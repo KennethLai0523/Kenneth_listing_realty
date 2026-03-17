@@ -3,376 +3,822 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kenneth Lai Property Listings</title>
+  <title>Kenneth Property Listings</title>
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f6f4ef;
+      background: #f4f1eb;
       color: #1f1f1f;
     }
-    header {
-      background: #1f2d3d;
-      color: white;
-      padding: 28px 20px;
-      text-align: center;
+
+    .wrapper {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 24px;
     }
-    header h1 {
-      margin: 0 0 8px;
+
+    h1 {
+      margin: 0 0 18px;
       font-size: 30px;
     }
-    header p {
-      margin: 0;
-      opacity: 0.9;
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
     }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px 16px 40px;
+
+    .top-card,
+    .panel,
+    .listing-card {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
     }
-    .panel {
-      background: white;
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      margin-bottom: 20px;
+
+    .top-card {
+      padding: 22px;
+      margin-bottom: 22px;
     }
-    .panel h2 {
-      margin-top: 0;
-      font-size: 22px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-    input, select, textarea, button {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #d8d4cc;
-      border-radius: 10px;
-      font: inherit;
-    }
-    textarea { min-height: 110px; resize: vertical; }
-    button {
-      background: #b88a3b;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    button:hover { background: #9e742f; }
-    .secondary {
-      background: #e9e4da;
-      color: #1f1f1f;
-    }
-    .secondary:hover { background: #ddd5c7; }
+
     .toolbar {
       display: flex;
+      flex-wrap: wrap;
       gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
+      margin: 14px 0 16px;
     }
-    .toolbar button {
-      width: auto;
-      padding: 10px 16px;
-    }
-    .listing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-    }
-    .card {
-      background: white;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      border: 1px solid #ece7de;
-    }
-    .card img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-      background: #ece7de;
-    }
-    .card-body {
-      padding: 16px;
-    }
-    .badge {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      background: #f3ead9;
-      color: #7a5821;
-    }
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 20px;
-    }
-    .meta {
-      color: #666;
-      font-size: 14px;
-      margin-bottom: 10px;
-      line-height: 1.5;
-    }
-    .price {
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: #1f2d3d;
-    }
-    .desc {
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 14px;
-      color: #444;
-      white-space: pre-line;
-    }
-    .card-actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .card-actions button,
-    .card-actions a {
-      flex: 1;
-      min-width: 120px;
-      text-align: center;
-      text-decoration: none;
-      padding: 10px 12px;
+
+    .btn {
+      border: none;
       border-radius: 10px;
-      font-weight: bold;
+      padding: 11px 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
     }
-    .whatsapp {
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-gold {
+      background: #b88a3b;
+      color: white;
+    }
+
+    .btn-light {
+      background: #e8e1d6;
+      color: #1f1f1f;
+    }
+
+    .btn-green {
       background: #25d366;
       color: white;
     }
-    .empty {
-      text-align: center;
-      color: #777;
-      padding: 30px 12px;
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+
+    .btn-red {
+      background: #d9534f;
+      color: white;
     }
-    .small {
+
+    .btn-blue {
+      background: #2f6fed;
+      color: white;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .search-row input {
+      flex: 1;
+      min-width: 220px;
+      border: 1px solid #d8d1c7;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .panel {
+      padding: 20px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    input,
+    textarea,
+    select {
+      border: 1px solid #d8d1c7;
+      border-radius: 10px;
+      padding: 11px 12px;
+      font-size: 14px;
+      font-family: inherit;
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 92px;
+      resize: vertical;
+    }
+
+    .small-note {
+      color: #6e655a;
       font-size: 13px;
-      color: #777;
-      margin-top: 10px;
     }
-    @media (max-width: 800px) {
-      .grid, .grid-3 { grid-template-columns: 1fr; }
-      header h1 { font-size: 25px; }
+
+    .listing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      margin-top: 22px;
+    }
+
+    .listing-card {
+      overflow: hidden;
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 340px;
+      background: #eee6da;
+      overflow: hidden;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.45);
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .slider-btn:hover {
+      background: rgba(0, 0, 0, 0.65);
+    }
+
+    .slider-btn.prev {
+      left: 12px;
+    }
+
+    .slider-btn.next {
+      right: 12px;
+    }
+
+    .slide-counter {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      background: rgba(0, 0, 0, 0.55);
+      color: white;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      z-index: 2;
+    }
+
+    .card-body {
+      padding: 18px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      background: #f1e4c9;
+      color: #7a571d;
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .listing-title {
+      font-size: 30px;
+      font-weight: 800;
+      margin: 6px 0 10px;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 18px;
+      margin-bottom: 12px;
+    }
+
+    .meta div {
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .price {
+      font-size: 34px;
+      font-weight: 800;
+      margin: 10px 0 12px;
+      color: #101010;
+    }
+
+    .desc {
+      color: #49433d;
+      line-height: 1.6;
+      margin-bottom: 14px;
+      white-space: pre-line;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 36px 20px;
+      color: #6a6258;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .footer-note {
+      margin-top: 16px;
+      color: #726a5f;
+      font-size: 13px;
+    }
+
+    @media (max-width: 860px) {
+      .grid,
+      .form-grid,
+      .meta {
+        grid-template-columns: 1fr;
+      }
+
+      .slider {
+        height: 240px;
+      }
+
+      .listing-title {
+        font-size: 24px;
+      }
+
+      .price {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Kenneth Lai Property Listings</h1>
-    <p>Simple listing site for buyers, tenants and co-broke agents</p>
-  </header>
+  <div class="wrapper">
+    <div class="top-card">
+      <h1>Browse Listings</h1>
 
-  <div class="container">
-    <div class="panel">
-      <h2>Add New Listing</h2>
-      <div class="grid">
-        <input id="title" placeholder="Property title (e.g. Residensi AVA)" />
-        <input id="location" placeholder="Location (e.g. Kepong / Sri Damansara)" />
-        <input id="price" placeholder="Price / Rent (e.g. RM590,000 or RM2,000/month)" />
-        <select id="audience">
-          <option value="buyer">For Buyer / Tenant</option>
-          <option value="cobroke">For Co-Broke Agent</option>
-        </select>
-        <select id="dealType">
-          <option value="sale">For Sale</option>
-          <option value="rent">For Rent</option>
-          <option value="both">Sale & Rent</option>
-        </select>
-        <input id="size" placeholder="Built-up / Land size (e.g. 947 sqft)" />
-      </div>
-
-      <div class="grid-3" style="margin-top:12px;">
-        <input id="bedrooms" placeholder="Bedrooms" />
-        <input id="bathrooms" placeholder="Bathrooms" />
-        <input id="image" placeholder="Image URL (optional)" />
-      </div>
-
-      <div style="margin-top:12px;">
-        <textarea id="description" placeholder="Short description, highlights, nearby MRT, retail, city view, etc."></textarea>
-      </div>
-
-      <div class="grid" style="margin-top:12px;">
-        <button onclick="addListing()">Add Listing</button>
-        <button class="secondary" onclick="clearForm()">Clear Form</button>
-      </div>
-      <div class="small">Listings are saved in the browser using local storage, so they stay there after refresh on the same device.</div>
-    </div>
-
-    <div class="panel">
-      <h2>Browse Listings</h2>
       <div class="toolbar">
-        <button onclick="setFilter('all')">All</button>
-        <button onclick="setFilter('buyer')">Buyer / Tenant View</button>
-        <button onclick="setFilter('cobroke')">Co-Broke Agent View</button>
-        <button class="secondary" onclick="seedExamples()">Load Sample Listings</button>
+        <button class="btn btn-gold" onclick="setView('all')">All</button>
+        <button class="btn btn-gold" onclick="setView('buyer')">Buyer / Tenant View</button>
+        <button class="btn btn-gold" onclick="setView('cobroke')">Co-Broke Agent View</button>
+        <button class="btn btn-light" onclick="loadSampleListings()">Load Sample Listings</button>
+        <button class="btn btn-light" onclick="clearAllListings()">Clear All Listings</button>
       </div>
-      <div id="listingContainer" class="listing-grid"></div>
+
+      <div class="search-row">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by project, location, price, keyword..."
+          oninput="renderListings()"
+        />
+      </div>
+
+      <div class="footer-note">
+        Photos can be added using image links separated by commas.
+      </div>
     </div>
+
+    <div class="grid">
+      <div class="panel">
+        <h2>Add Listing</h2>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="title">Project / Title</label>
+            <input id="title" type="text" placeholder="Residensi Ava" />
+          </div>
+
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input id="location" type="text" placeholder="Kepong" />
+          </div>
+
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input id="price" type="text" placeholder="RM590,000" />
+          </div>
+
+          <div class="form-group">
+            <label for="purpose">Purpose</label>
+            <select id="purpose">
+              <option value="For Sale">For Sale</option>
+              <option value="For Rent">For Rent</option>
+              <option value="Sale / Rent">Sale / Rent</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="propertyType">Property Type</label>
+            <input id="propertyType" type="text" placeholder="Apartment / Condo / Commercial" />
+          </div>
+
+          <div class="form-group">
+            <label for="rooms">Rooms</label>
+            <input id="rooms" type="text" placeholder="3 Bed" />
+          </div>
+
+          <div class="form-group">
+            <label for="bathrooms">Bathrooms</label>
+            <input id="bathrooms" type="text" placeholder="2 Bath" />
+          </div>
+
+          <div class="form-group">
+            <label for="builtup">Built-up</label>
+            <input id="builtup" type="text" placeholder="947 sqft" />
+          </div>
+
+          <div class="form-group">
+            <label for="furnishing">Furnishing</label>
+            <input id="furnishing" type="text" placeholder="Semi Furnished" />
+          </div>
+
+          <div class="form-group">
+            <label for="tenure">Tenure</label>
+            <input id="tenure" type="text" placeholder="Leasehold / Freehold" />
+          </div>
+
+          <div class="form-group">
+            <label for="buyerLabel">Buyer/Tenant Tag</label>
+            <input id="buyerLabel" type="text" placeholder="Near MRT / City View / Family Friendly" />
+          </div>
+
+          <div class="form-group">
+            <label for="agentNote">Co-Broke Agent Note</label>
+            <input id="agentNote" type="text" placeholder="Co-broke welcome / Call for details" />
+          </div>
+
+          <div class="form-group full">
+            <label for="description">Description</label>
+            <textarea id="description" placeholder="Write short property description here..."></textarea>
+          </div>
+
+          <div class="form-group full">
+            <label for="photos">Photo URLs</label>
+            <textarea
+              id="photos"
+              placeholder="Paste image links separated by commas&#10;Example: https://...jpg, https://...jpg, https://...jpg"
+            ></textarea>
+            <div class="small-note">Use direct image links ending with .jpg, .jpeg, .png, .webp if possible.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp Number</label>
+            <input id="whatsapp" type="text" placeholder="60166287357" />
+          </div>
+
+          <div class="form-group">
+            <label for="listingMode">Show In</label>
+            <select id="listingMode">
+              <option value="buyer">Buyer / Tenant View</option>
+              <option value="cobroke">Co-Broke Agent View</option>
+              <option value="both">Both Views</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="toolbar" style="margin-top:16px;">
+          <button class="btn btn-blue" onclick="addListing()">Add Listing</button>
+          <button class="btn btn-light" onclick="resetForm()">Reset Form</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>How It Works</h2>
+        <div class="desc">
+1. Fill in the property details.
+2. Paste several photo links separated by commas.
+3. Click Add Listing.
+4. Each card will have left/right arrows for the photos.
+5. Your listings stay saved in the browser automatically.
+
+For GitHub Pages:
+- Save this file as index.html
+- Upload it to your repository
+- Commit changes
+- GitHub Pages will deploy it
+
+If you want to use your own image folder later:
+images/ava1.jpg, images/ava2.jpg, images/ava3.jpg
+        </div>
+      </div>
+    </div>
+
+    <div id="listingsContainer" class="listing-grid"></div>
   </div>
 
   <script>
-    const STORAGE_KEY = 'kenneth_property_listings';
-    let currentFilter = 'all';
+    const STORAGE_KEY = "kenneth_property_listings_v1";
+    let currentView = "all";
 
-    function getListings() {
-      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-    }
+    let listings = [];
 
-    function saveListings(listings) {
+    function saveListings() {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(listings));
     }
 
+    function loadListings() {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        try {
+          listings = JSON.parse(stored);
+        } catch (e) {
+          listings = [];
+        }
+      }
+    }
+
+    function escapeHtml(text) {
+      if (text === null || text === undefined) return "";
+      return String(text)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function setView(view) {
+      currentView = view;
+      renderListings();
+    }
+
+    function parsePhotoInput(text) {
+      return text
+        .split(",")
+        .map(item => item.trim())
+        .filter(item => item.length > 0);
+    }
+
+    function resetForm() {
+      document.getElementById("title").value = "";
+      document.getElementById("location").value = "";
+      document.getElementById("price").value = "";
+      document.getElementById("purpose").value = "For Sale";
+      document.getElementById("propertyType").value = "";
+      document.getElementById("rooms").value = "";
+      document.getElementById("bathrooms").value = "";
+      document.getElementById("builtup").value = "";
+      document.getElementById("furnishing").value = "";
+      document.getElementById("tenure").value = "";
+      document.getElementById("buyerLabel").value = "";
+      document.getElementById("agentNote").value = "";
+      document.getElementById("description").value = "";
+      document.getElementById("photos").value = "";
+      document.getElementById("whatsapp").value = "";
+      document.getElementById("listingMode").value = "buyer";
+    }
+
     function addListing() {
-      const title = document.getElementById('title').value.trim();
-      const location = document.getElementById('location').value.trim();
-      const price = document.getElementById('price').value.trim();
-      const audience = document.getElementById('audience').value;
-      const dealType = document.getElementById('dealType').value;
-      const size = document.getElementById('size').value.trim();
-      const bedrooms = document.getElementById('bedrooms').value.trim();
-      const bathrooms = document.getElementById('bathrooms').value.trim();
-      const image = document.getElementById('image').value.trim();
-      const description = document.getElementById('description').value.trim();
+      const title = document.getElementById("title").value.trim();
+      const location = document.getElementById("location").value.trim();
+      const price = document.getElementById("price").value.trim();
+      const purpose = document.getElementById("purpose").value;
+      const propertyType = document.getElementById("propertyType").value.trim();
+      const rooms = document.getElementById("rooms").value.trim();
+      const bathrooms = document.getElementById("bathrooms").value.trim();
+      const builtup = document.getElementById("builtup").value.trim();
+      const furnishing = document.getElementById("furnishing").value.trim();
+      const tenure = document.getElementById("tenure").value.trim();
+      const buyerLabel = document.getElementById("buyerLabel").value.trim();
+      const agentNote = document.getElementById("agentNote").value.trim();
+      const description = document.getElementById("description").value.trim();
+      const photos = parsePhotoInput(document.getElementById("photos").value.trim());
+      const whatsapp = document.getElementById("whatsapp").value.trim();
+      const listingMode = document.getElementById("listingMode").value;
 
       if (!title || !location || !price) {
-        alert('Please fill in at least title, location and price.');
+        alert("Please fill in at least Title, Location, and Price.");
         return;
       }
 
-      const listings = getListings();
-      listings.unshift({
+      const newListing = {
         id: Date.now(),
         title,
         location,
         price,
-        audience,
-        dealType,
-        size,
-        bedrooms,
+        purpose,
+        propertyType,
+        rooms,
         bathrooms,
-        image,
-        description
-      });
+        builtup,
+        furnishing,
+        tenure,
+        buyerLabel,
+        agentNote,
+        description,
+        photos,
+        whatsapp,
+        listingMode,
+        currentPhoto: 0
+      };
 
-      saveListings(listings);
-      clearForm();
+      listings.unshift(newListing);
+      saveListings();
+      resetForm();
       renderListings();
-    }
-
-    function clearForm() {
-      ['title','location','price','size','bedrooms','bathrooms','image','description'].forEach(id => {
-        document.getElementById(id).value = '';
-      });
-      document.getElementById('audience').value = 'buyer';
-      document.getElementById('dealType').value = 'sale';
     }
 
     function deleteListing(id) {
-      const listings = getListings().filter(item => item.id !== id);
-      saveListings(listings);
+      const ok = confirm("Delete this listing?");
+      if (!ok) return;
+      listings = listings.filter(item => item.id !== id);
+      saveListings();
       renderListings();
     }
 
-    function setFilter(filter) {
-      currentFilter = filter;
+    function changeSlide(id, direction) {
+      const listing = listings.find(item => item.id === id);
+      if (!listing || !listing.photos || listing.photos.length === 0) return;
+
+      listing.currentPhoto += direction;
+
+      if (listing.currentPhoto < 0) {
+        listing.currentPhoto = listing.photos.length - 1;
+      }
+
+      if (listing.currentPhoto >= listing.photos.length) {
+        listing.currentPhoto = 0;
+      }
+
+      saveListings();
       renderListings();
     }
 
-    function formatAudience(value) {
-      return value === 'cobroke' ? 'Co-Broke Agent' : 'Buyer / Tenant';
-    }
+    function getVisibleListings() {
+      const keyword = document.getElementById("searchInput").value.trim().toLowerCase();
 
-    function formatDealType(value) {
-      if (value === 'sale') return 'For Sale';
-      if (value === 'rent') return 'For Rent';
-      return 'Sale & Rent';
+      return listings.filter(listing => {
+        let matchesView = false;
+
+        if (currentView === "all") {
+          matchesView = true;
+        } else if (currentView === "buyer") {
+          matchesView = listing.listingMode === "buyer" || listing.listingMode === "both";
+        } else if (currentView === "cobroke") {
+          matchesView = listing.listingMode === "cobroke" || listing.listingMode === "both";
+        }
+
+        const searchableText = [
+          listing.title,
+          listing.location,
+          listing.price,
+          listing.purpose,
+          listing.propertyType,
+          listing.rooms,
+          listing.bathrooms,
+          listing.builtup,
+          listing.furnishing,
+          listing.tenure,
+          listing.buyerLabel,
+          listing.agentNote,
+          listing.description
+        ].join(" ").toLowerCase();
+
+        const matchesKeyword = searchableText.includes(keyword);
+
+        return matchesView && matchesKeyword;
+      });
     }
 
     function renderListings() {
-      const container = document.getElementById('listingContainer');
-      const listings = getListings().filter(item => currentFilter === 'all' ? true : item.audience === currentFilter);
+      const container = document.getElementById("listingsContainer");
+      const visibleListings = getVisibleListings();
 
-      if (!listings.length) {
-        container.innerHTML = '<div class="empty">No listings yet. Add your first listing above.</div>';
+      if (visibleListings.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <h3 style="margin-top:0;">No listings found</h3>
+            <p>Try another search, another view, or add a new listing.</p>
+          </div>
+        `;
         return;
       }
 
-      container.innerHTML = listings.map(item => `
-        <div class="card">
-          <img src="${item.image || 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80'}" alt="${item.title}">
-          <div class="card-body">
-            <div class="badge">${formatDealType(item.dealType)} · ${formatAudience(item.audience)}</div>
-            <h3>${item.title}</h3>
-            <div class="meta">
-              <div><strong>Location:</strong> ${item.location}</div>
-              ${item.size ? `<div><strong>Size:</strong> ${item.size}</div>` : ''}
-              ${(item.bedrooms || item.bathrooms) ? `<div><strong>Rooms:</strong> ${item.bedrooms || '-'} Bed · ${item.bathrooms || '-'} Bath</div>` : ''}
+      container.innerHTML = visibleListings.map(listing => {
+        const hasPhotos = listing.photos && listing.photos.length > 0;
+        const photoIndex = hasPhotos ? Math.min(listing.currentPhoto || 0, listing.photos.length - 1) : 0;
+        const photoSrc = hasPhotos
+          ? listing.photos[photoIndex]
+          : "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=80";
+
+        const viewTag =
+          listing.listingMode === "buyer" ? "Buyer / Tenant View" :
+          listing.listingMode === "cobroke" ? "Co-Broke Agent View" :
+          "Both Views";
+
+        const whatsappButton = listing.whatsapp
+          ? `<button class="btn btn-green" onclick="window.open('https://wa.me/${encodeURIComponent(listing.whatsapp)}','_blank')">WhatsApp</button>`
+          : "";
+
+        const buyerExtra = listing.buyerLabel
+          ? `<div class="tag">${escapeHtml(listing.buyerLabel)}</div>`
+          : "";
+
+        const agentExtra = (currentView === "cobroke" || currentView === "all") && listing.agentNote
+          ? `<div class="tag">${escapeHtml(listing.agentNote)}</div>`
+          : "";
+
+        return `
+          <div class="listing-card">
+            <div class="slider">
+              <img src="${escapeHtml(photoSrc)}" alt="${escapeHtml(listing.title)}" />
+
+              ${hasPhotos && listing.photos.length > 1 ? `
+                <button class="slider-btn prev" onclick="changeSlide(${listing.id}, -1)">&#10094;</button>
+                <button class="slider-btn next" onclick="changeSlide(${listing.id}, 1)">&#10095;</button>
+                <div class="slide-counter">${photoIndex + 1} / ${listing.photos.length}</div>
+              ` : ""}
             </div>
-            <div class="price">${item.price}</div>
-            <div class="desc">${item.description || 'Contact Kenneth Lai for more details and viewing arrangement.'}</div>
-            <div class="card-actions">
-              <a class="whatsapp" href="https://wa.me/60166287357?text=${encodeURIComponent('Hi Kenneth, I am interested in ' + item.title + ' at ' + item.location)}" target="_blank">WhatsApp</a>
-              <button class="secondary" onclick="deleteListing(${item.id})">Delete</button>
+
+            <div class="card-body">
+              <div class="tags">
+                <div class="tag">${escapeHtml(listing.purpose)}</div>
+                <div class="tag">${escapeHtml(viewTag)}</div>
+                ${listing.propertyType ? `<div class="tag">${escapeHtml(listing.propertyType)}</div>` : ""}
+                ${buyerExtra}
+                ${agentExtra}
+              </div>
+
+              <div class="listing-title">${escapeHtml(listing.title)}</div>
+
+              <div class="meta">
+                <div><strong>Location:</strong> ${escapeHtml(listing.location || "-")}</div>
+                <div><strong>Built-up:</strong> ${escapeHtml(listing.builtup || "-")}</div>
+                <div><strong>Rooms:</strong> ${escapeHtml(listing.rooms || "-")}</div>
+                <div><strong>Bathrooms:</strong> ${escapeHtml(listing.bathrooms || "-")}</div>
+                <div><strong>Furnishing:</strong> ${escapeHtml(listing.furnishing || "-")}</div>
+                <div><strong>Tenure:</strong> ${escapeHtml(listing.tenure || "-")}</div>
+              </div>
+
+              <div class="price">${escapeHtml(listing.price)}</div>
+
+              <div class="desc">${escapeHtml(listing.description || "")}</div>
+
+              <div class="actions">
+                ${whatsappButton}
+                <button class="btn btn-red" onclick="deleteListing(${listing.id})">Delete</button>
+              </div>
             </div>
           </div>
-        </div>
-      `).join('');
+        `;
+      }).join("");
     }
 
-    function seedExamples() {
-      const sample = [
-        {
-          id: Date.now(),
-          title: 'Residensi AVA',
-          location: 'Bandar Sri Damansara',
-          price: 'RM590,000',
-          audience: 'buyer',
-          dealType: 'sale',
-          size: '947 sqft',
-          bedrooms: '3',
-          bathrooms: '2',
-          image: '',
-          description: 'Perfect for own stay or investment. Convenient location with skyline view, mature township surroundings and easy access to amenities.'
-        },
-        {
-          id: Date.now() + 1,
-          title: 'Kepong 2 Storey Industrial',
-          location: 'Kepong',
-          price: 'RM1,700,000',
-          audience: 'cobroke',
-          dealType: 'sale',
-          size: '1,600 sqft',
-          bedrooms: '',
-          bathrooms: '',
-          image: '',
-          description: 'Suitable for factory and office use. Good option for co-broke agents with clients looking for industrial usage in Kepong area.'
-        }
-      ];
-      saveListings(sample);
+    function clearAllListings() {
+      const ok = confirm("Delete all listings?");
+      if (!ok) return;
+      listings = [];
+      saveListings();
       renderListings();
     }
 
+    function loadSampleListings() {
+      listings = [
+        {
+          id: 1001,
+          title: "Residensi Ava",
+          location: "Kepong",
+          price: "RM590,000",
+          purpose: "For Sale",
+          propertyType: "Apartment",
+          rooms: "3 Bed",
+          bathrooms: "2 Bath",
+          builtup: "947 sqft",
+          furnishing: "Semi Furnished",
+          tenure: "Leasehold",
+          buyerLabel: "Near MRT",
+          agentNote: "Co-broke welcome",
+          description: "Well-kept unit with convenient access to nearby retail, food and transport. Suitable for own stay or investment.",
+          photos: [
+            "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?auto=format&fit=crop&w=1400&q=80",
+            "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1400&q=80",
+            "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80"
+          ],
+          whatsapp: "60166287357",
+          listingMode: "both",
+          currentPhoto: 0
+        },
+        {
+          id: 1002,
+          title: "M Luna",
+          location: "Kepong",
+          price: "RM950,000",
+          purpose: "For Sale",
+          propertyType: "Condominium",
+          rooms: "4 Bed",
+          bathrooms: "2 Bath",
+          builtup: "1000 sqft",
+          furnishing: "Partly Furnished",
+          tenure: "Leasehold 99 years",
+          buyerLabel: "Corner Unit",
+          agentNote: "Direct owner listing",
+          description: "Spacious family layout with modern facilities and easy access to shops, eateries and key roads.",
+          photos: [
+            "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80",
+            "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80",
+            "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1400&q=80"
+          ],
+          whatsapp: "60166287357",
+          listingMode: "buyer",
+          currentPhoto: 0
+        },
+        {
+          id: 1003,
+          title: "Kepong 2-Storey Industrial",
+          location: "Kepong",
+          price: "RM1,700,000",
+          purpose: "For Sale",
+          propertyType: "Industrial",
+          rooms: "-",
+          bathrooms: "-",
+          builtup: "1600 sqft",
+          furnishing: "-",
+          tenure: "-",
+          buyerLabel: "Factory + Office Use",
+          agentNote: "Commercial / industrial co-broke welcome",
+          description: "Suitable for factory and office usage. Practical layout for business operations with accessible industrial surroundings.",
+          photos: [
+            "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1400&q=80",
+            "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80"
+          ],
+          whatsapp: "60166287357",
+          listingMode: "cobroke",
+          currentPhoto: 0
+        }
+      ];
+
+      saveListings();
+      renderListings();
+    }
+
+    loadListings();
     renderListings();
   </script>
 </body>
 </html>
-
