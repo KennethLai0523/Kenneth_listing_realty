@@ -1,227 +1,700 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kenneth Property Listings</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenneth Lai Property Listings</title>
+  <meta
+    name="description"
+    content="Property listings by Kenneth Lai. Browse residential, commercial, and industrial listings with direct WhatsApp contact."
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-body{
-font-family:Arial;
-margin:0;
-background:#f4f1eb;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f6f2eb;
+      color: #1f1f1f;
+    }
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:25px;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-h1{
-margin-bottom:20px;
-}
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px;
+    }
 
-.search{
-width:100%;
-padding:12px;
-border-radius:10px;
-border:1px solid #ccc;
-margin-bottom:25px;
-}
+    .hero {
+      background:
+        linear-gradient(rgba(20, 20, 20, 0.38), rgba(20, 20, 20, 0.45)),
+        url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
+      color: white;
+      border-radius: 24px;
+      overflow: hidden;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 26px;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.12);
+    }
 
-.card{
-background:white;
-border-radius:14px;
-margin-bottom:25px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
-}
+    .hero-content {
+      padding: 42px;
+      max-width: 700px;
+    }
 
-.slider{
-position:relative;
-height:320px;
-}
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      font-size: 13px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(6px);
+    }
 
-.slider img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
+    .hero h1 {
+      margin: 0 0 14px;
+      font-size: 46px;
+      line-height: 1.08;
+    }
 
-.arrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-background:rgba(0,0,0,0.5);
-color:white;
-border:none;
-width:40px;
-height:40px;
-border-radius:50%;
-font-size:20px;
-cursor:pointer;
-}
+    .hero p {
+      margin: 0 0 22px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.92);
+    }
 
-.left{left:10px;}
-.right{right:10px;}
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-.body{
-padding:20px;
-}
+    .btn {
+      border: none;
+      border-radius: 12px;
+      padding: 13px 20px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
 
-.title{
-font-size:26px;
-font-weight:bold;
-margin-bottom:10px;
-}
+    .btn:hover {
+      transform: translateY(-1px);
+    }
 
-.price{
-font-size:28px;
-font-weight:bold;
-margin:10px 0;
-}
+    .btn-gold {
+      background: #b88a3b;
+      color: white;
+    }
 
-.meta{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-}
+    .btn-white {
+      background: white;
+      color: #1f1f1f;
+    }
 
-.whatsapp{
-background:#25D366;
-color:white;
-padding:12px 20px;
-border:none;
-border-radius:8px;
-margin-top:15px;
-cursor:pointer;
-}
+    .btn-green {
+      background: #25d366;
+      color: white;
+    }
 
-@media(max-width:700px){
+    .section-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+      padding: 22px;
+      margin-bottom: 24px;
+    }
 
-.meta{
-grid-template-columns:1fr;
-}
+    .top-row {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 22px;
+      margin-bottom: 26px;
+    }
 
-.slider{
-height:220px;
-}
+    .search-title {
+      margin: 0 0 12px;
+      font-size: 28px;
+    }
 
-}
+    .search-subtitle {
+      margin: 0 0 16px;
+      color: #655d53;
+      line-height: 1.6;
+    }
 
-</style>
+    .search-box {
+      width: 100%;
+      border: 1px solid #ddd3c6;
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 15px;
+      outline: none;
+      background: #fcfaf7;
+    }
+
+    .search-box:focus {
+      border-color: #b88a3b;
+      box-shadow: 0 0 0 3px rgba(184, 138, 59, 0.12);
+    }
+
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(135deg, #111111, #2b2b2b);
+      color: white;
+    }
+
+    .contact-label {
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 10px;
+    }
+
+    .contact-name {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .contact-role {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 18px;
+    }
+
+    .contact-phone {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .contact-note {
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .listing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .listing-card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .listing-media {
+      position: relative;
+      height: 420px;
+      background: #ece6de;
+      overflow: hidden;
+    }
+
+    .listing-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .media-overlay {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      z-index: 2;
+    }
+
+    .media-chip {
+      background: rgba(17, 17, 17, 0.68);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(17, 17, 17, 0.55);
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .arrow:hover {
+      background: rgba(17, 17, 17, 0.78);
+    }
+
+    .arrow.left {
+      left: 16px;
+    }
+
+    .arrow.right {
+      right: 16px;
+    }
+
+    .slide-count {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      background: rgba(17, 17, 17, 0.62);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 999px;
+      z-index: 3;
+    }
+
+    .listing-body {
+      padding: 24px;
+    }
+
+    .listing-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .listing-title {
+      margin: 0 0 8px;
+      font-size: 32px;
+      line-height: 1.15;
+    }
+
+    .listing-location {
+      font-size: 15px;
+      color: #6b6358;
+    }
+
+    .listing-price {
+      font-size: 34px;
+      font-weight: 800;
+      color: #111111;
+      white-space: nowrap;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      background: #f3e7cf;
+      color: #7b5920;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .detail-box {
+      background: #faf7f2;
+      border: 1px solid #ede3d7;
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .detail-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #8a8176;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+
+    .detail-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1f1f1f;
+    }
+
+    .description {
+      color: #534c43;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .listing-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .secondary-btn {
+      background: #ece4d8;
+      color: #2b2b2b;
+    }
+
+    .empty {
+      background: white;
+      border-radius: 20px;
+      text-align: center;
+      padding: 46px 20px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+      color: #6c6459;
+    }
+
+    .footer {
+      margin-top: 34px;
+      padding: 28px 24px;
+      background: #121212;
+      color: white;
+      border-radius: 22px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .footer h3 {
+      margin: 0 0 10px;
+      font-size: 26px;
+    }
+
+    .footer p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
+    }
+
+    .footer-contact {
+      text-align: right;
+    }
+
+    .footer-contact strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .footer-contact span {
+      display: block;
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .top-row,
+      .footer-grid,
+      .details {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card,
+      .footer-contact {
+        text-align: left;
+      }
+
+      .listing-top {
+        flex-direction: column;
+      }
+
+      .listing-price {
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 16px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-content {
+        padding: 28px 22px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .listing-media {
+        height: 250px;
+      }
+
+      .listing-title {
+        font-size: 26px;
+      }
+
+      .listing-price {
+        font-size: 28px;
+      }
+
+      .arrow {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">Property Listings by Kenneth Lai</div>
+        <h1>Find the Right Property with Direct Agent Contact</h1>
+        <p>
+          Browse available residential, commercial, and industrial listings with clear photos,
+          key property details, and fast WhatsApp contact for enquiries and viewing arrangements.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#listings">Browse Listings</a>
+          <a class="btn btn-white" href="https://wa.me/60166287357" target="_blank">WhatsApp Kenneth Lai</a>
+        </div>
+      </div>
+    </section>
 
-<div class="container">
+    <section class="top-row">
+      <div class="section-card">
+        <h2 class="search-title">Available Listings</h2>
+        <p class="search-subtitle">
+          Search by project name, location, or keyword to quickly find the property you are looking for.
+        </p>
+        <input
+          class="search-box"
+          id="search"
+          type="text"
+          placeholder="Search project, location, keyword..."
+          oninput="render()"
+        />
+      </div>
 
-<h1>Property Listings</h1>
+      <div class="section-card contact-card">
+        <div>
+          <div class="contact-label">Direct Contact</div>
+          <div class="contact-name">Kenneth Lai</div>
+          <div class="contact-role">Property Agent</div>
+          <div class="contact-phone">016-628 7357</div>
+          <div class="contact-note">
+            For viewing arrangements, more information, or suitable property recommendations, contact me directly.
+          </div>
+        </div>
+        <div>
+          <a class="btn btn-green" href="https://wa.me/60166287357" target="_blank">WhatsApp Now</a>
+        </div>
+      </div>
+    </section>
 
-<input
-class="search"
-id="search"
-placeholder="Search location, project, keyword..."
-oninput="render()"
-/>
+    <section id="listings" class="listing-grid"></section>
 
-<div id="listings"></div>
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <h3>Kenneth Lai Property Listings</h3>
+          <p>
+            Explore curated listings with direct enquiry access. For sales, rentals, and property matching,
+            reach out directly for the latest availability and viewing arrangements.
+          </p>
+        </div>
+        <div class="footer-contact">
+          <strong>Kenneth Lai</strong>
+          <span>Property Agent</span>
+          <a class="btn btn-gold" href="https://wa.me/60166287357" target="_blank">016-628 7357</a>
+        </div>
+      </div>
+    </footer>
+  </div>
 
-</div>
+  <script src="listings.js"></script>
+  <script>
+    let data = LISTINGS.map(item => ({
+      ...item,
+      index: 0
+    }));
 
-<script src="listings.js"></script>
+    function safe(value) {
+      return value ? value : "";
+    }
 
-<script>
+    function slide(id, dir) {
+      const item = data.find(x => x.id === id);
+      if (!item || !item.photos || item.photos.length === 0) return;
 
-let data = LISTINGS.map(x=>({...x,index:0}))
+      item.index += dir;
 
-function slide(id,dir){
+      if (item.index < 0) item.index = item.photos.length - 1;
+      if (item.index >= item.photos.length) item.index = 0;
 
-let item=data.find(x=>x.id===id)
+      render();
+    }
 
-item.index+=dir
+    function render() {
+      const key = document.getElementById("search").value.toLowerCase().trim();
 
-if(item.index<0) item.index=item.photos.length-1
-if(item.index>=item.photos.length) item.index=0
+      const filtered = data.filter(item => {
+        const text = [
+          item.title,
+          item.location,
+          item.description,
+          item.price,
+          item.rooms,
+          item.bathrooms,
+          item.builtup,
+          item.furnishing,
+          item.tenure,
+          item.propertyType,
+          item.purpose
+        ].join(" ").toLowerCase();
 
-render()
+        return text.includes(key);
+      });
 
-}
+      if (filtered.length === 0) {
+        document.getElementById("listings").innerHTML = `
+          <div class="empty">
+            <h3 style="margin-top:0;">No listings found</h3>
+            <p>Try a different keyword or contact Kenneth Lai for more options.</p>
+          </div>
+        `;
+        return;
+      }
 
-function render(){
+      let html = "";
 
-let key=document.getElementById("search").value.toLowerCase()
+      filtered.forEach(item => {
+        const photos = item.photos && item.photos.length ? item.photos : [
+          "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=80"
+        ];
 
-let filtered=data.filter(x=>{
+        const currentIndex = item.index >= photos.length ? 0 : item.index;
+        const currentPhoto = photos[currentIndex];
 
-return (
-(x.title||"").toLowerCase().includes(key)||
-(x.location||"").toLowerCase().includes(key)||
-(x.description||"").toLowerCase().includes(key)
-)
+        html += `
+          <article class="listing-card">
+            <div class="listing-media">
+              <img src="${currentPhoto}" alt="${safe(item.title) || "Property Listing"}" />
 
-})
+              <div class="media-overlay">
+                ${item.purpose ? `<span class="media-chip">${item.purpose}</span>` : ""}
+                ${item.propertyType ? `<span class="media-chip">${item.propertyType}</span>` : ""}
+              </div>
 
-let html=""
+              ${photos.length > 1 ? `
+                <button class="arrow left" onclick="slide(${item.id}, -1)">‹</button>
+                <button class="arrow right" onclick="slide(${item.id}, 1)">›</button>
+                <div class="slide-count">${currentIndex + 1} / ${photos.length}</div>
+              ` : ""}
+            </div>
 
-filtered.forEach(x=>{
+            <div class="listing-body">
+              <div class="listing-top">
+                <div>
+                  <h2 class="listing-title">${safe(item.title) || "Untitled Listing"}</h2>
+                  <div class="listing-location">${safe(item.location) || "Location upon enquiry"}</div>
+                </div>
+                <div class="listing-price">${safe(item.price) || "Price upon enquiry"}</div>
+              </div>
 
-let img=x.photos?.length?x.photos[x.index]:""
+              <div class="tag-row">
+                ${item.purpose ? `<span class="tag">${item.purpose}</span>` : ""}
+                ${item.propertyType ? `<span class="tag">${item.propertyType}</span>` : ""}
+                ${item.buyerLabel ? `<span class="tag">${item.buyerLabel}</span>` : ""}
+              </div>
 
-html+=`
-<div class="card">
+              <div class="details">
+                <div class="detail-box">
+                  <div class="detail-label">Rooms</div>
+                  <div class="detail-value">${safe(item.rooms) || "-"}</div>
+                </div>
+                <div class="detail-box">
+                  <div class="detail-label">Bathrooms</div>
+                  <div class="detail-value">${safe(item.bathrooms) || "-"}</div>
+                </div>
+                <div class="detail-box">
+                  <div class="detail-label">Built-up</div>
+                  <div class="detail-value">${safe(item.builtup) || "-"}</div>
+                </div>
+                <div class="detail-box">
+                  <div class="detail-label">Furnishing</div>
+                  <div class="detail-value">${safe(item.furnishing) || "-"}</div>
+                </div>
+                <div class="detail-box">
+                  <div class="detail-label">Tenure</div>
+                  <div class="detail-value">${safe(item.tenure) || "-"}</div>
+                </div>
+                <div class="detail-box">
+                  <div class="detail-label">Contact</div>
+                  <div class="detail-value">Kenneth Lai</div>
+                </div>
+              </div>
 
-<div class="slider">
+              <div class="description">
+                ${safe(item.description) || "Contact Kenneth Lai for more details about this property."}
+              </div>
 
-<img src="${img}">
+              <div class="listing-actions">
+                <a class="btn btn-green" href="https://wa.me/${item.whatsapp ? item.whatsapp : "60166287357"}" target="_blank">
+                  WhatsApp Kenneth Lai
+                </a>
+                <a class="btn secondary-btn" href="tel:+60166287357">
+                  Call 016-628 7357
+                </a>
+              </div>
+            </div>
+          </article>
+        `;
+      });
 
-${x.photos.length>1?`
-<button class="arrow left" onclick="slide(${x.id},-1)">‹</button>
-<button class="arrow right" onclick="slide(${x.id},1)">›</button>
-`:``}
+      document.getElementById("listings").innerHTML = html;
+    }
 
-</div>
-
-<div class="body">
-
-<div class="title">${x.title||"Listing"}</div>
-
-<div class="meta">
-<div><b>Location:</b> ${x.location||"-"}</div>
-<div><b>Built-up:</b> ${x.builtup||"-"}</div>
-<div><b>Rooms:</b> ${x.rooms||"-"}</div>
-<div><b>Bathrooms:</b> ${x.bathrooms||"-"}</div>
-<div><b>Furnishing:</b> ${x.furnishing||"-"}</div>
-<div><b>Tenure:</b> ${x.tenure||"-"}</div>
-</div>
-
-${x.price?`<div class="price">${x.price}</div>`:""}
-
-<p>${x.description||""}</p>
-
-${x.whatsapp?`
-<button class="whatsapp"
-onclick="window.open('https://wa.me/${x.whatsapp}')">
-WhatsApp
-</button>
-`:""}
-
-</div>
-
-</div>
-`
-
-})
-
-document.getElementById("listings").innerHTML=html
-
-}
-
-render()
-
-</script>
-
+    render();
+  </script>
 </body>
 </html>
