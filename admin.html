@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Listing Admin</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f1eb;
+      color: #1f1f1f;
+    }
+
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    input, textarea, select {
+      border: 1px solid #d8d1c7;
+      border-radius: 10px;
+      padding: 11px 12px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    button {
+      border: none;
+      border-radius: 10px;
+      padding: 11px 16px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+
+    .gold { background: #b88a3b; color: white; }
+    .green { background: #25d366; color: white; }
+    .red { background: #d9534f; color: white; }
+    .light { background: #e8e1d6; color: #1f1f1f; }
+
+    .listing-item {
+      border: 1px solid #e3dbcf;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .code-box {
+      width: 100%;
+      min-height: 320px;
+      font-family: Consolas, monospace;
+    }
+
+    @media (max-width: 860px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <h1>Private Listing Admin</h1>
+      <p>This page is for you only. Add listings here, then click <strong>Export listings.js</strong>, copy the code, paste into your real <strong>listings.js</strong> file, and commit to GitHub.</p>
+    </div>
+
+    <div class="card">
+      <h2>Add Listing</h2>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Project / Title</label>
+          <input id="title" type="text" placeholder="Residensi Ava" />
+        </div>
+
+        <div class="form-group">
+          <label>Location</label>
+          <input id="location" type="text" placeholder="Kepong" />
+        </div>
+
+        <div class="form-group">
+          <label>Price</label>
+          <input id="price" type="text" placeholder="RM590,000" />
+        </div>
+
+        <div class="form-group">
+          <label>Purpose</label>
+          <select id="purpose">
+            <option value="For Sale">For Sale</option>
+            <option value="For Rent">For Rent</option>
+            <option value="Sale / Rent">Sale / Rent</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Property Type</label>
+          <input id="propertyType" type="text" placeholder="Apartment / Commercial / Industrial" />
+        </div>
+
+        <div class="form-group">
+          <label>Rooms</label>
+          <input id="rooms" type="text" placeholder="3 Bed" />
+        </div>
+
+        <div class="form-group">
+          <label>Bathrooms</label>
+          <input id="bathrooms" type="text" placeholder="2 Bath" />
+        </div>
+
+        <div class="form-group">
+          <label>Built-up</label>
+          <input id="builtup" type="text" placeholder="947 sqft" />
+        </div>
+
+        <div class="form-group">
+          <label>Furnishing</label>
+          <input id="furnishing" type="text" placeholder="Semi Furnished" />
+        </div>
+
+        <div class="form-group">
+          <label>Tenure</label>
+          <input id="tenure" type="text" placeholder="Leasehold / Freehold" />
+        </div>
+
+        <div class="form-group">
+          <label>Buyer/Tenant Tag</label>
+          <input id="buyerLabel" type="text" placeholder="Near MRT / City View" />
+        </div>
+
+        <div class="form-group">
+          <label>Agent Note</label>
+          <input id="agentNote" type="text" placeholder="Co-broke welcome" />
+        </div>
+
+        <div class="form-group">
+          <label>WhatsApp Number</label>
+          <input id="whatsapp" type="text" placeholder="60166287357" />
+        </div>
+
+        <div class="form-group">
+          <label>Show In</label>
+          <select id="listingMode">
+            <option value="buyer">Buyer / Tenant View</option>
+            <option value="cobroke">Co-Broke Agent View</option>
+            <option value="both">Both Views</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <label>Description</label>
+          <textarea id="description" placeholder="Write short property description..."></textarea>
+        </div>
+
+        <div class="form-group full">
+          <label>Photo URLs (one per line)</label>
+          <textarea id="photos" placeholder="https://...jpg&#10;https://...jpg&#10;https://...jpg"></textarea>
+        </div>
+      </div>
+
+      <button class="gold" onclick="addListing()">Add Listing</button>
+      <button class="light" onclick="resetForm()">Reset</button>
+    </div>
+
+    <div class="card">
+      <h2>Current Listings</h2>
+      <div id="listingList"></div>
+    </div>
+
+    <div class="card">
+      <h2>Export listings.js</h2>
+      <button class="green" onclick="exportJS()">Generate Export Code</button>
+      <button class="light" onclick="copyExport()">Copy Code</button>
+      <textarea id="exportBox" class="code-box" placeholder="Generated code will appear here..."></textarea>
+    </div>
+  </div>
+
+  <script src="listings.js"></script>
+  <script>
+    let adminListings = JSON.parse(JSON.stringify(LISTINGS));
+
+    function resetForm() {
+      document.getElementById("title").value = "";
+      document.getElementById("location").value = "";
+      document.getElementById("price").value = "";
+      document.getElementById("purpose").value = "For Sale";
+      document.getElementById("propertyType").value = "";
+      document.getElementById("rooms").value = "";
+      document.getElementById("bathrooms").value = "";
+      document.getElementById("builtup").value = "";
+      document.getElementById("furnishing").value = "";
+      document.getElementById("tenure").value = "";
+      document.getElementById("buyerLabel").value = "";
+      document.getElementById("agentNote").value = "";
+      document.getElementById("whatsapp").value = "";
+      document.getElementById("listingMode").value = "buyer";
+      document.getElementById("description").value = "";
+      document.getElementById("photos").value = "";
+    }
+
+    function addListing() {
+      const title = document.getElementById("title").value.trim();
+      const location = document.getElementById("location").value.trim();
+      const price = document.getElementById("price").value.trim();
+
+      if (!title || !location || !price) {
+        alert("Please fill in Title, Location and Price.");
+        return;
+      }
+
+      const photos = document.getElementById("photos").value
+        .split("\n")
+        .map(x => x.trim())
+        .filter(Boolean);
+
+      adminListings.unshift({
+        id: Date.now(),
+        title,
+        location,
+        price,
+        purpose: document.getElementById("purpose").value,
+        propertyType: document.getElementById("propertyType").value.trim(),
+        rooms: document.getElementById("rooms").value.trim(),
+        bathrooms: document.getElementById("bathrooms").value.trim(),
+        builtup: document.getElementById("builtup").value.trim(),
+        furnishing: document.getElementById("furnishing").value.trim(),
+        tenure: document.getElementById("tenure").value.trim(),
+        buyerLabel: document.getElementById("buyerLabel").value.trim(),
+        agentNote: document.getElementById("agentNote").value.trim(),
+        description: document.getElementById("description").value.trim(),
+        whatsapp: document.getElementById("whatsapp").value.trim(),
+        listingMode: document.getElementById("listingMode").value,
+        photos
+      });
+
+      resetForm();
+      renderAdminList();
+      exportJS();
+    }
+
+    function deleteListing(id) {
+      adminListings = adminListings.filter(item => item.id !== id);
+      renderAdminList();
+      exportJS();
+    }
+
+    function renderAdminList() {
+      const container = document.getElementById("listingList");
+
+      if (adminListings.length === 0) {
+        container.innerHTML = "<p>No listings yet.</p>";
+        return;
+      }
+
+      container.innerHTML = adminListings.map(item => `
+        <div class="listing-item">
+          <strong>${item.title}</strong><br>
+          ${item.location} · ${item.price} · ${item.purpose}<br>
+          Photos: ${item.photos.length}
+          <br>
+          <button class="red" onclick="deleteListing(${item.id})">Delete</button>
+        </div>
+      `).join("");
+    }
+
+    function exportJS() {
+      const code = "const LISTINGS = " + JSON.stringify(adminListings, null, 2) + ";";
+      document.getElementById("exportBox").value = code;
+    }
+
+    function copyExport() {
+      const box = document.getElementById("exportBox");
+      box.select();
+      box.setSelectionRange(0, 999999);
+      document.execCommand("copy");
+      alert("Copied.");
+    }
+
+    renderAdminList();
+    exportJS();
+  </script>
+</body>
+</html>

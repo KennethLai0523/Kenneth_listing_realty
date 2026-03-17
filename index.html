@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenneth Property Listings</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f1eb;
+      color: #1f1f1f;
+    }
+
+    .wrapper {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: 30px;
+    }
+
+    .top-card,
+    .listing-card,
+    .empty-state {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .top-card {
+      padding: 22px;
+      margin-bottom: 22px;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 14px 0 16px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 10px;
+      padding: 11px 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-gold {
+      background: #b88a3b;
+      color: white;
+    }
+
+    .search-row input {
+      width: 100%;
+      border: 1px solid #d8d1c7;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 15px;
+    }
+
+    .listing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      margin-top: 22px;
+    }
+
+    .listing-card {
+      overflow: hidden;
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 340px;
+      background: #eee6da;
+      overflow: hidden;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.45);
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .slider-btn.prev {
+      left: 12px;
+    }
+
+    .slider-btn.next {
+      right: 12px;
+    }
+
+    .slide-counter {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      background: rgba(0, 0, 0, 0.55);
+      color: white;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      z-index: 2;
+    }
+
+    .card-body {
+      padding: 18px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      background: #f1e4c9;
+      color: #7a571d;
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .listing-title {
+      font-size: 30px;
+      font-weight: 800;
+      margin: 6px 0 10px;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 18px;
+      margin-bottom: 12px;
+    }
+
+    .meta div {
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .price {
+      font-size: 34px;
+      font-weight: 800;
+      margin: 10px 0 12px;
+      color: #101010;
+    }
+
+    .desc {
+      color: #49433d;
+      line-height: 1.6;
+      margin-bottom: 14px;
+      white-space: pre-line;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .wa-btn {
+      border: none;
+      border-radius: 10px;
+      padding: 11px 16px;
+      font-weight: 700;
+      cursor: pointer;
+      background: #25d366;
+      color: white;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 36px 20px;
+      color: #6a6258;
+    }
+
+    @media (max-width: 860px) {
+      .meta {
+        grid-template-columns: 1fr;
+      }
+
+      .slider {
+        height: 240px;
+      }
+
+      .listing-title {
+        font-size: 24px;
+      }
+
+      .price {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="top-card">
+      <h1>Browse Listings</h1>
+
+      <div class="toolbar">
+        <button class="btn btn-gold" onclick="setView('all')">All</button>
+        <button class="btn btn-gold" onclick="setView('buyer')">Buyer / Tenant View</button>
+        <button class="btn btn-gold" onclick="setView('cobroke')">Co-Broke Agent View</button>
+      </div>
+
+      <div class="search-row">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by project, location, price, keyword..."
+          oninput="renderListings()"
+        />
+      </div>
+    </div>
+
+    <div id="listingsContainer" class="listing-grid"></div>
+  </div>
+
+  <script src="listings.js"></script>
+  <script>
+    let currentView = "all";
+    let listingState = LISTINGS.map(item => ({ ...item, currentPhoto: 0 }));
+
+    function escapeHtml(text) {
+      if (text === null || text === undefined) return "";
+      return String(text)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function setView(view) {
+      currentView = view;
+      renderListings();
+    }
+
+    function changeSlide(id, direction) {
+      const listing = listingState.find(item => item.id === id);
+      if (!listing || !listing.photos || listing.photos.length === 0) return;
+
+      listing.currentPhoto += direction;
+
+      if (listing.currentPhoto < 0) {
+        listing.currentPhoto = listing.photos.length - 1;
+      }
+
+      if (listing.currentPhoto >= listing.photos.length) {
+        listing.currentPhoto = 0;
+      }
+
+      renderListings();
+    }
+
+    function getVisibleListings() {
+      const keyword = document.getElementById("searchInput").value.trim().toLowerCase();
+
+      return listingState.filter(listing => {
+        let matchesView = false;
+
+        if (currentView === "all") {
+          matchesView = true;
+        } else if (currentView === "buyer") {
+          matchesView = listing.listingMode === "buyer" || listing.listingMode === "both";
+        } else if (currentView === "cobroke") {
+          matchesView = listing.listingMode === "cobroke" || listing.listingMode === "both";
+        }
+
+        const searchableText = [
+          listing.title,
+          listing.location,
+          listing.price,
+          listing.purpose,
+          listing.propertyType,
+          listing.rooms,
+          listing.bathrooms,
+          listing.builtup,
+          listing.furnishing,
+          listing.tenure,
+          listing.buyerLabel,
+          listing.agentNote,
+          listing.description
+        ].join(" ").toLowerCase();
+
+        const matchesKeyword = searchableText.includes(keyword);
+
+        return matchesView && matchesKeyword;
+      });
+    }
+
+    function renderListings() {
+      const container = document.getElementById("listingsContainer");
+      const visibleListings = getVisibleListings();
+
+      if (visibleListings.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <h3 style="margin-top:0;">No listings found</h3>
+            <p>Try another search or another view.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = visibleListings.map(listing => {
+        const hasPhotos = listing.photos && listing.photos.length > 0;
+        const photoIndex = hasPhotos ? Math.min(listing.currentPhoto || 0, listing.photos.length - 1) : 0;
+        const photoSrc = hasPhotos ? listing.photos[photoIndex] : "";
+
+        const viewTag =
+          listing.listingMode === "buyer" ? "Buyer / Tenant View" :
+          listing.listingMode === "cobroke" ? "Co-Broke Agent View" :
+          "Both Views";
+
+        const whatsappButton = listing.whatsapp
+          ? `<button class="wa-btn" onclick="window.open('https://wa.me/${encodeURIComponent(listing.whatsapp)}','_blank')">WhatsApp</button>`
+          : "";
+
+        return `
+          <div class="listing-card">
+            <div class="slider">
+              <img src="${escapeHtml(photoSrc)}" alt="${escapeHtml(listing.title)}" />
+
+              ${hasPhotos && listing.photos.length > 1 ? `
+                <button class="slider-btn prev" onclick="changeSlide(${listing.id}, -1)">&#10094;</button>
+                <button class="slider-btn next" onclick="changeSlide(${listing.id}, 1)">&#10095;</button>
+                <div class="slide-counter">${photoIndex + 1} / ${listing.photos.length}</div>
+              ` : ""}
+            </div>
+
+            <div class="card-body">
+              <div class="tags">
+                <div class="tag">${escapeHtml(listing.purpose)}</div>
+                <div class="tag">${escapeHtml(viewTag)}</div>
+                ${listing.propertyType ? `<div class="tag">${escapeHtml(listing.propertyType)}</div>` : ""}
+                ${listing.buyerLabel ? `<div class="tag">${escapeHtml(listing.buyerLabel)}</div>` : ""}
+                ${(currentView === "cobroke" || currentView === "all") && listing.agentNote ? `<div class="tag">${escapeHtml(listing.agentNote)}</div>` : ""}
+              </div>
+
+              <div class="listing-title">${escapeHtml(listing.title)}</div>
+
+              <div class="meta">
+                <div><strong>Location:</strong> ${escapeHtml(listing.location || "-")}</div>
+                <div><strong>Built-up:</strong> ${escapeHtml(listing.builtup || "-")}</div>
+                <div><strong>Rooms:</strong> ${escapeHtml(listing.rooms || "-")}</div>
+                <div><strong>Bathrooms:</strong> ${escapeHtml(listing.bathrooms || "-")}</div>
+                <div><strong>Furnishing:</strong> ${escapeHtml(listing.furnishing || "-")}</div>
+                <div><strong>Tenure:</strong> ${escapeHtml(listing.tenure || "-")}</div>
+              </div>
+
+              <div class="price">${escapeHtml(listing.price)}</div>
+
+              <div class="desc">${escapeHtml(listing.description || "")}</div>
+
+              <div class="actions">
+                ${whatsappButton}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    renderListings();
+  </script>
+</body>
+</html>
