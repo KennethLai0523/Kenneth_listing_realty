@@ -1,263 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Kenneth Property Listings</title>
-
-<style>
-
-body{
-font-family: Arial;
-background:#f5f5f5;
-margin:0;
-padding:30px;
-}
-
-h2{
-margin-bottom:20px;
-}
-
-button{
-padding:10px 18px;
-border:none;
-border-radius:6px;
-cursor:pointer;
-font-weight:bold;
-}
-
-.filter{
-background:#b88a3b;
-color:white;
-margin-right:10px;
-}
-
-.sample{
-background:#ddd;
-}
-
-.container{
-max-width:1000px;
-margin:auto;
-}
-
-.listing-card{
-background:white;
-border-radius:14px;
-overflow:hidden;
-margin-top:25px;
-box-shadow:0 4px 15px rgba(0,0,0,0.08);
-}
-
-.image-slider{
-position:relative;
-height:260px;
-overflow:hidden;
-}
-
-.image-slider img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.arrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-background:rgba(0,0,0,0.4);
-color:white;
-border:none;
-width:40px;
-height:40px;
-border-radius:50%;
-font-size:20px;
-cursor:pointer;
-}
-
-.arrow-left{
-left:10px;
-}
-
-.arrow-right{
-right:10px;
-}
-
-.card-body{
-padding:20px;
-}
-
-.tag{
-background:#f3e7cf;
-padding:6px 12px;
-border-radius:20px;
-font-size:13px;
-display:inline-block;
-margin-bottom:10px;
-}
-
-.price{
-font-size:22px;
-font-weight:bold;
-margin:10px 0;
-}
-
-.whatsapp{
-background:#25D366;
-color:white;
-width:48%;
-}
-
-.delete{
-background:#e6e1d8;
-width:48%;
-}
-
-.actions{
-display:flex;
-gap:10px;
-margin-top:15px;
-}
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenneth Lai Property Listings</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f6f4ef;
+      color: #1f1f1f;
+    }
+    header {
+      background: #1f2d3d;
+      color: white;
+      padding: 28px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+    }
+    header p {
+      margin: 0;
+      opacity: 0.9;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+    .panel {
+      background: white;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+    }
+    .panel h2 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d8d4cc;
+      border-radius: 10px;
+      font: inherit;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    button {
+      background: #b88a3b;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover { background: #9e742f; }
+    .secondary {
+      background: #e9e4da;
+      color: #1f1f1f;
+    }
+    .secondary:hover { background: #ddd5c7; }
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .toolbar button {
+      width: auto;
+      padding: 10px 16px;
+    }
+    .listing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      border: 1px solid #ece7de;
+    }
+    .card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      background: #ece7de;
+    }
+    .card-body {
+      padding: 16px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      background: #f3ead9;
+      color: #7a5821;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+    .meta {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .price {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #1f2d3d;
+    }
+    .desc {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 14px;
+      color: #444;
+      white-space: pre-line;
+    }
+    .card-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .card-actions button,
+    .card-actions a {
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+    .whatsapp {
+      background: #25d366;
+      color: white;
+    }
+    .empty {
+      text-align: center;
+      color: #777;
+      padding: 30px 12px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .small {
+      font-size: 13px;
+      color: #777;
+      margin-top: 10px;
+    }
+    @media (max-width: 800px) {
+      .grid, .grid-3 { grid-template-columns: 1fr; }
+      header h1 { font-size: 25px; }
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <h1>Kenneth Lai Property Listings</h1>
+    <p>Simple listing site for buyers, tenants and co-broke agents</p>
+  </header>
 
-<div class="container">
+  <div class="container">
+    <div class="panel">
+      <h2>Add New Listing</h2>
+      <div class="grid">
+        <input id="title" placeholder="Property title (e.g. Residensi AVA)" />
+        <input id="location" placeholder="Location (e.g. Kepong / Sri Damansara)" />
+        <input id="price" placeholder="Price / Rent (e.g. RM590,000 or RM2,000/month)" />
+        <select id="audience">
+          <option value="buyer">For Buyer / Tenant</option>
+          <option value="cobroke">For Co-Broke Agent</option>
+        </select>
+        <select id="dealType">
+          <option value="sale">For Sale</option>
+          <option value="rent">For Rent</option>
+          <option value="both">Sale & Rent</option>
+        </select>
+        <input id="size" placeholder="Built-up / Land size (e.g. 947 sqft)" />
+      </div>
 
-<h2>Browse Listings</h2>
+      <div class="grid-3" style="margin-top:12px;">
+        <input id="bedrooms" placeholder="Bedrooms" />
+        <input id="bathrooms" placeholder="Bathrooms" />
+        <input id="image" placeholder="Image URL (optional)" />
+      </div>
 
-<button class="filter">All</button>
-<button class="filter">Buyer / Tenant View</button>
-<button class="filter">Co-Broke Agent View</button>
-<button class="sample">Load Sample Listings</button>
+      <div style="margin-top:12px;">
+        <textarea id="description" placeholder="Short description, highlights, nearby MRT, retail, city view, etc."></textarea>
+      </div>
 
+      <div class="grid" style="margin-top:12px;">
+        <button onclick="addListing()">Add Listing</button>
+        <button class="secondary" onclick="clearForm()">Clear Form</button>
+      </div>
+      <div class="small">Listings are saved in the browser using local storage, so they stay there after refresh on the same device.</div>
+    </div>
 
-<!-- LISTING 1 -->
-<div class="listing-card">
+    <div class="panel">
+      <h2>Browse Listings</h2>
+      <div class="toolbar">
+        <button onclick="setFilter('all')">All</button>
+        <button onclick="setFilter('buyer')">Buyer / Tenant View</button>
+        <button onclick="setFilter('cobroke')">Co-Broke Agent View</button>
+        <button class="secondary" onclick="seedExamples()">Load Sample Listings</button>
+      </div>
+      <div id="listingContainer" class="listing-grid"></div>
+    </div>
+  </div>
 
-<div class="image-slider">
+  <script>
+    const STORAGE_KEY = 'kenneth_property_listings';
+    let currentFilter = 'all';
 
-<button class="arrow arrow-left" onclick="changeSlide(this,-1)">‹</button>
+    function getListings() {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    }
 
-<img class="slider-image"
-src="images/ava1.jpg"
-data-images='["images/ava1.jpg","images/ava2.jpg","images/ava3.jpg"]'
-data-index="0">
+    function saveListings(listings) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(listings));
+    }
 
-<button class="arrow arrow-right" onclick="changeSlide(this,1)">›</button>
+    function addListing() {
+      const title = document.getElementById('title').value.trim();
+      const location = document.getElementById('location').value.trim();
+      const price = document.getElementById('price').value.trim();
+      const audience = document.getElementById('audience').value;
+      const dealType = document.getElementById('dealType').value;
+      const size = document.getElementById('size').value.trim();
+      const bedrooms = document.getElementById('bedrooms').value.trim();
+      const bathrooms = document.getElementById('bathrooms').value.trim();
+      const image = document.getElementById('image').value.trim();
+      const description = document.getElementById('description').value.trim();
 
-</div>
+      if (!title || !location || !price) {
+        alert('Please fill in at least title, location and price.');
+        return;
+      }
 
-<div class="card-body">
+      const listings = getListings();
+      listings.unshift({
+        id: Date.now(),
+        title,
+        location,
+        price,
+        audience,
+        dealType,
+        size,
+        bedrooms,
+        bathrooms,
+        image,
+        description
+      });
 
-<div class="tag">For Sale · Buyer / Tenant</div>
+      saveListings(listings);
+      clearForm();
+      renderListings();
+    }
 
-<h3>Residensi Ava</h3>
+    function clearForm() {
+      ['title','location','price','size','bedrooms','bathrooms','image','description'].forEach(id => {
+        document.getElementById(id).value = '';
+      });
+      document.getElementById('audience').value = 'buyer';
+      document.getElementById('dealType').value = 'sale';
+    }
 
-<p>Location: Kepong</p>
-<p>Rooms: 3 Bed · 3 Bath</p>
+    function deleteListing(id) {
+      const listings = getListings().filter(item => item.id !== id);
+      saveListings(listings);
+      renderListings();
+    }
 
-<div class="price">RM590,000</div>
+    function setFilter(filter) {
+      currentFilter = filter;
+      renderListings();
+    }
 
-<p>Near MRT</p>
+    function formatAudience(value) {
+      return value === 'cobroke' ? 'Co-Broke Agent' : 'Buyer / Tenant';
+    }
 
-<div class="actions">
+    function formatDealType(value) {
+      if (value === 'sale') return 'For Sale';
+      if (value === 'rent') return 'For Rent';
+      return 'Sale & Rent';
+    }
 
-<button class="whatsapp"
-onclick="window.open('https://wa.me/60166287357')">
-WhatsApp
-</button>
+    function renderListings() {
+      const container = document.getElementById('listingContainer');
+      const listings = getListings().filter(item => currentFilter === 'all' ? true : item.audience === currentFilter);
 
-<button class="delete"
-onclick="this.closest('.listing-card').remove()">
-Delete
-</button>
+      if (!listings.length) {
+        container.innerHTML = '<div class="empty">No listings yet. Add your first listing above.</div>';
+        return;
+      }
 
-</div>
+      container.innerHTML = listings.map(item => `
+        <div class="card">
+          <img src="${item.image || 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80'}" alt="${item.title}">
+          <div class="card-body">
+            <div class="badge">${formatDealType(item.dealType)} · ${formatAudience(item.audience)}</div>
+            <h3>${item.title}</h3>
+            <div class="meta">
+              <div><strong>Location:</strong> ${item.location}</div>
+              ${item.size ? `<div><strong>Size:</strong> ${item.size}</div>` : ''}
+              ${(item.bedrooms || item.bathrooms) ? `<div><strong>Rooms:</strong> ${item.bedrooms || '-'} Bed · ${item.bathrooms || '-'} Bath</div>` : ''}
+            </div>
+            <div class="price">${item.price}</div>
+            <div class="desc">${item.description || 'Contact Kenneth Lai for more details and viewing arrangement.'}</div>
+            <div class="card-actions">
+              <a class="whatsapp" href="https://wa.me/60166287357?text=${encodeURIComponent('Hi Kenneth, I am interested in ' + item.title + ' at ' + item.location)}" target="_blank">WhatsApp</a>
+              <button class="secondary" onclick="deleteListing(${item.id})">Delete</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
 
-</div>
-</div>
+    function seedExamples() {
+      const sample = [
+        {
+          id: Date.now(),
+          title: 'Residensi AVA',
+          location: 'Bandar Sri Damansara',
+          price: 'RM590,000',
+          audience: 'buyer',
+          dealType: 'sale',
+          size: '947 sqft',
+          bedrooms: '3',
+          bathrooms: '2',
+          image: '',
+          description: 'Perfect for own stay or investment. Convenient location with skyline view, mature township surroundings and easy access to amenities.'
+        },
+        {
+          id: Date.now() + 1,
+          title: 'Kepong 2 Storey Industrial',
+          location: 'Kepong',
+          price: 'RM1,700,000',
+          audience: 'cobroke',
+          dealType: 'sale',
+          size: '1,600 sqft',
+          bedrooms: '',
+          bathrooms: '',
+          image: '',
+          description: 'Suitable for factory and office use. Good option for co-broke agents with clients looking for industrial usage in Kepong area.'
+        }
+      ];
+      saveListings(sample);
+      renderListings();
+    }
 
-
-<!-- LISTING 2 -->
-<div class="listing-card">
-
-<div class="image-slider">
-
-<button class="arrow arrow-left" onclick="changeSlide(this,-1)">‹</button>
-
-<img class="slider-image"
-src="images/mluna1.jpg"
-data-images='["images/mluna1.jpg","images/mluna2.jpg","images/mluna3.jpg"]'
-data-index="0">
-
-<button class="arrow arrow-right" onclick="changeSlide(this,1)">›</button>
-
-</div>
-
-<div class="card-body">
-
-<div class="tag">For Sale · Buyer / Tenant</div>
-
-<h3>M Luna</h3>
-
-<p>Location: Kepong</p>
-<p>Rooms: 4 Bed · 2 Bath</p>
-
-<div class="price">RM950,000</div>
-
-<p>Corner Unit · Spacious</p>
-
-<div class="actions">
-
-<button class="whatsapp"
-onclick="window.open('https://wa.me/60166287357')">
-WhatsApp
-</button>
-
-<button class="delete"
-onclick="this.closest('.listing-card').remove()">
-Delete
-</button>
-
-</div>
-
-</div>
-</div>
-
-
-</div>
-
-<script>
-
-function changeSlide(button, direction){
-
-const slider = button.parentElement
-const img = slider.querySelector(".slider-image")
-
-const images = JSON.parse(img.dataset.images)
-
-let index = parseInt(img.dataset.index)
-
-index += direction
-
-if(index < 0){
-index = images.length-1
-}
-
-if(index >= images.length){
-index = 0
-}
-
-img.src = images[index]
-img.dataset.index = index
-
-}
-
-</script>
-
+    renderListings();
+  </script>
 </body>
 </html>
+
