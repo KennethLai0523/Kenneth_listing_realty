@@ -481,6 +481,19 @@
         height: 40px;
       }
     }
+
+      .whatsapp-box{
+        display:flex;
+        align-items:center;
+        gap:10px;
+      }
+      
+      .agent-photo{
+        width:40px;
+        height:40px;
+        object-fit:cover;
+        border-radius:6px;
+      }
   </style>
 </head>
 <body>
@@ -493,9 +506,17 @@
           Browse available residential, commercial, and industrial listings with clear photos,
           key property details, and fast WhatsApp contact for enquiries and viewing arrangements.
         </p>
+
         <div class="hero-actions">
           <a class="btn btn-gold" href="#listings">Browse Listings</a>
-          <a class="btn btn-white" href="https://wa.me/60166287357" target="_blank">WhatsApp Kenneth Lai</a>
+        
+          <div class="whatsapp-box">
+            <a class="btn btn-white" href="https://wa.me/60166287357" target="_blank">
+              WhatsApp Kenneth Lai
+            </a>
+            <img src="kenneth.jpg" alt="Kenneth Lai" class="agent-photo">
+          </div>
+        
         </div>
       </div>
     </section>
