@@ -495,6 +495,25 @@
         border-radius:50%;
         border:2px solid white;
       }
+
+    .contact-card{
+      position:relative;
+    }
+    
+    .agent-photo-top{
+      position:absolute;
+      top:20px;
+      right:20px;
+    
+      width:70px;
+      height:70px;
+    
+      object-fit:cover;
+      border-radius:50%;
+      border:2px solid white;
+    
+      box-shadow:0 4px 10px rgba(0,0,0,0.25);
+    }
   </style>
 </head>
 <body>
@@ -538,6 +557,9 @@
       </div>
 
       <div class="section-card contact-card">
+      
+        <img src="kenneth.jpg" class="agent-photo-top">
+      
         <div>
           <div class="contact-label">Direct Contact</div>
           <div class="contact-name">Kenneth Lai</div>
@@ -547,9 +569,11 @@
             For viewing arrangements, more information, or suitable property recommendations, contact me directly.
           </div>
         </div>
+      
         <div>
           <a class="btn btn-green" href="https://wa.me/60166287357" target="_blank">WhatsApp Now</a>
         </div>
+      
       </div>
     </section>
 
