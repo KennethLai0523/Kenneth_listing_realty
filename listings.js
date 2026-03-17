@@ -1,5 +1,23 @@
 const LISTINGS = [
   {
+    "id": 1773763512409,
+    "title": "type A leverra",
+    "location": "Bandar Sri Damansara",
+    "price": "1500000",
+    "rooms": "4",
+    "bathrooms": "3",
+    "builtup": "1650",
+    "furnishing": "fully furnished",
+    "tenure": "freehold",
+    "description": "this house is good",
+    "whatsapp": "0166287357",
+    "photos": [
+      "typeA_leverra.png",
+      "typeA_leverra.png",
+      "typeA_leverra.png"
+    ]
+  },
+  {
     "id": 1773763430118,
     "title": "type A leverra",
     "location": "Bandar Sri Damansara",
