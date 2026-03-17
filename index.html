@@ -1,398 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kenneth Property Listings</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kenneth Property Listings</title>
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f1eb;
-      color: #1f1f1f;
-    }
+<style>
 
-    .wrapper {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 24px;
-    }
+body{
+font-family:Arial;
+margin:0;
+background:#f4f1eb;
+}
 
-    h1 {
-      margin: 0 0 18px;
-      font-size: 30px;
-    }
+.container{
+max-width:1100px;
+margin:auto;
+padding:25px;
+}
 
-    .top-card,
-    .listing-card,
-    .empty-state {
-      background: #ffffff;
-      border-radius: 18px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    }
+h1{
+margin-bottom:20px;
+}
 
-    .top-card {
-      padding: 22px;
-      margin-bottom: 22px;
-    }
+.search{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+margin-bottom:25px;
+}
 
-    .toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 14px 0 16px;
-    }
+.card{
+background:white;
+border-radius:14px;
+margin-bottom:25px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
 
-    .btn {
-      border: none;
-      border-radius: 10px;
-      padding: 11px 16px;
-      font-weight: 700;
-      cursor: pointer;
-    }
+.slider{
+position:relative;
+height:320px;
+}
 
-    .btn-gold {
-      background: #b88a3b;
-      color: white;
-    }
+.slider img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
 
-    .search-row input {
-      width: 100%;
-      border: 1px solid #d8d1c7;
-      border-radius: 10px;
-      padding: 12px 14px;
-      font-size: 15px;
-    }
+.arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.5);
+color:white;
+border:none;
+width:40px;
+height:40px;
+border-radius:50%;
+font-size:20px;
+cursor:pointer;
+}
 
-    .listing-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 22px;
-      margin-top: 22px;
-    }
+.left{left:10px;}
+.right{right:10px;}
 
-    .listing-card {
-      overflow: hidden;
-    }
+.body{
+padding:20px;
+}
 
-    .slider {
-      position: relative;
-      width: 100%;
-      height: 340px;
-      background: #eee6da;
-      overflow: hidden;
-    }
+.title{
+font-size:26px;
+font-weight:bold;
+margin-bottom:10px;
+}
 
-    .slider img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+.price{
+font-size:28px;
+font-weight:bold;
+margin:10px 0;
+}
 
-    .slider-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      border: none;
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.45);
-      color: #fff;
-      font-size: 22px;
-      cursor: pointer;
-      z-index: 2;
-    }
+.meta{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
 
-    .slider-btn.prev {
-      left: 12px;
-    }
+.whatsapp{
+background:#25D366;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:8px;
+margin-top:15px;
+cursor:pointer;
+}
 
-    .slider-btn.next {
-      right: 12px;
-    }
+@media(max-width:700px){
 
-    .slide-counter {
-      position: absolute;
-      right: 14px;
-      bottom: 14px;
-      background: rgba(0, 0, 0, 0.55);
-      color: white;
-      font-size: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      z-index: 2;
-    }
+.meta{
+grid-template-columns:1fr;
+}
 
-    .card-body {
-      padding: 18px;
-    }
+.slider{
+height:220px;
+}
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
+}
 
-    .tag {
-      background: #f1e4c9;
-      color: #7a571d;
-      padding: 6px 11px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .listing-title {
-      font-size: 30px;
-      font-weight: 800;
-      margin: 6px 0 10px;
-    }
-
-    .meta {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px 18px;
-      margin-bottom: 12px;
-    }
-
-    .meta div {
-      font-size: 15px;
-      line-height: 1.45;
-    }
-
-    .price {
-      font-size: 34px;
-      font-weight: 800;
-      margin: 10px 0 12px;
-      color: #101010;
-    }
-
-    .desc {
-      color: #49433d;
-      line-height: 1.6;
-      margin-bottom: 14px;
-      white-space: pre-line;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .wa-btn {
-      border: none;
-      border-radius: 10px;
-      padding: 11px 16px;
-      font-weight: 700;
-      cursor: pointer;
-      background: #25d366;
-      color: white;
-    }
-
-    .empty-state {
-      text-align: center;
-      padding: 36px 20px;
-      color: #6a6258;
-    }
-
-    @media (max-width: 860px) {
-      .meta {
-        grid-template-columns: 1fr;
-      }
-
-      .slider {
-        height: 240px;
-      }
-
-      .listing-title {
-        font-size: 24px;
-      }
-
-      .price {
-        font-size: 28px;
-      }
-    }
-  </style>
+</style>
 </head>
+
 <body>
-  <div class="wrapper">
-    <div class="top-card">
-      <h1>Browse Listings</h1>
 
-      <div class="toolbar">
-        <button class="btn btn-gold" onclick="setView('all')">All</button>
-        <button class="btn btn-gold" onclick="setView('buyer')">Buyer / Tenant View</button>
-        <button class="btn btn-gold" onclick="setView('cobroke')">Co-Broke Agent View</button>
-      </div>
+<div class="container">
 
-      <div class="search-row">
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Search by project, location, price, keyword..."
-          oninput="renderListings()"
-        />
-      </div>
-    </div>
+<h1>Property Listings</h1>
 
-    <div id="listingsContainer" class="listing-grid"></div>
-  </div>
+<input
+class="search"
+id="search"
+placeholder="Search location, project, keyword..."
+oninput="render()"
+/>
 
-  <script src="listings.js"></script>
-  <script>
-    let currentView = "all";
-    let listingState = LISTINGS.map(item => ({ ...item, currentPhoto: 0 }));
+<div id="listings"></div>
 
-    function escapeHtml(text) {
-      if (text === null || text === undefined) return "";
-      return String(text)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
+</div>
 
-    function setView(view) {
-      currentView = view;
-      renderListings();
-    }
+<script src="listings.js"></script>
 
-    function changeSlide(id, direction) {
-      const listing = listingState.find(item => item.id === id);
-      if (!listing || !listing.photos || listing.photos.length === 0) return;
+<script>
 
-      listing.currentPhoto += direction;
+let data = LISTINGS.map(x=>({...x,index:0}))
 
-      if (listing.currentPhoto < 0) {
-        listing.currentPhoto = listing.photos.length - 1;
-      }
+function slide(id,dir){
 
-      if (listing.currentPhoto >= listing.photos.length) {
-        listing.currentPhoto = 0;
-      }
+let item=data.find(x=>x.id===id)
 
-      renderListings();
-    }
+item.index+=dir
 
-    function getVisibleListings() {
-      const keyword = document.getElementById("searchInput").value.trim().toLowerCase();
+if(item.index<0) item.index=item.photos.length-1
+if(item.index>=item.photos.length) item.index=0
 
-      return listingState.filter(listing => {
-        let matchesView = false;
+render()
 
-        if (currentView === "all") {
-          matchesView = true;
-        } else if (currentView === "buyer") {
-          matchesView = listing.listingMode === "buyer" || listing.listingMode === "both";
-        } else if (currentView === "cobroke") {
-          matchesView = listing.listingMode === "cobroke" || listing.listingMode === "both";
-        }
+}
 
-        const searchableText = [
-          listing.title,
-          listing.location,
-          listing.price,
-          listing.purpose,
-          listing.propertyType,
-          listing.rooms,
-          listing.bathrooms,
-          listing.builtup,
-          listing.furnishing,
-          listing.tenure,
-          listing.buyerLabel,
-          listing.agentNote,
-          listing.description
-        ].join(" ").toLowerCase();
+function render(){
 
-        const matchesKeyword = searchableText.includes(keyword);
+let key=document.getElementById("search").value.toLowerCase()
 
-        return matchesView && matchesKeyword;
-      });
-    }
+let filtered=data.filter(x=>{
 
-    function renderListings() {
-      const container = document.getElementById("listingsContainer");
-      const visibleListings = getVisibleListings();
+return (
+(x.title||"").toLowerCase().includes(key)||
+(x.location||"").toLowerCase().includes(key)||
+(x.description||"").toLowerCase().includes(key)
+)
 
-      if (visibleListings.length === 0) {
-        container.innerHTML = `
-          <div class="empty-state">
-            <h3 style="margin-top:0;">No listings found</h3>
-            <p>Try another search or another view.</p>
-          </div>
-        `;
-        return;
-      }
+})
 
-      container.innerHTML = visibleListings.map(listing => {
-        const hasPhotos = listing.photos && listing.photos.length > 0;
-        const photoIndex = hasPhotos ? Math.min(listing.currentPhoto || 0, listing.photos.length - 1) : 0;
-        const photoSrc = hasPhotos ? listing.photos[photoIndex] : "";
+let html=""
 
-        const viewTag =
-          listing.listingMode === "buyer" ? "Buyer / Tenant View" :
-          listing.listingMode === "cobroke" ? "Co-Broke Agent View" :
-          "Both Views";
+filtered.forEach(x=>{
 
-        const whatsappButton = listing.whatsapp
-          ? `<button class="wa-btn" onclick="window.open('https://wa.me/${encodeURIComponent(listing.whatsapp)}','_blank')">WhatsApp</button>`
-          : "";
+let img=x.photos?.length?x.photos[x.index]:""
 
-        return `
-          <div class="listing-card">
-            <div class="slider">
-              <img src="${escapeHtml(photoSrc)}" alt="${escapeHtml(listing.title)}" />
+html+=`
+<div class="card">
 
-              ${hasPhotos && listing.photos.length > 1 ? `
-                <button class="slider-btn prev" onclick="changeSlide(${listing.id}, -1)">&#10094;</button>
-                <button class="slider-btn next" onclick="changeSlide(${listing.id}, 1)">&#10095;</button>
-                <div class="slide-counter">${photoIndex + 1} / ${listing.photos.length}</div>
-              ` : ""}
-            </div>
+<div class="slider">
 
-            <div class="card-body">
-              <div class="tags">
-                <div class="tag">${escapeHtml(listing.purpose)}</div>
-                <div class="tag">${escapeHtml(viewTag)}</div>
-                ${listing.propertyType ? `<div class="tag">${escapeHtml(listing.propertyType)}</div>` : ""}
-                ${listing.buyerLabel ? `<div class="tag">${escapeHtml(listing.buyerLabel)}</div>` : ""}
-                ${(currentView === "cobroke" || currentView === "all") && listing.agentNote ? `<div class="tag">${escapeHtml(listing.agentNote)}</div>` : ""}
-              </div>
+<img src="${img}">
 
-              <div class="listing-title">${escapeHtml(listing.title)}</div>
+${x.photos.length>1?`
+<button class="arrow left" onclick="slide(${x.id},-1)">‹</button>
+<button class="arrow right" onclick="slide(${x.id},1)">›</button>
+`:``}
 
-              <div class="meta">
-                <div><strong>Location:</strong> ${escapeHtml(listing.location || "-")}</div>
-                <div><strong>Built-up:</strong> ${escapeHtml(listing.builtup || "-")}</div>
-                <div><strong>Rooms:</strong> ${escapeHtml(listing.rooms || "-")}</div>
-                <div><strong>Bathrooms:</strong> ${escapeHtml(listing.bathrooms || "-")}</div>
-                <div><strong>Furnishing:</strong> ${escapeHtml(listing.furnishing || "-")}</div>
-                <div><strong>Tenure:</strong> ${escapeHtml(listing.tenure || "-")}</div>
-              </div>
+</div>
 
-              <div class="price">${escapeHtml(listing.price)}</div>
+<div class="body">
 
-              <div class="desc">${escapeHtml(listing.description || "")}</div>
+<div class="title">${x.title||"Listing"}</div>
 
-              <div class="actions">
-                ${whatsappButton}
-              </div>
-            </div>
-          </div>
-        `;
-      }).join("");
-    }
+<div class="meta">
+<div><b>Location:</b> ${x.location||"-"}</div>
+<div><b>Built-up:</b> ${x.builtup||"-"}</div>
+<div><b>Rooms:</b> ${x.rooms||"-"}</div>
+<div><b>Bathrooms:</b> ${x.bathrooms||"-"}</div>
+<div><b>Furnishing:</b> ${x.furnishing||"-"}</div>
+<div><b>Tenure:</b> ${x.tenure||"-"}</div>
+</div>
 
-    renderListings();
-  </script>
+${x.price?`<div class="price">${x.price}</div>`:""}
+
+<p>${x.description||""}</p>
+
+${x.whatsapp?`
+<button class="whatsapp"
+onclick="window.open('https://wa.me/${x.whatsapp}')">
+WhatsApp
+</button>
+`:""}
+
+</div>
+
+</div>
+`
+
+})
+
+document.getElementById("listings").innerHTML=html
+
+}
+
+render()
+
+</script>
+
 </body>
 </html>
