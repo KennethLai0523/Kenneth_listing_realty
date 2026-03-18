@@ -1,96 +1,29 @@
 const LISTINGS = [
   {
-    "id": 1773763512409,
-    "title": "type A leverra",
-    "location": "Bandar Sri Damansara",
-    "price": "1500000",
-    "rooms": "4",
-    "bathrooms": "3",
-    "builtup": "1650",
-    "furnishing": "fully furnished",
-    "tenure": "freehold",
-    "description": "this house is good",
-    "whatsapp": "0166287357",
-    "photos": [
-      "typeA_leverra.png",
-      "typeA_leverra.png",
-      "typeA_leverra.png"
-    ]
-  },
-  {
-    "id": 1773763430118,
-    "title": "type A leverra",
-    "location": "Bandar Sri Damansara",
-    "price": "1500000",
-    "rooms": "4",
-    "bathrooms": "3",
-    "builtup": "1650",
-    "furnishing": "fully furnished",
-    "tenure": "freehold",
-    "description": "this house is good",
-    "whatsapp": "0166287357",
-    "photos": [
-      "typeA_leverra.png"
-    ]
-  },
-  {
-    "id": 1773761973280,
-    "title": "",
-    "location": "Bandar Sri Damansara",
-    "price": "1500000",
-    "rooms": "4",
-    "bathrooms": "3",
-    "builtup": "1650",
-    "furnishing": "fully furnished",
-    "tenure": "freehold",
-    "description": "this house is good",
-    "whatsapp": "0166287357",
-    "photos": []
-  },
-  {
-    "id": 1,
-    "title": "Residensi Ava",
-    "location": "Kepong",
-    "price": "RM590,000",
-    "purpose": "For Sale",
-    "propertyType": "Apartment",
-    "rooms": "3 Bed",
-    "bathrooms": "2 Bath",
-    "builtup": "947 sqft",
-    "furnishing": "Semi Furnished",
-    "tenure": "Leasehold",
-    "buyerLabel": "Near MRT",
-    "agentNote": "Co-broke welcome",
-    "description": "Well-kept unit with convenient access to nearby retail, food and transport. Suitable for own stay or investment.",
-    "whatsapp": "60166287357",
-    "listingMode": "both",
-    "photos": [
-      "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80"
-    ]
-  },
-  {
-    "id": 2,
-    "title": "M Luna",
-    "location": "Kepong",
-    "price": "RM950,000",
-    "purpose": "For Sale",
-    "propertyType": "Condominium",
-    "rooms": "4 Bed",
-    "bathrooms": "2 Bath",
-    "builtup": "1000 sqft",
+    "id": 1773873755480,
+    "title": "Residensi Ava @ Kiara Bay",
+    "location": "Kepong / Kiara Bay",
+    "price": "For Sale : RM 610,000",
+    "rooms": "2",
+    "bathrooms": "2",
+    "builtup": "813sqft",
     "furnishing": "Partly Furnished",
-    "tenure": "Leasehold 99 years",
-    "buyerLabel": "Corner Unit",
-    "agentNote": "Direct owner listing",
-    "description": "Spacious family layout with modern facilities and easy access to shops, eateries and key roads.",
+    "tenure": "Leasehold",
+    "description": "Residensi Ava @ Kiara Bay Apartment – For Sale\n\nBuilt-up: 813 sqft\n\n• 2 Bedrooms\n• 2 Bathrooms\n• 2 Carparks\n• Partially Furnished\n• Facing Pool & Parking View\n\nTenure: Leasehold\nTitle: Strata Title\nLot Type: Bumi Lot\nUnit Status: Tenanted\n\nSelling Price: RM610,000\n\nStrategic location in Kiara Bay near Kepong with convenient access to major highways, retail and lifestyle amenities.\n\nNearby:\n• Kepong\n• Desa ParkCity\n• Metro Prima\n• MRR2 Highway\n• Easy access to KL city\n\nCo-agency welcome.",
     "whatsapp": "60166287357",
-    "listingMode": "buyer",
     "photos": [
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1400&q=80"
+      "RA2(1).jpeg",
+      "RA2(2).jpeg",
+      "RA2(3).jpeg",
+      "RA2(4).jpeg",
+      "RA2(5).jpeg",
+      "RA2(6).jpeg",
+      "RA2(7).jpeg",
+      "RA2(8).jpeg",
+      "RA2(9).jpeg",
+      "RA2(10).jpeg",
+      "RA2(11).jpeg",
+      "RA2(12).jpeg"
     ]
   }
 ];
