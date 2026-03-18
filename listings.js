@@ -1,5 +1,28 @@
 const LISTINGS = [
   {
+    "id": 1773876991951,
+    "title": "Residensi Ava @ Kiara Bay",
+    "location": "Kiara Bay / Kepong",
+    "price": "For Sale : RM 590,000",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "947 sqft",
+    "furnishing": "Partially Furnished",
+    "tenure": "Leasehold",
+    "description": "Condo For Sale – Residensi Ava @ Kiara Bay, Kepong\n\nProperty Details:\n• Built-up: 947 sqft\n• 3 Bedrooms\n• 2 Bathrooms\n• Leasehold\n\nHighlights:\n• Perfect KL city skyline view\n• Practical layout suitable for families\n• Located within the developing Kiara Bay township\n• Modern facilities including swimming pool, gymnasium and recreational areas\n• Easy access to Kepong, Desa ParkCity and major highways\n\nSelling Price: RM590,000 (Negotiable)\n\nSuitable for own stay or investment.\n\nFor viewing or more information contact:\n\nKenneth Lai  \nReal Estate Negotiator  \nOne Maker Realty Group",
+    "whatsapp": "60166287357",
+    "photos": [
+      "RA7 (1).jpeg",
+      "RA7 (2).jpeg",
+      "RA7 (3).jpeg",
+      "RA7 (4).jpeg",
+      "RA7 (5).jpeg",
+      "RA7 (6).jpeg",
+      "RA7 (7).jpeg"
+    ],
+    "privateNotes": "SWLim @residency ava (7) , +60 12-208 1990"
+  },
+  {
     "id": 1773875829820,
     "title": "Residensi Ava @ Kiara Bay",
     "location": "Kiara Bay / Kepong",
