@@ -87,6 +87,9 @@ padding:10px 0;
 
 <textarea id="photos" placeholder="Photo URLs (one per line)"></textarea>
 
+<!-- NEW PRIVATE NOTE FIELD -->
+<textarea id="privateNotes" placeholder="Private Notes (Admin Only - owner contact, remarks, lowest price etc)"></textarea>
+
 <button class="add" onclick="add()">Add Listing</button>
 
 </div>
@@ -138,7 +141,10 @@ furnishing:document.getElementById("furnishing").value,
 tenure:document.getElementById("tenure").value,
 description:document.getElementById("description").value,
 whatsapp:document.getElementById("whatsapp").value,
-photos
+photos,
+
+/* PRIVATE ADMIN NOTES */
+privateNotes:document.getElementById("privateNotes").value
 
 })
 
