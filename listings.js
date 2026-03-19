@@ -1,5 +1,55 @@
 const LISTINGS = [
   {
+    "id": 1773929534795,
+    "type": "listing",
+    "title": "Factory",
+    "location": "Sungai Buloh",
+    "price": "For rent : RM1.6 per sqft",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "7000 sqft per unit , total 3 unit",
+    "furnishing": "-",
+    "tenure": "Leasehold",
+    "description": "Industrial factory units in Sungai Buloh.\n\n3 units available | 7,000 sqft each  \nSuitable for factory, warehouse, or storage use.\n\nGood accessibility for logistics and transportation.\n\nIdeal for own use or investment.\n\nAsking RM1.60 psf.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "SungaiBulohFactoryNo2.png"
+    ],
+    "privateNotes": "mummy llisting",
+    "status": "Available"
+  },
+  {
+    "id": 1773929269996,
+    "type": "listing",
+    "title": "Semi-D Corner Bungalow",
+    "location": "Bukit Rahman Putra (BRP5), Sungai Buloh",
+    "price": "For Sale : RM2.5mil",
+    "rooms": "7+1",
+    "bathrooms": "6",
+    "builtup": "8000 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "Corner semi-D bungalow located in BRP5, Bukit Rahman Putra.\n\nSpacious 8,000 sqft land with 7+1 bedrooms and 6 bathrooms.\nSuitable for large families or investment.\n\nWell maintained condition with ample parking space.\n\nAsking RM2.5M (negotiable).",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Bukit_Rahman_Putra_no1 (11).jpeg",
+      "Bukit_Rahman_Putra_no1 (13).jpeg",
+      "Bukit_Rahman_Putra_no1 (1).jpeg",
+      "Bukit_Rahman_Putra_no1 (2).jpeg",
+      "Bukit_Rahman_Putra_no1 (3).jpeg",
+      "Bukit_Rahman_Putra_no1 (4).jpeg",
+      "Bukit_Rahman_Putra_no1 (5).jpeg",
+      "Bukit_Rahman_Putra_no1 (6).jpeg",
+      "Bukit_Rahman_Putra_no1 (7).jpeg",
+      "Bukit_Rahman_Putra_no1 (8).jpeg",
+      "Bukit_Rahman_Putra_no1 (9).jpeg",
+      "Bukit_Rahman_Putra_no1 (10).jpeg",
+      "Bukit_Rahman_Putra_no1 (12).jpeg"
+    ],
+    "privateNotes": "Mummy listing",
+    "status": "Available"
+  },
+  {
     "id": 1773912979268,
     "type": "asking",
     "title": "3 Student studying at APU looking to rent together",
