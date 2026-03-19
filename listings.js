@@ -1,5 +1,35 @@
 const LISTINGS = [
   {
+    "id": 1773894737531,
+    "type": "listing",
+    "title": "Sri Damansara 2 Storey Terrace",
+    "location": "Sri Damansara, Kuala Lumpur",
+    "price": "For Sale : RM1.5 Mil , For Rent : RM2,800/month",
+    "rooms": "3+1",
+    "bathrooms": "3",
+    "builtup": "1650 sqft",
+    "furnishing": "Partly Furnished",
+    "tenure": "Freehold",
+    "description": "Spacious 2-storey terrace located in a mature Sri Damansara neighbourhood.\n\nProperty Features:\n• Spacious living room  \n• Large dining area & kitchen  \n• 1 study room on ground floor (convertible to bedroom)  \n• 1 bathroom on ground floor  \n\nUpstairs Layout:\n• 3 Bedrooms  \n• Master bedroom with fully tiled ensuite bathroom  \n• 1 shared tiled bathroom  \n• Built-in wardrobes in bedrooms  \n• Small upstairs common space  \n\nFully tiled flooring throughout the house  \n\nLocated in a mature neighbourhood close to amenities, schools, restaurants and conveniences.\n\nSuitable for own stay or rental investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "SD10No1 (1).jpeg",
+      "SD10No1 (2).jpeg",
+      "SD10No1 (3).jpeg",
+      "SD10No1 (4).jpeg",
+      "SD10No1 (5).jpeg",
+      "SD10No1 (6).jpeg",
+      "SD10No1 (7).jpeg",
+      "SD10No1 (8).jpeg",
+      "SD10No1 (9).jpeg",
+      "SD10No1 (10).jpeg",
+      "SD10No1 (11).jpeg",
+      "SD10No1 (12).jpeg"
+    ],
+    "privateNotes": "Mummy auntie friend",
+    "status": "Available"
+  },
+  {
     "id": 1773893951166,
     "type": "listing",
     "title": "Emhub @Bukit Raja Commercial unit",
