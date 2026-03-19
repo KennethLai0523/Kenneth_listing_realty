@@ -1,5 +1,17 @@
 const LISTINGS = [
   {
+    "id": 1773912979268,
+    "type": "asking",
+    "title": "3 Student studying at APU looking to rent together",
+    "location": "Bukit Jalil close to APU university",
+    "price": "RM 2,000/month",
+    "area": "Bukit Jalil , Kuala Lumpur",
+    "description": "student studying at APU just started their Bachelor degree, for 2-3 years long term stay. Looking to sign for 1 year tenancy and will very much willing to continue renting until graduate if suitable",
+    "whatsapp": "60166287357",
+    "privateNotes": "Jay",
+    "status": "Available"
+  },
+  {
     "id": 1773912587729,
     "type": "listing",
     "title": "Endah Ria Apartment",
@@ -319,10 +331,10 @@ const LISTINGS = [
     "id": 1773900347893,
     "type": "asking",
     "title": "Apartment rental (need 3 units)",
-    "location": "Residensi Ava ",
-    "price": "approx RM3000/month",
+    "location": "Residensi Ava",
+    "price": "RM2500/month",
     "area": "Kiara Bay, Kepong",
-    "description": "Looking for a suitable rental unit.\n\n1.Tenant profile:\n• Malaysian Chinese  \n• 5 persons staying  \n• No pets  \n• Working in beauty / aesthetic industry  \n\n2.Tenant profile:\n\n3.Tenant profile:\n\nRequirements:\n• Prefer partially furnished unit  \n\nMove-in date: (to be confirmed)  \nBudget: (to be confirmed)  \n\nKindly contact if you have a suitable unit to match.\n\nCo-agency welcome.",
+    "description": "Looking for a suitable rental unit.\n\n1.Tenant profile:\n• Malaysian Chinese  \n• 5 persons staying  \n• No pets  \n• Working in beauty / aesthetic industry  \n\n2.Tenant profile:\n\n3.Tenant profile:\n\nRequirements:\n• Prefer partially furnished unit  \n\nMove-in date: Immediately\nBudget: RM2,500 and above\n\nKindly contact if you have a suitable unit to match.\n\nCo-agency welcome.",
     "whatsapp": "60166287357",
     "privateNotes": "mummy client",
     "status": "Available"
