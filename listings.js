@@ -1,5 +1,50 @@
 const LISTINGS = [
   {
+    "id": 1773910404389,
+    "type": "listing",
+    "title": "Putra Walk",
+    "location": "Seri Kembangan, Selangor",
+    "price": "For Sale : RM950,000",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "2,800 sqft (20 x 70, Ground + First Floor)",
+    "furnishing": "-",
+    "tenure": "Leasehold",
+    "description": "Location: Putra Walk @ Seri Kembangan  \nProperty Type: 2-Storey Commercial Shop Lot  \nSize: 20 x 70 (Ground Floor + First Floor)  \nBuilt-up approx. 2,800 sqft  \n\nSuitable for:\n• F&B  \n• Retail  \n• Office  \n• Tuition Centre  \n• Beauty Studio  \n• Service Centre  \n\nSelling Price: RM950,000 (Negotiable)  \n\nAlso available for rent (separate levels):\n• Ground Floor: RM3,000/month  \n• First Floor: RM1,250/month  \n\nFlexible usage and layout, suitable for own business or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "PutraWalkNo1.jpg"
+    ],
+    "privateNotes": "Vrs Pets Shop @Putra Walk(1) seri Kembangan for sale and rent\n+60 19-790 3601",
+    "status": "Available"
+  },
+  {
+    "id": 1773910107922,
+    "type": "listing",
+    "title": "Mercu Jalil",
+    "location": "Bukit Jalil, Kuala Lumpur",
+    "price": "For Rent : RM2,300/month",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "1,000 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "Leasehold",
+    "description": "Built-up: 1,000 sqft  \n3 Bedrooms  \n2 Bathrooms  \nFully furnished  \n2 Car Parks  \nAir conditioning installed  \n\nAvailable from 15 May 2026  \n\nFacilities:\n• Playground  \n• Park  \n• Multipurpose hall  \n• 24-hour security  \n• Convenience store within residence  \n\nPrime location with everything within reach:\n\n• Tzu Chi International School – 60m (walking distance)  \n• Alam Sutera LRT Station – 1km  \n• Pavilion Bukit Jalil – 4km  \n• Bukit Jalil Recreational Park – 3.5km  \n• Giant Bandar Kinrara – 4km  \n• International Medical University (IMU) – 5km  \n\nRental: RM2,300/month  \n\nSuitable for families, students or working professionals.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Mercu_jalil_no1 (1).jpeg",
+      "Mercu_jalil_no1 (2).jpeg",
+      "Mercu_jalil_no1 (3).jpeg",
+      "Mercu_jalil_no1 (4).jpeg",
+      "Mercu_jalil_no1 (5).jpeg",
+      "Mercu_jalil_no1 (6).jpeg",
+      "Mercu_jalil_no1 (7).jpeg",
+      "Mercu_jalil_no1 (8).jpeg"
+    ],
+    "privateNotes": "Pei Yi Mercu Jalil mudah\n+60 16-940 3183",
+    "status": "Available"
+  },
+  {
     "id": 1773909605849,
     "type": "listing",
     "title": "Seria 88 - Commercial 4 storey shoplot",
