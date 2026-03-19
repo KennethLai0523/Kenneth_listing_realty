@@ -1,5 +1,49 @@
 const LISTINGS = [
   {
+    "id": 1773909605849,
+    "type": "listing",
+    "title": "Seria 88 - Commercial 4 storey shoplot",
+    "location": "Bandar Setia Alam, Selangor",
+    "price": "5 million (very much negoatiable) / Offered by buyer",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "30 x 70 (Multi-floor building)",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "Location: Seria 88, Bandar Setia Alam  \nProperty Type: 4-Storey Shop Office  \nLand Size: 30 x 70  \n\nLayout:\n• Ground Floor – 2,310 sqft  \n• 1st Floor – 2,564 sqft  \n• 2nd Floor – 2,564 sqft  \n• 3rd Floor – 2,564 sqft  \n• Lift access available  \n• Block D4  \n\nTenure: Freehold  \n\nHighlights:\n• Facing main road with high visibility  \n• Located in established Setia Alam commercial hub  \n• Surrounded by residential developments with strong customer flow  \n• Suitable for office, showroom, retail or investment  \n\nPrice: To be offered  \n\nSuitable for own business or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Seria88No1 (4).jpeg",
+      "Seria88No1 (1).jpeg",
+      "Seria88No1 (2).jpeg",
+      "Seria88No1 (3).jpeg"
+    ],
+    "privateNotes": "Wendy Wong @seria 88 Setia Alam (1)\n+60 19-222 2020",
+    "status": "Available"
+  },
+  {
+    "id": 1773909301643,
+    "type": "listing",
+    "title": "Summit USJ Mall",
+    "location": "Subang Jaya, Selangor ",
+    "price": "Sale Price : RM1,100,000",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "700 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold (Non-Bumi Lot)",
+    "description": "Location: Summit USJ Mall, Subang Jaya  \nBuilt-up: 700 sqft  \nProperty Type: Commercial Shop Lot  \nGround floor unit  \nFacing main mall entrance  \n\nTenure: Freehold (Non-Bumi Lot)  \n\nHighlights:\n• Prime retail position with strong visibility  \n• High foot traffic from mall visitors  \n• Suitable for retail, F&B or service business  \n• Located in established commercial area in USJ  \n• Good investment opportunity  \n\nSelling Price: RM1,100,000  \nBank Value: RM1,300,000  \n\nSuitable for own business or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "SummitUSJNo1 (1).jpeg",
+      "SummitUSJNo1 (2).jpeg",
+      "SummitUSJNo1 (3).jpeg",
+      "SummitUSJNo1 (4).jpeg"
+    ],
+    "privateNotes": "Alexis King @USJ NSK summit USJ(1) mall ground floor commercial\n+60 11-2001 1211",
+    "status": "Available"
+  },
+  {
     "id": 1773903222862,
     "type": "listing",
     "title": "SetiaWalk - Commercial Office",
