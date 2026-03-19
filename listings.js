@@ -1,19 +1,26 @@
 const LISTINGS = [
   {
-    "id": 1773885887130,
-    "title": "testing",
-    "location": "damansara",
-    "price": "150,000",
-    "rooms": "4",
-    "bathrooms": "2",
-    "builtup": "1978",
-    "furnishing": "fully",
-    "tenure": "leasehold",
-    "description": "hih",
-    "whatsapp": "6018",
-    "photos": [],
-    "privateNotes": "",
-    "status": "Rented"
+    "id": 1773888817373,
+    "title": "Westside One @ Desa ParkCity ",
+    "location": "Desa ParkCity, Kuala Lumpur",
+    "price": "For Rent : RM5,500/month",
+    "rooms": "3+1",
+    "bathrooms": "3",
+    "builtup": "1701 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "Leasehold",
+    "description": "Available from 1 April 2026\nCurrently tenanted – viewing can be arranged\n\nLocated in Desa ParkCity, one of KL’s most sought-after lifestyle townships:\n• Beautiful lake park community\n• International school & hospital within the township\n• Strong expatriate community\n• Pet-friendly environment\n• High security & well-managed township\n\nClose to Waterfront & Arkaid – popular dining, retail & lifestyle hubs.\n\nCo-agency welcome",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Desapark1 (1).jpeg",
+      "Desapark1 (2).jpeg",
+      "Desapark1 (3).jpeg",
+      "Desapark1 (4).jpeg",
+      "Desapark1 (5).jpeg",
+      "Desapark1 (6).jpeg"
+    ],
+    "privateNotes": "Co broke with mummy ",
+    "status": "Available"
   },
   {
     "id": 1773880488466,
