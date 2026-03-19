@@ -1,5 +1,21 @@
 const LISTINGS = [
   {
+    "id": 1773885887130,
+    "title": "testing",
+    "location": "damansara",
+    "price": "150,000",
+    "rooms": "4",
+    "bathrooms": "2",
+    "builtup": "1978",
+    "furnishing": "fully",
+    "tenure": "leasehold",
+    "description": "hih",
+    "whatsapp": "6018",
+    "photos": [],
+    "privateNotes": "",
+    "status": "Rented"
+  },
+  {
     "id": 1773880488466,
     "title": "8trium - Rear Facing shoplot",
     "location": "Sri Damansara",
