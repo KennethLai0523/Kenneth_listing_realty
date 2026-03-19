@@ -1,5 +1,17 @@
 const LISTINGS = [
   {
+    "id": 1773890479357,
+    "type": "asking",
+    "title": "need kepong",
+    "location": "KL",
+    "price": "6000",
+    "area": "",
+    "description": "5500",
+    "whatsapp": "016628",
+    "privateNotes": "mr jake",
+    "status": "Available"
+  },
+  {
     "id": 1773888817373,
     "title": "Westside One @ Desa ParkCity ",
     "location": "Desa ParkCity, Kuala Lumpur",
