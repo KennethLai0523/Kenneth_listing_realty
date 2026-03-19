@@ -427,6 +427,33 @@
       margin-bottom: 14px;
     }
 
+    .listing-status {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .status-available {
+      background: #28a745;
+    }
+
+    .status-not-available {
+      background: #6c757d;
+    }
+
+    .status-sold {
+      background: #d9534f;
+    }
+
+    .status-rented {
+      background: #f0ad4e;
+      color: white;
+    }
+
     @media (max-width: 980px) {
       .top-row,
       .footer-grid,
@@ -491,14 +518,11 @@
       position:absolute;
       top:20px;
       right:20px;
-    
       width:70px;
       height:70px;
-    
       object-fit:cover;
       border-radius:50%;
       border:2px solid white;
-    
       box-shadow:0 4px 10px rgba(0,0,0,0.25);
     }
   </style>
@@ -588,6 +612,14 @@
       return value ? value : "";
     }
 
+    function getStatusClass(status) {
+      if (status === "Available") return "status-available";
+      if (status === "Not Available") return "status-not-available";
+      if (status === "Sold") return "status-sold";
+      if (status === "Rented") return "status-rented";
+      return "status-available";
+    }
+
     function slide(id, dir) {
       const item = data.find(x => x.id === id);
       if (!item || !item.photos || item.photos.length === 0) return;
@@ -615,7 +647,8 @@
           item.furnishing,
           item.tenure,
           item.propertyType,
-          item.purpose
+          item.purpose,
+          item.status
         ].join(" ").toLowerCase();
 
         return text.includes(key);
@@ -640,6 +673,7 @@
 
         const currentIndex = item.index >= photos.length ? 0 : item.index;
         const currentPhoto = photos[currentIndex];
+        const statusText = safe(item.status) || "Available";
 
         html += `
           <article class="listing-card">
@@ -663,6 +697,7 @@
                 <div>
                   <h2 class="listing-title">${safe(item.title) || "Untitled Listing"}</h2>
                   <div class="listing-location">${safe(item.location) || "Location upon enquiry"}</div>
+                  <div class="listing-status ${getStatusClass(statusText)}">${statusText}</div>
                 </div>
                 <div class="listing-price">${safe(item.price) || "Price upon enquiry"}</div>
               </div>
