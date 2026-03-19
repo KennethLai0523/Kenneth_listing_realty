@@ -551,7 +551,7 @@ const LISTINGS = [
     "type": "listing",
     "title": "Bandar Sri Damansara - End Lot 2 storey Terrace",
     "location": "Sri Damansara, Kuala Lumpur",
-    "price": "For Sale : RM1,200,000 , For Rent : RM2,500/month",
+    "price": "For Sale : RM1.2Mil , For Rent : RM2,500/month",
     "rooms": "4",
     "bathrooms": "3",
     "builtup": "1800 sqft",
