@@ -1,5 +1,32 @@
 const LISTINGS = [
   {
+    "id": 1773880488466,
+    "title": "8trium - Rear Facing shoplot",
+    "location": "Sri Damansara",
+    "price": "For Rent : RM2.90psf",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1495 sqft",
+    "furnishing": "-",
+    "tenure": "-",
+    "description": "Commercial Unit For Rent – Atrium Sri Damansara\n\nFront-facing unit with strong visibility and high exposure.\n\nDirect escalator access from the main entrance, suitable for retail, showroom or office use.\n\nRental Price: RM2.90 psf\n\nLocated in an established commercial hub with MRT nearby, loading bay facilities, cargo lift and ample multi-level parking.\n\nHigh exposure unit with strong walk-in potential.\n\nCo-agency welcome.\n\nFor details or viewing arrangement contact:\n\nKenneth Lai  \nReal Estate Negotiator  \nOne Maker Realty Group",
+    "whatsapp": "60166287357",
+    "photos": [
+      "8Trium1lot (1).jpeg",
+      "8Trium1lot (2).jpeg",
+      "8Trium1lot (3).jpeg",
+      "8Trium1lot (4).jpeg",
+      "8Trium1lot (5).jpeg",
+      "8Trium1lot (6).jpeg",
+      "8Trium1lot (7).jpeg",
+      "8Trium1lot (8).jpeg",
+      "8Trium1lot (9).jpeg",
+      "8Trium1lot (10).jpeg",
+      "8Trium1lot (11).jpeg"
+    ],
+    "privateNotes": "Co broke with mummy 8trium developer"
+  },
+  {
     "id": 1773879543969,
     "title": "8trium",
     "location": "Sri Damansara",
