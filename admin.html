@@ -44,11 +44,15 @@ padding:10px 18px;
 border:none;
 border-radius:8px;
 cursor:pointer;
+margin-right:8px;
+margin-bottom:8px;
 }
 
 .add{background:#2f6fed;color:white;}
 .copy{background:#25D366;color:white;}
 .delete{background:#d9534f;color:white;}
+.edit{background:#f0ad4e;color:white;}
+.cancel{background:#6c757d;color:white;}
 
 .code{
 width:100%;
@@ -133,6 +137,16 @@ background:#d9534f;
 background:#f0ad4e;
 }
 
+.editing-note{
+display:none;
+margin-bottom:14px;
+padding:10px 14px;
+border-radius:8px;
+background:#fff3cd;
+color:#856404;
+font-weight:bold;
+}
+
 </style>
 
 </head>
@@ -143,7 +157,9 @@ background:#f0ad4e;
 
 <div class="card">
 
-<h2>Add Listing</h2>
+<h2 id="formTitle">Add Listing</h2>
+
+<div id="editingNote" class="editing-note">You are editing an existing listing</div>
 
 <input id="title" placeholder="Title">
 <input id="location" placeholder="Location">
@@ -159,10 +175,8 @@ background:#f0ad4e;
 
 <textarea id="photos" placeholder="Photo URLs (one per line)"></textarea>
 
-<!-- NEW PRIVATE NOTE FIELD -->
 <textarea id="privateNotes" placeholder="Private Notes (Admin Only - owner contact, remarks, lowest price etc)"></textarea>
 
-<!-- EXTRA STATUS SECTION -->
 <div class="status-section">
   <div class="status-title">Listing Status</div>
   <div class="status-buttons">
@@ -173,7 +187,8 @@ background:#f0ad4e;
   </div>
 </div>
 
-<button class="add" onclick="add()">Add Listing</button>
+<button class="add" id="mainActionBtn" onclick="add()">Add Listing</button>
+<button class="cancel" id="cancelEditBtn" onclick="cancelEdit()" style="display:none;">Cancel Edit</button>
 
 </div>
 
@@ -204,6 +219,7 @@ background:#f0ad4e;
 
 let items=[...LISTINGS]
 let selectedStatus="Available"
+let editingId=null
 
 function setStatus(status, el){
 
@@ -217,6 +233,25 @@ el.classList.add("active")
 
 }
 
+function activateStatusButton(status){
+document.querySelectorAll(".status-btn").forEach(btn=>{
+btn.classList.remove("active")
+})
+
+if(status==="Available"){
+document.querySelector(".status-available").classList.add("active")
+}
+else if(status==="Not Available"){
+document.querySelector(".status-not-available").classList.add("active")
+}
+else if(status==="Sold"){
+document.querySelector(".status-sold").classList.add("active")
+}
+else if(status==="Rented"){
+document.querySelector(".status-rented").classList.add("active")
+}
+}
+
 function getBadgeClass(status){
 if(status==="Available") return "badge-available"
 if(status==="Not Available") return "badge-not-available"
@@ -225,16 +260,33 @@ if(status==="Rented") return "badge-rented"
 return "badge-available"
 }
 
-function add(){
+function clearForm(){
+document.getElementById("title").value=""
+document.getElementById("location").value=""
+document.getElementById("price").value=""
+document.getElementById("rooms").value=""
+document.getElementById("bathrooms").value=""
+document.getElementById("builtup").value=""
+document.getElementById("furnishing").value=""
+document.getElementById("tenure").value=""
+document.getElementById("whatsapp").value=""
+document.getElementById("description").value=""
+document.getElementById("photos").value=""
+document.getElementById("privateNotes").value=""
+
+selectedStatus="Available"
+activateStatusButton("Available")
+}
+
+function getFormData(existingId=null){
 
 let photos=document.getElementById("photos").value
 .split("\n")
 .map(x=>x.trim())
 .filter(Boolean)
 
-items.unshift({
-
-id:Date.now(),
+return {
+id: existingId || Date.now(),
 title:document.getElementById("title").value,
 location:document.getElementById("location").value,
 price:document.getElementById("price").value,
@@ -245,24 +297,98 @@ furnishing:document.getElementById("furnishing").value,
 tenure:document.getElementById("tenure").value,
 description:document.getElementById("description").value,
 whatsapp:document.getElementById("whatsapp").value,
-photos,
-
-/* PRIVATE ADMIN NOTES */
+photos:photos,
 privateNotes:document.getElementById("privateNotes").value,
-
-/* LISTING STATUS */
 status:selectedStatus
+}
 
-})
+}
 
+function add(){
+
+if(editingId!==null){
+updateListing()
+return
+}
+
+items.unshift(getFormData())
+clearForm()
 render()
 exportCode()
+
+}
+
+function editItem(id){
+
+let item=items.find(x=>x.id===id)
+if(!item) return
+
+editingId=id
+
+document.getElementById("formTitle").innerText="Edit Listing"
+document.getElementById("editingNote").style.display="block"
+document.getElementById("mainActionBtn").innerText="Update Listing"
+document.getElementById("cancelEditBtn").style.display="inline-block"
+
+document.getElementById("title").value=item.title || ""
+document.getElementById("location").value=item.location || ""
+document.getElementById("price").value=item.price || ""
+document.getElementById("rooms").value=item.rooms || ""
+document.getElementById("bathrooms").value=item.bathrooms || ""
+document.getElementById("builtup").value=item.builtup || ""
+document.getElementById("furnishing").value=item.furnishing || ""
+document.getElementById("tenure").value=item.tenure || ""
+document.getElementById("whatsapp").value=item.whatsapp || ""
+document.getElementById("description").value=item.description || ""
+document.getElementById("photos").value=(item.photos || []).join("\n")
+document.getElementById("privateNotes").value=item.privateNotes || ""
+
+selectedStatus=item.status || "Available"
+activateStatusButton(selectedStatus)
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+})
+
+}
+
+function updateListing(){
+
+if(editingId===null) return
+
+items=items.map(x=>{
+if(x.id===editingId){
+return getFormData(editingId)
+}
+return x
+})
+
+cancelEdit()
+render()
+exportCode()
+
+}
+
+function cancelEdit(){
+
+editingId=null
+document.getElementById("formTitle").innerText="Add Listing"
+document.getElementById("editingNote").style.display="none"
+document.getElementById("mainActionBtn").innerText="Add Listing"
+document.getElementById("cancelEditBtn").style.display="none"
+clearForm()
 
 }
 
 function remove(id){
 
 items=items.filter(x=>x.id!==id)
+
+if(editingId===id){
+cancelEdit()
+}
+
 render()
 exportCode()
 
@@ -288,8 +414,9 @@ ${x.location||""} ${x.price||""}
 
 <br><br>
 
-<button class="delete"
-onclick="remove(${x.id})">
+<button class="edit" onclick="editItem(${x.id})">Edit</button>
+
+<button class="delete" onclick="remove(${x.id})">
 Delete
 </button>
 
@@ -313,10 +440,8 @@ JSON.stringify(items,null,2)+";"
 function copy(){
 
 let t=document.getElementById("output")
-
 t.select()
 document.execCommand("copy")
-
 alert("Copied")
 
 }
