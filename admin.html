@@ -27,12 +27,14 @@ margin-bottom:20px;
 box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
-input,textarea{
+input,textarea,select{
 width:100%;
 padding:10px;
 border-radius:8px;
 border:1px solid #ccc;
 margin-bottom:10px;
+font-family:Arial;
+font-size:14px;
 }
 
 textarea{
@@ -147,6 +149,31 @@ color:#856404;
 font-weight:bold;
 }
 
+.field-group-title{
+font-weight:bold;
+margin:10px 0 8px 0;
+color:#444;
+}
+
+.hidden{
+display:none;
+}
+
+.type-section{
+margin-bottom:12px;
+padding:14px;
+border:1px solid #ddd;
+border-radius:10px;
+background:#faf8f4;
+}
+
+.small-note{
+font-size:13px;
+color:#666;
+margin-top:-4px;
+margin-bottom:10px;
+}
+
 </style>
 
 </head>
@@ -161,19 +188,36 @@ font-weight:bold;
 
 <div id="editingNote" class="editing-note">You are editing an existing listing</div>
 
-<input id="title" placeholder="Title">
-<input id="location" placeholder="Location">
-<input id="price" placeholder="Price">
-<input id="rooms" placeholder="Rooms">
-<input id="bathrooms" placeholder="Bathrooms">
-<input id="builtup" placeholder="Built-up">
-<input id="furnishing" placeholder="Furnishing">
-<input id="tenure" placeholder="Tenure">
+<div class="type-section">
+  <div class="field-group-title">Post Type</div>
+  <select id="type" onchange="toggleFields()">
+    <option value="listing">Listing</option>
+    <option value="asking">Asking</option>
+  </select>
+  <div class="small-note">Choose Listing for properties you have. Choose Asking for buyer / tenant requests.</div>
+</div>
+
+<div id="listingFields">
+  <input id="title" placeholder="Title">
+  <input id="location" placeholder="Location">
+  <input id="rooms" placeholder="Rooms">
+  <input id="bathrooms" placeholder="Bathrooms">
+  <input id="builtup" placeholder="Built-up">
+  <input id="furnishing" placeholder="Furnishing">
+  <input id="tenure" placeholder="Tenure">
+  <textarea id="photos" placeholder="Photo URLs (one per line)"></textarea>
+</div>
+
+<div id="askingFields">
+  <input id="askingTitle" placeholder="Asking Title (eg. Looking for condo in Kepong)">
+  <input id="askingLocation" placeholder="Preferred Location">
+  <input id="askingArea" placeholder="Area">
+</div>
+
+<input id="price" placeholder="Price / Budget">
 <input id="whatsapp" placeholder="WhatsApp Number">
 
 <textarea id="description" placeholder="Description"></textarea>
-
-<textarea id="photos" placeholder="Photo URLs (one per line)"></textarea>
 
 <textarea id="privateNotes" placeholder="Private Notes (Admin Only - owner contact, remarks, lowest price etc)"></textarea>
 
@@ -260,7 +304,23 @@ if(status==="Rented") return "badge-rented"
 return "badge-available"
 }
 
+function toggleFields(){
+let type=document.getElementById("type").value
+
+if(type==="asking"){
+document.getElementById("listingFields").style.display="none"
+document.getElementById("askingFields").style.display="block"
+document.getElementById("mainActionBtn").innerText=editingId!==null ? "Update Asking" : "Add Asking"
+}else{
+document.getElementById("listingFields").style.display="block"
+document.getElementById("askingFields").style.display="block"
+document.getElementById("mainActionBtn").innerText=editingId!==null ? "Update Listing" : "Add Listing"
+}
+}
+
 function clearForm(){
+document.getElementById("type").value="listing"
+
 document.getElementById("title").value=""
 document.getElementById("location").value=""
 document.getElementById("price").value=""
@@ -273,20 +333,42 @@ document.getElementById("whatsapp").value=""
 document.getElementById("description").value=""
 document.getElementById("photos").value=""
 document.getElementById("privateNotes").value=""
+document.getElementById("askingTitle").value=""
+document.getElementById("askingLocation").value=""
+document.getElementById("askingArea").value=""
 
 selectedStatus="Available"
 activateStatusButton("Available")
+toggleFields()
 }
 
 function getFormData(existingId=null){
+
+let type=document.getElementById("type").value
 
 let photos=document.getElementById("photos").value
 .split("\n")
 .map(x=>x.trim())
 .filter(Boolean)
 
+if(type==="asking"){
 return {
 id: existingId || Date.now(),
+type:"asking",
+title:document.getElementById("askingTitle").value,
+location:document.getElementById("askingLocation").value,
+price:document.getElementById("price").value,
+area:document.getElementById("askingArea").value,
+description:document.getElementById("description").value,
+whatsapp:document.getElementById("whatsapp").value,
+privateNotes:document.getElementById("privateNotes").value,
+status:selectedStatus
+}
+}
+
+return {
+id: existingId || Date.now(),
+type:"listing",
 title:document.getElementById("title").value,
 location:document.getElementById("location").value,
 price:document.getElementById("price").value,
@@ -325,26 +407,48 @@ if(!item) return
 
 editingId=id
 
-document.getElementById("formTitle").innerText="Edit Listing"
+document.getElementById("formTitle").innerText=item.type==="asking" ? "Edit Asking" : "Edit Listing"
 document.getElementById("editingNote").style.display="block"
-document.getElementById("mainActionBtn").innerText="Update Listing"
 document.getElementById("cancelEditBtn").style.display="inline-block"
 
+document.getElementById("type").value=item.type || "listing"
+
+if((item.type || "listing")==="asking"){
+document.getElementById("askingTitle").value=item.title || ""
+document.getElementById("askingLocation").value=item.location || ""
+document.getElementById("askingArea").value=item.area || item.builtup || ""
+
+document.getElementById("title").value=""
+document.getElementById("location").value=""
+document.getElementById("rooms").value=""
+document.getElementById("bathrooms").value=""
+document.getElementById("builtup").value=""
+document.getElementById("furnishing").value=""
+document.getElementById("tenure").value=""
+document.getElementById("photos").value=""
+}else{
 document.getElementById("title").value=item.title || ""
 document.getElementById("location").value=item.location || ""
-document.getElementById("price").value=item.price || ""
 document.getElementById("rooms").value=item.rooms || ""
 document.getElementById("bathrooms").value=item.bathrooms || ""
 document.getElementById("builtup").value=item.builtup || ""
 document.getElementById("furnishing").value=item.furnishing || ""
 document.getElementById("tenure").value=item.tenure || ""
+document.getElementById("photos").value=(item.photos || []).join("\n")
+
+document.getElementById("askingTitle").value=""
+document.getElementById("askingLocation").value=""
+document.getElementById("askingArea").value=""
+}
+
+document.getElementById("price").value=item.price || ""
 document.getElementById("whatsapp").value=item.whatsapp || ""
 document.getElementById("description").value=item.description || ""
-document.getElementById("photos").value=(item.photos || []).join("\n")
 document.getElementById("privateNotes").value=item.privateNotes || ""
 
 selectedStatus=item.status || "Available"
 activateStatusButton(selectedStatus)
+toggleFields()
 
 window.scrollTo({
 top:0,
@@ -375,7 +479,6 @@ function cancelEdit(){
 editingId=null
 document.getElementById("formTitle").innerText="Add Listing"
 document.getElementById("editingNote").style.display="none"
-document.getElementById("mainActionBtn").innerText="Add Listing"
 document.getElementById("cancelEditBtn").style.display="none"
 clearForm()
 
@@ -401,11 +504,13 @@ let html=""
 items.forEach(x=>{
 
 let status=x.status || "Available"
+let type=x.type || "listing"
 
 html+=`
 <div class="item">
 
 <b>${x.title||"(No title)"}</b><br>
+${type==="asking" ? "<span style='color:#2f6fed;font-weight:bold;'>ASKING</span><br>" : "<span style='color:#28a745;font-weight:bold;'>LISTING</span><br>"}
 ${x.location||""} ${x.price||""}
 
 <br>
@@ -446,6 +551,7 @@ alert("Copied")
 
 }
 
+toggleFields()
 render()
 exportCode()
 
