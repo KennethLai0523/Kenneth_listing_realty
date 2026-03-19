@@ -1,5 +1,74 @@
 const LISTINGS = [
   {
+    "id": 1773912587729,
+    "type": "listing",
+    "title": "Endah Ria Apartment",
+    "location": "Bukit Jalil, Kuala Lumpur",
+    "price": "For Rent : RM1,900",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "1000 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "-",
+    "description": "3 Bedrooms  \n2 Bathrooms  \nFully furnished unit  \n\nRental: RM1,900/month  \n\nLocated at Endah Ria, Bukit Jalil, with excellent accessibility and convenience.\n\nOnly 6 minutes cycling distance to LRT Bukit Jalil, making it ideal for daily commuting.\n\nUnit comes fully furnished and ready for immediate move-in.\n\nSuitable for:\n• Students  \n• Working professionals  \n• Families  \n\nSurrounded by nearby amenities including shops, eateries, and daily conveniences.\n\nComfortable living environment with good connectivity to major roads and public transport.\n\nCo-agency welcome.",
+    "whatsapp": "0166287357",
+    "photos": [
+      "EndahRiaNo1 (5).jpeg",
+      "EndahRiaNo1 (1).jpeg",
+      "EndahRiaNo1 (2).jpeg",
+      "EndahRiaNo1 (3).jpeg",
+      "EndahRiaNo1 (4).jpeg",
+      "EndahRiaNo1 (6).jpeg",
+      "EndahRiaNo1 (7).jpeg",
+      "EndahRiaNo1 (8).jpeg"
+    ],
+    "privateNotes": "endah Ria (1)\n+60 17-277 1300",
+    "status": "Available"
+  },
+  {
+    "id": 1773911871818,
+    "type": "listing",
+    "title": "The Core - Office Unit ",
+    "location": "Kota Damansara, Selangor",
+    "price": "For Sale : RM340,000 ",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "538 sqft",
+    "furnishing": "Partially Furnished",
+    "tenure": "Leasehold (Bumi Lot)",
+    "description": "Built-up: 538 sqft  \n1st floor unit with lift access  \nLeasehold (Bumi Lot)  \nSecurity access card  \nShared toilet  \n\nPrime location in Kota Damansara, surrounded by apartments, offices, eateries, clinics and retail shops.\n\nOnly 300m to MRT Kota Damansara  \nEasy access to NKVE, DASH & LDP highways  \n\nSelling Price: RM340,000 (Negotiable)  \n\nOwner motivated to sell – serious offers welcome  \n\nTenancy Info:\n• Current tenant until end of April 2026  \n• If tenant does not renew, owner willing to rent at RM1,200/month  \n\nSuitable for own business or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "KotaDamansaraNo1 (4).jpeg",
+      "KotaDamansaraNo1 (5).jpeg",
+      "KotaDamansaraNo1 (6).jpeg",
+      "KotaDamansaraNo1 (2).jpeg",
+      "KotaDamansaraNo1 (3).jpeg",
+      "KotaDamansaraNo1 (1).jpeg"
+    ],
+    "privateNotes": "Rafi Commercial unit Kota Damansara(1)\n+60 13-340 3028",
+    "status": "Available"
+  },
+  {
+    "id": 1773911091378,
+    "type": "listing",
+    "title": "2-Storey Industrial Shoplot",
+    "location": "Kepong, Kuala Lumpur",
+    "price": "For Sale : RM1.7Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1,600 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "Property Type: 2-Storey Industrial Shoplot  \nBuilt-up: 1,600 sqft  \n\nCurrent Status: Tenanted  \nRental Income: RM4,400/month  \nTenancy expiry: 30 October 2026  \n\nSelling Price: RM1,700,000  \n\nSuitable for:\n• Light factory / workshop  \n• Warehouse / storage  \n• Office with operational space  \n• Small manufacturing business  \n\nIncome-generating property with existing tenant, suitable for investment or future own use.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "KepongShoplotNo1.jpg"
+    ],
+    "privateNotes": ".. Tsumori ..1.7Million kepong shop lot @Taman Perindustrian Ehsan Jaya(1)\n+60 10-969 6819",
+    "status": "Available"
+  },
+  {
     "id": 1773910404389,
     "type": "listing",
     "title": "Putra Walk",
@@ -49,7 +118,7 @@ const LISTINGS = [
     "type": "listing",
     "title": "Seria 88 - Commercial 4 storey shoplot",
     "location": "Bandar Setia Alam, Selangor",
-    "price": "5 million (very much negoatiable) / Offered by buyer",
+    "price": "For Sale : RM5 mil (negoatiable) ",
     "rooms": "-",
     "bathrooms": "-",
     "builtup": "30 x 70 (Multi-floor building)",
