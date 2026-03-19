@@ -93,6 +93,8 @@
       font-weight: 700;
       cursor: pointer;
       transition: 0.2s ease;
+      display: inline-block;
+      text-align: center;
     }
 
     .btn:hover {
@@ -153,6 +155,35 @@
     .search-box:focus {
       border-color: #b88a3b;
       box-shadow: 0 0 0 3px rgba(184, 138, 59, 0.12);
+    }
+
+    .mode-toggle {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .toggle-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      background: #efe5d7;
+      color: #6c4d1b;
+      transition: 0.2s ease;
+    }
+
+    .toggle-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .toggle-btn.active {
+      background: #b88a3b;
+      color: white;
+      box-shadow: 0 8px 18px rgba(184, 138, 59, 0.22);
     }
 
     .contact-card {
@@ -510,20 +541,20 @@
       }
     }
 
-    .contact-card{
-      position:relative;
+    .contact-card {
+      position: relative;
     }
     
-    .agent-photo-top{
-      position:absolute;
-      top:20px;
-      right:20px;
-      width:70px;
-      height:70px;
-      object-fit:cover;
-      border-radius:50%;
-      border:2px solid white;
-      box-shadow:0 4px 10px rgba(0,0,0,0.25);
+    .agent-photo-top {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
     }
   </style>
 </head>
@@ -547,8 +578,8 @@
 
     <section class="top-row">
       <div class="section-card">
-        <h2 class="search-title">Available Listings</h2>
-        <p class="search-subtitle">
+        <h2 class="search-title" id="searchTitle">Available Listings</h2>
+        <p class="search-subtitle" id="searchSubtitle">
           Search by project name, location, or keyword to quickly find the property you are looking for.
         </p>
         <input
@@ -558,12 +589,16 @@
           placeholder="Search project, location, keyword..."
           oninput="render()"
         />
+
+        <div class="mode-toggle">
+          <button id="listingBtn" class="toggle-btn active" onclick="setMode('listing')">Listing</button>
+          <button id="askingBtn" class="toggle-btn" onclick="setMode('asking')">Asking</button>
+        </div>
       </div>
 
       <div class="section-card contact-card">
-      
         <img src="kenneth_listing_website_photo.jpg" class="agent-photo-top">
-      
+
         <div>
           <div class="contact-label">Direct Contact</div>
           <div class="contact-name">Kenneth Lai</div>
@@ -573,11 +608,10 @@
             For viewing arrangements, more information, or suitable property recommendations, contact me directly.
           </div>
         </div>
-      
+
         <div>
           <a class="btn btn-green" href="https://wa.me/60166287357" target="_blank">WhatsApp Now</a>
         </div>
-      
       </div>
     </section>
 
@@ -603,8 +637,11 @@
 
   <script src="listings.js"></script>
   <script>
+    let currentMode = "listing";
+
     let data = LISTINGS.map(item => ({
       ...item,
+      type: (item.type || "listing").toLowerCase(),
       index: 0
     }));
 
@@ -620,6 +657,29 @@
       return "status-available";
     }
 
+    function setMode(mode) {
+      currentMode = mode;
+
+      document.getElementById("listingBtn").classList.toggle("active", mode === "listing");
+      document.getElementById("askingBtn").classList.toggle("active", mode === "asking");
+
+      const title = document.getElementById("searchTitle");
+      const subtitle = document.getElementById("searchSubtitle");
+      const searchBox = document.getElementById("search");
+
+      if (mode === "listing") {
+        title.textContent = "Available Listings";
+        subtitle.textContent = "Search by project name, location, or keyword to quickly find the property you are looking for.";
+        searchBox.placeholder = "Search project, location, keyword...";
+      } else {
+        title.textContent = "Asking Requests";
+        subtitle.textContent = "Browse what buyers or tenants are currently looking for by budget, area, or requirement.";
+        searchBox.placeholder = "Search budget, area, requirement...";
+      }
+
+      render();
+    }
+
     function slide(id, dir) {
       const item = data.find(x => x.id === id);
       if (!item || !item.photos || item.photos.length === 0) return;
@@ -632,24 +692,177 @@
       render();
     }
 
+    function renderAskingCard(item) {
+      const areaValue = safe(item.area) || safe(item.builtup) || "-";
+      const priceValue = safe(item.price) || "Price upon enquiry";
+      const descValue = safe(item.description) || "Contact Kenneth Lai for more details.";
+
+      return `
+        <article class="listing-card">
+          <div class="listing-body">
+            <div class="listing-top">
+              <div>
+                <h2 class="listing-title">${safe(item.title) || "Looking For Property"}</h2>
+                <div class="listing-location">${safe(item.location) || "Preferred location upon enquiry"}</div>
+                ${item.status ? `<div class="listing-status ${getStatusClass(item.status)}">${item.status}</div>` : ""}
+              </div>
+              <div class="listing-price">${priceValue}</div>
+            </div>
+
+            <div class="details">
+              <div class="detail-box">
+                <div class="detail-label">Pricing</div>
+                <div class="detail-value">${priceValue}</div>
+              </div>
+              <div class="detail-box">
+                <div class="detail-label">Area</div>
+                <div class="detail-value">${areaValue}</div>
+              </div>
+              <div class="detail-box">
+                <div class="detail-label">Contact</div>
+                <div class="detail-value">Kenneth Lai</div>
+              </div>
+            </div>
+
+            <div class="description">
+              ${descValue}
+            </div>
+
+            <div class="listing-actions">
+              <a class="btn btn-green" href="https://wa.me/${item.whatsapp ? item.whatsapp : "60166287357"}" target="_blank">
+                WhatsApp Kenneth Lai
+              </a>
+              <a class="btn secondary-btn" href="tel:+60166287357">
+                Call 016-628 7357
+              </a>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderListingCard(item) {
+      const photos = item.photos && item.photos.length ? item.photos : [
+        "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=80"
+      ];
+
+      const currentIndex = item.index >= photos.length ? 0 : item.index;
+      const currentPhoto = photos[currentIndex];
+      const statusText = safe(item.status) || "Available";
+
+      return `
+        <article class="listing-card">
+          <div class="listing-media">
+            <img src="${currentPhoto}" alt="${safe(item.title) || "Property Listing"}" />
+
+            <div class="media-overlay">
+              ${item.purpose ? `<span class="media-chip">${item.purpose}</span>` : ""}
+              ${item.propertyType ? `<span class="media-chip">${item.propertyType}</span>` : ""}
+            </div>
+
+            ${photos.length > 1 ? `
+              <button class="arrow left" onclick="slide(${item.id}, -1)">‹</button>
+              <button class="arrow right" onclick="slide(${item.id}, 1)">›</button>
+              <div class="slide-count">${currentIndex + 1} / ${photos.length}</div>
+            ` : ""}
+          </div>
+
+          <div class="listing-body">
+            <div class="listing-top">
+              <div>
+                <h2 class="listing-title">${safe(item.title) || "Untitled Listing"}</h2>
+                <div class="listing-location">${safe(item.location) || "Location upon enquiry"}</div>
+                <div class="listing-status ${getStatusClass(statusText)}">${statusText}</div>
+              </div>
+              <div class="listing-price">${safe(item.price) || "Price upon enquiry"}</div>
+            </div>
+
+            <div class="tag-row">
+              ${item.purpose ? `<span class="tag">${item.purpose}</span>` : ""}
+              ${item.propertyType ? `<span class="tag">${item.propertyType}</span>` : ""}
+              ${item.buyerLabel ? `<span class="tag">${item.buyerLabel}</span>` : ""}
+            </div>
+
+            <div class="details">
+              <div class="detail-box">
+                <div class="detail-label">Rooms</div>
+                <div class="detail-value">${safe(item.rooms) || "-"}</div>
+              </div>
+              <div class="detail-box">
+                <div class="detail-label">Bathrooms</div>
+                <div class="detail-value">${safe(item.bathrooms) || "-"}</div>
+              </div>
+              <div class="detail-box">
+                <div class="detail-label">Built-up</div>
+                <div class="detail-value">${safe(item.builtup) || safe(item.area) || "-"}</div>
+              </div>
+              <div class="detail-box">
+                <div class="detail-label">Furnishing</div>
+                <div class="detail-value">${safe(item.furnishing) || "-"}</div>
+              </div>
+              <div class="detail-box">
+                <div class="detail-label">Tenure</div>
+                <div class="detail-value">${safe(item.tenure) || "-"}</div>
+              </div>
+              <div class="detail-box">
+                <div class="detail-label">Contact</div>
+                <div class="detail-value">Kenneth Lai</div>
+              </div>
+            </div>
+
+            <div class="description">
+              ${safe(item.description) || "Contact Kenneth Lai for more details about this property."}
+            </div>
+
+            <div class="listing-actions">
+              <a class="btn btn-green" href="https://wa.me/${item.whatsapp ? item.whatsapp : "60166287357"}" target="_blank">
+                WhatsApp Kenneth Lai
+              </a>
+              <a class="btn secondary-btn" href="tel:+60166287357">
+                Call 016-628 7357
+              </a>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
     function render() {
       const key = document.getElementById("search").value.toLowerCase().trim();
 
       const filtered = data.filter(item => {
-        const text = [
-          item.title,
-          item.location,
-          item.description,
-          item.price,
-          item.rooms,
-          item.bathrooms,
-          item.builtup,
-          item.furnishing,
-          item.tenure,
-          item.propertyType,
-          item.purpose,
-          item.status
-        ].join(" ").toLowerCase();
+        const itemType = (item.type || "listing").toLowerCase();
+
+        if (itemType !== currentMode) return false;
+
+        let text = "";
+
+        if (currentMode === "asking") {
+          text = [
+            item.title,
+            item.location,
+            item.description,
+            item.price,
+            item.area,
+            item.builtup,
+            item.status
+          ].join(" ").toLowerCase();
+        } else {
+          text = [
+            item.title,
+            item.location,
+            item.description,
+            item.price,
+            item.rooms,
+            item.bathrooms,
+            item.builtup,
+            item.furnishing,
+            item.tenure,
+            item.propertyType,
+            item.purpose,
+            item.status
+          ].join(" ").toLowerCase();
+        }
 
         return text.includes(key);
       });
@@ -657,7 +870,7 @@
       if (filtered.length === 0) {
         document.getElementById("listings").innerHTML = `
           <div class="empty">
-            <h3 style="margin-top:0;">No listings found</h3>
+            <h3 style="margin-top:0;">No ${currentMode === "listing" ? "listings" : "asking requests"} found</h3>
             <p>Try a different keyword or contact Kenneth Lai for more options.</p>
           </div>
         `;
@@ -667,89 +880,11 @@
       let html = "";
 
       filtered.forEach(item => {
-        const photos = item.photos && item.photos.length ? item.photos : [
-          "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=80"
-        ];
-
-        const currentIndex = item.index >= photos.length ? 0 : item.index;
-        const currentPhoto = photos[currentIndex];
-        const statusText = safe(item.status) || "Available";
-
-        html += `
-          <article class="listing-card">
-            <div class="listing-media">
-              <img src="${currentPhoto}" alt="${safe(item.title) || "Property Listing"}" />
-
-              <div class="media-overlay">
-                ${item.purpose ? `<span class="media-chip">${item.purpose}</span>` : ""}
-                ${item.propertyType ? `<span class="media-chip">${item.propertyType}</span>` : ""}
-              </div>
-
-              ${photos.length > 1 ? `
-                <button class="arrow left" onclick="slide(${item.id}, -1)">‹</button>
-                <button class="arrow right" onclick="slide(${item.id}, 1)">›</button>
-                <div class="slide-count">${currentIndex + 1} / ${photos.length}</div>
-              ` : ""}
-            </div>
-
-            <div class="listing-body">
-              <div class="listing-top">
-                <div>
-                  <h2 class="listing-title">${safe(item.title) || "Untitled Listing"}</h2>
-                  <div class="listing-location">${safe(item.location) || "Location upon enquiry"}</div>
-                  <div class="listing-status ${getStatusClass(statusText)}">${statusText}</div>
-                </div>
-                <div class="listing-price">${safe(item.price) || "Price upon enquiry"}</div>
-              </div>
-
-              <div class="tag-row">
-                ${item.purpose ? `<span class="tag">${item.purpose}</span>` : ""}
-                ${item.propertyType ? `<span class="tag">${item.propertyType}</span>` : ""}
-                ${item.buyerLabel ? `<span class="tag">${item.buyerLabel}</span>` : ""}
-              </div>
-
-              <div class="details">
-                <div class="detail-box">
-                  <div class="detail-label">Rooms</div>
-                  <div class="detail-value">${safe(item.rooms) || "-"}</div>
-                </div>
-                <div class="detail-box">
-                  <div class="detail-label">Bathrooms</div>
-                  <div class="detail-value">${safe(item.bathrooms) || "-"}</div>
-                </div>
-                <div class="detail-box">
-                  <div class="detail-label">Built-up</div>
-                  <div class="detail-value">${safe(item.builtup) || "-"}</div>
-                </div>
-                <div class="detail-box">
-                  <div class="detail-label">Furnishing</div>
-                  <div class="detail-value">${safe(item.furnishing) || "-"}</div>
-                </div>
-                <div class="detail-box">
-                  <div class="detail-label">Tenure</div>
-                  <div class="detail-value">${safe(item.tenure) || "-"}</div>
-                </div>
-                <div class="detail-box">
-                  <div class="detail-label">Contact</div>
-                  <div class="detail-value">Kenneth Lai</div>
-                </div>
-              </div>
-
-              <div class="description">
-                ${safe(item.description) || "Contact Kenneth Lai for more details about this property."}
-              </div>
-
-              <div class="listing-actions">
-                <a class="btn btn-green" href="https://wa.me/${item.whatsapp ? item.whatsapp : "60166287357"}" target="_blank">
-                  WhatsApp Kenneth Lai
-                </a>
-                <a class="btn secondary-btn" href="tel:+60166287357">
-                  Call 016-628 7357
-                </a>
-              </div>
-            </div>
-          </article>
-        `;
+        if (currentMode === "asking") {
+          html += renderAskingCard(item);
+        } else {
+          html += renderListingCard(item);
+        }
       });
 
       document.getElementById("listings").innerHTML = html;
