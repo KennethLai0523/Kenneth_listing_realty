@@ -1,31 +1,21 @@
 const LISTINGS = [
   {
-    "id": 1773891439104,
+    "id": 1773891614530,
     "type": "listing",
-    "title": "desaspark",
-    "location": "kl",
-    "price": "555",
-    "rooms": "4",
-    "bathrooms": "3",
-    "builtup": "123",
-    "furnishing": "fully",
-    "tenure": "leasehold",
-    "description": "hihi",
-    "whatsapp": "016",
-    "photos": [],
-    "privateNotes": "",
-    "status": "Available"
-  },
-  {
-    "id": 1773890479357,
-    "type": "asking",
-    "title": "need kepong",
-    "location": "KL",
-    "price": "6000",
-    "area": "",
-    "description": "5500",
-    "whatsapp": "016628",
-    "privateNotes": "mr jake",
+    "title": "Sungai Buloh Factory",
+    "location": "Sungai Buloh, Selangor",
+    "price": "For Rent : RM15,000/month",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "10,000 sqft",
+    "furnishing": "-",
+    "tenure": "-",
+    "description": "Power supply: 150 amps (TNB)\nTruck & container accessible\n\nRental: RM15,000/month (negotiable)\nAvailable from 1 April 2026\n\nSuitable for warehouse, storage or light industrial use.\n\nStrategic Sungai Buloh location with good accessibility.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "sungai_buloh1.jpeg"
+    ],
+    "privateNotes": "Co broke mummy",
     "status": "Available"
   },
   {
