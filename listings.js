@@ -1,5 +1,71 @@
 const LISTINGS = [
   {
+    "id": 1773901261965,
+    "type": "listing",
+    "title": "M Luna apartment - corner unit",
+    "location": "Kiara Bay, Kepong",
+    "price": "For Sale : RM600,000",
+    "rooms": "4",
+    "bathrooms": "2",
+    "builtup": "1,000 sqft",
+    "furnishing": "-",
+    "tenure": "Leasehold (99 years, Non-Bumi Lot)",
+    "description": "Project: M Luna @ Kiara Bay  \nBuilt-up: 1,000 sqft  \n4 Bedrooms  \n2 Bathrooms  \n2 Car Parks  \nCompletion Year: 2024  \n\nFacilities include:\n• Swimming pool  \n• Gymnasium  \n• Playground  \n• Sauna  \n• Barbecue area  \n• Jogging track  \n• Multipurpose hall  \n• Clubhouse  \n• 24-hour security & lift access  \n\nStrategically located in Kepong with easy access to surrounding amenities, major roads and city connectivity.\n\nSuitable for own stay or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "No1M_Luna (1).jpeg",
+      "No1M_Luna (2).jpeg",
+      "No1M_Luna (3).jpeg",
+      "No1M_Luna (4).jpeg",
+      "No1M_Luna (5).jpeg",
+      "No1M_Luna (6).jpeg",
+      "No1M_Luna (7).jpeg",
+      "No1M_Luna (8).jpeg",
+      "No1M_Luna (9).jpeg",
+      "No1M_Luna (10).jpeg",
+      "No1M_Luna (11).jpeg",
+      "No1M_Luna (12).jpeg"
+    ],
+    "privateNotes": "Mizan @M Luna(1) for sale 600k & Taman Usaha jaya +60 17-608 4776",
+    "status": "Available"
+  },
+  {
+    "id": 1773900640367,
+    "type": "listing",
+    "title": "The Henge",
+    "location": "Kepong, Kuala Lumpur",
+    "price": "For Sale : RM 490,000",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "1,100 sqft",
+    "furnishing": "Semi Furnished",
+    "tenure": "Leasehold (Approx. 92 years remaining)",
+    "description": "Located next to Kepong Metropolitan Lake Garden, offering a peaceful environment with greenery views while still enjoying the convenience of city living.\n\nProject: The Henge  \nBuilt-up: 1,100 sqft  \n3 Bedrooms  \n2 Bathrooms  \n2 side-by-side car parks  \nSemi furnished  \n\nMaintenance fee approx. RM319/month  \n\nHighlights:\n• Walking distance to Kepong Metropolitan Lake Garden  \n• Spacious layout suitable for families  \n• Side-by-side car parks for convenience  \n• Quiet residential environment  \n• Easy access to nearby amenities  \n\nSelling Price: RM498,000  \n\nSuitable for own stay or investment.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "The_Henge_No1 (1).jpeg",
+      "The_Henge_No1 (2).jpeg",
+      "The_Henge_No1 (3).jpeg",
+      "The_Henge_No1 (4).jpeg",
+      "The_Henge_No1 (5).jpeg",
+      "The_Henge_No1 (6).jpeg"
+    ],
+    "privateNotes": "mummy listing",
+    "status": "Available"
+  },
+  {
+    "id": 1773900347893,
+    "type": "asking",
+    "title": "Apartment rental (need 3 units)",
+    "location": "Residensi Ava ",
+    "price": "approx RM3000/month",
+    "area": "Kiara Bay, Kepong",
+    "description": "Looking for a suitable rental unit.\n\n1.Tenant profile:\n• Malaysian Chinese  \n• 5 persons staying  \n• No pets  \n• Working in beauty / aesthetic industry  \n\n2.Tenant profile:\n\n3.Tenant profile:\n\nRequirements:\n• Prefer partially furnished unit  \n\nMove-in date: (to be confirmed)  \nBudget: (to be confirmed)  \n\nKindly contact if you have a suitable unit to match.\n\nCo-agency welcome.",
+    "whatsapp": "60166287357",
+    "privateNotes": "mummy client",
+    "status": "Available"
+  },
+  {
     "id": 1773898981565,
     "type": "listing",
     "title": "Bandar Sri Damansara - 2 Storey Terrace House ",
@@ -29,7 +95,7 @@ const LISTINGS = [
       "SriDamansaraNo4 (14).jpeg",
       "SriDamansaraNo4 (15).jpeg"
     ],
-    "privateNotes": "mummy with other tenant but i found it ",
+    "privateNotes": "mummy with other tenant but i found it \nSamantha Sri damansara(4)\n+60 17-224 1019",
     "status": "Available"
   },
   {
@@ -59,7 +125,7 @@ const LISTINGS = [
       "Gambira_residence_no1 (11).jpeg",
       "Gambira_residence_no1 (12).jpeg"
     ],
-    "privateNotes": "",
+    "privateNotes": "KHJ @The Henge(2) @Abadi Indah 1 @Gembira residence(1)\n+60 16-866 0611",
     "status": "Available"
   },
   {
@@ -105,7 +171,7 @@ const LISTINGS = [
       "No2_The_henge (26).jpeg",
       "No2_The_henge (27).jpeg"
     ],
-    "privateNotes": "the owner with few listing on google drive",
+    "privateNotes": "KHJ @The Henge(2) @Abadi Indah 1 @Gembira residence(1)\n+60 16-866 0611",
     "status": "Available"
   },
   {
@@ -133,7 +199,7 @@ const LISTINGS = [
       "Abadi_Indah1 (9).jpeg",
       "Abadi_Indah1 (10).jpeg"
     ],
-    "privateNotes": "The owner with 4 listing in google drive",
+    "privateNotes": "KHJ @The Henge(2) @Abadi Indah 1 @Gembira residence(1)\n+60 16-866 0611",
     "status": "Available"
   },
   {
