@@ -13,6 +13,7 @@ const LISTINGS = [
     "description": "Project: M Luna @ Kiara Bay  \nBuilt-up: 1,000 sqft  \n4 Bedrooms  \n2 Bathrooms  \n2 Car Parks  \nCompletion Year: 2024  \n\nFacilities include:\n• Swimming pool  \n• Gymnasium  \n• Playground  \n• Sauna  \n• Barbecue area  \n• Jogging track  \n• Multipurpose hall  \n• Clubhouse  \n• 24-hour security & lift access  \n\nStrategically located in Kepong with easy access to surrounding amenities, major roads and city connectivity.\n\nSuitable for own stay or investment.\n\nCo-agency welcome.",
     "whatsapp": "60166287357",
     "photos": [
+      "No1M_Luna (8).jpeg",
       "No1M_Luna (1).jpeg",
       "No1M_Luna (2).jpeg",
       "No1M_Luna (3).jpeg",
@@ -20,7 +21,6 @@ const LISTINGS = [
       "No1M_Luna (5).jpeg",
       "No1M_Luna (6).jpeg",
       "No1M_Luna (7).jpeg",
-      "No1M_Luna (8).jpeg",
       "No1M_Luna (9).jpeg",
       "No1M_Luna (10).jpeg",
       "No1M_Luna (11).jpeg",
