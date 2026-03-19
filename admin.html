@@ -27,7 +27,7 @@ margin-bottom:20px;
 box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
-input,textarea{
+input,textarea,select{
 width:100%;
 padding:10px;
 border-radius:8px;
@@ -75,6 +75,11 @@ border-radius:10px;
 background:#faf8f4;
 }
 
+.status-title{
+font-weight:bold;
+margin-bottom:10px;
+}
+
 .status-buttons{
 display:flex;
 gap:10px;
@@ -83,6 +88,7 @@ flex-wrap:wrap;
 
 .status-btn{
 background:#e9e9e9;
+color:#333;
 border:1px solid #ccc;
 }
 
@@ -91,10 +97,21 @@ color:white;
 border:none;
 }
 
-.status-available.active{background:#28a745;}
-.status-not-available.active{background:#6c757d;}
-.status-sold.active{background:#d9534f;}
-.status-rented.active{background:#f0ad4e;}
+.status-available.active{
+background:#28a745;
+}
+
+.status-not-available.active{
+background:#6c757d;
+}
+
+.status-sold.active{
+background:#d9534f;
+}
+
+.status-rented.active{
+background:#f0ad4e;
+}
 
 .status-badge{
 display:inline-block;
@@ -106,18 +123,55 @@ color:white;
 margin-top:8px;
 }
 
-.badge-available{background:#28a745;}
-.badge-not-available{background:#6c757d;}
-.badge-sold{background:#d9534f;}
-.badge-rented{background:#f0ad4e;}
+.badge-available{
+background:#28a745;
+}
+
+.badge-not-available{
+background:#6c757d;
+}
+
+.badge-sold{
+background:#d9534f;
+}
+
+.badge-rented{
+background:#f0ad4e;
+}
 
 .editing-note{
 display:none;
 margin-bottom:14px;
-padding:10px;
-background:#fff3cd;
+padding:10px 14px;
 border-radius:8px;
+background:#fff3cd;
+color:#856404;
 font-weight:bold;
+}
+
+.field-group-title{
+font-weight:bold;
+margin:10px 0 8px 0;
+color:#444;
+}
+
+.hidden{
+display:none;
+}
+
+.type-section{
+margin-bottom:12px;
+padding:14px;
+border:1px solid #ddd;
+border-radius:10px;
+background:#faf8f4;
+}
+
+.small-note{
+font-size:13px;
+color:#666;
+margin-top:-4px;
+margin-bottom:10px;
 }
 
 </style>
@@ -131,46 +185,74 @@ font-weight:bold;
 <div class="card">
 
 <h2 id="formTitle">Add Listing</h2>
-<div id="editingNote" class="editing-note">Editing Listing</div>
 
-<input id="title" placeholder="Title">
-<input id="location" placeholder="Location">
+<div id="editingNote" class="editing-note">You are editing an existing listing</div>
+
+<div class="type-section">
+  <div class="field-group-title">Post Type</div>
+  <select id="type" onchange="toggleFields()">
+    <option value="listing">Listing</option>
+    <option value="asking">Asking</option>
+  </select>
+  <div class="small-note">Choose Listing for properties you have. Choose Asking for buyer / tenant requests.</div>
+</div>
+
+<div id="listingFields">
+  <input id="title" placeholder="Title">
+  <input id="location" placeholder="Location">
+  <input id="rooms" placeholder="Rooms">
+  <input id="bathrooms" placeholder="Bathrooms">
+  <input id="builtup" placeholder="Built-up">
+  <input id="furnishing" placeholder="Furnishing">
+  <input id="tenure" placeholder="Tenure">
+  <textarea id="photos" placeholder="Photo URLs (one per line)"></textarea>
+</div>
+
+<div id="askingFields">
+  <input id="askingTitle" placeholder="Asking Title (eg. Looking for condo in Kepong)">
+  <input id="askingLocation" placeholder="Preferred Location">
+  <input id="askingArea" placeholder="Area">
+</div>
+
 <input id="price" placeholder="Price">
-<input id="rooms" placeholder="Rooms">
-<input id="bathrooms" placeholder="Bathrooms">
-<input id="builtup" placeholder="Built-up">
-<input id="furnishing" placeholder="Furnishing">
-<input id="tenure" placeholder="Tenure">
 <input id="whatsapp" placeholder="WhatsApp Number">
 
 <textarea id="description" placeholder="Description"></textarea>
-<textarea id="photos" placeholder="Photo URLs (one per line)"></textarea>
-<textarea id="privateNotes" placeholder="Private Notes"></textarea>
+
+<textarea id="privateNotes" placeholder="Private Notes (Admin Only - owner contact, remarks, lowest price etc)"></textarea>
 
 <div class="status-section">
-<div class="status-buttons">
-<button class="status-btn status-available active" onclick="setStatus('Available',this)">Available</button>
-<button class="status-btn status-not-available" onclick="setStatus('Not Available',this)">Not Available</button>
-<button class="status-btn status-sold" onclick="setStatus('Sold',this)">Sold</button>
-<button class="status-btn status-rented" onclick="setStatus('Rented',this)">Rented</button>
-</div>
+  <div class="status-title">Listing Status</div>
+  <div class="status-buttons">
+    <button type="button" class="status-btn status-available active" onclick="setStatus('Available', this)">Available</button>
+    <button type="button" class="status-btn status-not-available" onclick="setStatus('Not Available', this)">Not Available</button>
+    <button type="button" class="status-btn status-sold" onclick="setStatus('Sold', this)">Sold</button>
+    <button type="button" class="status-btn status-rented" onclick="setStatus('Rented', this)">Rented</button>
+  </div>
 </div>
 
-<button class="add" id="mainBtn" onclick="add()">Add Listing</button>
-<button class="cancel" id="cancelBtn" onclick="cancelEdit()" style="display:none;">Cancel</button>
+<button class="add" id="mainActionBtn" onclick="add()">Add Listing</button>
+<button class="cancel" id="cancelEditBtn" onclick="cancelEdit()" style="display:none;">Cancel Edit</button>
 
 </div>
 
 <div class="card">
+
 <h2>Listings</h2>
+
 <div id="list"></div>
+
 </div>
 
 <div class="card">
+
 <h2>Export listings.js</h2>
+
 <button class="copy" onclick="exportCode()">Generate</button>
 <button class="copy" onclick="copy()">Copy</button>
+
 <textarea id="output" class="code"></textarea>
+
 </div>
 
 </div>
@@ -183,13 +265,38 @@ let items=[...LISTINGS]
 let selectedStatus="Available"
 let editingId=null
 
-function setStatus(status,el){
+function setStatus(status, el){
+
 selectedStatus=status
-document.querySelectorAll(".status-btn").forEach(b=>b.classList.remove("active"))
+
+document.querySelectorAll(".status-btn").forEach(btn=>{
+btn.classList.remove("active")
+})
+
 el.classList.add("active")
+
 }
 
-function getBadge(status){
+function activateStatusButton(status){
+document.querySelectorAll(".status-btn").forEach(btn=>{
+btn.classList.remove("active")
+})
+
+if(status==="Available"){
+document.querySelector(".status-available").classList.add("active")
+}
+else if(status==="Not Available"){
+document.querySelector(".status-not-available").classList.add("active")
+}
+else if(status==="Sold"){
+document.querySelector(".status-sold").classList.add("active")
+}
+else if(status==="Rented"){
+document.querySelector(".status-rented").classList.add("active")
+}
+}
+
+function getBadgeClass(status){
 if(status==="Available") return "badge-available"
 if(status==="Not Available") return "badge-not-available"
 if(status==="Sold") return "badge-sold"
@@ -197,116 +304,256 @@ if(status==="Rented") return "badge-rented"
 return "badge-available"
 }
 
-function getData(id=null){
-let photos=photosInput().split("\n").map(x=>x.trim()).filter(Boolean)
+function toggleFields(){
+let type=document.getElementById("type").value
 
-return{
-id:id||Date.now(),
-title:title.value,
-location:location.value,
-price:price.value,
-rooms:rooms.value,
-bathrooms:bathrooms.value,
-builtup:builtup.value,
-furnishing:furnishing.value,
-tenure:tenure.value,
-description:description.value,
-whatsapp:whatsapp.value,
-photos:photos,
-privateNotes:privateNotes.value,
+if(type==="asking"){
+document.getElementById("listingFields").style.display="none"
+document.getElementById("askingFields").style.display="block"
+document.getElementById("price").placeholder="Budget"
+document.getElementById("mainActionBtn").innerText=editingId!==null ? "Update Asking" : "Add Asking"
+}else{
+document.getElementById("listingFields").style.display="block"
+document.getElementById("askingFields").style.display="none"
+document.getElementById("price").placeholder="Price"
+document.getElementById("mainActionBtn").innerText=editingId!==null ? "Update Listing" : "Add Listing"
+}
+}
+
+function clearForm(){
+document.getElementById("type").value="listing"
+
+document.getElementById("title").value=""
+document.getElementById("location").value=""
+document.getElementById("price").value=""
+document.getElementById("rooms").value=""
+document.getElementById("bathrooms").value=""
+document.getElementById("builtup").value=""
+document.getElementById("furnishing").value=""
+document.getElementById("tenure").value=""
+document.getElementById("whatsapp").value=""
+document.getElementById("description").value=""
+document.getElementById("photos").value=""
+document.getElementById("privateNotes").value=""
+document.getElementById("askingTitle").value=""
+document.getElementById("askingLocation").value=""
+document.getElementById("askingArea").value=""
+
+selectedStatus="Available"
+activateStatusButton("Available")
+toggleFields()
+}
+
+function getFormData(existingId=null){
+
+let type=document.getElementById("type").value
+
+let photos=document.getElementById("photos").value
+.split("\n")
+.map(x=>x.trim())
+.filter(Boolean)
+
+if(type==="asking"){
+return {
+id: existingId || Date.now(),
+type:"asking",
+title:document.getElementById("askingTitle").value,
+location:document.getElementById("askingLocation").value,
+price:document.getElementById("price").value,
+area:document.getElementById("askingArea").value,
+description:document.getElementById("description").value,
+whatsapp:document.getElementById("whatsapp").value,
+privateNotes:document.getElementById("privateNotes").value,
 status:selectedStatus
 }
 }
 
-function photosInput(){
-return document.getElementById("photos").value
+return {
+id: existingId || Date.now(),
+type:"listing",
+title:document.getElementById("title").value,
+location:document.getElementById("location").value,
+price:document.getElementById("price").value,
+rooms:document.getElementById("rooms").value,
+bathrooms:document.getElementById("bathrooms").value,
+builtup:document.getElementById("builtup").value,
+furnishing:document.getElementById("furnishing").value,
+tenure:document.getElementById("tenure").value,
+description:document.getElementById("description").value,
+whatsapp:document.getElementById("whatsapp").value,
+photos:photos,
+privateNotes:document.getElementById("privateNotes").value,
+status:selectedStatus
+}
+
 }
 
 function add(){
-if(editingId){update();return}
-items.unshift(getData())
-clear()
+
+if(editingId!==null){
+updateListing()
+return
+}
+
+items.unshift(getFormData())
+clearForm()
 render()
 exportCode()
+
 }
 
-function edit(id){
-let x=items.find(i=>i.id===id)
+function editItem(id){
+
+let item=items.find(x=>x.id===id)
+if(!item) return
+
 editingId=id
 
-title.value=x.title||""
-location.value=x.location||""
-price.value=x.price||""
-rooms.value=x.rooms||""
-bathrooms.value=x.bathrooms||""
-builtup.value=x.builtup||""
-furnishing.value=x.furnishing||""
-tenure.value=x.tenure||""
-description.value=x.description||""
-whatsapp.value=x.whatsapp||""
-document.getElementById("photos").value=(x.photos||[]).join("\n")
-privateNotes.value=x.privateNotes||""
+document.getElementById("formTitle").innerText=item.type==="asking" ? "Edit Asking" : "Edit Listing"
+document.getElementById("editingNote").style.display="block"
+document.getElementById("cancelEditBtn").style.display="inline-block"
 
-selectedStatus=x.status||"Available"
-setStatus(selectedStatus,document.querySelector(`.status-${selectedStatus.toLowerCase().replace(" ","-")}`))
+document.getElementById("type").value=item.type || "listing"
 
-mainBtn.innerText="Update Listing"
-cancelBtn.style.display="inline-block"
-window.scrollTo({top:0})
+if((item.type || "listing")==="asking"){
+document.getElementById("askingTitle").value=item.title || ""
+document.getElementById("askingLocation").value=item.location || ""
+document.getElementById("askingArea").value=item.area || item.builtup || ""
+
+document.getElementById("title").value=""
+document.getElementById("location").value=""
+document.getElementById("rooms").value=""
+document.getElementById("bathrooms").value=""
+document.getElementById("builtup").value=""
+document.getElementById("furnishing").value=""
+document.getElementById("tenure").value=""
+document.getElementById("photos").value=""
+}else{
+document.getElementById("title").value=item.title || ""
+document.getElementById("location").value=item.location || ""
+document.getElementById("rooms").value=item.rooms || ""
+document.getElementById("bathrooms").value=item.bathrooms || ""
+document.getElementById("builtup").value=item.builtup || ""
+document.getElementById("furnishing").value=item.furnishing || ""
+document.getElementById("tenure").value=item.tenure || ""
+document.getElementById("photos").value=(item.photos || []).join("\n")
+
+document.getElementById("askingTitle").value=""
+document.getElementById("askingLocation").value=""
+document.getElementById("askingArea").value=""
 }
 
-function update(){
-items=items.map(x=>x.id===editingId?getData(editingId):x)
+document.getElementById("price").value=item.price || ""
+document.getElementById("whatsapp").value=item.whatsapp || ""
+document.getElementById("description").value=item.description || ""
+document.getElementById("privateNotes").value=item.privateNotes || ""
+
+selectedStatus=item.status || "Available"
+activateStatusButton(selectedStatus)
+toggleFields()
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+})
+
+}
+
+function updateListing(){
+
+if(editingId===null) return
+
+items=items.map(x=>{
+if(x.id===editingId){
+return getFormData(editingId)
+}
+return x
+})
+
 cancelEdit()
 render()
 exportCode()
+
 }
 
 function cancelEdit(){
-editingId=null
-clear()
-mainBtn.innerText="Add Listing"
-cancelBtn.style.display="none"
-}
 
-function clear(){
-document.querySelectorAll("input,textarea").forEach(i=>i.value="")
-selectedStatus="Available"
-document.querySelector(".status-available").click()
+editingId=null
+document.getElementById("formTitle").innerText="Add Listing"
+document.getElementById("editingNote").style.display="none"
+document.getElementById("cancelEditBtn").style.display="none"
+clearForm()
+
 }
 
 function remove(id){
+
 items=items.filter(x=>x.id!==id)
+
+if(editingId===id){
+cancelEdit()
+}
+
 render()
 exportCode()
+
 }
 
 function render(){
+
 let html=""
+
 items.forEach(x=>{
-let s=x.status||"Available"
+
+let status=x.status || "Available"
+let type=x.type || "listing"
+
 html+=`
 <div class="item">
-<b>${x.title}</b><br>
-${x.location} ${x.price}<br>
-<span class="status-badge ${getBadge(s)}">${s}</span><br><br>
-<button class="edit" onclick="edit(${x.id})">Edit</button>
-<button class="delete" onclick="remove(${x.id})">Delete</button>
-</div>`
+
+<b>${x.title||"(No title)"}</b><br>
+${type==="asking" ? "<span style='color:#2f6fed;font-weight:bold;'>ASKING</span><br>" : "<span style='color:#28a745;font-weight:bold;'>LISTING</span><br>"}
+${x.location||""} ${x.price||""}
+
+<br>
+
+<span class="status-badge ${getBadgeClass(status)}">${status}</span>
+
+<br><br>
+
+<button class="edit" onclick="editItem(${x.id})">Edit</button>
+
+<button class="delete" onclick="remove(${x.id})">
+Delete
+</button>
+
+</div>
+`
+
 })
-list.innerHTML=html
+
+document.getElementById("list").innerHTML=html
+
 }
 
 function exportCode(){
-output.value="const LISTINGS = "+JSON.stringify(items,null,2)+";"
+
+document.getElementById("output").value=
+"const LISTINGS = "+
+JSON.stringify(items,null,2)+";"
+
 }
 
 function copy(){
-output.select()
+
+let t=document.getElementById("output")
+t.select()
 document.execCommand("copy")
 alert("Copied")
+
 }
 
+toggleFields()
 render()
 exportCode()
 
