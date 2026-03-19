@@ -61,6 +61,78 @@ border-bottom:1px solid #eee;
 padding:10px 0;
 }
 
+.status-section{
+margin:12px 0 16px 0;
+padding:14px;
+border:1px solid #ddd;
+border-radius:10px;
+background:#faf8f4;
+}
+
+.status-title{
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.status-buttons{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.status-btn{
+background:#e9e9e9;
+color:#333;
+border:1px solid #ccc;
+}
+
+.status-btn.active{
+color:white;
+border:none;
+}
+
+.status-available.active{
+background:#28a745;
+}
+
+.status-not-available.active{
+background:#6c757d;
+}
+
+.status-sold.active{
+background:#d9534f;
+}
+
+.status-rented.active{
+background:#f0ad4e;
+}
+
+.status-badge{
+display:inline-block;
+padding:6px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+color:white;
+margin-top:8px;
+}
+
+.badge-available{
+background:#28a745;
+}
+
+.badge-not-available{
+background:#6c757d;
+}
+
+.badge-sold{
+background:#d9534f;
+}
+
+.badge-rented{
+background:#f0ad4e;
+}
+
 </style>
 
 </head>
@@ -89,6 +161,17 @@ padding:10px 0;
 
 <!-- NEW PRIVATE NOTE FIELD -->
 <textarea id="privateNotes" placeholder="Private Notes (Admin Only - owner contact, remarks, lowest price etc)"></textarea>
+
+<!-- EXTRA STATUS SECTION -->
+<div class="status-section">
+  <div class="status-title">Listing Status</div>
+  <div class="status-buttons">
+    <button type="button" class="status-btn status-available active" onclick="setStatus('Available', this)">Available</button>
+    <button type="button" class="status-btn status-not-available" onclick="setStatus('Not Available', this)">Not Available</button>
+    <button type="button" class="status-btn status-sold" onclick="setStatus('Sold', this)">Sold</button>
+    <button type="button" class="status-btn status-rented" onclick="setStatus('Rented', this)">Rented</button>
+  </div>
+</div>
 
 <button class="add" onclick="add()">Add Listing</button>
 
@@ -120,6 +203,27 @@ padding:10px 0;
 <script>
 
 let items=[...LISTINGS]
+let selectedStatus="Available"
+
+function setStatus(status, el){
+
+selectedStatus=status
+
+document.querySelectorAll(".status-btn").forEach(btn=>{
+btn.classList.remove("active")
+})
+
+el.classList.add("active")
+
+}
+
+function getBadgeClass(status){
+if(status==="Available") return "badge-available"
+if(status==="Not Available") return "badge-not-available"
+if(status==="Sold") return "badge-sold"
+if(status==="Rented") return "badge-rented"
+return "badge-available"
+}
 
 function add(){
 
@@ -144,7 +248,10 @@ whatsapp:document.getElementById("whatsapp").value,
 photos,
 
 /* PRIVATE ADMIN NOTES */
-privateNotes:document.getElementById("privateNotes").value
+privateNotes:document.getElementById("privateNotes").value,
+
+/* LISTING STATUS */
+status:selectedStatus
 
 })
 
@@ -167,6 +274,8 @@ let html=""
 
 items.forEach(x=>{
 
+let status=x.status || "Available"
+
 html+=`
 <div class="item">
 
@@ -174,6 +283,10 @@ html+=`
 ${x.location||""} ${x.price||""}
 
 <br>
+
+<span class="status-badge ${getBadgeClass(status)}">${status}</span>
+
+<br><br>
 
 <button class="delete"
 onclick="remove(${x.id})">
