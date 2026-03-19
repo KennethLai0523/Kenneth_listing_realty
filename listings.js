@@ -17,7 +17,7 @@ const LISTINGS = [
   },
   {
     "id": 1773880488466,
-    "title": "8trium - Rear Facing shoplot",
+    "title": "8trium - Front Facing shoplot",
     "location": "Sri Damansara",
     "price": "For Rent : RM2.90psf",
     "rooms": "-",
@@ -40,11 +40,12 @@ const LISTINGS = [
       "8Trium1lot (10).jpeg",
       "8Trium1lot (11).jpeg"
     ],
-    "privateNotes": "Co broke with mummy 8trium developer"
+    "privateNotes": "Co broke with mummy 8trium developer",
+    "status": "Available"
   },
   {
     "id": 1773879543969,
-    "title": "8trium",
+    "title": "8trium - Rear Facing shoplot",
     "location": "Sri Damansara",
     "price": "For Rent : RM2.70psf",
     "rooms": "-",
@@ -78,7 +79,8 @@ const LISTINGS = [
       "8Trium2lot (21).jpeg",
       "8Trium2lot (22).jpeg"
     ],
-    "privateNotes": "Co broke with mummy 8trium developer"
+    "privateNotes": "Co broke with mummy 8trium developer",
+    "status": "Available"
   },
   {
     "id": 1773877619191,
@@ -112,7 +114,8 @@ const LISTINGS = [
       "RA6 (16).jpeg",
       "RA6 (17).jpeg"
     ],
-    "privateNotes": "Michelle #A23-03-@Residensi Ava for rent (6) Teo , +60 12-680 4698"
+    "privateNotes": "Michelle #A23-03-@Residensi Ava for rent (6) Teo , +60 12-680 4698",
+    "status": "Available"
   },
   {
     "id": 1773876991951,
