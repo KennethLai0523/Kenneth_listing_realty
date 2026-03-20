@@ -6,7 +6,7 @@
   <title>Kenneth Lai Property Listings</title>
   <meta
     name="description"
-    content="Property listings by Kenneth Lai. Browse residential, commercial, and industrial listings with direct WhatsApp contact."
+    content="Property listings by Kenneth Lai. Browse residential, commercial, industrial, land, and new project listings with direct WhatsApp contact."
   />
   <style>
     * {
@@ -171,8 +171,6 @@
       font-size: 14px;
       font-weight: 700;
       cursor: pointer;
-      background: #efe5d7;
-      color: #6c4d1b;
       transition: 0.2s ease;
     }
 
@@ -180,10 +178,55 @@
       transform: translateY(-1px);
     }
 
-    .toggle-btn.active {
+    .listing-toggle {
+      background: #efe5d7;
+      color: #6c4d1b;
+    }
+
+    .listing-toggle.active {
       background: #b88a3b;
       color: white;
       box-shadow: 0 8px 18px rgba(184, 138, 59, 0.22);
+    }
+
+    .asking-toggle {
+      background: #e6eefc;
+      color: #2d5ea8;
+    }
+
+    .asking-toggle.active {
+      background: #2f6fed;
+      color: white;
+      box-shadow: 0 8px 18px rgba(47, 111, 237, 0.22);
+    }
+
+    .category-branch {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .branch-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      background: #f5efe6;
+      color: #6c5a45;
+      transition: 0.2s ease;
+    }
+
+    .branch-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .branch-btn.active {
+      background: #1f1f1f;
+      color: white;
+      box-shadow: 0 8px 18px rgba(31, 31, 31, 0.18);
     }
 
     .contact-card {
@@ -192,6 +235,7 @@
       justify-content: space-between;
       background: linear-gradient(135deg, #111111, #2b2b2b);
       color: white;
+      position: relative;
     }
 
     .contact-label {
@@ -224,6 +268,18 @@
       color: rgba(255, 255, 255, 0.75);
       line-height: 1.6;
       margin-bottom: 18px;
+    }
+
+    .agent-photo-top {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
     }
 
     .listing-grid {
@@ -540,22 +596,6 @@
         height: 40px;
       }
     }
-
-    .contact-card {
-      position: relative;
-    }
-    
-    .agent-photo-top {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 70px;
-      height: 70px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-    }
   </style>
 </head>
 <body>
@@ -565,7 +605,7 @@
         <div class="hero-badge">Property Listings by Kenneth Lai</div>
         <h1>Find the Right Property with Direct Agent Contact</h1>
         <p>
-          Browse available residential, commercial, and industrial listings with clear photos,
+          Browse available residential, commercial, industrial, land, and new project listings with clear photos,
           key property details, and fast WhatsApp contact for enquiries and viewing arrangements.
         </p>
 
@@ -591,13 +631,22 @@
         />
 
         <div class="mode-toggle">
-          <button id="listingBtn" class="toggle-btn active" onclick="setMode('listing')">Listing</button>
-          <button id="askingBtn" class="toggle-btn" onclick="setMode('asking')">Asking</button>
+          <button id="listingBtn" class="toggle-btn listing-toggle active" onclick="setMode('listing')">Listing</button>
+          <button id="askingBtn" class="toggle-btn asking-toggle" onclick="setMode('asking')">Asking</button>
+        </div>
+
+        <div class="category-branch" id="categoryBranch">
+          <button class="branch-btn active" onclick="setListingCategory('all')">All</button>
+          <button class="branch-btn" onclick="setListingCategory('residential')">Residential</button>
+          <button class="branch-btn" onclick="setListingCategory('commercial')">Commercial</button>
+          <button class="branch-btn" onclick="setListingCategory('industrial')">Industrial</button>
+          <button class="branch-btn" onclick="setListingCategory('land')">Land</button>
+          <button class="branch-btn" onclick="setListingCategory('new project')">New Project</button>
         </div>
       </div>
 
       <div class="section-card contact-card">
-        <img src="kenneth_listing_website_photo.jpg" class="agent-photo-top">
+        <img src="kenneth_listing_website_photo.jpg" class="agent-photo-top" alt="Kenneth Lai">
 
         <div>
           <div class="contact-label">Direct Contact</div>
@@ -638,6 +687,7 @@
   <script src="listings.js"></script>
   <script>
     let currentMode = "listing";
+    let currentListingCategory = "all";
 
     let data = LISTINGS.map(item => ({
       ...item,
@@ -647,6 +697,64 @@
 
     function safe(value) {
       return value ? value : "";
+    }
+
+    function normalizeCategoryValue(value) {
+      return String(value || "")
+        .toLowerCase()
+        .replace(/&/g, "and")
+        .replace(/[_-]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function getListingCategory(item) {
+      const explicitCategory =
+        item.category ||
+        item.listingCategory ||
+        item.propertyCategory ||
+        item.branch ||
+        item.sector ||
+        "";
+
+      const normalizedExplicit = normalizeCategoryValue(explicitCategory);
+
+      if (normalizedExplicit) {
+        if (normalizedExplicit.includes("new project") || normalizedExplicit.includes("project")) return "new project";
+        if (normalizedExplicit.includes("residential")) return "residential";
+        if (normalizedExplicit.includes("commercial")) return "commercial";
+        if (normalizedExplicit.includes("industrial")) return "industrial";
+        if (normalizedExplicit.includes("land")) return "land";
+      }
+
+      const combined = normalizeCategoryValue([
+        item.title,
+        item.location,
+        item.description,
+        item.propertyType,
+        item.purpose,
+        item.buyerLabel
+      ].join(" "));
+
+      if (
+        combined.includes("new project") ||
+        combined.includes("new launch") ||
+        combined.includes("pre sale") ||
+        combined.includes("presale") ||
+        combined.includes("under construction")
+      ) return "new project";
+
+      if (combined.includes("land") || combined.includes("agricultural") || combined.includes("development land")) return "land";
+      if (combined.includes("factory") || combined.includes("warehouse") || combined.includes("industrial")) return "industrial";
+      if (
+        combined.includes("shop") ||
+        combined.includes("office") ||
+        combined.includes("retail") ||
+        combined.includes("commercial") ||
+        combined.includes("shoplot")
+      ) return "commercial";
+
+      return "residential";
     }
 
     function getStatusClass(status) {
@@ -666,16 +774,36 @@
       const title = document.getElementById("searchTitle");
       const subtitle = document.getElementById("searchSubtitle");
       const searchBox = document.getElementById("search");
+      const categoryBranch = document.getElementById("categoryBranch");
 
       if (mode === "listing") {
         title.textContent = "Available Listings";
         subtitle.textContent = "Search by project name, location, or keyword to quickly find the property you are looking for.";
         searchBox.placeholder = "Search project, location, keyword...";
+        categoryBranch.style.display = "flex";
       } else {
         title.textContent = "Asking Requests";
         subtitle.textContent = "Browse what buyers or tenants are currently looking for by budget, area, or requirement.";
         searchBox.placeholder = "Search budget, area, requirement...";
+        categoryBranch.style.display = "none";
       }
+
+      render();
+    }
+
+    function setListingCategory(category) {
+      currentListingCategory = category;
+
+      const buttons = document.querySelectorAll("#categoryBranch .branch-btn");
+      buttons.forEach(btn => {
+        btn.classList.remove("active");
+        if (btn.textContent.toLowerCase() === category) {
+          btn.classList.add("active");
+        }
+        if (category === "all" && btn.textContent.toLowerCase() === "all") {
+          btn.classList.add("active");
+        }
+      });
 
       render();
     }
@@ -749,6 +877,7 @@
       const currentIndex = item.index >= photos.length ? 0 : item.index;
       const currentPhoto = photos[currentIndex];
       const statusText = safe(item.status) || "Available";
+      const categoryText = getListingCategory(item);
 
       return `
         <article class="listing-card">
@@ -756,6 +885,7 @@
             <img src="${currentPhoto}" alt="${safe(item.title) || "Property Listing"}" />
 
             <div class="media-overlay">
+              ${categoryText ? `<span class="media-chip">${categoryText.replace(/\b\w/g, c => c.toUpperCase())}</span>` : ""}
               ${item.purpose ? `<span class="media-chip">${item.purpose}</span>` : ""}
               ${item.propertyType ? `<span class="media-chip">${item.propertyType}</span>` : ""}
             </div>
@@ -778,6 +908,7 @@
             </div>
 
             <div class="tag-row">
+              <span class="tag">${categoryText.replace(/\b\w/g, c => c.toUpperCase())}</span>
               ${item.purpose ? `<span class="tag">${item.purpose}</span>` : ""}
               ${item.propertyType ? `<span class="tag">${item.propertyType}</span>` : ""}
               ${item.buyerLabel ? `<span class="tag">${item.buyerLabel}</span>` : ""}
@@ -835,6 +966,11 @@
 
         if (itemType !== currentMode) return false;
 
+        if (currentMode === "listing" && currentListingCategory !== "all") {
+          const itemCategory = getListingCategory(item);
+          if (itemCategory !== currentListingCategory) return false;
+        }
+
         let text = "";
 
         if (currentMode === "asking") {
@@ -860,7 +996,13 @@
             item.tenure,
             item.propertyType,
             item.purpose,
-            item.status
+            item.status,
+            item.category,
+            item.listingCategory,
+            item.propertyCategory,
+            item.branch,
+            item.sector,
+            getListingCategory(item)
           ].join(" ").toLowerCase();
         }
 
@@ -868,9 +1010,13 @@
       });
 
       if (filtered.length === 0) {
+        const categoryText = currentMode === "listing" && currentListingCategory !== "all"
+          ? ` under ${currentListingCategory.replace(/\b\w/g, c => c.toUpperCase())}`
+          : "";
+
         document.getElementById("listings").innerHTML = `
           <div class="empty">
-            <h3 style="margin-top:0;">No ${currentMode === "listing" ? "listings" : "asking requests"} found</h3>
+            <h3 style="margin-top:0;">No ${currentMode === "listing" ? "listings" : "asking requests"} found${categoryText}</h3>
             <p>Try a different keyword or contact Kenneth Lai for more options.</p>
           </div>
         `;
