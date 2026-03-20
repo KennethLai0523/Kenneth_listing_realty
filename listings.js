@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1774021203402,
+    "type": "listing",
+    "category": "Land",
+    "title": "Taman desa",
+    "location": "Taman desa, Old Klang Road, Kuala Lumpur",
+    "price": "For Sale : RM 6mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "16,000 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "Development Potential:\n• DBKL approval for development (up to 5-storey / approx. 10 units)\n• Suitable for bungalow project or boutique development\n• Tested solid ground – suitable for construction without piling\n\n• Approved architect & engineer plans available\n\nSelling Price: RM6,000,000",
+    "whatsapp": "60166287357",
+    "photos": [
+      "tamandesaslopeland.jpeg"
+    ],
+    "privateNotes": "slope land 11k flat + 5k slope \n\numtc my taman desa 11000 sqft + 5000 sqft total 16000 sqft freehold\n\n+60 19-340 3093",
+    "status": "Available"
+  },
+  {
     "id": 1774020111969,
     "type": "listing",
     "category": "Commercial",
