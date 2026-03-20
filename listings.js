@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1774018764898,
+    "type": "listing",
+    "category": "Land",
+    "title": "Kampung Sungai Penchala",
+    "location": "Mont Kiara, KL",
+    "price": "3.93Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1.64 acres (≈ 71,450 sqft)",
+    "furnishing": "-",
+    "tenure": "Malay Reserve",
+    "description": "Malay Reserved Land For Sale – Kg Sungai Penchala, Kuala Lumpur\n\n✔ Land Size: 1.64 acres (≈ 71,450 sqft)\n✔ Approx. RM55 psf\n✔ Survey-verified cadastral lot (NDCDB)\n✔ Clear boundary & ownership\n\nLocation Highlights:\n• Strategic KL location\n• 5–10 mins to TTDI, Damansara Perdana, Mont Kiara & One Utama\n• Peaceful kampung environment surrounded by greenery\n• Close to major amenities & city access\n\nSpecial Features:\n• Existing natural ground water source\n• Suitable for irrigation or private use\n• Flat & usable land condition (agriculture – fruit trees/rubber)\n\nSuitable for:\n• Private bungalow / villa estate\n• Boutique residential development\n• Long-term land banking",
+    "whatsapp": "60166287357",
+    "photos": [
+      "mont_kiara_land_sale_no1.jpg"
+    ],
+    "privateNotes": "Malay reserve \nAshraf Faris Malay reserve mont kiara kampung sungai penchala 3.93mil\n+60 12-291 3253",
+    "status": "Available"
+  },
+  {
     "id": 1774017588320,
     "type": "listing",
     "category": "Residential",
