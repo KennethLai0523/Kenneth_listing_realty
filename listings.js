@@ -6,7 +6,7 @@ const LISTINGS = [
     "title": "Leverra @ Sri Damansara",
     "location": "Sri Damansara, Kuala Lumpur",
     "price": "For sale : From 4XX,XXX",
-    "rooms": "2-3",
+    "rooms": "2-4",
     "bathrooms": "2-3",
     "builtup": "725 - 1150 sqft",
     "furnishing": "Empty - Fully Furnished",
