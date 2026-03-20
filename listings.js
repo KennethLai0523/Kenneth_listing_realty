@@ -1,5 +1,30 @@
 const LISTINGS = [
   {
+    "id": 1774028640623,
+    "type": "listing",
+    "category": "New Project",
+    "title": "Galaxy Walk @ Puncak Alam (Retail Hub / Lifestyle Mall)",
+    "location": "Puncak Alam, Selangor",
+    "price": "For Sale : From 3mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1,800 - 6,800 sqft",
+    "furnishing": "-",
+    "tenure": "Strata Commercial",
+    "description": "Galaxy Walk is a premium integrated retail hub within the Galaxy Exchange masterplan, designed as the central lifestyle and commercial destination in Puncak Alam.\n\nFeaturing only 20 exclusive bungalow-style retail units, the development offers a pedestrian-friendly environment with shaded walkways, open courtyards, and green spaces, creating a unique shopping and dining experience.\n\nStrategically positioned as the primary retail pulse for the surrounding precinct, Galaxy Walk is supported by strong residential catchment, universities, and growing population, making it ideal for F&B, café, lifestyle brands, and retail concepts.\n\nAnchored by Bizmilla Wedding Hall (up to 1,000 pax capacity) and Bgrocer supermarket, the project benefits from consistent footfall, event-driven traffic, and strong daily visitation, enhancing business sustainability and long-term value.\n\nWith upcoming infrastructure such as DASH Highway extension and future ECRL station, Galaxy Walk is set to become a key commercial and lifestyle destination in the area.\n\nSuitable for own business or investment.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "GalaxyWalk (1).jpeg",
+      "GalaxyWalk (2).jpeg",
+      "GalaxyWalk (3).jpeg",
+      "GalaxyWalk (4).jpeg",
+      "GalaxyWalk (5).jpeg",
+      "GalaxyWalk (6).jpeg"
+    ],
+    "privateNotes": "Galaxy walk(shopping mall at centre for retail) & galaxy avenue(shoplot), company new project",
+    "status": "Available"
+  },
+  {
     "id": 1774027931295,
     "type": "listing",
     "category": "New Project",
