@@ -1,5 +1,36 @@
 const LISTINGS = [
   {
+    "id": 1774027931295,
+    "type": "listing",
+    "category": "New Project",
+    "title": "Galaxy Avenue @ Puncak Alam (2-Storey Shoplot)",
+    "location": "Puncak Alam, Selangor",
+    "price": "For Sale : RM 700 - 850 psf, From 2 Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "2930 - 3765 sqft",
+    "furnishing": "-",
+    "tenure": "Leasehold (Individual Title)",
+    "description": "Galaxy Avenue is a brand new 2-storey commercial shoplot development strategically located in the heart of Puncak Alam. Positioned along the main road (Persiaran Mokhtar Dahari), the project offers excellent visibility, accessibility, and strong business exposure.\n\nBuilt-ups range from 2,930 sqft to 3,765 sqft, suitable for F&B, retail, office, and lifestyle businesses. Designed with modern architecture, full glass frontage, and double-volume ceiling, allowing flexible layout and strong branding presence.\n\nSurrounded by a rapidly growing township with high population catchment, nearby universities, and established residential areas, this development offers strong rental demand and long-term capital appreciation potential.\n\nExcellent connectivity via major highways including LATAR, DASH, GCE, and upcoming ECRL station, making it a strategic commercial hub for future growth.\n\nSuitable for own business use or investment.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Galaxy_Avenue (1).jpeg",
+      "Galaxy_Avenue (2).jpeg",
+      "Galaxy_Avenue (3).jpeg",
+      "Galaxy_Avenue (4).jpeg",
+      "Galaxy_Avenue (5).jpeg",
+      "Galaxy_Avenue (6).jpeg",
+      "Galaxy_Avenue (7).jpeg",
+      "Galaxy_Avenue (8).jpeg",
+      "Galaxy_Avenue (9).jpeg",
+      "Galaxy_Avenue (10).jpeg",
+      "Galaxy_Avenue (11).jpeg",
+      "Galaxy_Avenue (12).jpeg"
+    ],
+    "privateNotes": "Galaxy avenue whatsapp group company new project",
+    "status": "Available"
+  },
+  {
     "id": 1774021203402,
     "type": "listing",
     "category": "Land",
