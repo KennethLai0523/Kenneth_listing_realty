@@ -1,5 +1,38 @@
 const LISTINGS = [
   {
+    "id": 1774017588320,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Puncak Seri Kelana Condo | Near LRT | Fully Furnished",
+    "location": "Ara Damansara, Selangor",
+    "price": "For Rent : RM 2600/month",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "1,100 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "Leasehold",
+    "description": "Puncak Seri Kelana Condominium @ Ara Damansara\n\n✔ 3 Bedrooms 2 Bathrooms\n✔ 2 Car Parks\n✔ 1,100 sqft\n✔ Fully Furnished\n✔ High Floor\n\nLocation Highlights:\n• Walking distance to LRT Ara Damansara\n• Easy access to major highways\n• Mature and convenient neighbourhood\n\nFacilities:\n• Swimming Pool\n• Gymnasium\n• Playground\n• 24-hour Security\n• Parking & Minimart\n\nSuitable for family, working adults, or students.\n\nRental: RM2,600/month\n(Option to negotiate if only 1 car park required)\n\nFor viewing & details, contact:\nKenneth Lai – 0166287357",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Ara DamansaraNo1 (1).jpeg",
+      "Ara DamansaraNo1 (2).jpeg",
+      "Ara DamansaraNo1 (3).jpeg",
+      "Ara DamansaraNo1 (4).jpeg",
+      "Ara DamansaraNo1 (5).jpeg",
+      "Ara DamansaraNo1 (6).jpeg",
+      "Ara DamansaraNo1 (7).jpeg",
+      "Ara DamansaraNo1 (1).jpeg",
+      "Ara DamansaraNo1 (8).jpeg",
+      "Ara DamansaraNo1 (9).jpeg",
+      "Ara DamansaraNo1 (10).jpeg",
+      "Ara DamansaraNo1 (11).jpeg",
+      "Ara DamansaraNo1 (12).jpeg",
+      "Ara DamansaraNo1 (13).jpeg"
+    ],
+    "privateNotes": "Carl ara damansara for rent\n+60 17-716 5153",
+    "status": "Available"
+  },
+  {
     "id": 1774007330193,
     "type": "listing",
     "category": "Commercial",
