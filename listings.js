@@ -1,5 +1,27 @@
 const LISTINGS = [
   {
+    "id": 1774007330193,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Commercial office building",
+    "location": "Old Klang Road, Kuala Lumpur",
+    "price": "For Sale : RM 8Mil ",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "10,000 sqft - 15,000 sqft",
+    "furnishing": "-",
+    "tenure": "Leasehold 70years",
+    "description": "Facing main road, fully partitioned\n",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Old_klang_road (1).jpeg",
+      "Old_klang_road (2).jpeg",
+      "Old_klang_road (3).jpeg"
+    ],
+    "privateNotes": "Old klang road from mudah",
+    "status": "Available"
+  },
+  {
     "id": 1774005605425,
     "type": "listing",
     "category": "New Project",
