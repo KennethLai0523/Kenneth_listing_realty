@@ -1,25 +1,5 @@
 const LISTINGS = [
   {
-    "id": 1774016906679,
-    "type": "listing",
-    "category": "Industrial",
-    "title": "Corner Factory",
-    "location": "Taman Muda, Ampang KL",
-    "price": "RM 3Mil ",
-    "rooms": "-",
-    "bathrooms": "-",
-    "builtup": "3,500 sqft (single level)",
-    "furnishing": "Newly renovated",
-    "tenure": "Leasehold (86 years, renewed)",
-    "description": "100 amp power \n30ft - 50ft wide road access \n5-10 parking available for heavy ton truck ",
-    "whatsapp": "60166287357",
-    "photos": [
-      "kampung_cheras_ampang_No1.jpg"
-    ],
-    "privateNotes": "Mudah \nAi Ampang Kampung cheras baru 3Mil factory sell\n+60 11-3778 4019",
-    "status": "Available"
-  },
-  {
     "id": 1774007330193,
     "type": "listing",
     "category": "Commercial",
