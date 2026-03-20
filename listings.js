@@ -1,25 +1,8 @@
 const LISTINGS = [
   {
-    "id": 1774003382142,
-    "type": "listing",
-    "category": "New Project",
-    "title": "hihi",
-    "location": "testing",
-    "price": "777",
-    "rooms": "",
-    "bathrooms": "",
-    "builtup": "",
-    "furnishing": "",
-    "tenure": "",
-    "description": "",
-    "whatsapp": "",
-    "photos": [],
-    "privateNotes": "",
-    "status": "Available"
-  },
-  {
     "id": 1773929534795,
     "type": "listing",
+    "category": "Industrial",
     "title": "Factory",
     "location": "Sungai Buloh",
     "price": "For rent : RM1.6 per sqft",
@@ -39,6 +22,7 @@ const LISTINGS = [
   {
     "id": 1773929269996,
     "type": "listing",
+    "category": "Residential",
     "title": "Semi-D Corner Bungalow",
     "location": "Bukit Rahman Putra (BRP5), Sungai Buloh",
     "price": "For Sale : RM2.5mil",
@@ -82,6 +66,7 @@ const LISTINGS = [
   {
     "id": 1773912587729,
     "type": "listing",
+    "category": "Residential",
     "title": "Endah Ria Apartment",
     "location": "Bukit Jalil, Kuala Lumpur",
     "price": "For Rent : RM1,900",
@@ -108,6 +93,7 @@ const LISTINGS = [
   {
     "id": 1773911871818,
     "type": "listing",
+    "category": "Commercial",
     "title": "The Core - Office Unit ",
     "location": "Kota Damansara, Selangor",
     "price": "For Sale : RM340,000 ",
@@ -132,6 +118,7 @@ const LISTINGS = [
   {
     "id": 1773911091378,
     "type": "listing",
+    "category": "Industrial",
     "title": "2-Storey Industrial Shoplot",
     "location": "Kepong, Kuala Lumpur",
     "price": "For Sale : RM1.7Mil",
@@ -151,6 +138,7 @@ const LISTINGS = [
   {
     "id": 1773910404389,
     "type": "listing",
+    "category": "Commercial",
     "title": "Putra Walk",
     "location": "Seri Kembangan, Selangor",
     "price": "For Sale : RM950,000",
@@ -170,6 +158,7 @@ const LISTINGS = [
   {
     "id": 1773910107922,
     "type": "listing",
+    "category": "Residential",
     "title": "Mercu Jalil",
     "location": "Bukit Jalil, Kuala Lumpur",
     "price": "For Rent : RM2,300/month",
@@ -196,6 +185,7 @@ const LISTINGS = [
   {
     "id": 1773909605849,
     "type": "listing",
+    "category": "Commercial",
     "title": "Seria 88 - Commercial 4 storey shoplot",
     "location": "Bandar Setia Alam, Selangor",
     "price": "For Sale : RM5 mil (negoatiable) ",
@@ -218,6 +208,7 @@ const LISTINGS = [
   {
     "id": 1773909301643,
     "type": "listing",
+    "category": "Commercial",
     "title": "Summit USJ Mall",
     "location": "Subang Jaya, Selangor ",
     "price": "Sale Price : RM1,100,000",
@@ -240,6 +231,7 @@ const LISTINGS = [
   {
     "id": 1773903222862,
     "type": "listing",
+    "category": "Commercial",
     "title": "SetiaWalk - Commercial Office",
     "location": "Puchong, Selangor ",
     "price": "For Sale : RM800,000 , For Rent : RM3,100/month",
@@ -269,6 +261,7 @@ const LISTINGS = [
   {
     "id": 1773902853251,
     "type": "listing",
+    "category": "Residential",
     "title": "Unio Residence",
     "location": "Kepong, Kuala Lumpur",
     "price": "For Sale : RM550,000",
@@ -294,6 +287,7 @@ const LISTINGS = [
   {
     "id": 1773902473891,
     "type": "listing",
+    "category": "Residential",
     "title": "M Luna apartment - Lake View",
     "location": "Kepong, Kuala Lumpur",
     "price": "For Sale : RM950,000",
@@ -321,6 +315,7 @@ const LISTINGS = [
   {
     "id": 1773902142249,
     "type": "listing",
+    "category": "Residential",
     "title": "Taman Usaha Jaya - 2 storey terrace house",
     "location": "Taman Usaha Jaya, Kepong, Kuala Lumpur",
     "price": "For Sale : RM500,000",
@@ -344,6 +339,7 @@ const LISTINGS = [
   {
     "id": 1773901261965,
     "type": "listing",
+    "category": "Residential",
     "title": "M Luna apartment - corner unit - Lake view",
     "location": "Kiara Bay, Kepong",
     "price": "For Sale : RM600,000",
@@ -374,6 +370,7 @@ const LISTINGS = [
   {
     "id": 1773900640367,
     "type": "listing",
+    "category": "Residential",
     "title": "The Henge",
     "location": "Kepong, Kuala Lumpur",
     "price": "For Sale : RM 490,000",
@@ -410,6 +407,7 @@ const LISTINGS = [
   {
     "id": 1773898981565,
     "type": "listing",
+    "category": "Residential",
     "title": "Bandar Sri Damansara - 2 Storey Terrace House ",
     "location": "Bandar Sri Damansara, Kuala Lumpur",
     "price": "For Rent : RM2,500/month",
@@ -443,6 +441,7 @@ const LISTINGS = [
   {
     "id": 1773898469164,
     "type": "listing",
+    "category": "Residential",
     "title": "Gambira Residence",
     "location": "Kuchai Lama, Kuala Lumpur",
     "price": "For Sale : RM890,000",
@@ -473,6 +472,7 @@ const LISTINGS = [
   {
     "id": 1773897846223,
     "type": "listing",
+    "category": "Residential",
     "title": "The Henge",
     "location": "Kepong, Kuala Lumpur",
     "price": "For Sale : RM640,000 , For Rent : RM2,500/month",
@@ -519,6 +519,7 @@ const LISTINGS = [
   {
     "id": 1773897327056,
     "type": "listing",
+    "category": "Residential",
     "title": "Abadi Indah",
     "location": "Taman Desa, Kuala Lumpur (Near Cheras)",
     "price": "For Sale : RM340,000",
@@ -547,6 +548,7 @@ const LISTINGS = [
   {
     "id": 1773894737531,
     "type": "listing",
+    "category": "Residential",
     "title": "Sri Damansara 2 Storey Terrace",
     "location": "Sri Damansara, Kuala Lumpur",
     "price": "For Sale : RM1.5 Mil , For Rent : RM2,800/month",
@@ -577,6 +579,7 @@ const LISTINGS = [
   {
     "id": 1773893951166,
     "type": "listing",
+    "category": "New Project",
     "title": "Emhub @Bukit Raja Commercial unit",
     "location": "Klang, Selangor",
     "price": "Rm 150 - 200 psf",
@@ -617,6 +620,7 @@ const LISTINGS = [
   {
     "id": 1773892656321,
     "type": "listing",
+    "category": "Residential",
     "title": "Bandar Sri Damansara - End Lot 2 storey Terrace",
     "location": "Sri Damansara, Kuala Lumpur",
     "price": "For Sale : RM1.2Mil , For Rent : RM2,500/month",
@@ -649,6 +653,7 @@ const LISTINGS = [
   {
     "id": 1773892254532,
     "type": "listing",
+    "category": "Residential",
     "title": "Bandar Sri Damansara - 2 storey Terrace",
     "location": "Sri Damansara, Kuala Lumpur",
     "price": "For Sale : RM1.2Mil",
@@ -685,6 +690,7 @@ const LISTINGS = [
   {
     "id": 1773891614530,
     "type": "listing",
+    "category": "Industrial",
     "title": "Sungai Buloh Factory",
     "location": "Sungai Buloh, Selangor",
     "price": "For Rent : RM15,000/month",
@@ -703,6 +709,8 @@ const LISTINGS = [
   },
   {
     "id": 1773888817373,
+    "type": "listing",
+    "category": "Residential",
     "title": "Westside One @ Desa ParkCity ",
     "location": "Desa ParkCity, Kuala Lumpur",
     "price": "For Rent : RM5,500/month",
@@ -726,6 +734,8 @@ const LISTINGS = [
   },
   {
     "id": 1773880488466,
+    "type": "listing",
+    "category": "Commercial",
     "title": "8trium - Front Facing shoplot",
     "location": "Sri Damansara",
     "price": "For Rent : RM2.90psf",
@@ -754,6 +764,8 @@ const LISTINGS = [
   },
   {
     "id": 1773879543969,
+    "type": "listing",
+    "category": "Commercial",
     "title": "8trium - Rear Facing shoplot",
     "location": "Sri Damansara",
     "price": "For Rent : RM2.70psf",
@@ -793,6 +805,8 @@ const LISTINGS = [
   },
   {
     "id": 1773877619191,
+    "type": "listing",
+    "category": "Residential",
     "title": "Residensi Ava @ Kiara Bay",
     "location": "Kiara Bay / Kepong",
     "price": "For Rent : RM 3,800/month",
@@ -828,6 +842,8 @@ const LISTINGS = [
   },
   {
     "id": 1773876991951,
+    "type": "listing",
+    "category": "Residential",
     "title": "Residensi Ava @ Kiara Bay",
     "location": "Kiara Bay / Kepong",
     "price": "For Sale : RM 590,000",
@@ -847,7 +863,8 @@ const LISTINGS = [
       "RA7 (6).jpeg",
       "RA7 (7).jpeg"
     ],
-    "privateNotes": "SWLim @residency ava (7) , +60 12-208 1990"
+    "privateNotes": "SWLim @residency ava (7) , +60 12-208 1990",
+    "status": "Available"
   },
   {
     "id": 1773875829820,
