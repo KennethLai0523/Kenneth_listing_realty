@@ -18,7 +18,7 @@ const LISTINGS = [
       "Old_klang_road (2).jpeg",
       "Old_klang_road (3).jpeg"
     ],
-    "privateNotes": "Old klang road from mudah",
+    "privateNotes": "Old klang road from mudah\n\nAlan Lee Commercial office 8 million (waiting for photo without watermark)\n\n+60 19-663 5154",
     "status": "Available"
   },
   {
