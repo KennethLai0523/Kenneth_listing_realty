@@ -1,5 +1,23 @@
 const LISTINGS = [
   {
+    "id": 1774003382142,
+    "type": "listing",
+    "category": "New Project",
+    "title": "hihi",
+    "location": "testing",
+    "price": "777",
+    "rooms": "",
+    "bathrooms": "",
+    "builtup": "",
+    "furnishing": "",
+    "tenure": "",
+    "description": "",
+    "whatsapp": "",
+    "photos": [],
+    "privateNotes": "",
+    "status": "Available"
+  },
+  {
     "id": 1773929534795,
     "type": "listing",
     "title": "Factory",
@@ -833,6 +851,8 @@ const LISTINGS = [
   },
   {
     "id": 1773875829820,
+    "type": "listing",
+    "category": "Residential",
     "title": "Residensi Ava @ Kiara Bay",
     "location": "Kiara Bay / Kepong",
     "price": "For Sale : RM 850,000",
@@ -850,10 +870,13 @@ const LISTINGS = [
       "RA3 (4).jpeg",
       "RA3 (5).jpeg"
     ],
-    "privateNotes": "Co broke with mummy"
+    "privateNotes": "Co broke with mummy",
+    "status": "Available"
   },
   {
     "id": 1773875638456,
+    "type": "listing",
+    "category": "Residential",
     "title": "Residensi Ava @ Kiara Bay",
     "location": "Kiara Bay / Kepong",
     "price": "For Sale : RM 610,000",
@@ -878,6 +901,7 @@ const LISTINGS = [
       "RA2(11).jpeg",
       "RA2(12).jpeg"
     ],
-    "privateNotes": "#A-07-07-@Residensi Ava(2) for sale , +60 11-2549 3614"
+    "privateNotes": "#A-07-07-@Residensi Ava(2) for sale , +60 11-2549 3614",
+    "status": "Available"
   }
 ];
