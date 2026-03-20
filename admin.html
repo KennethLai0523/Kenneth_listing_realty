@@ -174,6 +174,36 @@ margin-top:-4px;
 margin-bottom:10px;
 }
 
+.type-badge{
+display:inline-block;
+padding:4px 10px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+margin-top:6px;
+color:white;
+}
+
+.type-listing{
+background:#28a745;
+}
+
+.type-asking{
+background:#2f6fed;
+}
+
+.category-badge{
+display:inline-block;
+padding:4px 10px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+margin-top:6px;
+background:#222;
+color:white;
+margin-left:8px;
+}
+
 </style>
 
 </head>
@@ -198,6 +228,15 @@ margin-bottom:10px;
 </div>
 
 <div id="listingFields">
+  <select id="category">
+    <option value="Residential">Residential</option>
+    <option value="Commercial">Commercial</option>
+    <option value="Industrial">Industrial</option>
+    <option value="Land">Land</option>
+    <option value="New Project">New Project</option>
+  </select>
+  <div class="small-note">Choose the branch for this listing.</div>
+
   <input id="title" placeholder="Title">
   <input id="location" placeholder="Location">
   <input id="rooms" placeholder="Rooms">
@@ -322,6 +361,7 @@ document.getElementById("mainActionBtn").innerText=editingId!==null ? "Update Li
 
 function clearForm(){
 document.getElementById("type").value="listing"
+document.getElementById("category").value="Residential"
 
 document.getElementById("title").value=""
 document.getElementById("location").value=""
@@ -371,6 +411,7 @@ status:selectedStatus
 return {
 id: existingId || Date.now(),
 type:"listing",
+category:document.getElementById("category").value,
 title:document.getElementById("title").value,
 location:document.getElementById("location").value,
 price:document.getElementById("price").value,
@@ -420,6 +461,7 @@ document.getElementById("askingTitle").value=item.title || ""
 document.getElementById("askingLocation").value=item.location || ""
 document.getElementById("askingArea").value=item.area || item.builtup || ""
 
+document.getElementById("category").value="Residential"
 document.getElementById("title").value=""
 document.getElementById("location").value=""
 document.getElementById("rooms").value=""
@@ -429,6 +471,7 @@ document.getElementById("furnishing").value=""
 document.getElementById("tenure").value=""
 document.getElementById("photos").value=""
 }else{
+document.getElementById("category").value=item.category || item.listingCategory || item.propertyCategory || "Residential"
 document.getElementById("title").value=item.title || ""
 document.getElementById("location").value=item.location || ""
 document.getElementById("rooms").value=item.rooms || ""
@@ -507,12 +550,21 @@ items.forEach(x=>{
 
 let status=x.status || "Available"
 let type=x.type || "listing"
+let typeBadge=type==="asking"
+? "<span class='type-badge type-asking'>ASKING</span>"
+: "<span class='type-badge type-listing'>LISTING</span>"
+
+let categoryBadge=type==="listing" && x.category
+? `<span class="category-badge">${x.category}</span>`
+: ""
 
 html+=`
 <div class="item">
 
 <b>${x.title||"(No title)"}</b><br>
-${type==="asking" ? "<span style='color:#2f6fed;font-weight:bold;'>ASKING</span><br>" : "<span style='color:#28a745;font-weight:bold;'>LISTING</span><br>"}
+${typeBadge}
+${categoryBadge}
+<br>
 ${x.location||""} ${x.price||""}
 
 <br>
