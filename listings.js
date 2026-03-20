@@ -1,11 +1,31 @@
 const LISTINGS = [
   {
+    "id": 1774020111969,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Shoplot Ground + 1st Floor",
+    "location": "Pudu, KL",
+    "price": "For Sale : RM 3.8 Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "8,000 - 10,000 sqft",
+    "furnishing": "-",
+    "tenure": "Leasehold (approx. 50 years remaining)",
+    "description": "Ground + 1st Floor Shoplot For Sale – KL\n\n✔ Tenanted unit (good for investment)\n✔ Ground Floor Rental: RM12,000/month\n✔ 1st Floor Rental: RM4,500/month\n✔ Total Rental: RM16,500/month",
+    "whatsapp": "60166287357",
+    "photos": [
+      "PudushoplotNo1.jpeg"
+    ],
+    "privateNotes": "Pudu KL, \nFoo CC PUDU , KL shoplot mudah : https://www.mudah.my/for-sale-114157657.htm\n+60 12-370 9023",
+    "status": "Available"
+  },
+  {
     "id": 1774018764898,
     "type": "listing",
     "category": "Land",
     "title": "Kampung Sungai Penchala",
     "location": "Mont Kiara, KL",
-    "price": "3.93Mil",
+    "price": "For Sale : RM 3.93Mil",
     "rooms": "-",
     "bathrooms": "-",
     "builtup": "1.64 acres (≈ 71,450 sqft)",
