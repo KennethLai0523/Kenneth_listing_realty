@@ -4,7 +4,7 @@ const LISTINGS = [
     "type": "listing",
     "category": "Land",
     "title": "Development Land",
-    "location": "Titiwangsa",
+    "location": "Titiwangsa, Kuala Lumpur",
     "price": "For Sale : RM 40-60Million",
     "rooms": "-",
     "bathrooms": "-",
