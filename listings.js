@@ -1,5 +1,91 @@
 const LISTINGS = [
   {
+    "id": 1774113144936,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Shoplot @Ground floor",
+    "location": "Kepong, Kuala Lumpur",
+    "price": "For Sale : RM 2.5 Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1700 sqft",
+    "furnishing": "-",
+    "tenure": "Leasehold (Remaining 90 years)",
+    "description": "🏢 Property Details:\n• Property Type: Shop Lot\n• Tenure: Leasehold (Remaining 90 years)\n• Land Title: Non-Bumi Lot\n• Facing main road (high visibility)\n• Suitable for investment or own business\n\n🚀 Highlights:\n• Main road frontage with high exposure\n• Surrounded by residential catchment\n• Good rental return\n• Established commercial area in Kepong",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Kepongshopaeon2storey.jpeg"
+    ],
+    "privateNotes": "Ideal LED Jeffrey kepong fortune perdana 2.45mil\n+60 12-336 8808",
+    "status": "Available"
+  },
+  {
+    "id": 1774112807183,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "KL Trillion Office building",
+    "location": "City Centre, KL",
+    "price": "For Sale : RM 1.1 Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1055 sqft",
+    "furnishing": "Fully renovated",
+    "tenure": "Freehold",
+    "description": "High floor unit with excellent natural lighting, offering a quiet and comfortable working environment. Strategically located in KL City Centre, providing easy access to amenities, public transport, and major business hubs. Ideal for companies seeking a prestigious office address with a productive atmosphere.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "KL_Trillion_office (1).jpeg",
+      "KL_Trillion_office (2).jpeg",
+      "KL_Trillion_office (3).jpeg",
+      "KL_Trillion_office (4).jpeg",
+      "KL_Trillion_office (5).jpeg",
+      "KL_Trillion_office (6).jpeg",
+      "KL_Trillion_office (7).jpeg"
+    ],
+    "privateNotes": "High zone\ntan KL trillion office building @ highzone\n+60 11-2627 2966",
+    "status": "Available"
+  },
+  {
+    "id": 1774112151050,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Kota Raya shopping complex ",
+    "location": "Bukit Bintang, Kuala Lumpur",
+    "price": "For Sale : RM 810k",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "approx 1000 sqft ",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "📝 Description:\n• Kota Raya shop for sale\n• 1st Floor unit\n• Size: approx 1000 sqft\n• Currently tenanted (good for investment)\n• Freehold property\n\n🏢 Property Details:\n• Property Type: Retail Space\n• Tenure: Freehold\n• Land Title: Non-Bumi Lot\n\n🚀 Highlights:\n• Prime location in Bukit Bintang\n• High foot traffic area\n• Suitable for investment or own business\n\n🛗 Facilities:\n• Lift access",
+    "whatsapp": "60166287357",
+    "photos": [
+      "KotaRaya.jpeg"
+    ],
+    "privateNotes": "Nicole Kew Kota raya shopping complex (talk on comission 2%)\n+60 12-273 5489",
+    "status": "Available"
+  },
+  {
+    "id": 1774111804163,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "2 storey shoplot ",
+    "location": "Taman desa @Happy garden",
+    "price": "For Sale : RM 1.7 Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1400 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "• Double storey shop located at Happy Garden\n• Size: 20 x 70 (1,400 sqft)\n• Good location with road frontage (facing road)\n• Suitable for own use or investment\n",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Tamandesashoplothappygarden.jpeg"
+    ],
+    "privateNotes": "Zuzumiki taman desa happy garden\n+60 18-238 6323\n\ncomission based on over 1.6 mil ",
+    "status": "Available"
+  },
+  {
     "id": 1774089799365,
     "type": "listing",
     "category": "Residential",
