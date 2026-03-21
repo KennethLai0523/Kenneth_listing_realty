@@ -1,10 +1,36 @@
 const LISTINGS = [
   {
+    "id": 1774088471093,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Residensi Ava apartment",
+    "location": "Kiara Bay, Kepong",
+    "price": "For Sale : RM 850,000",
+    "rooms": "4",
+    "bathrooms": "2",
+    "builtup": "1285 sqft",
+    "furnishing": "Partly furnished",
+    "tenure": "Leasehold",
+    "description": "AVA Kiara Bay is a modern residential development located in a well-connected and growing area. This unit offers a practical layout with 4 bedrooms and 2 bathrooms, suitable for family living or investment. Currently tenanted, providing immediate rental income.\n\nComes modern partially furnished with lighting, air-conditioning units, ceiling fans, and water heaters, along with 2 carparks.\n\nConvenient access to nearby amenities, highways, and lifestyle hubs, making it an ideal choice for both own stay and investment.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "ResidensiAvaBlockBNo1 (1).jpeg",
+      "ResidensiAvaBlockBNo1 (2).jpeg",
+      "ResidensiAvaBlockBNo1 (3).jpeg",
+      "ResidensiAvaBlockBNo1 (4).jpeg",
+      "ResidensiAvaBlockBNo1 (5).jpeg",
+      "ResidensiAvaBlockBNo1 (6).jpeg",
+      "ResidensiAvaBlockBNo1 (7).jpeg"
+    ],
+    "privateNotes": "rachellyho kiara bay for sale 850k partly furnished\n\n+60 19-352 2340",
+    "status": "Available"
+  },
+  {
     "id": 1774080791931,
     "type": "listing",
     "category": "Land",
     "title": "Residential land(Top Hill)",
-    "location": "Bukit Tunky, Kuala Lumpur",
+    "location": "Bukit Tunku, Kuala Lumpur",
     "price": "For Sale : RM 9-11Mil",
     "rooms": "-",
     "bathrooms": "-",
@@ -16,7 +42,7 @@ const LISTINGS = [
     "photos": [
       "Bukit_tunku_top_hill.jpeg"
     ],
-    "privateNotes": "10.9million top of bukit tunku\n\nrightbugger@gmail.com 10.9Mil Bukit Tunku residential land for sale mudah\n\n+60 12-222 2209",
+    "privateNotes": "10.9million top of bukit tunku\n\nrightbugger@gmail.com 10.9Mil Bukit Tunku residential land for sale mudah\n\n+60 12-222 2209\n\nMain gate facing East South , larger at back",
     "status": "Available"
   },
   {
@@ -152,7 +178,7 @@ const LISTINGS = [
     "photos": [
       "tamandesaslopeland.jpeg"
     ],
-    "privateNotes": "slope land 11k flat + 5k slope \n\numtc my taman desa 11000 sqft + 5000 sqft total 16000 sqft freehold\n\n+60 19-340 3093",
+    "privateNotes": "slope land 11k flat + 5k slope \n\numtc my taman desa 11000 sqft + 5000 sqft total 16000 sqft freehold\n\n+60 19-340 3093\n\nfacing north west north east ",
     "status": "Available"
   },
   {
