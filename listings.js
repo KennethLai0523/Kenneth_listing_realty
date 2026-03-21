@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1774063304003,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Just Beside Menara Kuala Lumpur (KL Tower)",
+    "location": "Chowkit , KL city centre",
+    "price": "For Sale : RM 12Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "5,000 - 7,000 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "3 Storey\n\nFacing Main Road\n\nPrime Location",
+    "whatsapp": "60166287357",
+    "photos": [
+      "KL_tower_beside.jpeg"
+    ],
+    "privateNotes": "💰 Rental income approx. RM40,000/month , \nJalan Tuanku Abdul Rahman – For Sale",
+    "status": "Available"
+  },
+  {
     "id": 1774028640623,
     "type": "listing",
     "category": "New Project",
