@@ -3,7 +3,7 @@ const LISTINGS = [
     "id": 1774079614923,
     "type": "listing",
     "category": "Land",
-    "title": "Residential Land",
+    "title": "Development Land",
     "location": "Titiwangsa",
     "price": "For Sale : RM 40-60Million",
     "rooms": "-",
