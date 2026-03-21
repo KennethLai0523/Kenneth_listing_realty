@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1774079614923,
+    "type": "listing",
+    "category": "Land",
+    "title": "Residential Land",
+    "location": "Titiwangsa",
+    "price": "40-60Million",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "3-5acre",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "For Investment / development use",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Titiwangsa (2).jpeg"
+    ],
+    "privateNotes": "bukit tunku 8.8million and 58million KL city resi land and commercial land 138million\n+60 11-5554 3886",
+    "status": "Available"
+  },
+  {
     "id": 1774078213057,
     "type": "listing",
     "category": "Land",
