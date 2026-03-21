@@ -5,7 +5,7 @@ const LISTINGS = [
     "category": "Land",
     "title": "Residential Land",
     "location": "Bukit Tunku, Kuala Lumpur",
-    "price": "8-10Million",
+    "price": "For Sale : RM 8-10Million",
     "rooms": "-",
     "bathrooms": "-",
     "builtup": "0.6-0.8acre",
