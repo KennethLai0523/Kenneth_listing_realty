@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1774089799365,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Residensi Ava apartment",
+    "location": "Kiara Bay, Kepong",
+    "price": "For Rent : RM 2,800/month",
+    "rooms": "4",
+    "bathrooms": "2",
+    "builtup": "1285 sqft",
+    "furnishing": "Partly Furnished",
+    "tenure": "Leasehold",
+    "description": "Residensi AVA Kiara Bay offers a balanced living environment within a rapidly developing waterfront township. This unit features a well-designed layout with 4 bedrooms and 2 bathrooms, suitable for families or investors seeking long-term value.\n\nFully equipped with modern partial furnishings, including lighting, air-conditioning, ceiling fans, and water heaters, ensuring comfort and immediate move-in readiness.\n\nCurrently tenanted, making it an attractive option for investors looking for instant rental yield. The development is surrounded by lifestyle amenities, upcoming retail components, and enjoys convenient connectivity to major roads and key areas such as Kepong, Segambut, and Mont Kiara.\n\nA solid opportunity to secure a unit in a growing location with strong future appreciation potential.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "ResidensiAva_typeE.jpeg"
+    ],
+    "privateNotes": "Rixe residensi ava type E\n+60 16-635 5733\n\nMorris residensi ava type E\n+60 12-681 1109",
+    "status": "Available"
+  },
+  {
     "id": 1774088471093,
     "type": "listing",
     "category": "Residential",
