@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1774078213057,
+    "type": "listing",
+    "category": "Land",
+    "title": "Residential Land",
+    "location": "Bukit Tunku, Kuala Lumpur",
+    "price": "8-10Million",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "0.6-0.8acre",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "Prime KL location , KLCC , Merdeka 118 , KL tower view ",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Bukit_tunku.jpeg"
+    ],
+    "privateNotes": "0.73 acre selling at 8.8million from mudah\nbukit tunku 8.8million and 58million KL city resi land and commercial land 138million\n+60 11-5554 3886",
+    "status": "Available"
+  },
+  {
     "id": 1774063304003,
     "type": "listing",
     "category": "Commercial",
@@ -16,7 +36,7 @@ const LISTINGS = [
     "photos": [
       "KL_tower_beside.jpeg"
     ],
-    "privateNotes": "💰 Rental income approx. RM40,000/month , \nJalan Tuanku Abdul Rahman – For Sale",
+    "privateNotes": "💰 Rental income approx. RM40,000/month , \nJalan Tuanku Abdul Rahman – For Sale\n🧘🏻‍♂️ jalan tunku abdul rahman KL beside KL tower for sale 11.8mil\n+60 12-338 9321",
     "status": "Available"
   },
   {
