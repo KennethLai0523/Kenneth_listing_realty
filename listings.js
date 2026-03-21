@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1774080791931,
+    "type": "listing",
+    "category": "Land",
+    "title": "Residential land(Top Hill)",
+    "location": "Bukit Tunky, Kuala Lumpur",
+    "price": "For Sale : RM 9-11Mil",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "0.5 Acre",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "📍 Bukit Tunku – Prime Residential Address in Kuala Lumpur\n\nBukit Tunku, also known as Kenny Hills, is one of Kuala Lumpur’s most prestigious and exclusive residential enclaves. Surrounded by lush greenery and low-density developments, it offers a peaceful environment while still being just minutes away from the city centre.\n\nThis area is highly sought after for its large land sizes, privacy, and premium neighbourhood profile, making it ideal for luxury bungalow living or long-term investment. With excellent accessibility to Jalan Duta, Mont Kiara, and KL City Centre, Bukit Tunku combines convenience with exclusivity.\n\nNearby amenities include international schools, embassies, lifestyle hubs, and established commercial areas, ensuring both comfort and strong future value appreciation.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Bukit_tunku_top_hill.jpeg"
+    ],
+    "privateNotes": "10.9million top of bukit tunku\n\nrightbugger@gmail.com 10.9Mil Bukit Tunku residential land for sale mudah\n\n+60 12-222 2209",
+    "status": "Available"
+  },
+  {
     "id": 1774079614923,
     "type": "listing",
     "category": "Land",
@@ -11,7 +31,7 @@ const LISTINGS = [
     "builtup": "3-5acre",
     "furnishing": "-",
     "tenure": "Freehold",
-    "description": "For Investment / development use",
+    "description": "📍 Titiwangsa – Prime Development Land For Sale\n\nStrategically located in the fast-growing Titiwangsa area, this development land presents a rare opportunity for investors and developers to secure a valuable land bank within Kuala Lumpur city.\n\nSurrounded by established residential neighbourhoods, commercial hubs, and ongoing developments, the site offers strong potential for residential, mixed-use, or commercial projects. Its central location ensures excellent connectivity to major roads, public transport, and key city landmarks.\n\nWith increasing demand for city living and limited land availability in prime KL locations, this property holds strong upside for both immediate development and long-term capital appreciation.",
     "whatsapp": "60166287357",
     "photos": [
       "Titiwangsa (2).jpeg"
@@ -31,7 +51,7 @@ const LISTINGS = [
     "builtup": "0.6-0.8acre",
     "furnishing": "-",
     "tenure": "Freehold",
-    "description": "Prime KL location , KLCC , Merdeka 118 , KL tower view ",
+    "description": "📍 Bukit Tunku – Exclusive Living in Kuala Lumpur\n\nBukit Tunku (Kenny Hills) is one of Kuala Lumpur’s most established luxury residential areas, known for its exclusivity, greenery, and spacious land parcels. The area is home to high-profile residents, diplomats, and premium developments, making it one of the most sought-after addresses in the city.\n\nSurrounded by mature trees and a serene environment, Bukit Tunku offers a rare balance of privacy and accessibility. Despite its tranquil setting, it is strategically located just a short drive to KL City Centre, Mont Kiara, and key highways.\n\nWith limited land supply and consistent demand, properties in Bukit Tunku hold strong value and long-term appreciation potential. It is an ideal choice for those looking to build a dream bungalow or secure a prime land bank in a prestigious location.",
     "whatsapp": "60166287357",
     "photos": [
       "Bukit_tunku.jpeg"
@@ -51,12 +71,12 @@ const LISTINGS = [
     "builtup": "5,000 - 7,000 sqft",
     "furnishing": "-",
     "tenure": "Freehold",
-    "description": "3 Storey\n\nFacing Main Road\n\nPrime Location",
+    "description": "📍 Jalan Tunku Abdul Rahman – 3 Storey Shoplot (Main Road Facing)\n\nLocated along the highly sought-after Jalan Tunku Abdul Rahman, this 3-storey shoplot enjoys excellent visibility and strong foot traffic, making it ideal for retail, F&B, showroom, or office use.\n\nStrategically positioned facing the main road, the property benefits from constant exposure and easy accessibility, surrounded by established commercial activities, shopping areas, and dense population catchment.\n\nThis is a prime opportunity for both own-use and investment, with strong rental demand and long-term capital appreciation in one of Kuala Lumpur’s most iconic commercial zones.",
     "whatsapp": "60166287357",
     "photos": [
       "KL_tower_beside.jpeg"
     ],
-    "privateNotes": "💰 Rental income approx. RM40,000/month , \nJalan Tuanku Abdul Rahman – For Sale\n🧘🏻‍♂️ jalan tunku abdul rahman KL beside KL tower for sale 11.8mil\n+60 12-338 9321",
+    "privateNotes": "💰 Rental income approx. RM40,000/month , \nJalan Tuanku Abdul Rahman – For Sale\n\n🧘🏻‍♂️ jalan tunku abdul rahman KL beside KL tower for sale 11.8mil\n+60 12-338 9321",
     "status": "Available"
   },
   {
