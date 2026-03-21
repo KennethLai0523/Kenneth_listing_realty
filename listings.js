@@ -5,7 +5,7 @@ const LISTINGS = [
     "category": "Land",
     "title": "Residential Land",
     "location": "Titiwangsa",
-    "price": "40-60Million",
+    "price": "For Sale : RM 40-60Million",
     "rooms": "-",
     "bathrooms": "-",
     "builtup": "3-5acre",
