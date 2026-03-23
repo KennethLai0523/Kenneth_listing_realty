@@ -49,7 +49,7 @@ const LISTINGS = [
     "bathrooms": "-",
     "builtup": "4 acre",
     "furnishing": "Built-up: warehouse + office",
-    "tenure": "-",
+    "tenure": "FreeHold non bumi",
     "description": "• Land Area: 4 acre\n• Built-up: Warehouse + Office\n• Ceiling Height: 40 ft\n• Power Supply: 5 kV\n• Floor Loading: Up to 4 tons\n\n💰 Asking Price: RM48 Million",
     "whatsapp": "60166287357",
     "photos": [
