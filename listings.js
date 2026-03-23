@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1774280556824,
+    "type": "listing",
+    "category": "Industrial",
+    "title": "Industrial Land + Factory ",
+    "location": "Klang",
+    "price": "For sale : RM 48 Million ",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "4 acre",
+    "furnishing": "Built-up: warehouse + office",
+    "tenure": "-",
+    "description": "• Land Area: 4 acre\n• Built-up: Warehouse + Office\n• Ceiling Height: 40 ft\n• Power Supply: 5 kV\n• Floor Loading: Up to 4 tons\n\n💰 Asking Price: RM48 Million",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Klangfactory.jpeg"
+    ],
+    "privateNotes": "En M 38 Mil bungalow bukit tunky\n+60 11-2786 9873",
+    "status": "Available"
+  },
+  {
     "id": 1774113144936,
     "type": "listing",
     "category": "Commercial",
@@ -102,7 +122,7 @@ const LISTINGS = [
     "photos": [
       "ResidensiAva_typeE.jpeg"
     ],
-    "privateNotes": "Rixe residensi ava type E\n+60 16-635 5733\n\nMorris residensi ava type E\n+60 12-681 1109",
+    "privateNotes": "Rixe residensi ava type E\n+60 16-635 5733\n\nMorris residensi ava type E\n+60 12-681 1109\n\nChloe Chew residensi ava part furnished\n+60 17-680 2949",
     "status": "Available"
   },
   {
