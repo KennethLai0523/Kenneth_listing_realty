@@ -1,5 +1,17 @@
 const LISTINGS = [
   {
+    "id": 1774290376287,
+    "type": "asking",
+    "title": "Badminton Court rental",
+    "location": "approx 20000 sqft or 0.5 acre",
+    "price": "RM 30k/month",
+    "area": "Kota Damansara",
+    "description": "Long term rental ",
+    "whatsapp": "60166287357",
+    "privateNotes": "mummy industrial ",
+    "status": "Available"
+  },
+  {
     "id": 1774281867223,
     "type": "listing",
     "category": "Residential",
