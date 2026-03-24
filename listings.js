@@ -1,5 +1,50 @@
 const LISTINGS = [
   {
+    "id": 1774351750041,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Retail high visibility facing main road shoplot | 2 shops available",
+    "location": "Kepong, Kuala Lumpur",
+    "price": "For Sale : RM 3Million",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "2,551 sq ft (2-storey)",
+    "furnishing": "-",
+    "tenure": "Leasehold",
+    "description": "Kepong Main Road Shoplot 🚗🏢\n\nPrime shoplot located facing the main road in Kepong, offering excellent visibility and high exposure with strong daily traffic flow. Strategic location surrounded by established residential and commercial areas, making it ideal for retail, F&B, or business operations. Great frontage with easy access and strong signage presence to attract customers.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "FortuneCentra.jpeg"
+    ],
+    "privateNotes": "Sam Sim Uncle 广东话 3mil not ure length of tenancy\n+60 16-661 1998\n\nHooi Lin Auntie upstair school , bottom dentist long term wishing to sell for long tenancy\n+60 12-399 0943",
+    "status": "Available"
+  },
+  {
+    "id": 1774351386078,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Residensi Ava",
+    "location": "Kiara Bay,Kepong",
+    "price": "For Rent : RM 2300/month",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "1125 sqft ",
+    "furnishing": "Partly Furnished",
+    "tenure": "Leasehold",
+    "description": "Residensi AVA @ Kiara Bay – Type C 🌇🌊\n\nSpacious 3-bedroom, 2-bathroom Type C layout located on a high floor, offering a stunning unblocked lake view with serene and relaxing surroundings. This unit is partly furnished, never occupied, and features a modern, clean interior design—perfect for own stay or investment. Enjoy natural lighting, good ventilation, and a peaceful living environment right next to the lake.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "RA8 (6).jpeg",
+      "RA8 (7).jpeg",
+      "RA8 (10).jpeg",
+      "RA8 (5).jpeg",
+      "RA8 (2).jpeg",
+      "RA8 (9).jpeg"
+    ],
+    "privateNotes": "Chloe Chew residensi ava part furnished\n+60 17-680 2949",
+    "status": "Available"
+  },
+  {
     "id": 1774290376287,
     "type": "asking",
     "title": "Badminton Court rental",
