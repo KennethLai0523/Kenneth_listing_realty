@@ -1,5 +1,45 @@
 const LISTINGS = [
   {
+    "id": 1774372274260,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Unio Residence @ Kepong (High Floor, Unblocked View)",
+    "location": "Kepong, Kuala Lumpur",
+    "price": "For Sale : RM 750,000",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "1139 sqft Type C",
+    "furnishing": "Partly Furnished",
+    "tenure": "Leasehold",
+    "description": "Well-maintained condominium located in the heart of Kepong with excellent accessibility and surrounded by matured neighbourhood amenities. High floor unit with direct unblocked KL city skyline view, offering bright and comfortable living environment.\n\nProperty Details:\n\nBuilt-up: 1,139 sqft\n3 Bedrooms, 2 Bathrooms\n2 Car Parks (side by side, near lift)\nHigh floor, unobstructed city view\nBuilt-in kitchen cabinets with cooker hood & hob\nBuilt-in wardrobes (master bedroom)\nPlaster ceiling with lighting\nWater heaters in bathrooms\n\nFacilities:\n\nGrand Entrance Lobby\nMulti-tier security with video intercom\nInfinity swimming pool\n360° gym with city view\nSky party deck with projector cinema\nYoga & relaxation decks\nGolf putting area\nBBQ & teppanyaki area\nBadminton courts & basketball area\nReading & game room\nBusiness lounge\n\nAccessibility:\n\nWalking distance (~500m) to MRT Kepong Baru\nEasy access to DUKE, LDP, Penchala Link\nLess than 15km to KLCC, Pavilion, Publika",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Unio2.jpeg"
+    ],
+    "privateNotes": "David YANG Unio residence from mudah\n+60 13-230 2305",
+    "status": "Available"
+  },
+  {
+    "id": 1774371350367,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Bukit Jalil 1.5 Storey Terrace Factory (OUG Industrial Park)",
+    "location": "Taman Perindustrian Bukit OUG, Bukit Jalil, Kuala Lumpur",
+    "price": "For Sale : RM 2.5 Million",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1700 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "Well-positioned 1.5 storey factory within an established industrial enclave in Bukit Jalil, surrounded by active businesses and steady commercial traffic. The unit offers a practical layout suitable for light manufacturing, storage, or logistics operations.\n\nLocated in a matured industrial zone with strong rental demand, making it a solid choice for both own-use and long-term investment. Connectivity is excellent, allowing smooth movement to key parts of KL and Selangor, which is ideal for business operations.\n\nThe property is currently tenanted, providing immediate income stream, and can be sold together with tenancy for investors seeking stable return.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "TamanperindustrianOUG.jpeg"
+    ],
+    "privateNotes": "mudah \nhttps://www.mudah.my/1-1-2-terrace-factory-113207484.htm",
+    "status": "Available"
+  },
+  {
     "id": 1774351386078,
     "type": "listing",
     "category": "Residential",
