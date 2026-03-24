@@ -1,25 +1,5 @@
 const LISTINGS = [
   {
-    "id": 1774351750041,
-    "type": "listing",
-    "category": "Commercial",
-    "title": "Retail high visibility facing main road shoplot | 2 shops available",
-    "location": "Kepong, Kuala Lumpur",
-    "price": "For Sale : RM 3Million",
-    "rooms": "-",
-    "bathrooms": "-",
-    "builtup": "2,551 sq ft (2-storey)",
-    "furnishing": "-",
-    "tenure": "Leasehold",
-    "description": "Kepong Main Road Shoplot 🚗🏢\n\nPrime shoplot located facing the main road in Kepong, offering excellent visibility and high exposure with strong daily traffic flow. Strategic location surrounded by established residential and commercial areas, making it ideal for retail, F&B, or business operations. Great frontage with easy access and strong signage presence to attract customers.",
-    "whatsapp": "60166287357",
-    "photos": [
-      "FortuneCentra.jpeg"
-    ],
-    "privateNotes": "Sam Sim Uncle 广东话 3mil not ure length of tenancy\n+60 16-661 1998\n\nHooi Lin Auntie upstair school , bottom dentist long term wishing to sell for long tenancy\n+60 12-399 0943",
-    "status": "Available"
-  },
-  {
     "id": 1774351386078,
     "type": "listing",
     "category": "Residential",
