@@ -1,5 +1,31 @@
 const LISTINGS = [
   {
+    "id": 1774457188378,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Villa Puteri Condo | KL city centre | beside LRT station | newly renovated ",
+    "location": "KL City, Kuala Lumpur",
+    "price": "For Sale : RM 530,000",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "1,100 sqft ",
+    "furnishing": "Fully Furnished ",
+    "tenure": "Freehold ",
+    "description": "Newly renovated unit located in KL City, just walking distance to PWTC LRT station.\nConvenient access to Sunway Putra Mall and surrounding amenities.\nWell-maintained unit with practical layout, suitable for own stay or investment.\n\nHighlights:\n\nNewly Renovated\nNear PWTC LRT\nNearby Sunway Putra Mall\nFully Furnished\nGood Rental Potential\n\n",
+    "whatsapp": "60166287357",
+    "photos": [
+      "KL600k (1).jpeg",
+      "KL600k (2).jpeg",
+      "KL600k (3).jpeg",
+      "KL600k (4).jpeg",
+      "KL600k (5).jpeg",
+      "KL600k (6).jpeg",
+      "KL600k (7).jpeg"
+    ],
+    "privateNotes": "WN Lee Villa puteri sell 530 k\n+60 17-206 6312",
+    "status": "Available"
+  },
+  {
     "id": 1774422113546,
     "type": "listing",
     "category": "Commercial",
