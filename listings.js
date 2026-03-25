@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1774422113546,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "SS15 Subang Jaya Ground Floor Shoplot For Rent",
+    "location": "SS15",
+    "price": "For Rent : RM 8000 /month",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1800 sqft",
+    "furnishing": "with extended kitchen , in a restaurant operation condition",
+    "tenure": "-",
+    "description": "Ideal for F&B business.\nCan rent whole block - ground + first + second \n\nIdeal for businesses looking for visibility and convenience.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "SS15.jpeg"
+    ],
+    "privateNotes": "Option to rent whole unit including first and second floor, or ground floor only. \nStrategic location with high foot traffic, same row as Pelita Nasi Kandar. Walking distance (approx. 2 mins) to SS15 LRT station.\nJenny SS15 shoplot for rent 7500 /month F&B\n+60 12-345 1350",
+    "status": "Available"
+  },
+  {
     "id": 1774372274260,
     "type": "listing",
     "category": "Residential",
