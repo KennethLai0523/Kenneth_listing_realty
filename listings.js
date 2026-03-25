@@ -1,5 +1,26 @@
 const LISTINGS = [
   {
+    "id": 1774459668208,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Robson Heights Condo | KL City Greenery View | Theon Hou Temple Nearby",
+    "location": "KL city",
+    "price": "For Sale : RM 598,000",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "1,500 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "Spacious unit located in a unique and peaceful greenery environment within KL city.\nSurrounded by lush views while still enjoying easy access to major transport hubs including LRT, MRT, and KL Sentral.\nConveniently located near Mid Valley Megamall, ideal for own stay or investment.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "thenhoutempleKL (2).jpeg",
+      "thenhoutempleKL (1).jpeg"
+    ],
+    "privateNotes": "Huang HI Thean hou temple for sale 598k\n+60 16-321 6852",
+    "status": "Available"
+  },
+  {
     "id": 1774457188378,
     "type": "listing",
     "category": "Residential",
