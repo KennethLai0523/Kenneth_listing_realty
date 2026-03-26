@@ -799,7 +799,7 @@ const LISTINGS = [
     "id": 1773929534795,
     "type": "listing",
     "category": "Industrial",
-    "title": "Factory",
+    "title": "7000 - 10000 sqft factory | newly built | 40 feet container well accessible",
     "location": "Sungai Buloh",
     "price": "For rent : RM1.6 per sqft",
     "rooms": "-",
@@ -807,10 +807,11 @@ const LISTINGS = [
     "builtup": "7000 sqft per unit , total 3 unit",
     "furnishing": "-",
     "tenure": "Leasehold",
-    "description": "Industrial factory units in Sungai Buloh.\n\n3 units available | 7,000 sqft each  \nSuitable for factory, warehouse, or storage use.\n\nGood accessibility for logistics and transportation.\n\nIdeal for own use or investment.\n\nAsking RM1.60 psf.",
+    "description": "Industrial factory units in Sungai Buloh.\n\n80x105 feet : 1 unit,\n80 x 88 feet : 2 units\n\n3 units available | 7,000 sqft each  \nSuitable for factory, warehouse, or storage use.\n\nGood accessibility for logistics and transportation.\n\nIdeal for own use or investment.\n\nAsking RM1.60 psf.",
     "whatsapp": "60166287357",
     "photos": [
-      "SungaiBulohFactoryNo2.png"
+      "SungaiBulohFactoryNo2.png",
+      "SGbulohfactoryjustbuilt.jpeg"
     ],
     "privateNotes": "mummy llisting",
     "status": "Available"
