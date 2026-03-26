@@ -1,5 +1,53 @@
 const LISTINGS = [
   {
+    "id": 1774542729542,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Duta Park Residence | KL City | Near MRT LRT | Easy Access",
+    "location": "KL City, Kuala Lumpur",
+    "price": "For Sale : RM530,000",
+    "rooms": "2",
+    "bathrooms": "2",
+    "builtup": "858 sqft",
+    "furnishing": "-",
+    "tenure": "Leasehold",
+    "description": "Duta Park Residence unit located in KL City with convenient access to MRT, LRT, and major highways. Practical 2 bedrooms 2 bathrooms layout with 1 car park. Surrounded by essential amenities and just minutes to KLCC, Mont Kiara, and University Malaya. Suitable for own stay or investment with good rental demand.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "DutaPark (1).jpeg",
+      "DutaPark (2).jpeg",
+      "DutaPark (3).jpeg",
+      "DutaPark (4).jpeg",
+      "DutaPark (5).jpeg"
+    ],
+    "privateNotes": "Zen Dutapark @Kl city\n+60 13-767 8728",
+    "status": "Available"
+  },
+  {
+    "id": 1774542505650,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Splendor Residence Condo | KL Skyline View | Fully Renovated",
+    "location": "KL city",
+    "price": "For Sale : RM540,000",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "926 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "Leasehold",
+    "description": "Fully renovated unit at Splendor Residence with KL skyline view. Spacious 3 bedrooms and 2 bathrooms layout, fully furnished and move-in ready. Located on mid-high floor with 2 car parks. Suitable for own stay or investment with tenancy secured until 2028. Well-maintained unit with practical layout and strong rental potential.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Splendor (1).jpeg",
+      "Splendor (2).jpeg",
+      "Splendor (3).jpeg",
+      "Splendor (4).jpeg",
+      "Splendor (5).jpeg"
+    ],
+    "privateNotes": "Mun Hoe Splendor residence @KL city\n+60 17-267 4877",
+    "status": "Available"
+  },
+  {
     "id": 1774492434512,
     "type": "listing",
     "category": "Residential",
