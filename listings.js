@@ -17,6 +17,7 @@ const LISTINGS = [
       "SkylineKl2 (1).jpeg",
       "SkylineKl2 (2).jpeg",
       "SkylineKl2 (3).jpeg",
+      "SkylineKl2 (7).jpeg",
       "SkylineKl2 (4).jpeg",
       "SkylineKl2 (5).jpeg",
       "SkylineKl2 (6).jpeg"
