@@ -1,5 +1,33 @@
 const LISTINGS = [
   {
+    "id": 1774597891298,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Service Residence @ Sungai Besi | 888 sqft | 2 Bed 2 Bath",
+    "location": "Sungai besi, Bukit Jalil",
+    "price": "For Sale : RM 560,000",
+    "rooms": "2",
+    "bathrooms": "2",
+    "builtup": "888 sqft",
+    "furnishing": "Fully Furnished newly renovated",
+    "tenure": "Leasehold",
+    "description": "Well-maintained service residence located in Sungai Besi, strategically positioned near KL city centre. Functional 2-bedroom layout with comfortable living space, suitable for own stay or investment. High floor unit with pleasant morning sun and good ventilation. Surrounded by established amenities and easy access to major highways and public transport.\n\nHighlights:\n• Approx. 5 mins to Chan Sow Lin MRT & LRT\n• High floor, good natural lighting\n• 2 side-by-side car parks\n• Easy access to KL, Pudu, Cheras\n• Nearby shops, eateries & daily conveniences",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Oneresidence (2).jpeg",
+      "Oneresidence (1).jpeg",
+      "Oneresidence (3).jpeg",
+      "Oneresidence (4).jpeg",
+      "Oneresidence (5).jpeg",
+      "Oneresidence (6).jpeg",
+      "Oneresidence (7).jpeg",
+      "Oneresidence (8).jpeg",
+      "Oneresidence (9).jpeg"
+    ],
+    "privateNotes": "KenUnion Equipment One residence (sungai besi)\n+60 12-222 9688",
+    "status": "Available"
+  },
+  {
     "id": 1774595437309,
     "type": "listing",
     "category": "Residential",
