@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1774627217628,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Kepong Fortune Centra Shoplot (Main Road Facing) | Ground + First | Can sell seperately",
+    "location": "Kepong centre, Kuala Lumpur",
+    "price": "For Sale : RM 3Mil. If sold seperately : 2.1M for G , 1.1M for 1st",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "3400 ( 1700 each floor)",
+    "furnishing": "Partly",
+    "tenure": "Leasehold 95 years",
+    "description": "Prime commercial shoplot located at Kepong Fortune Centra, directly facing main road with high visibility & strong traffic flow 🚗💼\n\n✅ Selling Price: RM3,000,000 (Both Units)\n✅ Option to sell together or separately\n✅ Excellent frontage – ideal for branding & business exposure\n✅ Surrounded by mature commercial area with strong catchment",
+    "whatsapp": "60166287357",
+    "photos": [
+      "FortuneCentra.jpeg"
+    ],
+    "privateNotes": "📌 Tenancy Details:\n• Ground Floor (TCM Centre)\n– Tenancy until 30.04.2028\n– Rental: RM6,500 (until 30.04.2026)\n– RM7,000 (from 01.05.2026)\n\n• 1st Floor (Kid Cafe)\n– Tenancy until 30.06.2027\n– Rental: RM3,800\n\n💰 Investment Highlight:\n• Dual income stream\n• Stable long-term tenants\n• Suitable for own use or investment\n\n📍 Located in busy Kepong commercial hub with excellent accessibility",
+    "status": "Available"
+  },
+  {
     "id": 1774597891298,
     "type": "listing",
     "category": "Residential",
