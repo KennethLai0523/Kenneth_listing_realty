@@ -5,13 +5,13 @@ const LISTINGS = [
     "category": "Commercial",
     "title": "Kepong Fortune Centra Shoplot (Main Road Facing) | Ground + First | Can sell seperately",
     "location": "Kepong centre, Kuala Lumpur",
-    "price": "For Sale : RM 3Mil. If sold seperately : 2.1M for G , 1.1M for 1st",
+    "price": "For Sale : RM 3Mil. ",
     "rooms": "-",
     "bathrooms": "-",
     "builtup": "3400 ( 1700 each floor)",
     "furnishing": "Partly",
     "tenure": "Leasehold 95 years",
-    "description": "Prime commercial shoplot located at Kepong Fortune Centra, directly facing main road with high visibility & strong traffic flow 🚗💼\n\n✅ Selling Price: RM3,000,000 (Both Units)\n✅ Option to sell together or separately\n✅ Excellent frontage – ideal for branding & business exposure\n✅ Surrounded by mature commercial area with strong catchment",
+    "description": "Prime commercial shoplot located at Kepong Fortune Centra, directly facing main road with high visibility & strong traffic flow 🚗💼\n\n✅ Selling Price: RM3,000,000 (Both Units)\n✅ Option to sell together or separately\n✅ Excellent frontage – ideal for branding & business exposure\n✅ Surrounded by mature commercial area with strong catchment\nIf sold seperately : 2.1M for G , 1.1M for 1st",
     "whatsapp": "60166287357",
     "photos": [
       "FortuneCentra.jpeg"
