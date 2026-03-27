@@ -1,5 +1,30 @@
 const LISTINGS = [
   {
+    "id": 1774595437309,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Skyline KL Condo (Next to Pudu LRT) | Corner Unit | Away from lift | Quite unit",
+    "location": "KL, city centre",
+    "price": "For Sale : RM 700,000",
+    "rooms": "2",
+    "bathrooms": "2",
+    "builtup": "695 sqft",
+    "furnishing": "bare unit",
+    "tenure": "Leasehold",
+    "description": "TOD apartment strategically located next to Pudu LRT station, offering excellent connectivity within KL city centre. Walking distance to F&B outlets, cafes, and convenience stores. Easy access to Bukit Bintang, TRX, Pavilion, and Berjaya Times Square. Situated in a mature township with strong rental demand.\n\nUnit is brand new and partially furnished, ideal for own stay or investment. Positioned away from the lift for better privacy and reduced noise. Despite being near the LRT, the unit remains quiet — with doors and windows closed, train sound is minimal and hardly noticeable, ensuring a comfortable living environment.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "SkylineKl2 (1).jpeg",
+      "SkylineKl2 (2).jpeg",
+      "SkylineKl2 (3).jpeg",
+      "SkylineKl2 (4).jpeg",
+      "SkylineKl2 (5).jpeg",
+      "SkylineKl2 (6).jpeg"
+    ],
+    "privateNotes": "Sales & Marketing Team Skyline KL owner wanting to sell 720 , net 700\n60 16-288 0478",
+    "status": "Available"
+  },
+  {
     "id": 1774542729542,
     "type": "listing",
     "category": "Residential",
