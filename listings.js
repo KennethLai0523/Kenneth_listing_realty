@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1774710532484,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "3 storey shoplot @Meru, Klang ",
+    "location": "Klang, Selangor",
+    "price": "For Sale : RM 1,600,000",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1400 sqft ( 3 floors = 4200 sqft)",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "Prime three-storey shoplot located at The Galeria @ Meru, Klang.\nSuitable for various business operations with spacious layout and good accessibility.\n",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Klang3storey.jpeg"
+    ],
+    "privateNotes": "Private Notes (Admin Only):\nOwner: Chong\nPrivate advertiser\nPosted ~5 days ago\nMortgage est: ~RM6,376/month\nUnits can confirm availability\n\nChong agent co broke klang sell 1.6 mil mudah\n+60 17-756 1208",
+    "status": "Available"
+  },
+  {
     "id": 1774680138244,
     "type": "listing",
     "category": "Residential",
