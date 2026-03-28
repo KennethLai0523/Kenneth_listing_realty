@@ -738,6 +738,7 @@
         <div id="toolsWrapper" class="tools-wrapper">
           <div class="tool-selector">
             <button id="roiToolBtn" class="tool-btn active" onclick="setTool('roi')">ROI Calculator</button>
+            <button id="loanToolBtn" class="tool-btn" onclick="setTool('loan')">Loan Calculator</button>
           </div>
 
           <div id="roiToolPanel" class="tool-panel">
@@ -754,6 +755,26 @@
             <div id="roiResult" class="tool-result" style="display:none;">
               <div class="tool-result-title">Estimated Annual Gross ROI</div>
               <div id="roiResultValue" class="tool-result-value">0.00%</div>
+            </div>
+          </div>
+
+          <div id="loanToolPanel" class="tool-panel" style="display:none;">
+            <h3 class="tool-title">Loan Calculator</h3> 
+            <p class="tool-subtitle">
+              Enter property price, downpayment, interest rate, and loan tenure to estimate monthly installment.
+            </p>
+          
+            <input id="loanPrice" class="search-box" type="number" placeholder="Property Price (RM)" />
+            <input id="loanDownpayment" class="search-box" type="number" placeholder="Downpayment (%)" />
+            <input id="loanInterest" class="search-box" type="number" step="0.01" placeholder="Interest Rate (% per year)" />
+            <input id="loanTenure" class="search-box" type="number" placeholder="Loan Tenure (Years)" />
+          
+            <button class="btn btn-gold" onclick="calculateLoan()">Calculate Loan</button>
+          
+            <div id="loanResult" class="tool-result" style="display:none;">
+              <div class="tool-result-title">Estimated Loan Result</div>
+              <div id="loanAmountValue" style="font-size:18px; font-weight:700; margin-bottom:8px;">Loan Amount: RM 0</div>
+              <div id="monthlyInstallmentValue" class="tool-result-value">RM 0 / month</div>
             </div>
           </div>
         </div>
@@ -924,9 +945,12 @@
 
     function setTool(tool) {
       currentTool = tool;
-
+    
       document.getElementById("roiToolBtn").classList.toggle("active", tool === "roi");
+      document.getElementById("loanToolBtn").classList.toggle("active", tool === "loan");
+    
       document.getElementById("roiToolPanel").style.display = tool === "roi" ? "block" : "none";
+      document.getElementById("loanToolPanel").style.display = tool === "loan" ? "block" : "none";
     }
 
     function calculateROI() {
@@ -944,6 +968,42 @@
 
       document.getElementById("roiResult").style.display = "block";
       document.getElementById("roiResultValue").textContent = roi.toFixed(2) + "%";
+    }
+
+    function calculateLoan() {
+      const price = parseFloat(document.getElementById("loanPrice").value);
+      const downpaymentPercent = parseFloat(document.getElementById("loanDownpayment").value);
+      const annualInterestPercent = parseFloat(document.getElementById("loanInterest").value);
+      const tenureYears = parseFloat(document.getElementById("loanTenure").value);
+    
+      if (
+        !price || price <= 0 ||
+        downpaymentPercent < 0 || downpaymentPercent >= 100 ||
+        !annualInterestPercent || annualInterestPercent <= 0 ||
+        !tenureYears || tenureYears <= 0
+      ) {
+        document.getElementById("loanResult").style.display = "block";
+        document.getElementById("loanAmountValue").textContent = "Loan Amount: Please enter valid numbers";
+        document.getElementById("monthlyInstallmentValue").textContent = "";
+        return;
+      }
+    
+      const loanAmount = price * (1 - downpaymentPercent / 100);
+      const monthlyRate = annualInterestPercent / 100 / 12;
+      const totalMonths = tenureYears * 12;
+    
+      const monthlyPayment =
+        loanAmount *
+        monthlyRate *
+        Math.pow(1 + monthlyRate, totalMonths) /
+        (Math.pow(1 + monthlyRate, totalMonths) - 1);
+    
+      document.getElementById("loanResult").style.display = "block";
+      document.getElementById("loanAmountValue").textContent =
+        "Loan Amount: RM " + loanAmount.toLocaleString(undefined, {maximumFractionDigits: 2});
+    
+      document.getElementById("monthlyInstallmentValue").textContent =
+        "RM " + monthlyPayment.toLocaleString(undefined, {maximumFractionDigits: 2}) + " / month";
     }
 
     function setListingCategory(category) {
