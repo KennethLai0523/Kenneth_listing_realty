@@ -151,6 +151,7 @@
       font-size: 15px;
       outline: none;
       background: #fcfaf7;
+      margin-bottom: 12px;
     }
 
     .search-box:focus {
@@ -542,6 +543,82 @@
       color: white;
     }
 
+    .tools-wrapper {
+      display: none;
+      margin-top: 18px;
+    }
+
+    .tool-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .tool-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      background: #e6eefc;
+      color: #2d5ea8;
+      transition: 0.2s ease;
+    }
+
+    .tool-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .tool-btn.active {
+      background: #2f6fed;
+      color: white;
+      box-shadow: 0 8px 18px rgba(47, 111, 237, 0.22);
+    }
+
+    .tool-panel {
+      background: #faf7f2;
+      border: 1px solid #ede3d7;
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .tool-title {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .tool-subtitle {
+      margin: 0 0 14px;
+      color: #655d53;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .tool-result {
+      margin-top: 14px;
+      background: white;
+      border: 1px solid #ede3d7;
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .tool-result-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #8a8176;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+
+    .tool-result-value {
+      font-size: 26px;
+      font-weight: 800;
+      color: #111111;
+    }
+
     @media (max-width: 980px) {
       .top-row,
       .footer-grid,
@@ -619,30 +696,61 @@
 
     <section class="top-row">
       <div class="section-card">
+        <div class="mode-toggle" style="margin-top:0; margin-bottom:16px;">
+          <button id="mainListingBtn" class="toggle-btn listing-toggle active" onclick="setMainMode('listing')">Listings</button>
+          <button id="mainToolsBtn" class="toggle-btn asking-toggle" onclick="setMainMode('tools')">Tools</button>
+        </div>
+
         <h2 class="search-title" id="searchTitle">Available Listings</h2>
         <p class="search-subtitle" id="searchSubtitle">
           Search by project name, location, or keyword to quickly find the property you are looking for.
         </p>
-        <input
-          class="search-box"
-          id="search"
-          type="text"
-          placeholder="Search project, location, keyword..."
-          oninput="render()"
-        />
 
-        <div class="mode-toggle">
-          <button id="listingBtn" class="toggle-btn listing-toggle active" onclick="setMode('listing')">Listing</button>
-          <button id="askingBtn" class="toggle-btn asking-toggle" onclick="setMode('asking')">Asking</button>
+        <div id="listingControls">
+          <input
+            class="search-box"
+            id="search"
+            type="text"
+            placeholder="Search project, location, keyword..."
+            oninput="render()"
+          />
+
+          <div class="mode-toggle">
+            <button id="listingBtn" class="toggle-btn listing-toggle active" onclick="setMode('listing')">Listing</button>
+            <button id="askingBtn" class="toggle-btn asking-toggle" onclick="setMode('asking')">Asking</button>
+          </div>
+
+          <div class="category-branch" id="categoryBranch">
+            <button class="branch-btn active" onclick="setListingCategory('all')">All</button>
+            <button class="branch-btn" onclick="setListingCategory('residential')">Residential</button>
+            <button class="branch-btn" onclick="setListingCategory('commercial')">Commercial</button>
+            <button class="branch-btn" onclick="setListingCategory('industrial')">Industrial</button>
+            <button class="branch-btn" onclick="setListingCategory('land')">Land</button>
+            <button class="branch-btn" onclick="setListingCategory('new project')">New Project</button>
+          </div>
         </div>
 
-        <div class="category-branch" id="categoryBranch">
-          <button class="branch-btn active" onclick="setListingCategory('all')">All</button>
-          <button class="branch-btn" onclick="setListingCategory('residential')">Residential</button>
-          <button class="branch-btn" onclick="setListingCategory('commercial')">Commercial</button>
-          <button class="branch-btn" onclick="setListingCategory('industrial')">Industrial</button>
-          <button class="branch-btn" onclick="setListingCategory('land')">Land</button>
-          <button class="branch-btn" onclick="setListingCategory('new project')">New Project</button>
+        <div id="toolsWrapper" class="tools-wrapper">
+          <div class="tool-selector">
+            <button id="roiToolBtn" class="tool-btn active" onclick="setTool('roi')">ROI Calculator</button>
+          </div>
+
+          <div id="roiToolPanel" class="tool-panel">
+            <h3 class="tool-title">ROI Calculator</h3>
+            <p class="tool-subtitle">
+              Enter property price and monthly rental to estimate annual gross ROI percentage.
+            </p>
+
+            <input id="roiPrice" class="search-box" type="number" placeholder="Property Price (RM)" />
+            <input id="roiRental" class="search-box" type="number" placeholder="Rental Per Month (RM)" />
+
+            <button class="btn btn-gold" onclick="calculateROI()">Calculate ROI</button>
+
+            <div id="roiResult" class="tool-result" style="display:none;">
+              <div class="tool-result-title">Estimated Annual Gross ROI</div>
+              <div id="roiResultValue" class="tool-result-value">0.00%</div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -689,6 +797,8 @@
   <script>
     let currentMode = "listing";
     let currentListingCategory = "all";
+    let currentMainMode = "listing";
+    let currentTool = "roi";
 
     let data = LISTINGS.map(item => ({
       ...item,
@@ -766,6 +876,64 @@
       return "status-available";
     }
 
+    function setMainMode(mode) {
+      currentMainMode = mode;
+
+      document.getElementById("mainListingBtn").classList.toggle("active", mode === "listing");
+      document.getElementById("mainToolsBtn").classList.toggle("active", mode === "tools");
+
+      const title = document.getElementById("searchTitle");
+      const subtitle = document.getElementById("searchSubtitle");
+      const listingControls = document.getElementById("listingControls");
+      const toolsWrapper = document.getElementById("toolsWrapper");
+      const listingsSection = document.getElementById("listings");
+
+      if (mode === "tools") {
+        title.textContent = "Property Tools";
+        subtitle.textContent = "Use simple property tools for quick calculation and analysis.";
+        listingControls.style.display = "none";
+        toolsWrapper.style.display = "block";
+        listingsSection.style.display = "none";
+      } else {
+        if (currentMode === "listing") {
+          title.textContent = "Available Listings";
+          subtitle.textContent = "Search by project name, location, or keyword to quickly find the property you are looking for.";
+        } else {
+          title.textContent = "Asking Requests";
+          subtitle.textContent = "Browse what buyers or tenants are currently looking for by budget, area, or requirement.";
+        }
+
+        listingControls.style.display = "block";
+        toolsWrapper.style.display = "none";
+        listingsSection.style.display = "grid";
+        render();
+      }
+    }
+
+    function setTool(tool) {
+      currentTool = tool;
+
+      document.getElementById("roiToolBtn").classList.toggle("active", tool === "roi");
+      document.getElementById("roiToolPanel").style.display = tool === "roi" ? "block" : "none";
+    }
+
+    function calculateROI() {
+      const price = parseFloat(document.getElementById("roiPrice").value);
+      const rental = parseFloat(document.getElementById("roiRental").value);
+
+      if (!price || !rental || price <= 0 || rental <= 0) {
+        document.getElementById("roiResult").style.display = "block";
+        document.getElementById("roiResultValue").textContent = "Please enter valid numbers";
+        return;
+      }
+
+      const annualRental = rental * 12;
+      const roi = (annualRental / price) * 100;
+
+      document.getElementById("roiResult").style.display = "block";
+      document.getElementById("roiResultValue").textContent = roi.toFixed(2) + "%";
+    }
+
     function setMode(mode) {
       currentMode = mode;
 
@@ -789,7 +957,9 @@
         categoryBranch.style.display = "none";
       }
 
-      render();
+      if (currentMainMode === "listing") {
+        render();
+      }
     }
 
     function setListingCategory(category) {
@@ -960,6 +1130,8 @@
     }
 
     function render() {
+      if (currentMainMode !== "listing") return;
+
       const key = document.getElementById("search").value.toLowerCase().trim();
 
       const filtered = data.filter(item => {
@@ -1037,6 +1209,8 @@
       document.getElementById("listings").innerHTML = html;
     }
 
+    setTool("roi");
+    setMainMode("listing");
     render();
   </script>
 </body>
