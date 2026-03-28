@@ -1,5 +1,30 @@
 const LISTINGS = [
   {
+    "id": 1774680138244,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Residensi AVA @ Kiara Bay – Type E (1,285 sqft)",
+    "location": "Kiara bay, Kepong",
+    "price": "For Rent : RM3,000/month",
+    "rooms": "4",
+    "bathrooms": "2",
+    "builtup": "1285 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "Leasehold",
+    "description": "4 Bedrooms | 2 Bathrooms | 2 Car Parks\n\nSpacious Type E layout with well-designed 4-bedroom configuration, perfect for family living. Located on high floor (above 25th floor) with beautiful lake facing view, enjoying unblocked greenery and relaxing waterfront scenery 🌿🌅\n\nBright and airy unit with functional living, dining, and kitchen layout. Comes with 2 parking lots for added convenience.\n\n✔️ Lake Facing (Kiara Bay View)\n✔️ High Floor (25+ Level)\n✔️ Unblocked View\n✔️ Good Natural Lighting & Ventilation\n✔️ 2 Car Parks\n✔️ Ideal for Own Stay / Investment",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Ava8 (1).jpeg",
+      "Ava8 (2).jpeg",
+      "Ava8 (3).jpeg",
+      "Ava8 (4).jpeg",
+      "Ava8 (5).jpeg",
+      "Ava8 (6).jpeg"
+    ],
+    "privateNotes": "Jun Keong A-28-12\n\nFacing lake view \n+60 16-900 9913",
+    "status": "Available"
+  },
+  {
     "id": 1774667783712,
     "type": "listing",
     "category": "Residential",
