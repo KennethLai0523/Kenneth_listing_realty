@@ -293,6 +293,13 @@ margin-left:8px;
 
 <textarea id="output" class="code"></textarea>
 
+<h2>Export Private Notes JSON</h2>
+
+<button class="copy" onclick="generatePrivateNotesJSON()">Generate JSON</button>
+<button class="copy" onclick="copyPrivateNotesJSON()">Copy JSON</button>
+
+<textarea id="privateNotesOutput" class="code"></textarea>
+
 </div>
 
 </div>
@@ -604,6 +611,26 @@ t.select()
 document.execCommand("copy")
 alert("Copied")
 
+}
+
+function generatePrivateNotesJSON(){
+
+  const privateNotes = items
+    .filter(x => x.privateNotes && x.privateNotes.trim() !== "")
+    .map(x => ({
+      name: x.title || "(No title)",
+      note: x.privateNotes
+    }));
+
+  document.getElementById("privateNotesOutput").value =
+    JSON.stringify(privateNotes, null, 2);
+}
+
+function copyPrivateNotesJSON(){
+  let t = document.getElementById("privateNotesOutput");
+  t.select();
+  document.execCommand("copy");
+  alert("Private Notes JSON Copied");
 }
 
 toggleFields()
