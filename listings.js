@@ -1,5 +1,46 @@
 const LISTINGS = [
   {
+    "id": 1774712948260,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "3 Storey Shop Lot @ Bandar Botanik Klang | Fully tenanted | good ROI",
+    "location": "Klang, Selangor",
+    "price": "For Sale : RM 2,500,000",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "6000 sqft approx",
+    "furnishing": "Fully Furnished ",
+    "tenure": "Freehold",
+    "description": "Fully renovated 3-storey shoplot located in Bandar Botanik, Klang.\nSituated in a mature commercial area with strong surrounding catchment and good accessibility.\nSuitable for F&B, retail, office use and businesses that require high exposure.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Klang3storeyfullytenanted.jpeg"
+    ],
+    "privateNotes": "Owner: Jivian Sagadeven\nFully tenanted\nDual frontage (front & back access)\nNearby Kesas Highway, GM Klang, Aeon Bukit Tinggi\nEst. loan ~RM9,564/month\n\nJiyvan - MSTA, CFTe klang 3 storey front and back\n+60 12-622 5855",
+    "status": "Available"
+  },
+  {
+    "id": 1774712468141,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "3 Storey Shop Lot Facing public road | high visibility | high traffic",
+    "location": "Ara Damansara, Selangor",
+    "price": "For Sale : RM 2,800,000",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "4800 sqft(3 storey)",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "3-storey shop office located in Ara Damansara, a well-established commercial area with strong surrounding catchment.\nSuitable for F&B outlets and businesses that require high exposure and visibility.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "AraDamansara3storeyshop (1).jpeg",
+      "AraDamansara3storeyshop (2).jpeg"
+    ],
+    "privateNotes": "3-Storey Shop Office – Unit 3A, Ara Damansara\n\n🔥 FOR SALE (BELOW MARKET VALUE) 🔥\n🏢 3-Storey Shop Office – Ara Damansara\n\n📌 DIRECT OWNER\n📌 FULLY TENANTED\n\n✨ HIGHLIGHTS ✨\n• 🏢 3-Storey Intermediate Shop Office\n• 📐 Approx. 4,800 sq ft Gross Built-Up\n• 📊 Fully Tenanted – ROI approx. 4.50%\n• 💼 Strong corporate / commercial tenant\n• 🧱 Practical layout, easy to reconfigure\n• 📈 Stable rental income & capital appreciation potential\n• 📝 Hassle-free ownership transfer\n\n⚠️ IMPORTANT\n• 💰 Ideal for investors seeking immediate income\n• 🏦 Suitable for own use after tenancy (subject to terms)\n• 👀 Viewing by appointment only\n\n📍 LOCATION: Ara Damansara, Selangor\n\n🏢 PRIME COMMERCIAL AREA\n🚗 Easy access to major highways\n👥 Strong surrounding residential & business catchment\n\n💰 SELLING PRICE: RM2,700,000\n\n📞 CONTACT:0️⃣1️⃣3️⃣-6️⃣0️⃣3️⃣9️⃣4️⃣3️⃣3️⃣ (Ross) / 0️⃣1️⃣2️⃣-6️⃣2️⃣6️⃣4️⃣2️⃣1️⃣0️⃣ (Kasyful)\n\nMuhammad Ross Izzat Ara damansara owner for sale 2.7mil\n+60 13-603 9433",
+    "status": "Available"
+  },
+  {
     "id": 1774710532484,
     "type": "listing",
     "category": "Commercial",
