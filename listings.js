@@ -76,7 +76,7 @@ const LISTINGS = [
     "id": 1774597891298,
     "type": "listing",
     "category": "Residential",
-    "title": "Service Residence @ Sungai Besi | 888 sqft | 2 Bed 2 Bath",
+    "title": "One Residences @ Sungai Besi | 888 sqft | 2 Bed 2 Bath",
     "location": "Sungai besi, Bukit Jalil",
     "price": "For Sale : RM 560,000",
     "rooms": "2",
