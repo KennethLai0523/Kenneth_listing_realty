@@ -151,7 +151,6 @@
       font-size: 15px;
       outline: none;
       background: #fcfaf7;
-      margin-bottom: 12px;
     }
 
     .search-box:focus {
@@ -200,6 +199,17 @@
       background: #2f6fed;
       color: white;
       box-shadow: 0 8px 18px rgba(47, 111, 237, 0.22);
+    }
+
+    .tools-toggle {
+      background: #ede7fb;
+      color: #5b3fbf;
+    }
+
+    .tools-toggle.active {
+      background: #6f42c1;
+      color: white;
+      box-shadow: 0 8px 18px rgba(111, 66, 193, 0.25);
     }
 
     .category-branch {
@@ -562,8 +572,8 @@
       font-size: 13px;
       font-weight: 700;
       cursor: pointer;
-      background: #e6eefc;
-      color: #2d5ea8;
+      background: #ede7fb;
+      color: #5b3fbf;
       transition: 0.2s ease;
     }
 
@@ -572,9 +582,9 @@
     }
 
     .tool-btn.active {
-      background: #2f6fed;
+      background: #6f42c1;
       color: white;
-      box-shadow: 0 8px 18px rgba(47, 111, 237, 0.22);
+      box-shadow: 0 8px 18px rgba(111, 66, 193, 0.25);
     }
 
     .tool-panel {
@@ -696,38 +706,31 @@
 
     <section class="top-row">
       <div class="section-card">
-        <div class="mode-toggle" style="margin-top:0; margin-bottom:16px;">
-          <button id="mainListingBtn" class="toggle-btn listing-toggle active" onclick="setMainMode('listing')">Listings</button>
-          <button id="mainToolsBtn" class="toggle-btn asking-toggle" onclick="setMainMode('tools')">Tools</button>
-        </div>
-
         <h2 class="search-title" id="searchTitle">Available Listings</h2>
         <p class="search-subtitle" id="searchSubtitle">
           Search by project name, location, or keyword to quickly find the property you are looking for.
         </p>
+        <input
+          class="search-box"
+          id="search"
+          type="text"
+          placeholder="Search project, location, keyword..."
+          oninput="render()"
+        />
 
-        <div id="listingControls">
-          <input
-            class="search-box"
-            id="search"
-            type="text"
-            placeholder="Search project, location, keyword..."
-            oninput="render()"
-          />
+        <div class="mode-toggle">
+          <button id="listingBtn" class="toggle-btn listing-toggle active" onclick="setMode('listing')">Listing</button>
+          <button id="askingBtn" class="toggle-btn asking-toggle" onclick="setMode('asking')">Asking</button>
+          <button id="toolsBtn" class="toggle-btn tools-toggle" onclick="setMode('tools')">Tools</button>
+        </div>
 
-          <div class="mode-toggle">
-            <button id="listingBtn" class="toggle-btn listing-toggle active" onclick="setMode('listing')">Listing</button>
-            <button id="askingBtn" class="toggle-btn asking-toggle" onclick="setMode('asking')">Asking</button>
-          </div>
-
-          <div class="category-branch" id="categoryBranch">
-            <button class="branch-btn active" onclick="setListingCategory('all')">All</button>
-            <button class="branch-btn" onclick="setListingCategory('residential')">Residential</button>
-            <button class="branch-btn" onclick="setListingCategory('commercial')">Commercial</button>
-            <button class="branch-btn" onclick="setListingCategory('industrial')">Industrial</button>
-            <button class="branch-btn" onclick="setListingCategory('land')">Land</button>
-            <button class="branch-btn" onclick="setListingCategory('new project')">New Project</button>
-          </div>
+        <div class="category-branch" id="categoryBranch">
+          <button class="branch-btn active" onclick="setListingCategory('all')">All</button>
+          <button class="branch-btn" onclick="setListingCategory('residential')">Residential</button>
+          <button class="branch-btn" onclick="setListingCategory('commercial')">Commercial</button>
+          <button class="branch-btn" onclick="setListingCategory('industrial')">Industrial</button>
+          <button class="branch-btn" onclick="setListingCategory('land')">Land</button>
+          <button class="branch-btn" onclick="setListingCategory('new project')">New Project</button>
         </div>
 
         <div id="toolsWrapper" class="tools-wrapper">
@@ -797,7 +800,6 @@
   <script>
     let currentMode = "listing";
     let currentListingCategory = "all";
-    let currentMainMode = "listing";
     let currentTool = "roi";
 
     let data = LISTINGS.map(item => ({
@@ -876,37 +878,45 @@
       return "status-available";
     }
 
-    function setMainMode(mode) {
-      currentMainMode = mode;
+    function setMode(mode) {
+      currentMode = mode;
 
-      document.getElementById("mainListingBtn").classList.toggle("active", mode === "listing");
-      document.getElementById("mainToolsBtn").classList.toggle("active", mode === "tools");
+      document.getElementById("listingBtn").classList.toggle("active", mode === "listing");
+      document.getElementById("askingBtn").classList.toggle("active", mode === "asking");
+      document.getElementById("toolsBtn").classList.toggle("active", mode === "tools");
 
       const title = document.getElementById("searchTitle");
       const subtitle = document.getElementById("searchSubtitle");
-      const listingControls = document.getElementById("listingControls");
+      const searchBox = document.getElementById("search");
+      const categoryBranch = document.getElementById("categoryBranch");
       const toolsWrapper = document.getElementById("toolsWrapper");
       const listingsSection = document.getElementById("listings");
 
-      if (mode === "tools") {
-        title.textContent = "Property Tools";
-        subtitle.textContent = "Use simple property tools for quick calculation and analysis.";
-        listingControls.style.display = "none";
-        toolsWrapper.style.display = "block";
-        listingsSection.style.display = "none";
-      } else {
-        if (currentMode === "listing") {
-          title.textContent = "Available Listings";
-          subtitle.textContent = "Search by project name, location, or keyword to quickly find the property you are looking for.";
-        } else {
-          title.textContent = "Asking Requests";
-          subtitle.textContent = "Browse what buyers or tenants are currently looking for by budget, area, or requirement.";
-        }
-
-        listingControls.style.display = "block";
+      if (mode === "listing") {
+        title.textContent = "Available Listings";
+        subtitle.textContent = "Search by project name, location, or keyword to quickly find the property you are looking for.";
+        searchBox.placeholder = "Search project, location, keyword...";
+        searchBox.style.display = "block";
+        categoryBranch.style.display = "flex";
         toolsWrapper.style.display = "none";
         listingsSection.style.display = "grid";
         render();
+      } else if (mode === "asking") {
+        title.textContent = "Asking Requests";
+        subtitle.textContent = "Browse what buyers or tenants are currently looking for by budget, area, or requirement.";
+        searchBox.placeholder = "Search budget, area, requirement...";
+        searchBox.style.display = "block";
+        categoryBranch.style.display = "none";
+        toolsWrapper.style.display = "none";
+        listingsSection.style.display = "grid";
+        render();
+      } else if (mode === "tools") {
+        title.textContent = "Property Tools";
+        subtitle.textContent = "Use simple property tools for quick calculation and analysis.";
+        searchBox.style.display = "none";
+        categoryBranch.style.display = "none";
+        toolsWrapper.style.display = "block";
+        listingsSection.style.display = "none";
       }
     }
 
@@ -932,34 +942,6 @@
 
       document.getElementById("roiResult").style.display = "block";
       document.getElementById("roiResultValue").textContent = roi.toFixed(2) + "%";
-    }
-
-    function setMode(mode) {
-      currentMode = mode;
-
-      document.getElementById("listingBtn").classList.toggle("active", mode === "listing");
-      document.getElementById("askingBtn").classList.toggle("active", mode === "asking");
-
-      const title = document.getElementById("searchTitle");
-      const subtitle = document.getElementById("searchSubtitle");
-      const searchBox = document.getElementById("search");
-      const categoryBranch = document.getElementById("categoryBranch");
-
-      if (mode === "listing") {
-        title.textContent = "Available Listings";
-        subtitle.textContent = "Search by project name, location, or keyword to quickly find the property you are looking for.";
-        searchBox.placeholder = "Search project, location, keyword...";
-        categoryBranch.style.display = "flex";
-      } else {
-        title.textContent = "Asking Requests";
-        subtitle.textContent = "Browse what buyers or tenants are currently looking for by budget, area, or requirement.";
-        searchBox.placeholder = "Search budget, area, requirement...";
-        categoryBranch.style.display = "none";
-      }
-
-      if (currentMainMode === "listing") {
-        render();
-      }
     }
 
     function setListingCategory(category) {
@@ -1130,7 +1112,7 @@
     }
 
     function render() {
-      if (currentMainMode !== "listing") return;
+      if (currentMode === "tools") return;
 
       const key = document.getElementById("search").value.toLowerCase().trim();
 
@@ -1210,7 +1192,7 @@
     }
 
     setTool("roi");
-    setMainMode("listing");
+    setMode("listing");
     render();
   </script>
 </body>
