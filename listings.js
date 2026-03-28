@@ -1,5 +1,33 @@
 const LISTINGS = [
   {
+    "id": 1774667783712,
+    "type": "listing",
+    "category": "Residential",
+    "title": "TRX Residence @ TRX, KL City",
+    "location": "Kuala Lumpur, City centre",
+    "price": "For Sale : RM 650,000",
+    "rooms": "4",
+    "bathrooms": "3",
+    "builtup": "982 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "Service residence located at TRX, KL City with modern living environment.\nNearby TRX and Pixel City Central with strong connectivity.\n\n• 4 rooms layout\n• 30m to Salak Selatan LRT Station\n• Near TRX\n• Easy access to 6 major highways\n• Dual key concept\n\nHighlights:\nFreehold | Near MRT/LRT | Easy Highway Access | Swimming Pool",
+    "whatsapp": "60166287357",
+    "photos": [
+      "TRXresidence (1).jpeg",
+      "TRXresidence (2).jpeg",
+      "TRXresidence (3).jpeg",
+      "TRXresidence (4).jpeg",
+      "TRXresidence (5).jpeg",
+      "TRXresidence (6).jpeg",
+      "TRXresidence (7).jpeg",
+      "TRXresidence (8).jpeg",
+      "TRXresidence (9).jpeg"
+    ],
+    "privateNotes": "Fir trx residence\n+60 12-903 9054",
+    "status": "Available"
+  },
+  {
     "id": 1774627217628,
     "type": "listing",
     "category": "Commercial",
