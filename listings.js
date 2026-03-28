@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1774713669293,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Shoplot @ Melati Utama Setapak | Corner |1st floor | long term tenant",
+    "location": "Setapak, Kuala Lumpur",
+    "price": "For Sale : RM 1,150,000",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1400 sqft",
+    "furnishing": "Fully ",
+    "tenure": "Freehold",
+    "description": "Corner shop/office unit located at Melati Utama, directly opposite KL East Mall.\nSituated in a busy and accessible area with strong footfall.\nSuitable for office use, retail, or businesses requiring good visibility and accessibility.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Metalisetapak.jpeg"
+    ],
+    "privateNotes": "Ammar - Al Amin Consultancy\n+60 19-277 7202",
+    "status": "Available"
+  },
+  {
     "id": 1774712948260,
     "type": "listing",
     "category": "Commercial",
