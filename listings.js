@@ -1,5 +1,32 @@
 const LISTINGS = [
   {
+    "id": 1774750444993,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Residensi AVA @ Kiara Bay | Lake View High Floor | Corner | type E layout",
+    "location": "Kiara Bay, Kepong",
+    "price": "For Rent : RM 2,500/month",
+    "rooms": "4",
+    "bathrooms": "2",
+    "builtup": "1285 sqft",
+    "furnishing": "Partly",
+    "tenure": "Leasehold",
+    "description": "Residensi AVA @ Kiara Bay high floor unit with non-blocking lake view 🌊\nSpacious 4 bedroom 2 bathroom layout, modern design and well maintained\nComes with 2 carparks, suitable for own stay or investment\nStrategic location near MRT, Desa ParkCity & major highways 🚗",
+    "whatsapp": "60166287357",
+    "photos": [
+      "resiAvazigfacing (1).jpeg",
+      "resiAvazigfacing (2).jpeg",
+      "resiAvazigfacing (3).jpeg",
+      "resiAvazigfacing (4).jpeg",
+      "resiAvazigfacing (5).jpeg",
+      "resiAvazigfacing (6).jpeg",
+      "resiAvazigfacing (7).jpeg",
+      "resiAvazigfacing (8).jpeg"
+    ],
+    "privateNotes": "residensi ava type E new\n+60 16-747 0556\n\nIf you interested to sell or rent you can fill in your unit details at here 👇👇TQVM\nOwner Name : Wan Nur Hazlin\nBuild up : 1285\nUnit Number : B - 10 - 06\nBathrooms : 2 \nFurnishing : - \nCarpark : 2 \nFacing view : View ZIG\nSell or Rent : Rent\nPrice : \nTenant / vacant :\nType : corner / intermediate / endlot\n\nPlease provide your property details and can you send house picture also",
+    "status": "Available"
+  },
+  {
     "id": 1774713669293,
     "type": "listing",
     "category": "Commercial",
