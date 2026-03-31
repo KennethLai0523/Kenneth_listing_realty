@@ -74,10 +74,23 @@
       margin-bottom: 8px;
     }
 
-    img {
-      width: 100%;
-      border-radius: 12px;
+    .gallery-wrap {
+      overflow-x: auto;
       margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 12px;
+      min-width: 1500px;
+    }
+
+    .gallery img {
+      width: 240px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
     }
 
     .back {
@@ -106,17 +119,34 @@
     </a>
   </div>
 
-  <!-- IMAGE (replace later if you want) -->
-  <div style="overflow-x:auto; margin-bottom:20px;">
-    <div style="display:flex; gap:12px; min-width:800px;">
-  
-      <img src="Ava8 (1).jpeg" style="width:160px; height:120px; object-fit:cover; border-radius:10px;">
-      <img src="Ava8 (2).jpeg" style="width:160px; height:120px; object-fit:cover; border-radius:10px;">
-      <img src="Ava8 (3).jpeg" style="width:160px; height:120px; object-fit:cover; border-radius:10px;">
-      <img src="Ava8 (4).jpeg" style="width:160px; height:120px; object-fit:cover; border-radius:10px;">
-      <img src="Ava8 (5).jpeg" style="width:160px; height:120px; object-fit:cover; border-radius:10px;">
-      <img src="Ava8 (6).jpeg" style="width:160px; height:120px; object-fit:cover; border-radius:10px;">
-  
+  <!-- 🔥 UPDATED GALLERY -->
+  <div class="gallery-wrap">
+    <div class="gallery">
+
+      <a href="Ava8 (1).jpeg" target="_blank">
+        <img src="Ava8 (1).jpeg">
+      </a>
+
+      <a href="Ava8 (2).jpeg" target="_blank">
+        <img src="Ava8 (2).jpeg">
+      </a>
+
+      <a href="Ava8 (3).jpeg" target="_blank">
+        <img src="Ava8 (3).jpeg">
+      </a>
+
+      <a href="Ava8 (4).jpeg" target="_blank">
+        <img src="Ava8 (4).jpeg">
+      </a>
+
+      <a href="Ava8 (5).jpeg" target="_blank">
+        <img src="Ava8 (5).jpeg">
+      </a>
+
+      <a href="Ava8 (6).jpeg" target="_blank">
+        <img src="Ava8 (6).jpeg">
+      </a>
+
     </div>
   </div>
 
