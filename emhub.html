@@ -690,4 +690,578 @@
       box-shadow:var(--shadow);
     }
     .spec-card h3{
-      margin
+      margin:0 0 8px;
+      font-size:1.1rem;
+      font-family:'Manrope',sans-serif;
+      color:var(--dark);
+    }
+    .spec-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.75;
+    }
+
+    .cta{padding-bottom:110px;}
+    .cta-box{
+      position:relative;
+      overflow:hidden;
+      border-radius:34px;
+      background:linear-gradient(135deg, #8fd0ff, #5aa7ff 46%, #2f78e8 100%);
+      box-shadow:0 30px 80px rgba(59,130,246,0.20);
+      padding:44px;
+    }
+    .cta-box::before{
+      content:"";
+      position:absolute;
+      right:-100px;
+      top:-100px;
+      width:320px;
+      height:320px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.14);
+    }
+    .cta-grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:1.08fr 0.92fr;
+      gap:20px;
+      align-items:center;
+    }
+    .cta-box h2{
+      margin:0;
+      color:#fff;
+      font-size:clamp(2rem,4vw,3.6rem);
+      line-height:1.02;
+      letter-spacing:-0.04em;
+      font-family:'Manrope',sans-serif;
+    }
+    .cta-box p{
+      margin:16px 0 0;
+      color:rgba(255,255,255,0.94);
+      line-height:1.74;
+      max-width:680px;
+    }
+    .cta-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      justify-content:flex-end;
+    }
+    .cta-box .btn-primary{
+      background:#fff;
+      color:#2f78e8;
+      box-shadow:0 14px 34px rgba(255,255,255,0.20);
+    }
+    .cta-box .btn-secondary{
+      background:rgba(255,255,255,0.16);
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.26);
+      box-shadow:none;
+    }
+
+    footer{
+      padding:28px 0 42px;
+      border-top:1px solid rgba(21,32,51,0.08);
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:16px;
+      align-items:center;
+    }
+    .footer-grid p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:0.92rem;
+    }
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      color:var(--muted);
+      font-size:0.92rem;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media (max-width:1180px){
+      .hero-grid,
+      .panel-grid,
+      .gallery-shell,
+      .location-grid,
+      .cta-grid{grid-template-columns:1fr;}
+      .highlight-grid{grid-template-columns:repeat(2,1fr);}
+      .usage-grid{grid-template-columns:repeat(2,1fr);}
+      .plans-grid{grid-template-columns:1fr;}
+      .specs-grid{grid-template-columns:repeat(2,1fr);}
+      .info-band{grid-template-columns:repeat(2,1fr);}
+    }
+
+    @media (max-width:900px){
+      .nav{flex-direction:column;align-items:flex-start;}
+      .nav-links{justify-content:flex-start;gap:16px;}
+      .hero-copy{padding:34px 24px;min-height:auto;}
+      .hero-visual{min-height:560px;}
+      .hero-metrics,
+      .highlight-grid,
+      .usage-grid,
+      .specs-grid,
+      .info-band,
+      .footer-grid{grid-template-columns:1fr;}
+      .floating-card{grid-template-columns:1fr;}
+      .price-box{text-align:left;}
+      .plan-card{grid-template-columns:1fr;}
+      .cta-actions{justify-content:flex-start;}
+    }
+
+    @media (max-width:640px){
+      .section{padding:74px 0;}
+      .container{width:min(calc(100% - 20px), var(--max));}
+      .hero h1{font-size:2.9rem;}
+      .section-title{font-size:2.1rem;}
+      .panel,.location-card,.map-card,.cta-box{padding:22px;}
+      .gallery-main{min-height:430px;}
+      .mini{min-height:170px;}
+      .usage-card{min-height:380px;}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <div class="brand-mark">EM</div>
+        <div class="brand-text">
+          <strong>EMHub Bukit Raja</strong>
+          <span>Modern Commercial Showcase</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#spaces">Spaces</a>
+        <a href="#plans">Plans</a>
+        <a href="#location">Location</a>
+        <a href="#contact" class="btn btn-primary">Enquire Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="hero-badge">Bukit Raja • Klang • New Commercial Hub</div>
+          <h1>
+            EMHub Bukit Raja
+            <span class="light">Designed for Modern Business</span>
+          </h1>
+          <p>
+            A premium commercial hub in Klang with a ramp-up concept, flexible layouts and strong business functionality. Suitable for showroom, office, warehouse and operational use, with a presentation style that feels polished, modern and developer-grade.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Get Brochure</a>
+            <a href="#gallery" class="btn btn-secondary">View Gallery</a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric">
+              <strong>RM 150 – 200 psf</strong>
+              <span>Indicative pricing prepared based on the current project information.</span>
+            </div>
+            <div class="metric">
+              <strong>2,196 – 5,088 sqft</strong>
+              <span>Flexible built-up options for a wide range of commercial needs.</span>
+            </div>
+            <div class="metric">
+              <strong>Leasehold</strong>
+              <span>Commercial positioning suitable for business owners and investors.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="EMHub Bukit Raja showcase image">
+          <div class="floating-card">
+            <div>
+              <h3>EMHub @ Bukit Raja Commercial Unit</h3>
+              <p>Modern commercial concept with drive-up accessibility, duplex functionality and flexible space planning for showroom, office and warehouse use.</p>
+            </div>
+            <div class="price-box">
+              <span>Indicative pricing</span>
+              <strong>RM 150 – 200 psf</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="info-band reveal">
+          <div class="info-box">
+            <strong>Drive-Up</strong>
+            <span>Built for efficient daily access and operational convenience.</span>
+          </div>
+          <div class="info-box">
+            <strong>Showroom Ready</strong>
+            <span>Ideal for customer-facing businesses that value brand presence.</span>
+          </div>
+          <div class="info-box">
+            <strong>Office + Storage</strong>
+            <span>Suitable for hybrid setups requiring both admin and operational space.</span>
+          </div>
+          <div class="info-box">
+            <strong>Modern Appeal</strong>
+            <span>Presented with a cleaner, lighter and more premium digital image.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="container panel-grid">
+        <div class="panel reveal">
+          <div class="eyebrow">Project Overview</div>
+          <h2 class="section-title">A cleaner, more <span class="accent">modern presentation</span> for EMHub</h2>
+          <p class="section-copy">
+            EMHub Bukit Raja is positioned as a commercial hub for businesses seeking accessibility, functionality and a stronger professional image. The site structure is designed to present the project with the same confidence as a dedicated developer microsite, while keeping the wording customer-facing and direct.
+          </p>
+
+          <div class="story-list">
+            <div class="story-item">
+              <strong>Premium first impression</strong>
+              <span>Large visuals, modern typography, lighter colour palette and cleaner spacing create a more established project image.</span>
+            </div>
+            <div class="story-item">
+              <strong>Business-use focused</strong>
+              <span>The presentation highlights practical value for showroom, office, warehouse and hybrid commercial operations.</span>
+            </div>
+            <div class="story-item">
+              <strong>Clear enquiry journey</strong>
+              <span>Visitors are guided from project overview to features, floor plans, location and direct contact call-to-actions.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel reveal">
+          <div class="eyebrow">Commercial Positioning</div>
+          <h2 class="section-title">Built around <span class="accent">business efficiency</span> and presentation</h2>
+          <p class="section-copy">
+            The EMHub concept is especially suitable for businesses that need more than a standard shoplot or office unit. With stronger access, larger flexibility and a cleaner visual identity, the project can be positioned as a modern business destination in Bukit Raja, Klang.
+          </p>
+
+          <div class="story-list">
+            <div class="story-item">
+              <strong>Operational convenience</strong>
+              <span>Drive-up access and practical unit planning support smoother loading, movement and daily usage.</span>
+            </div>
+            <div class="story-item">
+              <strong>Brand-ready environment</strong>
+              <span>Suitable for businesses that want a more polished setting for display, office functions and customer engagement.</span>
+            </div>
+            <div class="story-item">
+              <strong>Flexible commercial use</strong>
+              <span>Works well for owner-occupiers, growing companies, warehouse-light users and investors seeking a stronger concept asset.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="highlights">
+      <div class="container">
+        <div class="eyebrow reveal">Key Highlights</div>
+        <h2 class="section-title reveal">Commercial value presented with a <span class="accent">more premium digital image</span></h2>
+        <p class="section-copy reveal">
+          Instead of sounding like a personal explanation, the content below speaks directly to visitors looking for a modern commercial address in Klang. The focus stays on what matters most: access, space flexibility, business suitability and long-term usability.
+        </p>
+
+        <div class="highlight-grid">
+          <div class="highlight-card reveal">
+            <div class="icon">↗</div>
+            <h3>Ramp-Up Access</h3>
+            <p>Improved daily convenience for business operations, with a concept that supports smoother movement and easier accessibility.</p>
+          </div>
+          <div class="highlight-card reveal">
+            <div class="icon">▣</div>
+            <h3>Flexible Built-Up Range</h3>
+            <p>Built-up options from approximately 2,196 sqft onwards, suitable for businesses with varying space requirements.</p>
+          </div>
+          <div class="highlight-card reveal">
+            <div class="icon">⌂</div>
+            <h3>Multi-Use Layout</h3>
+            <p>Designed to support showroom, office, storage and hybrid business setups within one commercial environment.</p>
+          </div>
+          <div class="highlight-card reveal">
+            <div class="icon">🚚</div>
+            <h3>Operational Functionality</h3>
+            <p>Appealing for businesses that require loading support, daily movement efficiency and practical work flow planning.</p>
+          </div>
+          <div class="highlight-card reveal">
+            <div class="icon">✦</div>
+            <h3>Modern Project Image</h3>
+            <p>The lighter and cleaner design direction gives the project a fresher, more polished and more professional online presence.</p>
+          </div>
+          <div class="highlight-card reveal">
+            <div class="icon">☎</div>
+            <h3>Direct Enquiry Ready</h3>
+            <p>Every major section naturally leads into brochure request, WhatsApp contact and appointment arrangement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="spaces">
+      <div class="container">
+        <div class="eyebrow reveal">Business Suitability</div>
+        <h2 class="section-title reveal">Suitable for a wide range of <span class="accent">commercial use cases</span></h2>
+        <p class="section-copy reveal">
+          This section markets the project through lifestyle and commercial function rather than only through numbers. That helps the site feel more like a real project showcase and less like a standard listing page.
+        </p>
+
+        <div class="usage-grid">
+          <article class="usage-card reveal">
+            <div class="usage-bg" style="background-image:url('images/emhub-office.jpg');"></div>
+            <div class="usage-content">
+              <span class="tag">Office</span>
+              <h3>Modern Office Suite</h3>
+              <ul>
+                <li>Professional services and agencies</li>
+                <li>Consultancy, admin and HQ use</li>
+                <li>Businesses seeking a stronger image</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="usage-card reveal">
+            <div class="usage-bg" style="background-image:url('images/emhub-showroom.jpg');"></div>
+            <div class="usage-content">
+              <span class="tag">Showroom</span>
+              <h3>Brand-Facing Display Space</h3>
+              <ul>
+                <li>Furniture, lighting and concept retail</li>
+                <li>Automotive and lifestyle brands</li>
+                <li>Businesses prioritising customer presentation</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="usage-card reveal">
+            <div class="usage-bg" style="background-image:url('images/emhub-warehouse.jpg');"></div>
+            <div class="usage-content">
+              <span class="tag">Warehouse</span>
+              <h3>Operational Storage Hub</h3>
+              <ul>
+                <li>Inventory and stock support</li>
+                <li>Warehouse-light fulfilment operations</li>
+                <li>Businesses needing practical movement flow</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="usage-card reveal">
+            <div class="usage-bg" style="background-image:url('images/emhub-retail.jpg');"></div>
+            <div class="usage-content">
+              <span class="tag">Commercial</span>
+              <h3>Hybrid Business Space</h3>
+              <ul>
+                <li>Office + display + storage combination</li>
+                <li>Suitable for growing SMEs and owner-users</li>
+                <li>Flexible environment for mixed commercial needs</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="eyebrow reveal">Project Gallery</div>
+        <h2 class="section-title reveal">Large visuals help the project feel <span class="accent">more established and credible</span></h2>
+        <p class="section-copy reveal">
+          Replace the placeholder images below with actual Bukit Raja photos, artist impressions, unit interiors or facade visuals. The layout is already prepared for a full project-style image presentation.
+        </p>
+
+        <div class="gallery-shell">
+          <div class="gallery-main reveal">
+            <div class="overlay">
+              <strong>Main architectural showcase</strong>
+              <span>Use the strongest exterior or project image here to create a premium first visual impression for visitors and buyers.</span>
+            </div>
+          </div>
+          <div class="gallery-side reveal">
+            <div class="mini" data-label="Interior" style="background-image:url('images/emhub-bukit-raja-gallery-2.jpg');"></div>
+            <div class="mini" data-label="Facade" style="background-image:url('images/emhub-bukit-raja-gallery-3.jpg');"></div>
+            <div class="mini" data-label="Access" style="background-image:url('images/emhub-bukit-raja-gallery-4.jpg');"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="plans">
+      <div class="container">
+        <div class="eyebrow reveal">Plans & Layouts</div>
+        <h2 class="section-title reveal">Prepared for <span class="accent">floor plans and level presentation</span></h2>
+        <p class="section-copy reveal">
+          A dedicated plan section strengthens the project image and gives buyers clearer context on layout logic, floor organisation and unit positioning.
+        </p>
+
+        <div class="plans-grid">
+          <article class="plan-card reveal">
+            <div class="plan-copy">
+              <div class="eyebrow" style="color:#fff;margin-bottom:0;">Hub 1</div>
+              <h3>Level 1 Plan</h3>
+              <p>Suitable for showcasing ground or first-level unit arrangement, access flow, frontage and entry points.</p>
+            </div>
+            <div class="plan-image" style="background-image:url('images/emhub-plan-level-1.jpg');"></div>
+          </article>
+
+          <article class="plan-card reveal">
+            <div class="plan-copy">
+              <div class="eyebrow" style="color:#fff;margin-bottom:0;">Hub 1</div>
+              <h3>Level 2 – 6 Plan</h3>
+              <p>Ideal for explaining repeated upper-level layout logic, ramp-up movement and selected unit positioning.</p>
+            </div>
+            <div class="plan-image" style="background-image:url('images/emhub-plan-level-2-6.jpg');"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow reveal">Project Details</div>
+        <h2 class="section-title reveal">A concise section for <span class="accent">practical buyer information</span></h2>
+        <p class="section-copy reveal">
+          This area keeps important facts visible without making the page feel too technical. It also gives the site a more complete developer-style structure.
+        </p>
+
+        <div class="specs-grid">
+          <div class="spec-card reveal">
+            <h3>Built-Up Range</h3>
+            <p>Approx. 2,196 sqft up to larger layout options, depending on selected unit type and configuration.</p>
+          </div>
+          <div class="spec-card reveal">
+            <h3>Commercial Concept</h3>
+            <p>Suitable for office, showroom, storage and mixed operational use within one integrated project environment.</p>
+          </div>
+          <div class="spec-card reveal">
+            <h3>Indicative Pricing</h3>
+            <p>Current reference pricing prepared around RM150 – RM200 psf, subject to final unit, floor and availability.</p>
+          </div>
+          <div class="spec-card reveal">
+            <h3>Business Image</h3>
+            <p>A more polished project setting can support stronger branding and customer-facing business presentation.</p>
+          </div>
+          <div class="spec-card reveal">
+            <h3>Suitable Buyers</h3>
+            <p>Owner-occupiers, growing SMEs, showroom operators, warehouse-light businesses and investors.</p>
+          </div>
+          <div class="spec-card reveal">
+            <h3>Enquiry Ready</h3>
+            <p>Prepared for direct WhatsApp leads, brochure requests, viewing arrangements and project updates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="location">
+      <div class="container">
+        <div class="eyebrow reveal">Location</div>
+        <h2 class="section-title reveal">Location story built around <span class="accent">business access and confidence</span></h2>
+        <p class="section-copy reveal">
+          A strong location section helps the project feel more complete and gives buyers a better sense of how EMHub Bukit Raja can fit into everyday business operations.
+        </p>
+
+        <div class="location-grid">
+          <div class="location-card reveal">
+            <h3 style="margin:0 0 10px;font-family:'Manrope',sans-serif;font-size:1.45rem;color:var(--dark);">Bukit Raja commercial positioning</h3>
+            <p style="margin:0;color:var(--muted);line-height:1.75;">This section can be adjusted later with exact highways, industrial access, nearby townships and major landmarks once the final area narrative is confirmed.</p>
+            <div class="adv-list">
+              <div class="adv">
+                <strong>Business-friendly access</strong>
+                <span>Supports daily operational flow, staff movement and customer accessibility more comfortably than many ordinary commercial formats.</span>
+              </div>
+              <div class="adv">
+                <strong>Presentation value</strong>
+                <span>A cleaner and more premium website style helps reinforce the project as a modern commercial destination.</span>
+              </div>
+              <div class="adv">
+                <strong>Flexible own-use appeal</strong>
+                <span>Suitable for businesses seeking office, display and storage functions within one address.</span>
+              </div>
+              <div class="adv">
+                <strong>Longer-term relevance</strong>
+                <span>The project concept can appeal to both present operational needs and longer-term commercial positioning.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-card reveal">
+            <div class="map-frame">
+              <div class="map-note">
+                Replace this image with the final Bukit Raja map showing highways, access roads, nearby landmarks and commercial catchment points.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta" id="contact">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div class="cta-grid">
+            <div>
+              <div class="eyebrow" style="color:#fff;">Enquiry</div>
+              <h2>Get more details on EMHub Bukit Raja today.</h2>
+              <p>
+                For brochure, pricing, available units or viewing arrangement, contact Kenneth Lai directly. The page is prepared for a clean, modern project presentation while keeping the enquiry path simple and direct.
+              </p>
+            </div>
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="https://wa.me/60166287357" target="_blank" rel="noopener">WhatsApp Kenneth</a>
+              <a class="btn btn-secondary" href="tel:+60166287357">Call 016-628 7357</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <p>© 2026 EMHub Bukit Raja. Premium single-page commercial showcase prepared for marketing and enquiry generation.</p>
+      <div class="footer-links">
+        <a href="#home">Top</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#plans">Plans</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
