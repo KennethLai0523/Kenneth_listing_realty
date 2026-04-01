@@ -378,6 +378,11 @@
       display: block;
     }
 
+    .contain-img img{
+      object-fit: contain; /* shows FULL image */
+      background: #000; /* optional background */
+    }
+
 
     .image-break::before{
       content:"";
@@ -394,6 +399,7 @@
       right: 30px;
       z-index: 2;
       color: #fff;
+      
     
       padding: 20px 0; /* optional, smaller looks nicer */
     }
@@ -768,7 +774,7 @@
     </div> 
   </section>
 
-  <section class="image-break">
+  <section class="image-break contain-img">
     <img src="Armani_portklang.png" alt="">
     <div class="inner">
       <h2>DIRECT ACCESS TO MALAYSIA’S KEY LOGISTICS HUB</h2>
