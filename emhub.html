@@ -266,12 +266,21 @@
       grid-template-columns:1fr;
       gap:20px;
     }
-    .two-col{grid-template-columns:1fr 1fr}
-    .access-grid{grid-template-columns:repeat(3,1fr)}
-    .features-grid{grid-template-columns:repeat(3,1fr)}
-    .facilities-grid{grid-template-columns:repeat(4,1fr)}
-    .plans-grid{grid-template-columns:repeat(4,1fr)}
-    .form-grid{grid-template-columns:1fr 1fr}
+    .two-col{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .access-grid,
+    .features-grid,
+    .facilities-grid,
+    .plans-grid,
+    .form-grid{
+      display: grid;
+      gap: 20px;
+    }
+    .access-grid{
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     .panel{
       background:#fff;
@@ -398,6 +407,15 @@
       border:1px solid var(--line-dark);
       border-radius:22px;
       padding:24px;
+    }
+
+    .access-box{
+      transition: all 0.3s ease;
+    }
+    
+    .access-box:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
     }
 
     .access-box h3,
@@ -696,49 +714,43 @@
   </section>
 
   <section class="content-section alt" id="connectivity">
-    <div class="container">
+    <div class="container">   
+  
       <div class="section-head">
-        <h2>Connectivity</h2>
+        <h2>Connectivity & Accessibility</h2>
         <p>
-          Positioned with access to major highways and industrial routes, Armani Bizcore is suited for businesses that rely on regional movement, supplier access and efficient distribution channels.
+          Strategically positioned with direct access to major highways and close proximity to Port Klang, Armani Bizcore Bukit Raja ensures efficient logistics movement, strong regional connectivity and seamless business operations.
         </p>
       </div>
+      
       <div class="access-grid">
         <div class="access-box">
           <h3>NKVE</h3>
-          <p>One of the main arteries linking Bukit Raja to major Klang Valley industrial and commercial areas.</p>
+          <p>Links Bukit Raja directly to key Klang Valley industrial and commercial zones.</p>
         </div>
+  
         <div class="access-box">
           <h3>Federal Highway</h3>
-          <p>Provides convenient access into key urban corridors for daily business travel.</p>
+          <p>Provides fast access to major urban corridors for daily business and logistics movement.</p>
         </div>
+  
         <div class="access-box">
           <h3>KESAS / WCE</h3>
-          <p>Supports broader west coast and southern regional logistics movement from Klang.</p>
+          <p>Enhances west coast connectivity and supports regional logistics distribution.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="content-section" id="high-access">
-    <div class="container">
-      <div class="section-head">
-        <h2>High Accessibility</h2>
-        <p>
-          The location adds practical value not just through highways, but also through proximity to surrounding industrial centres and port infrastructure.
-        </p>
-      </div>
-      <div class="two-col">
-        <div class="panel">
+  
+        <div class="access-box">
           <h3>Operational Advantage</h3>
-          <p class="intro-text">Businesses benefit from easier movement for incoming goods, outgoing deliveries and regular site visits from clients, vendors and technical teams.</p>
+          <p>Efficient movement for incoming goods, outgoing deliveries and daily operations.</p>
         </div>
-        <div class="panel">
+  
+        <div class="access-box">
           <h3>Regional Reach</h3>
-          <p class="intro-text">Port Klang access, Klang industrial catchment and Shah Alam connectivity help the project appeal to logistics, distribution and warehousing operators.</p>
+          <p>Close proximity to Port Klang, Klang industrial hubs and Shah Alam business districts.</p>
         </div>
       </div>
-    </div>
+  
+    </div> 
   </section>
 
   <section class="image-break" style="background-image:url('Armani_portklang.png');">
