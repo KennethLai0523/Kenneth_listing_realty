@@ -367,8 +367,10 @@
       overflow: hidden; /* IMPORTANT */
       box-shadow: 0 18px 50px rgba(0,0,0,0.12); /* gives depth */
 
-      background-size: cover;
-    background-position: center;
+      background-size: contain;  /* CHANGE HERE */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #000; /* fills empty space nicely */
     }
 
     .image-break .inner{
