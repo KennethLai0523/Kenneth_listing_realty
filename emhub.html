@@ -3,905 +3,966 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Armani Bizcore Bukit Raja | Freehold Ramp-Up Industrial Hub</title>
-  <meta name="description" content="Discover Armani Bizcore Bukit Raja, a premium freehold ramp-up industrial hub in Klang with showroom, warehouse and office integration, direct ramp access, strong highway connectivity and modern business facilities." />
-  <meta name="keywords" content="Armani Bizcore Bukit Raja, Bukit Raja factory, ramp up factory Klang, freehold industrial hub Klang, showroom warehouse office Klang, industrial property Bukit Raja" />
+  <title>Armani Bizcore Bukit Raja | Freehold Ramp-Up Industrial Development</title>
+  <meta name="description" content="Armani Bizcore Bukit Raja is a freehold multi-level industrial development in Klang featuring showroom, warehouse and office integration, ramp-up access, smart industrial features, strategic road connectivity and modern facilities." />
+  <meta name="keywords" content="Armani Bizcore Bukit Raja, Bukit Raja industrial property, ramp up factory Klang, freehold industrial Klang, showroom warehouse office Klang, industrial project Bukit Raja" />
   <link rel="canonical" href="https://kennethlai.site/armani-bizcore.html" />
   <style>
-    :root {
-      --bg: #f5f3ee;
-      --bg-soft: #faf8f4;
-      --text: #1d1b19;
-      --muted: #6e655e;
-      --line: rgba(29, 27, 25, 0.12);
-      --gold: #b08b57;
-      --gold-dark: #8f6c3e;
-      --dark: #201b17;
-      --card: #ffffff;
-      --shadow: 0 20px 60px rgba(0,0,0,0.08);
-      --radius: 24px;
-      --radius-sm: 16px;
-      --container: 1180px;
+    :root{
+      --dark:#111111;
+      --dark-soft:#1b1b1b;
+      --light:#ffffff;
+      --muted:#6d6d6d;
+      --line:rgba(255,255,255,0.14);
+      --line-dark:rgba(17,17,17,0.10);
+      --gold:#b89257;
+      --gold-dark:#9b7842;
+      --bg:#f7f5f1;
+      --max:1200px;
+      --shadow:0 18px 50px rgba(0,0,0,0.12);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--dark);
+      background:#fff;
+      line-height:1.6;
     }
 
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    h1,h2,h3,h4,p{margin-top:0}
 
-    .container {
-      width: min(calc(100% - 32px), var(--container));
-      margin: 0 auto;
+    .container{
+      width:min(calc(100% - 40px), var(--max));
+      margin:0 auto;
     }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(12px);
-      background: rgba(245, 243, 238, 0.88);
-      border-bottom: 1px solid var(--line);
+    .topbar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      background:rgba(10,10,10,0.55);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      min-height: 78px;
+    .nav{
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
     }
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+    .brand{
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
     }
 
-    .brand strong {
-      font-size: 1.05rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .brand strong{
+      font-size:1rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
     }
 
-    .brand span {
-      font-size: 0.78rem;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .brand span{
+      font-size:.76rem;
+      color:rgba(255,255,255,.72);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-top:4px;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      flex-wrap:wrap;
     }
 
-    .nav-links a {
-      font-size: 0.95rem;
-      color: var(--muted);
+    .nav-links a{
+      color:rgba(255,255,255,.88);
+      font-size:.94rem;
     }
 
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover{color:#fff}
 
-    .btn,
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 20px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: 0.2s ease;
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 22px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+      color:#fff;
+      font-weight:700;
+      box-shadow:0 12px 30px rgba(184,146,87,.22);
+      transition:.2s ease;
     }
 
-    .btn {
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      color: #fff;
-      box-shadow: 0 14px 30px rgba(176, 139, 87, 0.28);
+    .btn:hover{transform:translateY(-1px)}
+
+    .btn-outline{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 22px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.24);
+      color:#fff;
+      font-weight:700;
+      background:rgba(255,255,255,.08);
+      backdrop-filter:blur(8px);
     }
 
-    .btn:hover { transform: translateY(-1px); }
-
-    .btn-outline {
-      border: 1px solid var(--line);
-      color: var(--text);
-      background: rgba(255,255,255,0.7);
-    }
-
-    .hero {
-      padding: 64px 0 40px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .hero-copy {
+    .hero{
+      min-height:100vh;
+      position:relative;
+      display:flex;
+      align-items:flex-end;
+      color:#fff;
       background:
-        linear-gradient(180deg, rgba(17,17,17,0.18), rgba(17,17,17,0.55)),
-        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80') center/cover;
-      min-height: 700px;
-      border-radius: 34px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: var(--shadow);
-      display: flex;
-      align-items: flex-end;
-      padding: 42px;
-      color: #fff;
+        linear-gradient(180deg, rgba(8,8,8,.18) 0%, rgba(8,8,8,.48) 48%, rgba(8,8,8,.70) 100%),
+        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
     }
 
-    .hero-panel {
-      max-width: 760px;
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg, rgba(0,0,0,.25), rgba(0,0,0,.05));
+      pointer-events:none;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.18);
-      color: #fff;
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
+    .hero-content{
+      position:relative;
+      z-index:1;
+      width:min(calc(100% - 40px), var(--max));
+      margin:0 auto;
+      padding:140px 0 72px;
     }
 
-    h1, h2, h3, h4, p { margin-top: 0; }
-
-    h1 {
-      font-size: clamp(2.5rem, 4.6vw, 5.3rem);
-      line-height: 0.98;
-      letter-spacing: -0.03em;
-      margin-bottom: 18px;
-      text-transform: uppercase;
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      border-radius:999px;
+      padding:9px 15px;
+      font-size:.78rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:20px;
     }
 
-    .hero-copy p {
-      font-size: 1.06rem;
-      color: rgba(255,255,255,0.9);
-      max-width: 650px;
-      margin-bottom: 28px;
+    .hero h1{
+      font-size:clamp(2.6rem, 6vw, 6rem);
+      line-height:.94;
+      letter-spacing:-.045em;
+      text-transform:uppercase;
+      max-width:860px;
+      margin-bottom:18px;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 28px;
+    .hero p{
+      font-size:1.06rem;
+      max-width:680px;
+      color:rgba(255,255,255,.86);
+      margin-bottom:28px;
     }
 
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:34px;
     }
 
-    .hero-stat {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 18px;
-      padding: 16px;
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      max-width:980px;
     }
 
-    .hero-stat strong {
-      display: block;
-      font-size: 1.35rem;
-      margin-bottom: 4px;
+    .hero-stat{
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.08);
+      backdrop-filter:blur(8px);
+      border-radius:18px;
+      padding:18px;
     }
 
-    .hero-stat span {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.78);
+    .hero-stat strong{
+      display:block;
+      font-size:1.28rem;
+      margin-bottom:4px;
     }
 
-    .side-stack {
-      display: grid;
-      grid-template-rows: 1.1fr 0.9fr;
-      gap: 24px;
+    .hero-stat span{
+      color:rgba(255,255,255,.76);
+      font-size:.88rem;
     }
 
-    .info-card,
-    .contact-card,
-    .card,
-    .gallery-card,
-    .spec-table,
-    .location-card,
-    .cta-card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    .content-section{
+      padding:88px 0;
     }
 
-    .info-card {
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 336px;
+    .content-section.alt{
+      background:var(--bg);
     }
 
-    .info-card h2 {
-      font-size: 1.35rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 16px;
+    .section-head{
+      margin-bottom:26px;
+      max-width:760px;
     }
 
-    .overview-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px 16px;
-      margin-top: 18px;
+    .section-head h2{
+      font-size:clamp(2rem, 4vw, 3.6rem);
+      line-height:.98;
+      text-transform:uppercase;
+      letter-spacing:-.04em;
+      margin-bottom:14px;
     }
 
-    .overview-item {
-      padding: 14px 0;
-      border-top: 1px solid var(--line);
+    .section-head p,
+    .intro-text{
+      color:var(--muted);
+      font-size:1rem;
     }
 
-    .overview-item span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 6px;
+    .overview-grid,
+    .two-col,
+    .access-grid,
+    .features-grid,
+    .facilities-grid,
+    .plans-grid,
+    .form-grid{
+      display:grid;
+      gap:20px;
     }
 
-    .overview-item strong {
-      font-size: 1rem;
+    .overview-grid{grid-template-columns:1.1fr .9fr}
+    .two-col{grid-template-columns:1fr 1fr}
+    .access-grid{grid-template-columns:repeat(3,1fr)}
+    .features-grid{grid-template-columns:repeat(3,1fr)}
+    .facilities-grid{grid-template-columns:repeat(4,1fr)}
+    .plans-grid{grid-template-columns:repeat(4,1fr)}
+    .form-grid{grid-template-columns:1fr 1fr}
+
+    .panel{
+      background:#fff;
+      border:1px solid var(--line-dark);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:var(--shadow);
     }
 
-    .contact-card {
-      padding: 28px;
-      background: linear-gradient(180deg, #fff, #f8f4ec);
-      min-height: 340px;
+    .panel.dark{
+      background:var(--dark-soft);
+      color:#fff;
+      border-color:rgba(255,255,255,.08);
     }
 
-    .contact-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 8px;
+    .panel.dark p,
+    .panel.dark li,
+    .panel.dark span{
+      color:rgba(255,255,255,.78);
     }
 
-    .contact-card p {
-      color: var(--muted);
-      margin-bottom: 22px;
+    .metric-list{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+      margin-top:20px;
     }
 
-    .contact-grid {
-      display: grid;
-      gap: 12px;
-      margin-top: 22px;
+    .metric{
+      border-top:1px solid var(--line-dark);
+      padding-top:14px;
     }
 
-    .contact-pill {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px 16px;
-      background: rgba(255,255,255,0.85);
+    .metric span{
+      display:block;
+      font-size:.78rem;
+      color:var(--muted);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:6px;
     }
 
-    .contact-pill span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 5px;
+    .metric strong{
+      font-size:1rem;
     }
 
-    section {
-      padding: 34px 0;
+    .list-clean{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:12px;
     }
 
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 20px;
-      margin-bottom: 22px;
+    .list-clean li{
+      padding:14px 16px;
+      border-radius:16px;
+      background:#f9f7f3;
+      border:1px solid var(--line-dark);
     }
 
-    .section-head h2 {
-      font-size: clamp(1.8rem, 3vw, 3rem);
-      line-height: 1;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: -0.03em;
+    .list-clean li strong{
+      display:block;
+      margin-bottom:4px;
+      color:var(--dark);
     }
 
-    .section-head p {
-      color: var(--muted);
-      max-width: 700px;
-      margin-bottom: 0;
+    .image-break{
+      width:100%;
+      min-height:82vh;
+      display:flex;
+      align-items:flex-end;
+      position:relative;
+      overflow:hidden;
+      background-size:cover;
+      background-position:center;
+      color:#fff;
     }
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+    .image-break::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,.50));
     }
 
-    .card {
-      padding: 24px;
-      min-height: 220px;
+    .image-break .inner{
+      position:relative;
+      z-index:1;
+      width:min(calc(100% - 40px), var(--max));
+      margin:0 auto;
+      padding:54px 0;
     }
 
-    .card small {
-      display: inline-block;
-      color: var(--gold-dark);
-      background: rgba(176,139,87,0.12);
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
+    .image-break h2{
+      font-size:clamp(2rem, 4vw, 4rem);
+      text-transform:uppercase;
+      letter-spacing:-.04em;
+      max-width:720px;
+      margin-bottom:10px;
     }
 
-    .card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 10px;
+    .image-break p{
+      max-width:620px;
+      color:rgba(255,255,255,.82);
+      margin:0;
     }
 
-    .card p { color: var(--muted); }
-
-    .spec-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
+    .access-box,
+    .feature-card,
+    .facility-card,
+    .plan-card{
+      background:#fff;
+      border:1px solid var(--line-dark);
+      border-radius:22px;
+      padding:24px;
     }
 
-    .spec-table {
-      padding: 12px 22px;
+    .access-box h3,
+    .feature-card h3,
+    .facility-card h3,
+    .plan-card h3{
+      margin-bottom:10px;
+      font-size:1.1rem;
+      text-transform:uppercase;
+      letter-spacing:.02em;
     }
 
-    .spec-row {
-      display: grid;
-      grid-template-columns: 190px 1fr;
-      gap: 20px;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--line);
+    .access-box p,
+    .feature-card p,
+    .facility-card p,
+    .plan-card p{
+      color:var(--muted);
+      margin-bottom:0;
     }
 
-    .spec-row:last-child { border-bottom: 0; }
-
-    .spec-row strong {
-      text-transform: uppercase;
-      font-size: 0.88rem;
-      letter-spacing: 0.08em;
+    .feature-card small,
+    .facility-card small,
+    .plan-card small{
+      display:inline-block;
+      margin-bottom:12px;
+      color:var(--gold-dark);
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
     }
 
-    .spec-row span { color: var(--muted); }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr 0.8fr;
-      grid-template-rows: 280px 280px;
-      gap: 18px;
+    .gallery-wrap{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr;
+      grid-auto-rows:290px;
+      gap:16px;
     }
 
-    .gallery-card {
-      overflow: hidden;
-      position: relative;
-      min-height: 220px;
+    .gallery-item{
+      position:relative;
+      overflow:hidden;
+      border-radius:22px;
     }
 
-    .gallery-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .5s ease;
     }
 
-    .gallery-card.large {
-      grid-row: span 2;
+    .gallery-item:hover img{transform:scale(1.04)}
+    .gallery-item.large{grid-row:span 2}
+
+    .gallery-item span{
+      position:absolute;
+      left:18px;
+      bottom:18px;
+      background:rgba(17,17,17,.62);
+      color:#fff;
+      border-radius:999px;
+      padding:10px 14px;
+      font-size:.82rem;
     }
 
-    .gallery-card .label {
-      position: absolute;
-      left: 18px;
-      bottom: 18px;
-      background: rgba(20,20,20,0.68);
-      color: #fff;
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-size: 0.84rem;
-      backdrop-filter: blur(8px);
+    .form-wrap{
+      background:linear-gradient(135deg,#161616,#2a2118);
+      color:#fff;
+      border-radius:28px;
+      padding:32px;
+      box-shadow:var(--shadow);
     }
 
-    .location-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
+    .form-wrap p{color:rgba(255,255,255,.8)}
+
+    .interest-form{
+      display:grid;
+      gap:14px;
     }
 
-    .location-card {
-      padding: 28px;
+    .interest-form input,
+    .interest-form textarea{
+      width:100%;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      padding:15px 16px;
+      font:inherit;
+      outline:none;
     }
 
-    .location-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 18px;
+    .interest-form input::placeholder,
+    .interest-form textarea::placeholder{color:rgba(255,255,255,.56)}
+
+    .interest-form textarea{min-height:130px;resize:vertical}
+
+    .contact-cards{
+      display:grid;
+      gap:14px;
     }
 
-    .location-list div {
-      padding: 14px;
-      border-radius: 16px;
-      background: var(--bg-soft);
-      border: 1px solid var(--line);
+    .contact-card{
+      padding:16px 18px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
     }
 
-    .location-list strong {
-      display: block;
-      margin-bottom: 5px;
+    .contact-card span{
+      display:block;
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:rgba(255,255,255,.66);
+      margin-bottom:6px;
     }
 
-    .location-list span {
-      color: var(--muted);
-      font-size: 0.93rem;
+    footer{
+      background:#101010;
+      color:rgba(255,255,255,.68);
+      padding:26px 0 34px;
     }
 
-    .uses-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      border-top:1px solid rgba(255,255,255,.10);
+      padding-top:18px;
     }
 
-    .cta-card {
-      padding: 34px;
-      background: linear-gradient(135deg, #1f1a17, #33291f);
-      color: #fff;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .cta-card p { color: rgba(255,255,255,0.8); }
-
-    .cta-points {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .cta-points div {
-      padding: 14px 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.06);
-      font-size: 0.95rem;
-    }
-
-    footer {
-      padding: 28px 0 46px;
-      color: var(--muted);
-    }
-
-    .footer-bar {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-    }
-
-    @media (max-width: 1100px) {
-      .hero-grid,
-      .spec-wrap,
-      .location-grid,
-      .cta-card,
-      .gallery-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 1100px){
+      .overview-grid,
+      .two-col,
+      .features-grid,
+      .facilities-grid,
+      .plans-grid,
+      .form-grid,
+      .gallery-wrap,
+      .access-grid,
+      .hero-stats{
+        grid-template-columns:1fr 1fr;
       }
 
-      .gallery-grid {
-        grid-template-rows: repeat(4, 240px);
-      }
-
-      .gallery-card.large { grid-row: span 1; }
-
-      .feature-grid,
-      .uses-grid { grid-template-columns: repeat(2, 1fr); }
-
-      .side-stack { grid-template-rows: auto; }
-      .hero-copy { min-height: 620px; }
+      .gallery-item.large{grid-row:span 1}
+      .image-break{min-height:68vh}
     }
 
-    @media (max-width: 720px) {
-      .topbar { position: static; }
-      .nav { padding: 14px 0; align-items: flex-start; }
-      .nav, .nav-links { flex-direction: column; align-items: flex-start; }
-      .hero-copy { padding: 24px; min-height: 560px; }
+    @media (max-width: 720px){
+      .topbar{position:static;background:#111}
+      .nav{padding:14px 0;align-items:flex-start}
+      .nav,.nav-links{flex-direction:column;align-items:flex-start}
+      .hero{min-height:auto}
+      .hero-content{padding:60px 0 42px}
       .hero-stats,
-      .overview-list,
-      .feature-grid,
-      .uses-grid,
-      .location-list,
-      .cta-points { grid-template-columns: 1fr; }
-      .spec-row { grid-template-columns: 1fr; gap: 8px; }
-      .section-head { align-items: flex-start; }
-      h1 { font-size: 2.4rem; }
+      .overview-grid,
+      .two-col,
+      .access-grid,
+      .features-grid,
+      .facilities-grid,
+      .plans-grid,
+      .form-grid,
+      .gallery-wrap,
+      .metric-list{grid-template-columns:1fr}
+      .hero h1{font-size:2.5rem}
+      .content-section{padding:64px 0}
+      .image-break{min-height:56vh}
+      .gallery-wrap{grid-auto-rows:220px}
     }
   </style>
 </head>
 <body>
-  <div class="topbar">
+  <header class="topbar">
     <div class="container nav">
       <a href="#home" class="brand">
         <strong>Armani Bizcore</strong>
-        <span>Bukit Raja • Klang</span>
+        <span>Bukit Raja, Klang</span>
       </a>
-      <div class="nav-links">
+      <nav class="nav-links">
         <a href="#overview">Overview</a>
-        <a href="#features">Features</a>
-        <a href="#specifications">Specifications</a>
         <a href="#location">Location</a>
+        <a href="#features">Features</a>
         <a href="#gallery">Gallery</a>
-        <a href="#contact" class="btn">Get Brochure</a>
+        <a href="#floorplan">Floor Plan</a>
+        <a href="#interest" class="btn">Get Brochure</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="eyebrow">Freehold Multi-Level Industrial Development</div>
+      <h1>Armani Bizcore Bukit Raja</h1>
+      <p>
+        A premium industrial address in Klang designed for modern businesses with integrated showroom, warehouse and office use, supported by ramp-up access, strategic connectivity and corporate-ready presentation.
+      </p>
+      <div class="hero-actions">
+        <a href="#interest" class="btn">Book A Viewing</a>
+        <a href="#overview" class="btn-outline">Explore Project</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>346 Units</strong>
+          <span>Multi-level industrial spaces</span>
+        </div>
+        <div class="hero-stat">
+          <strong>9.32 Acres</strong>
+          <span>Landmark industrial site</span>
+        </div>
+        <div class="hero-stat">
+          <strong>Freehold</strong>
+          <span>Long-term ownership value</span>
+        </div>
+        <div class="hero-stat">
+          <strong>3-in-1</strong>
+          <span>Showroom, warehouse & office</span>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="hero-panel">
-            <div class="eyebrow">Freehold Industrial Development</div>
-            <h1>Showroom.<br>Warehouse.<br>Office.</h1>
-            <p>
-              Armani Bizcore Bukit Raja is a modern ramp-up industrial hub designed for businesses that need efficient logistics, corporate presentation, and flexible operational space in one address.
-            </p>
-            <div class="hero-actions">
-              <a href="#contact" class="btn">Book A Site Tour</a>
-              <a href="#specifications" class="btn-outline">View Key Specs</a>
+  <section class="content-section" id="overview">
+    <div class="container">
+      <div class="section-head">
+        <h2>Project Overview</h2>
+        <p>
+          Armani Bizcore Bukit Raja is planned as a smart industrial ecosystem for businesses that want stronger logistics efficiency, better business presentation and more usable operational space in one address.
+        </p>
+      </div>
+
+      <div class="overview-grid">
+        <div class="panel">
+          <h3 style="font-size:1.35rem; margin-bottom:12px;">A New-Generation Industrial Concept</h3>
+          <p class="intro-text">
+            This development combines modern business frontage with industrial practicality. The core concept is simple: showroom in front, warehouse behind, office above — all within a ramp-up environment that supports direct access and better internal flow for daily operations.
+          </p>
+          <div class="metric-list">
+            <div class="metric">
+              <span>Development Type</span>
+              <strong>Multi-level industrial hub</strong>
             </div>
-            <div class="hero-stats">
-              <div class="hero-stat">
-                <strong>346</strong>
-                <span>Industrial units</span>
-              </div>
-              <div class="hero-stat">
-                <strong>9.32 acres</strong>
-                <span>Freehold development</span>
-              </div>
-              <div class="hero-stat">
-                <strong>1.5-storey</strong>
-                <span>Ramp-up unit concept</span>
-              </div>
+            <div class="metric">
+              <span>Unit Concept</span>
+              <strong>1.5-storey ramp-up unit design</strong>
+            </div>
+            <div class="metric">
+              <span>Target Users</span>
+              <strong>Logistics, distribution, e-commerce, light industrial</strong>
+            </div>
+            <div class="metric">
+              <span>Business Appeal</span>
+              <strong>Corporate façade with functional operations</strong>
             </div>
           </div>
         </div>
 
-        <div class="side-stack">
-          <div class="info-card">
-            <div>
-              <h2>Project Snapshot</h2>
-              <p>
-                A landmark industrial address in Bandar Bukit Raja offering a 3-in-1 business concept with ramp-up accessibility, corporate façade and modern shared facilities.
-              </p>
-              <div class="overview-list">
-                <div class="overview-item">
-                  <span>Tenure</span>
-                  <strong>Freehold</strong>
-                </div>
-                <div class="overview-item">
-                  <span>Concept</span>
-                  <strong>Ramp-Up Industrial Hub</strong>
-                </div>
-                <div class="overview-item">
-                  <span>Use</span>
-                  <strong>Showroom + Warehouse + Office</strong>
-                </div>
-                <div class="overview-item">
-                  <span>Vehicle Access</span>
-                  <strong>Direct Up / Down Ramp</strong>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="panel dark">
+          <h3 style="font-size:1.35rem; margin-bottom:12px;">Why This Project Stands Out</h3>
+          <ul class="list-clean" style="background:none;">
+            <li><strong>Freehold industrial title</strong>Longer-term holding value for own use or investment.</li>
+            <li><strong>Ramp-up circulation</strong>Vehicles can access upper levels more conveniently for loading and unloading.</li>
+            <li><strong>Flexible internal space</strong>Suitable for custom fit-outs across business categories.</li>
+            <li><strong>Polished project image</strong>Designed to feel more premium than a conventional factory layout.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="contact-card" id="contact">
-            <h3>Register Your Interest</h3>
-            <p>Enquire for brochure, layout, pricing and available unit selection.</p>
-            <a href="https://wa.me/60166287357" class="btn" target="_blank" rel="noopener">WhatsApp Now</a>
-            <div class="contact-grid">
-              <div class="contact-pill">
-                <span>Contact</span>
+  <section class="image-break" style="background-image:url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1800&q=80');">
+    <div class="inner">
+      <h2>Built For Businesses That Need Efficiency And Presence</h2>
+      <p>Large imagery spans edge to edge so the page feels more like a modern project launch site, not a boxed property listing.</p>
+    </div>
+  </section>
+
+  <section class="content-section alt" id="location">
+    <div class="container">
+      <div class="section-head">
+        <h2>Strategic Location</h2>
+        <p>
+          Located in Bandar Bukit Raja, Klang, the project benefits from established industrial surroundings, workforce accessibility and strong positioning within the wider Klang and Shah Alam industrial corridor.
+        </p>
+      </div>
+      <div class="two-col">
+        <div class="panel">
+          <h3>Main Industrial Catchment</h3>
+          <ul class="list-clean">
+            <li><strong>Bukit Raja</strong>Mature industrial and business environment with established activity.</li>
+            <li><strong>Shah Alam</strong>Close access to a major industrial and commercial city.</li>
+            <li><strong>Klang</strong>Practical access to local distribution and port-related movement.</li>
+            <li><strong>Setia Alam / Bukit Jelutong</strong>Nearby residential and commercial support zones.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Location Advantages</h3>
+          <ul class="list-clean">
+            <li><strong>Established township</strong>Surrounded by mature developments and daily conveniences.</li>
+            <li><strong>Logistics-friendly setting</strong>Suitable for storage, distribution and showroom operations.</li>
+            <li><strong>Workforce support</strong>Good accessibility from surrounding residential areas.</li>
+            <li><strong>Business visibility</strong>Better image and approachability for clients and suppliers.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="road-access">
+    <div class="container">
+      <div class="section-head">
+        <h2>Road Access</h2>
+        <p>
+          The development fronts practical access routes within Bukit Raja, making it easier for delivery movement, staff entry, customer approach and daily warehouse operations.
+        </p>
+      </div>
+      <div class="access-grid">
+        <div class="access-box">
+          <h3>Jalan Keluli 1</h3>
+          <p>Main frontage and one of the key direct access roads into the project zone.</p>
+        </div>
+        <div class="access-box">
+          <h3>Jalan Keluli 2A / KU2</h3>
+          <p>Supports surrounding industrial circulation and internal connectivity within the area.</p>
+        </div>
+        <div class="access-box">
+          <h3>Industrial-Friendly Circulation</h3>
+          <p>Road planning around the site supports the needs of business users and vehicle movement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="image-break" style="background-image:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=80');">
+    <div class="inner">
+      <h2>Strategic Connectivity Across Klang Valley</h2>
+      <p>A strong transport network improves movement time for deliveries, suppliers, clients and workforce access.</p>
+    </div>
+  </section>
+
+  <section class="content-section alt" id="connectivity">
+    <div class="container">
+      <div class="section-head">
+        <h2>Connectivity</h2>
+        <p>
+          Positioned with access to major highways and industrial routes, Armani Bizcore is suited for businesses that rely on regional movement, supplier access and efficient distribution channels.
+        </p>
+      </div>
+      <div class="access-grid">
+        <div class="access-box">
+          <h3>NKVE</h3>
+          <p>One of the main arteries linking Bukit Raja to major Klang Valley industrial and commercial areas.</p>
+        </div>
+        <div class="access-box">
+          <h3>Federal Highway</h3>
+          <p>Provides convenient access into key urban corridors for daily business travel.</p>
+        </div>
+        <div class="access-box">
+          <h3>KESAS / WCE</h3>
+          <p>Supports broader west coast and southern regional logistics movement from Klang.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="high-access">
+    <div class="container">
+      <div class="section-head">
+        <h2>High Accessibility</h2>
+        <p>
+          The location adds practical value not just through highways, but also through proximity to surrounding industrial centres and port infrastructure.
+        </p>
+      </div>
+      <div class="two-col">
+        <div class="panel">
+          <h3>Operational Advantage</h3>
+          <p class="intro-text">Businesses benefit from easier movement for incoming goods, outgoing deliveries and regular site visits from clients, vendors and technical teams.</p>
+        </div>
+        <div class="panel">
+          <h3>Regional Reach</h3>
+          <p class="intro-text">Port Klang access, Klang industrial catchment and Shah Alam connectivity help the project appeal to logistics, distribution and warehousing operators.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="image-break" style="background-image:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=80');">
+    <div class="inner">
+      <h2>Smart Industrial Features</h2>
+      <p>Purpose-driven specifications help the project feel modern, scalable and more suitable for next-generation industrial users.</p>
+    </div>
+  </section>
+
+  <section class="content-section alt" id="features">
+    <div class="container">
+      <div class="section-head">
+        <h2>Smart Industrial Features</h2>
+        <p>
+          These specifications are designed to support practical use, efficient loading, stronger presentation and long-term business functionality.
+        </p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <small>Feature 01</small>
+          <h3>Freehold Multi-Storey Development</h3>
+          <p>Longer-term asset holding value with a more future-ready industrial positioning.</p>
+        </div>
+        <div class="feature-card">
+          <small>Feature 02</small>
+          <h3>20-Foot High Ceilings</h3>
+          <p>Double-volume potential creates more flexibility for racking, warehouse efficiency or spatial presentation.</p>
+        </div>
+        <div class="feature-card">
+          <small>Feature 03</small>
+          <h3>Heavy-Duty Floor Loading</h3>
+          <p>Designed to support practical operational use and warehouse functionality.</p>
+        </div>
+        <div class="feature-card">
+          <small>Feature 04</small>
+          <h3>3-Phase 100A Power Supply</h3>
+          <p>Supports a range of industrial and business requirements for daily operations.</p>
+        </div>
+        <div class="feature-card">
+          <small>Feature 05</small>
+          <h3>Direct Up / Down Ramp System</h3>
+          <p>Ramp-up concept improves convenience for upper-level access and goods movement.</p>
+        </div>
+        <div class="feature-card">
+          <small>Feature 06</small>
+          <h3>3-in-1 Functional Layout</h3>
+          <p>Showroom, warehouse and office use can be combined under one roof with better planning flexibility.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <h2>Gallery</h2>
+        <p>
+          The layout below gives you a cleaner visual flow while still letting project images feel large, premium and immersive. Replace these placeholders with the actual Armani Bizcore visuals later.
+        </p>
+      </div>
+      <div class="gallery-wrap">
+        <div class="gallery-item large">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80" alt="Industrial exterior placeholder" />
+          <span>Project Exterior</span>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" alt="Office interior placeholder" />
+          <span>Office Ambience</span>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80" alt="Warehouse loading placeholder" />
+          <span>Loading Function</span>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" alt="Warehouse storage placeholder" />
+          <span>Warehouse Utility</span>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Corporate meeting placeholder" />
+          <span>Corporate Presentation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section alt" id="facilities">
+    <div class="container">
+      <div class="section-head">
+        <h2>Facilities</h2>
+        <p>
+          Beyond basic industrial function, the development includes supporting facilities that improve the overall business environment and daily convenience.
+        </p>
+      </div>
+      <div class="facilities-grid">
+        <div class="facility-card">
+          <small>Facility</small>
+          <h3>Podium Car Park</h3>
+          <p>Organized circulation improves accessibility for staff, clients and daily business traffic.</p>
+        </div>
+        <div class="facility-card">
+          <small>Facility</small>
+          <h3>Waiting Lounges</h3>
+          <p>Comfortable support areas add a more polished business experience for visitors and teams.</p>
+        </div>
+        <div class="facility-card">
+          <small>Facility</small>
+          <h3>Multiple Lift Systems</h3>
+          <p>Passenger, cargo, service and bomba lift planning improves vertical movement across the blocks.</p>
+        </div>
+        <div class="facility-card">
+          <small>Facility</small>
+          <h3>Security & Infrastructure</h3>
+          <p>Modern site planning with better control, monitoring and day-to-day operational support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="image-break" style="background-image:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=80');">
+    <div class="inner">
+      <h2>Floor Plan</h2>
+      <p>Dedicated floor plan presentation helps buyers understand the variety of layouts and business fit.</p>
+    </div>
+  </section>
+
+  <section class="content-section" id="floorplan">
+    <div class="container">
+      <div class="section-head">
+        <h2>Floor Plan</h2>
+        <p>
+          You asked for this section to be included clearly. For now I structured it as premium cards. Later, just replace each card image or insert the real brochure floor plan visuals.
+        </p>
+      </div>
+      <div class="plans-grid">
+        <div class="plan-card">
+          <small>Layout</small>
+          <h3>Type A</h3>
+          <p>Suitable placeholder block for one unit plan image and size details.</p>
+        </div>
+        <div class="plan-card">
+          <small>Layout</small>
+          <h3>Type B</h3>
+          <p>Use this card to present plan image, built-up, ceiling and loading information.</p>
+        </div>
+        <div class="plan-card">
+          <small>Layout</small>
+          <h3>Type C</h3>
+          <p>Can be swapped with actual brochure visual and downloadable PDF link later.</p>
+        </div>
+        <div class="plan-card">
+          <small>Layout</small>
+          <h3>Type D</h3>
+          <p>Flexible block to showcase multiple layouts without overcrowding the page.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section alt" id="interest">
+    <div class="container">
+      <div class="form-wrap">
+        <div class="form-grid">
+          <div>
+            <div class="eyebrow" style="margin-bottom:16px;">Register Interest</div>
+            <h2 style="font-size:clamp(2rem,4vw,3.6rem);line-height:.98;text-transform:uppercase;letter-spacing:-.04em; margin-bottom:14px;">Get Brochure, Layout & Availability</h2>
+            <p>
+              Use this section as the final conversion point. Visitors can enquire for brochure, pricing, current release information and available layouts.
+            </p>
+            <div class="contact-cards">
+              <div class="contact-card">
+                <span>Contact Person</span>
                 Kenneth Lai
               </div>
-              <div class="contact-pill">
+              <div class="contact-card">
                 <span>Phone</span>
                 +60 16-628 7357
               </div>
-              <div class="contact-pill">
-                <span>Coverage</span>
-                Bukit Raja • Klang • Shah Alam
+              <div class="contact-card">
+                <span>Action</span>
+                Fastest response via WhatsApp enquiry
               </div>
             </div>
+          </div>
+          <div>
+            <form class="interest-form">
+              <input type="text" placeholder="Your Name" />
+              <input type="tel" placeholder="Phone Number" />
+              <input type="email" placeholder="Email Address" />
+              <textarea placeholder="Message / Unit Requirement"></textarea>
+              <a href="https://wa.me/60166287357" class="btn" target="_blank" rel="noopener">WhatsApp Now</a>
+            </form>
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="overview">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Industrial Space Built For Modern Business</h2>
-            <p>
-              Armani Bizcore is planned for logistics operators, distributors, e-commerce players, light industrial users and companies seeking a polished business address with integrated operational space.
-            </p>
-          </div>
-        </div>
-
-        <div class="feature-grid">
-          <div class="card">
-            <small>01</small>
-            <h3>3-in-1 Functional Layout</h3>
-            <p>Each unit combines showroom frontage, warehouse functionality and office space to support daily operations under one roof.</p>
-          </div>
-          <div class="card">
-            <small>02</small>
-            <h3>Drive-Up Ramp Access</h3>
-            <p>Efficient up/down ramp circulation allows vehicles to access upper levels directly for smoother logistics and loading activity.</p>
-          </div>
-          <div class="card">
-            <small>03</small>
-            <h3>Corporate-Ready Image</h3>
-            <p>Modern façade, clean planning and organized circulation present a stronger impression for clients, suppliers and visitors.</p>
-          </div>
-          <div class="card">
-            <small>04</small>
-            <h3>Business-Friendly Facilities</h3>
-            <p>On-site event hall, waiting lounges, parking, gym and sports facilities add convenience beyond a typical factory project.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="specifications">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Key Specifications</h2>
-            <p>
-              Planned with practical industrial specifications to support warehousing, assembly, showroom use and day-to-day operational efficiency.
-            </p>
-          </div>
-        </div>
-
-        <div class="spec-wrap">
-          <div class="spec-table">
-            <div class="spec-row">
-              <strong>Ceiling Height</strong>
-              <span>Approx. 20 ft ground floor height with strong double-volume potential for racking, showroom presentation or added flexibility.</span>
-            </div>
-            <div class="spec-row">
-              <strong>Floor Loading</strong>
-              <span>Up to 10 kN/m² on ground floor and 3 kN/m² on mezzanine / upper areas for operational practicality.</span>
-            </div>
-            <div class="spec-row">
-              <strong>Power Supply</strong>
-              <span>100 Amp 3-phase power supply, with selected units reportedly offering higher capacity based on requirements.</span>
-            </div>
-            <div class="spec-row">
-              <strong>Roller Shutter</strong>
-              <span>Large motorized loading shutter designed for efficient goods movement and industrial access.</span>
-            </div>
-          </div>
-
-          <div class="spec-table">
-            <div class="spec-row">
-              <strong>Ramp System</strong>
-              <span>Direct ramp-up concept with gentle gradient for smoother up/down access and better loading convenience.</span>
-            </div>
-            <div class="spec-row">
-              <strong>Parking / Bays</strong>
-              <span>Minimum 3 dedicated parking or loading bays per unit for staff, visitors and operational use.</span>
-            </div>
-            <div class="spec-row">
-              <strong>Lifts</strong>
-              <span>Multiple passenger, cargo, bomba and service lifts planned to support vertical circulation across blocks.</span>
-            </div>
-            <div class="spec-row">
-              <strong>Title</strong>
-              <span>Freehold strata-titled industrial units in a large-scale multi-level development.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Visual Direction</h2>
-            <p>
-              A premium landing page works best with large industrial imagery, bold typography and a refined neutral palette similar to upscale commercial developments.
-            </p>
-          </div>
-        </div>
-
-        <div class="gallery-grid">
-          <div class="gallery-card large">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80" alt="Modern business building exterior" />
-            <div class="label">Hero Visual Placeholder</div>
-          </div>
-          <div class="gallery-card">
-            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" alt="Corporate office interior" />
-            <div class="label">Corporate Office Feel</div>
-          </div>
-          <div class="gallery-card">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" alt="Warehouse storage space" />
-            <div class="label">Warehouse Function</div>
-          </div>
-          <div class="gallery-card">
-            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80" alt="Industrial loading bay" />
-            <div class="label">Ramp / Loading Concept</div>
-          </div>
-          <div class="gallery-card">
-            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80" alt="Showroom and business environment" />
-            <div class="label">Showroom + Meeting Space</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="location">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Strategic Bukit Raja Connectivity</h2>
-            <p>
-              Positioned within Bandar Bukit Raja, the project benefits from road frontage, industrial surroundings and access to major transport routes serving Klang Valley logistics and distribution.
-            </p>
-          </div>
-        </div>
-
-        <div class="location-grid">
-          <div class="location-card">
-            <h3>Main Access Advantages</h3>
-            <p>
-              Businesses benefit from visibility and practical logistics movement within one of Klang’s established industrial zones.
-            </p>
-            <div class="location-list">
-              <div>
-                <strong>Road Frontage</strong>
-                <span>Fronting Jalan Keluli 1 in the Bukit Raja industrial area.</span>
-              </div>
-              <div>
-                <strong>Nearby Industrial Catchment</strong>
-                <span>Close to Shah Alam, Klang, Setia Alam, Bukit Jelutong and surrounding mature areas.</span>
-              </div>
-              <div>
-                <strong>Port Connectivity</strong>
-                <span>Approx. 15 km to Port Klang Northport for import-export and logistics users.</span>
-              </div>
-              <div>
-                <strong>Workforce Access</strong>
-                <span>Supported by nearby residential and commercial townships.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="location-card">
-            <h3>Highway Network</h3>
-            <p>
-              Well-connected access helps reduce movement time for staff, suppliers, deliveries and regional distribution.
-            </p>
-            <div class="location-list">
-              <div>
-                <strong>NKVE</strong>
-                <span>Main Klang Valley industrial connector.</span>
-              </div>
-              <div>
-                <strong>Federal Highway</strong>
-                <span>Direct linkage toward major urban catchments.</span>
-              </div>
-              <div>
-                <strong>WCE</strong>
-                <span>Additional west coast connectivity for logistics flow.</span>
-              </div>
-              <div>
-                <strong>Shapadu / NNKSB</strong>
-                <span>Supports local industrial access across Klang.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="uses">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Suitable Business Profiles</h2>
-            <p>
-              The layout concept supports a wide range of occupiers looking for integrated operational space and better presentation value.
-            </p>
-          </div>
-        </div>
-
-        <div class="uses-grid">
-          <div class="card">
-            <small>Use Case</small>
-            <h3>E-Commerce & Fulfilment</h3>
-            <p>Combine office management, stock holding and dispatch operations from one efficient business address.</p>
-          </div>
-          <div class="card">
-            <small>Use Case</small>
-            <h3>Showroom Distributors</h3>
-            <p>Suitable for businesses that require display frontage together with storage and back-end fulfillment.</p>
-          </div>
-          <div class="card">
-            <small>Use Case</small>
-            <h3>Light Manufacturing</h3>
-            <p>Supports selected assembly, engineering, printing and industrial support activities with practical specs.</p>
-          </div>
-          <div class="card">
-            <small>Use Case</small>
-            <h3>Industrial Investors</h3>
-            <p>Freehold industrial concept with modern specification may appeal to investors targeting rental demand and asset holding.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="cta-card">
-          <div>
-            <div class="eyebrow" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12);">Armani Bizcore Bukit Raja</div>
-            <h2 style="font-size: clamp(2rem, 3.2vw, 3.6rem); margin-bottom: 12px;">Position Your Business In A Future-Ready Industrial Address</h2>
-            <p>
-              Get the brochure, floor plan options and current availability for this freehold ramp-up industrial development in Bukit Raja, Klang.
-            </p>
-          </div>
-          <div>
-            <a href="https://wa.me/60166287357" class="btn" target="_blank" rel="noopener">Enquire On WhatsApp</a>
-            <div class="cta-points">
-              <div>Freehold industrial title</div>
-              <div>Ramp-up accessibility</div>
-              <div>Showroom + warehouse + office</div>
-              <div>Prime Bukit Raja location</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer>
-    <div class="container footer-bar">
+    <div class="container footer-row">
       <div>© Armani Bizcore Bukit Raja Landing Page Concept</div>
-      <div>Designed for property marketing and lead generation</div>
+      <div>Designed for premium industrial property marketing</div>
     </div>
   </footer>
 </body>
