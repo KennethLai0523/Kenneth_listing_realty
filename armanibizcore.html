@@ -118,6 +118,25 @@
       transition:.2s ease;
     }
 
+    .btn-whatsapp{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 22px;
+      border-radius:999px;
+      background:linear-gradient(135deg,#25D366,#1ebe5d);
+      color:#fff;
+      font-weight:700;
+      box-shadow:0 12px 30px rgba(37,211,102,0.35);
+      transition:0.25s ease;
+    }
+    
+    .btn-whatsapp:hover{
+      transform:translateY(-2px);
+      box-shadow:0 18px 40px rgba(37,211,102,0.45);
+    }
+
     .btn:hover{transform:translateY(-1px)}
 
     .btn-outline{
@@ -1084,7 +1103,12 @@
         A premium industrial property in Bukit Raja Klang designed for modern businesses with integrated showroom, warehouse and office use, supported by ramp-up access, strategic connectivity to Port Klang and major highways, and corporate-ready presentation.
       </p>
       <div class="hero-actions">
-        <a href="#interest" class="btn">Book A Viewing</a>
+        <a href="https://wa.me/60166287357?text=Hi%20Kenneth,%20I’m%20interested%20in%20Armani%20Bizcore%20Bukit%20Raja.%20Can%20I%20get%20more%20details?" 
+           class="btn-whatsapp" 
+           target="_blank" 
+           rel="noopener">
+          WhatsApp Now
+        </a>
         <a href="#overview" class="btn-outline">Explore Project</a>
       </div>
       <div class="hero-stats">
