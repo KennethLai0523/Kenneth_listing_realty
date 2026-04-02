@@ -375,7 +375,10 @@
     .metric strong{
       font-size:1rem;
     }
-
+    
+    .features-grid{
+      grid-template-columns: repeat(3, 1fr);
+    }
     .list-clean{
       list-style:none;
       padding:0;
@@ -769,6 +772,18 @@
     .layout-info p{
       color:var(--muted);
       margin-bottom:10px;
+    }
+
+    @media (max-width: 900px){
+      .features-grid{
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    @media (max-width: 600px){
+      .features-grid{
+        grid-template-columns: 1fr;
+      }
     }
     
     @media (max-width: 900px){
