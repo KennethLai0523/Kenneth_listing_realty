@@ -948,6 +948,24 @@
         line-height:1.5;
       }
     }
+
+    .split-layout{
+      display:grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap:30px;
+      align-items:start;
+    }
+    
+    .split-image img{
+      width:100%;
+      border-radius:20px;
+    }
+    
+    @media (max-width: 900px){
+      .split-layout{
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1060,17 +1078,24 @@
         <div class="lc-panel active" id="catchment-panel">
           <div class="panel">
             <h3>Main Industrial Catchment</h3>
-  
-            <section class="image-break image-break-sub">
-              <img src="Armani_portklang.png" alt="Main Industrial Catchment">
-            </section>
-  
-            <ul class="list-clean">
-              <li><strong>Bukit Raja</strong>Mature industrial and business environment with established activity.</li>
-              <li><strong>Shah Alam</strong>Close access to a major industrial and commercial city.</li>
-              <li><strong>Klang</strong>Practical access to local distribution and port-related movement.</li>
-              <li><strong>Setia Alam / Bukit Jelutong</strong>Nearby residential and commercial support zones.</li>
-            </ul>
+            <div class="split-layout">
+            
+              <!-- LEFT IMAGE -->
+              <div class="split-image">
+                <img src="Armani_portklang.png" alt="Main Industrial Catchment">
+              </div>
+            
+              <!-- RIGHT TEXT -->
+              <div class="split-content">
+                <ul class="list-clean">
+                  <li><strong>Bukit Raja</strong>Mature industrial and business environment with established activity.</li>
+                  <li><strong>Shah Alam</strong>Close access to a major industrial and commercial city.</li>
+                  <li><strong>Klang</strong>Practical access to local distribution and port-related movement.</li>
+                  <li><strong>Setia Alam / Bukit Jelutong</strong>Nearby residential and commercial support zones.</li>
+                </ul>
+              </div>
+            
+            </div>
           </div>
         </div>
   
@@ -1078,28 +1103,33 @@
         <div class="lc-panel" id="connectivity-panel">
           <div class="panel">
             <h3>Connectivity & Accessibility</h3>
-  
-            <section class="image-break image-break-sub">
-              <img src="armani_bizcore_map.png" alt="Connectivity and Accessibility">
-            </section>
-  
-            <div class="access-grid compact">
-              <div class="access-box">
-                <h3>NKVE</h3>
-                <p>Links Bukit Raja directly to key Klang Valley industrial zones.</p>
+            <div class="split-layout">
+            
+              <div class="split-image">
+                <img src="armani_bizcore_map.png" alt="Connectivity and Accessibility">
               </div>
-              <div class="access-box">
-                <h3>Federal Highway</h3>
-                <p>Fast access to major urban corridors.</p>
+            
+              <div class="split-content">
+                <div class="access-grid compact">
+                  <div class="access-box">
+                    <h3>NKVE</h3>
+                    <p>Links Bukit Raja directly to key Klang Valley industrial zones.</p>
+                  </div>
+                  <div class="access-box">
+                    <h3>Federal Highway</h3>
+                    <p>Fast access to major urban corridors.</p>
+                  </div>
+                  <div class="access-box">
+                    <h3>KESAS / WCE</h3>
+                    <p>Supports west coast logistics distribution.</p>
+                  </div>
+                  <div class="access-box">
+                    <h3>Regional Reach</h3>
+                    <p>Close to Port Klang and key industrial hubs.</p>
+                  </div>
+                </div>
               </div>
-              <div class="access-box">
-                <h3>KESAS / WCE</h3>
-                <p>Supports west coast logistics distribution.</p>
-              </div>
-              <div class="access-box">
-                <h3>Regional Reach</h3>
-                <p>Close to Port Klang and key industrial hubs.</p>
-              </div>
+            
             </div>
           </div>
         </div>
