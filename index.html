@@ -778,6 +778,22 @@
             <button id="loanToolBtn" class="tool-btn" onclick="setTool('loan')">Loan Calculator</button>
           </div>
 
+          <div id="websitePanel" class="tool-panel" style="display:none;">
+            <h3 class="tool-title">Project Websites</h3>
+            <p class="tool-subtitle">
+              Browse featured project pages and landing sites.
+            </p>
+          
+            <div class="listing-actions">
+              <a class="btn btn-gold" href="ava.html" target="_blank">AVA @ Kiara Bay</a>
+              <a class="btn btn-gold" href="kepong-shoplot.html" target="_blank">Kepong Shoplot</a>
+              <a class="btn btn-gold" href="kl-office.html" target="_blank">KL Office</a>
+              <a class="btn btn-gold" href="sungai_buloh_factory.html" target="_blank">Factory</a>
+              <a class="btn btn-gold" href="https://leverra-sri-damansara.homes/" target="_blank">Leverra</a>
+              <a class="btn btn-gold" href="armanibizcore.html" target="_blank">Armani Bizcore</a>
+            </div>
+          </div>
+
           <div id="roiToolPanel" class="tool-panel">
             <h3 class="tool-title">ROI Calculator</h3>
             <p class="tool-subtitle">
@@ -1000,36 +1016,25 @@
         categoryBranch.style.display = "none";
         toolsWrapper.style.display = "block";
         listingsSection.style.display = "none";
+        document.querySelector(".tool-selector").style.display = "flex";
+        document.getElementById("websitePanel").style.display = "none";
+      
+        setTool(currentTool);
       } else if (mode === "website") {
-      title.textContent = "My Websites";
-      subtitle.textContent = "Explore property landing pages and project websites.";
-    
-      searchBox.style.display = "none";
-      categoryBranch.style.display = "none";
-      toolsWrapper.style.display = "none";
-      listingsSection.style.display = "grid";
-    
-      document.getElementById("listings").innerHTML = `
-        <div class="listing-card">
-          <div class="listing-body">
-            <h2 class="listing-title">Project Websites</h2>
-            <div class="description">
-              Browse featured project pages and landing sites.
-            </div>
-    
-            <div class="listing-actions">
-              <a class="btn btn-gold" href="ava.html" target="_blank">AVA @ Kiara Bay</a>
-              <a class="btn btn-gold" href="kepong-shoplot.html" target="_blank">Kepong Shoplot</a>
-              <a class="btn btn-gold" href="kl-office.html" target="_blank">KL Office</a>
-              <a class="btn btn-gold" href="sungai_buloh_factory.html" target="_blank">Factory</a>
-              <a class="btn btn-gold" href="https://leverra-sri-damansara.homes/" target="_blank">Leverra Sri Damansara</a>
-              <a class="btn btn-gold" href="https://kennethlai.site/armanibizcore.html" target="_blank">Armani Bizcore</a>
-              
-            </div>
-          </div>
-        </div>
-      `;
-    }
+        title.textContent = "Project Websites";
+        subtitle.textContent = "Browse featured project pages and landing sites.";
+      
+        searchBox.style.display = "none";
+        categoryBranch.style.display = "none";
+        toolsWrapper.style.display = "block";
+        listingsSection.style.display = "none";
+      
+        document.querySelector(".tool-selector").style.display = "none";
+      
+        document.getElementById("roiToolPanel").style.display = "none";
+        document.getElementById("loanToolPanel").style.display = "none";
+        document.getElementById("websitePanel").style.display = "block";
+      }
     }
 
     function setTool(tool) {
@@ -1263,7 +1268,7 @@
     }
 
     function render() {
-      if (currentMode === "tools") return;
+      if (currentMode === "tools" || currentMode === "website") return;
 
       const key = document.getElementById("search").value.toLowerCase().trim();
 
