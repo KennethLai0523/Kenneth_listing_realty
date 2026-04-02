@@ -782,6 +782,76 @@
       }
     }
 
+    /* LOCATION CONNECTIVITY TABS */
+    .lc-tabs{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:22px;
+    }
+    
+    .lc-tab{
+      border:none;
+      background:#d7be87;
+      color:#fff;
+      padding:14px 20px;
+      border-radius:999px;
+      font-size:1rem;
+      font-weight:700;
+      cursor:pointer;
+      transition:.25s ease;
+    }
+    
+    .lc-tab:hover{
+      transform:translateY(-1px);
+    }
+    
+    .lc-tab.active{
+      background:#0f3f34;
+    }
+    
+    /* PANEL SWITCH */
+    .lc-panel{
+      display:none;
+    }
+    
+    .lc-panel.active{
+      display:block;
+    }
+    
+    /* IMAGE UNDER SUBTITLE */
+    .image-break-sub{
+      width:100%;
+      margin:18px 0 20px;
+    }
+    
+    /* MAKE IMAGE TITLE SMALLER (NOT TOO BIG) */
+    .image-break-sub h2{
+      font-size:clamp(1.5rem, 3vw, 2.6rem);
+    }
+    
+    /* MOBILE */
+    @media (max-width: 720px){
+      .lc-tabs{
+        gap:10px;
+      }
+    
+      .lc-tab{
+        width:100%;
+        text-align:center;
+        padding:12px 16px;
+        font-size:.95rem;
+      }
+    
+      .image-break-sub{
+        margin:16px 0 18px;
+      }
+    
+      .image-break-sub h2{
+        font-size:1.4rem;
+      }
+    }
+
     @media (max-width: 1100px){
       .-grid,
       .two-col,
@@ -949,63 +1019,68 @@
         </p>
       </div>
   
-      <div class="location-connect-grid">
+      <div class="lc-tabs">
+        <button class="lc-tab active" data-target="catchment-panel">Main Industrial Catchment</button>
+        <button class="lc-tab" data-target="connectivity-panel">Connectivity & Accessibility</button>
+      </div>
   
-        <!-- LEFT -->
-        <div class="panel">
-          <h3>Main Industrial Catchment</h3>
-          <ul class="list-clean">
-            <li><strong>Bukit Raja</strong>Mature industrial and business environment with established activity.</li>
-            <li><strong>Shah Alam</strong>Close access to a major industrial and commercial city.</li>
-            <li><strong>Klang</strong>Practical access to local distribution and port-related movement.</li>
-            <li><strong>Setia Alam / Bukit Jelutong</strong>Nearby residential and commercial support zones.</li>
-          </ul>
-        </div>
+      <div class="lc-panels">
+        <!-- MAIN INDUSTRIAL CATCHMENT -->
+        <div class="lc-panel active" id="catchment-panel">
+          <div class="panel">
+            <h3>Main Industrial Catchment</h3>
   
-        <!-- RIGHT -->
-        <div class="panel">
-          <h3>Connectivity & Accessibility</h3>
-          <div class="access-grid compact">
-            <div class="access-box">
-              <h3>NKVE</h3>
-              <p>Links Bukit Raja directly to key Klang Valley industrial zones.</p>
-            </div>
-            <div class="access-box">
-              <h3>Federal Highway</h3>
-              <p>Fast access to major urban corridors.</p>
-            </div>
-            <div class="access-box">
-              <h3>KESAS / WCE</h3>
-              <p>Supports west coast logistics distribution.</p>
-            </div>
-            <div class="access-box">
-              <h3>Regional Reach</h3>
-              <p>Close to Port Klang and key industrial hubs.</p>
-            </div>
+            <section class="image-break image-break-sub">
+              <img src="Armani_portklang.png" alt="Main Industrial Catchment">
+              <div class="inner">
+                <h2>Main Industrial Catchment</h2>
+                <p>Strong industrial positioning supported by Bukit Raja, Klang, Shah Alam and surrounding commercial catchments.</p>
+              </div>
+            </section>
+  
+            <ul class="list-clean">
+              <li><strong>Bukit Raja</strong>Mature industrial and business environment with established activity.</li>
+              <li><strong>Shah Alam</strong>Close access to a major industrial and commercial city.</li>
+              <li><strong>Klang</strong>Practical access to local distribution and port-related movement.</li>
+              <li><strong>Setia Alam / Bukit Jelutong</strong>Nearby residential and commercial support zones.</li>
+            </ul>
           </div>
         </div>
   
-      </div>
+        <!-- CONNECTIVITY -->
+        <div class="lc-panel" id="connectivity-panel">
+          <div class="panel">
+            <h3>Connectivity & Accessibility</h3>
   
-      <!-- IMAGES BELOW -->
-      <div class="location-image-stack">
-        <section class="image-break">
-          <img src="armani_bizcore_map.png" alt="">
-          <div class="inner">
-            <h2>Strategic Connectivity Across Klang Valley</h2>
-            <p>Strong transport network improves movement efficiency.</p>
+            <section class="image-break image-break-sub">
+              <img src="armani_bizcore_map.png" alt="Connectivity and Accessibility">
+              <div class="inner">
+                <h2>Strategic Connectivity Across Klang Valley</h2>
+                <p>Strong transport network improves movement efficiency for logistics, suppliers, clients and workforce access.</p>
+              </div>
+            </section>
+  
+            <div class="access-grid compact">
+              <div class="access-box">
+                <h3>NKVE</h3>
+                <p>Links Bukit Raja directly to key Klang Valley industrial zones.</p>
+              </div>
+              <div class="access-box">
+                <h3>Federal Highway</h3>
+                <p>Fast access to major urban corridors.</p>
+              </div>
+              <div class="access-box">
+                <h3>KESAS / WCE</h3>
+                <p>Supports west coast logistics distribution.</p>
+              </div>
+              <div class="access-box">
+                <h3>Regional Reach</h3>
+                <p>Close to Port Klang and key industrial hubs.</p>
+              </div>
+            </div>
           </div>
-        </section>
-  
-        <section class="image-break">
-          <img src="Armani_portklang.png" alt="">
-          <div class="inner">
-            <h2>Direct Access To Malaysia’s Key Logistics Hub</h2>
-            <p>Only 17 km to Port Klang with direct highway access.</p>
-          </div>
-        </section>
+        </div>
       </div>
-  
     </div>
   </section>
 
@@ -1379,6 +1454,22 @@
       tabButtons.forEach(btn => btn.classList.remove('active'));
       tabPanels.forEach(panel => panel.classList.remove('active'));
 
+      button.classList.add('active');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+
+  /* LOCATION / CONNECTIVITY TABS */
+  const lcTabs = document.querySelectorAll('.lc-tab');
+  const lcPanels = document.querySelectorAll('.lc-panel');
+  
+  lcTabs.forEach(button => {
+    button.addEventListener('click', () => {
+      const target = button.getAttribute('data-target');
+  
+      lcTabs.forEach(tab => tab.classList.remove('active'));
+      lcPanels.forEach(panel => panel.classList.remove('active'));
+  
       button.classList.add('active');
       document.getElementById(target).classList.add('active');
     });
