@@ -227,6 +227,17 @@
       color: white;
       box-shadow: 0 8px 18px rgba(111, 66, 193, 0.25);
     }
+    
+    .website-toggle {
+      background: #e8f8f2;
+      color: #1f9d7a;
+    }
+    
+    .website-toggle.active {
+      background: #20c997;
+      color: white;
+      box-shadow: 0 8px 18px rgba(32, 201, 151, 0.25);
+    }
 
     .category-branch {
       display: flex;
@@ -749,6 +760,7 @@
           <button id="listingBtn" class="toggle-btn listing-toggle active" onclick="setMode('listing')">Listing</button>
           <button id="askingBtn" class="toggle-btn asking-toggle" onclick="setMode('asking')">Asking</button>
           <button id="toolsBtn" class="toggle-btn tools-toggle" onclick="setMode('tools')">Tools</button>
+          <button id="websiteBtn" class="toggle-btn website-toggle" onclick="setMode('website')">Website</button>
         </div>
 
         <div class="category-branch" id="categoryBranch">
@@ -954,6 +966,7 @@
       document.getElementById("listingBtn").classList.toggle("active", mode === "listing");
       document.getElementById("askingBtn").classList.toggle("active", mode === "asking");
       document.getElementById("toolsBtn").classList.toggle("active", mode === "tools");
+      document.getElementById("websiteBtn").classList.toggle("active", mode === "website");
 
       const title = document.getElementById("searchTitle");
       const subtitle = document.getElementById("searchSubtitle");
@@ -987,7 +1000,33 @@
         categoryBranch.style.display = "none";
         toolsWrapper.style.display = "block";
         listingsSection.style.display = "none";
-      }
+      } else if (mode === "website") {
+      title.textContent = "My Websites";
+      subtitle.textContent = "Explore property landing pages and project websites.";
+    
+      searchBox.style.display = "none";
+      categoryBranch.style.display = "none";
+      toolsWrapper.style.display = "none";
+      listingsSection.style.display = "grid";
+    
+      document.getElementById("listings").innerHTML = `
+        <div class="listing-card">
+          <div class="listing-body">
+            <h2 class="listing-title">Project Websites</h2>
+            <div class="description">
+              Browse featured project pages and landing sites.
+            </div>
+    
+            <div class="listing-actions">
+              <a class="btn btn-gold" href="ava.html" target="_blank">AVA @ Kiara Bay</a>
+              <a class="btn btn-gold" href="kepong-shoplot.html" target="_blank">Kepong Shoplot</a>
+              <a class="btn btn-gold" href="kl-office.html" target="_blank">KL Office</a>
+              <a class="btn btn-gold" href="sungai_buloh_factory.html" target="_blank">Factory</a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
     }
 
     function setTool(tool) {
