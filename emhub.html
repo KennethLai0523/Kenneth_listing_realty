@@ -472,6 +472,8 @@
       gap:16px;
     }
 
+    
+
     .gallery-item{
       position:relative;
       overflow:hidden;
@@ -565,6 +567,195 @@
       flex-wrap:wrap;
       border-top:1px solid rgba(255,255,255,.10);
       padding-top:18px;
+    }
+
+    /* FLOOR PLAN SLIDER */
+    .fp-slider{
+      position:relative;
+      background:#efe2bf;
+      border-radius:24px;
+      padding:24px 24px 60px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      margin-top:20px;
+    }
+    
+    .fp-slides{
+      position:relative;
+    }
+    
+    .fp-slide{
+      display:none;
+      animation:fadeSlide .35s ease;
+    }
+    
+    .fp-slide.active{
+      display:block;
+    }
+    
+    .fp-slide img{
+      width:100%;
+      border-radius:18px;
+      background:#fff;
+    }
+    
+    @keyframes fadeSlide{
+      from{opacity:.3; transform:translateY(8px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+    
+    .fp-arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:48px;
+      height:48px;
+      border:none;
+      border-radius:999px;
+      background:rgba(255,255,255,.9);
+      color:#111;
+      font-size:1.4rem;
+      cursor:pointer;
+      z-index:3;
+      box-shadow:0 10px 25px rgba(0,0,0,.12);
+    }
+    
+    .fp-arrow.prev{left:16px;}
+    .fp-arrow.next{right:16px;}
+    
+    .fp-dots{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      margin-top:18px;
+    }
+    
+    .fp-dot{
+      width:10px;
+      height:10px;
+      border:none;
+      border-radius:50%;
+      background:rgba(17,17,17,.25);
+      cursor:pointer;
+    }
+    
+    .fp-dot.active{
+      background:#111;
+    }
+    
+    /* TABS BELOW */
+    .layout-tabs-wrap{
+      margin-top:28px;
+    }
+    
+    .layout-tabs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0;
+      background:#ccb071;
+      border-radius:0;
+      overflow:hidden;
+      width:fit-content;
+      margin:0 auto 20px;
+    }
+    
+    .layout-tab{
+      border:none;
+      background:transparent;
+      color:#fff;
+      padding:14px 20px;
+      font-size:1rem;
+      font-weight:700;
+      cursor:pointer;
+      transition:.25s ease;
+    }
+    
+    .layout-tab:hover{
+      background:rgba(0,0,0,.08);
+    }
+    
+    .layout-tab.active{
+      background:#0f3f34;
+    }
+    
+    .layout-panels{
+      margin-top:10px;
+    }
+    
+    .layout-panel{
+      display:none;
+      background:#f5f5f2;
+      border-radius:24px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+    
+    .layout-panel.active{
+      display:block;
+    }
+    
+    .layout-panel-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:28px;
+      align-items:center;
+    }
+    
+    .layout-image img{
+      width:100%;
+      border-radius:18px;
+      background:#fff;
+    }
+    
+    .layout-info small{
+      display:inline-block;
+      margin-bottom:10px;
+      color:var(--gold-dark);
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    
+    .layout-info h3{
+      font-size:2rem;
+      margin-bottom:14px;
+    }
+    
+    .layout-info p{
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+    
+    @media (max-width: 900px){
+      .layout-panel-grid{
+        grid-template-columns:1fr;
+      }
+    
+      .layout-tabs{
+        width:100%;
+        justify-content:center;
+      }
+    }
+    
+    @media (max-width: 720px){
+      .fp-slider{
+        padding:18px 18px 50px;
+      }
+    
+      .fp-arrow{
+        width:40px;
+        height:40px;
+        font-size:1.1rem;
+      }
+    
+      .layout-tab{
+        padding:12px 14px;
+        font-size:.92rem;
+      }
+    
+      .layout-panel{
+        padding:20px;
+      }
     }
 
     @media (max-width: 1100px){
@@ -903,29 +1094,164 @@
       <div class="section-head">
         <h2>Floor Plan</h2>
         <p>
-          You asked for this section to be included clearly. For now I structured it as premium cards. Later, just replace each card image or insert the real brochure floor plan visuals.
+          Explore the overall level layout and switch between available unit types interactively.
         </p>
       </div>
-      <div class="plans-grid">
-        <div class="plan-card">
-          <small>Layout</small>
-          <h3>Type A</h3>
-          <p>Suitable placeholder block for one unit plan image and size details.</p>
+  
+      <!-- TOP SLIDER -->
+      <div class="fp-slider">
+        <button class="fp-arrow prev" aria-label="Previous slide">&#10094;</button>
+  
+        <div class="fp-slides">
+          <div class="fp-slide active">
+            <img src="floor-level-1.jpg" alt="Armani Bizcore Level 1 Floor Plan">
+          </div>
+          <div class="fp-slide">
+            <img src="floor-level-2-3a-5-6.jpg" alt="Armani Bizcore Level 2, 3A, 5, 6 Floor Plan">
+          </div>
+          <div class="fp-slide">
+            <img src="floor-level-3-7.jpg" alt="Armani Bizcore Level 3 and 7 Floor Plan">
+          </div>
+          <div class="fp-slide">
+            <img src="floor-level-8.jpg" alt="Armani Bizcore Level 8 Floor Plan">
+          </div>
         </div>
-        <div class="plan-card">
-          <small>Layout</small>
-          <h3>Type B</h3>
-          <p>Use this card to present plan image, built-up, ceiling and loading information.</p>
+  
+        <button class="fp-arrow next" aria-label="Next slide">&#10095;</button>
+  
+        <div class="fp-dots">
+          <button class="fp-dot active" data-slide="0"></button>
+          <button class="fp-dot" data-slide="1"></button>
+          <button class="fp-dot" data-slide="2"></button>
+          <button class="fp-dot" data-slide="3"></button>
         </div>
-        <div class="plan-card">
-          <small>Layout</small>
-          <h3>Type C</h3>
-          <p>Can be swapped with actual brochure visual and downloadable PDF link later.</p>
+      </div>
+  
+      <!-- TABS BELOW -->
+      <div class="layout-tabs-wrap">
+        <div class="layout-tabs">
+          <button class="layout-tab active" data-target="typeA">Type A</button>
+          <button class="layout-tab" data-target="typeB">Type B</button>
+          <button class="layout-tab" data-target="typeB1">Type B1</button>
+          <button class="layout-tab" data-target="typeC">Type C</button>
+          <button class="layout-tab" data-target="typeD">Type D</button>
+          <button class="layout-tab" data-target="typeE">Type E</button>
+          <button class="layout-tab" data-target="typeF1">Type F1</button>
+          <button class="layout-tab" data-target="typeG">Type G</button>
         </div>
-        <div class="plan-card">
-          <small>Layout</small>
-          <h3>Type D</h3>
-          <p>Flexible block to showcase multiple layouts without overcrowding the page.</p>
+  
+        <div class="layout-panels">
+          <div class="layout-panel active" id="typeA">
+            <div class="layout-panel-grid">
+              <div class="layout-image">
+                <img src="type-a-floorplan.jpg" alt="Type A Floor Plan">
+              </div>
+              <div class="layout-info">
+                <small>Unit Layout</small>
+                <h3>Type A</h3>
+                <p>Built-up: 2,537 sq.ft</p>
+                <p>Suitable for showroom, office and warehouse integration.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="layout-panel" id="typeB">
+            <div class="layout-panel-grid">
+              <div class="layout-image">
+                <img src="type-b-floorplan.jpg" alt="Type B Floor Plan">
+              </div>
+              <div class="layout-info">
+                <small>Unit Layout</small>
+                <h3>Type B</h3>
+                <p>Built-up: 2,537 sq.ft</p>
+                <p>Practical configuration for business operation and logistics flow.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="layout-panel" id="typeB1">
+            <div class="layout-panel-grid">
+              <div class="layout-image">
+                <img src="type-b1-floorplan.jpg" alt="Type B1 Floor Plan">
+              </div>
+              <div class="layout-info">
+                <small>Unit Layout</small>
+                <h3>Type B1</h3>
+                <p>Built-up: 3,323 sq.ft</p>
+                <p>Balanced layout for front-facing business presentation and storage use.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="layout-panel" id="typeC">
+            <div class="layout-panel-grid">
+              <div class="layout-image">
+                <img src="type-c-floorplan.jpg" alt="Type C Floor Plan">
+              </div>
+              <div class="layout-info">
+                <small>Unit Layout</small>
+                <h3>Type C</h3>
+                <p>Built-up: 3,564 sq.ft</p>
+                <p>Larger floorplate with stronger operational flexibility.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="layout-panel" id="typeD">
+            <div class="layout-panel-grid">
+              <div class="layout-image">
+                <img src="type-d-floorplan.jpg" alt="Type D Floor Plan">
+              </div>
+              <div class="layout-info">
+                <small>Unit Layout</small>
+                <h3>Type D</h3>
+                <p>Built-up: 3,323 sq.ft</p>
+                <p>Well suited for businesses needing showroom plus backend support area.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="layout-panel" id="typeE">
+            <div class="layout-panel-grid">
+              <div class="layout-image">
+                <img src="type-e-floorplan.jpg" alt="Type E Floor Plan">
+              </div>
+              <div class="layout-info">
+                <small>Unit Layout</small>
+                <h3>Type E</h3>
+                <p>Built-up: 3,644 sq.ft</p>
+                <p>Spacious industrial layout for scaling operations.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="layout-panel" id="typeF1">
+            <div class="layout-panel-grid">
+              <div class="layout-image">
+                <img src="type-f1-floorplan.jpg" alt="Type F1 Floor Plan">
+              </div>
+              <div class="layout-info">
+                <small>Unit Layout</small>
+                <h3>Type F1</h3>
+                <p>Built-up: 5,130 sq.ft</p>
+                <p>Ideal for users needing broader warehouse and business usage space.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="layout-panel" id="typeG">
+            <div class="layout-panel-grid">
+              <div class="layout-image">
+                <img src="type-g-floorplan.jpg" alt="Type G Floor Plan">
+              </div>
+              <div class="layout-info">
+                <small>Unit Layout</small>
+                <h3>Type G</h3>
+                <p>Built-up: 5,130 sq.ft</p>
+                <p>Premium larger-format unit for stronger industrial functionality.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -969,6 +1295,58 @@
       </div>
     </div>
   </section>
+
+  <script>
+  /* FLOOR PLAN TOP SLIDER */
+  const slides = document.querySelectorAll('.fp-slide');
+  const dots = document.querySelectorAll('.fp-dot');
+  const prevBtn = document.querySelector('.fp-arrow.prev');
+  const nextBtn = document.querySelector('.fp-arrow.next');
+
+  let currentSlide = 0;
+
+  function showSlide(index){
+    if(index < 0) index = slides.length - 1;
+    if(index >= slides.length) index = 0;
+
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    currentSlide = index;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    showSlide(currentSlide - 1);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    showSlide(currentSlide + 1);
+  });
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      showSlide(index);
+    });
+  });
+
+  /* LAYOUT TABS BELOW */
+  const tabButtons = document.querySelectorAll('.layout-tab');
+  const tabPanels = document.querySelectorAll('.layout-panel');
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const target = button.getAttribute('data-target');
+
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabPanels.forEach(panel => panel.classList.remove('active'));
+
+      button.classList.add('active');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+</script>
 
   <footer>
     <div class="container footer-row">
