@@ -286,6 +286,11 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
+    .facilities-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 in a row */
+      gap:20px;
+    }
     .panel{
       background:#fff;
       border:1px solid var(--line-dark);
@@ -310,6 +315,18 @@
       margin-top:30px;
       display:grid;
       gap:28px;
+    }
+
+    @media (max-width: 900px){
+      .facilities-grid{
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    @media (max-width: 600px){
+      .facilities-grid{
+        grid-template-columns: 1fr;
+      }
     }
     
     @media (max-width: 900px){
@@ -1148,6 +1165,11 @@
           Beyond basic industrial function, the development includes supporting facilities that improve the overall business environment and daily convenience.
         </p>
       </div>
+
+      <section class="image-break">
+        <img src="ArmaniFacility.jpeg" alt="">
+      </section>
+      
       <div class="facilities-grid">
         <div class="facility-card">
           <small>Facility</small>
@@ -1171,10 +1193,6 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="image-break">
-    <img src="armani_bizcore_map.png" alt="">
   </section>
 
   <section class="content-section" id="floorplan">
