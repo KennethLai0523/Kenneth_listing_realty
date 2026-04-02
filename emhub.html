@@ -293,6 +293,34 @@
       padding:28px;
       box-shadow:var(--shadow);
     }
+    
+    .location-connect-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      align-items:start;
+    }
+    
+    .access-grid.compact{
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    
+    .location-image-stack{
+      margin-top:30px;
+      display:grid;
+      gap:28px;
+    }
+    
+    @media (max-width: 900px){
+      .location-connect-grid{
+        grid-template-columns:1fr;
+      }
+    
+      .access-grid.compact{
+        grid-template-columns:1fr;
+      }
+    }
 
     .panel.dark{
       background:var(--dark-soft);
@@ -825,7 +853,7 @@
       </a>
       <nav class="nav-links">
         <a href="#overview">Overview</a>
-        <a href="#location">Location</a>
+        <a href="#location-connectivity">Location</a>
         <a href="#features">Features</a>
         <a href="#gallery">Gallery</a>
         <a href="#floorplan">Floor Plan</a>
@@ -912,15 +940,18 @@
     </div>
   </section>
 
-  <section class="content-section alt" id="location">
+  <section class="content-section alt" id="location-connectivity">
     <div class="container">
       <div class="section-head">
-        <h2>1.Strategic Location</h2>
+        <h2>1. Strategic Location & Connectivity</h2>
         <p>
-          Located in Bandar Bukit Raja, Klang, the project benefits from established industrial surroundings, workforce accessibility and strong positioning within the wider Klang and Shah Alam industrial corridor.
+          Located in Bandar Bukit Raja, Klang, the project benefits from strong industrial surroundings and direct access to major highways, ensuring efficient logistics and seamless business operations.
         </p>
       </div>
-      <div class="two-col">
+  
+      <div class="location-connect-grid">
+  
+        <!-- LEFT -->
         <div class="panel">
           <h3>Main Industrial Catchment</h3>
           <ul class="list-clean">
@@ -930,63 +961,51 @@
             <li><strong>Setia Alam / Bukit Jelutong</strong>Nearby residential and commercial support zones.</li>
           </ul>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="image-break">
-    <img src="armani_bizcore_map.png" alt="">
-    <div class="inner">
-      <h2>Strategic Connectivity Across Klang Valley</h2>
-      <p>A strong transport network improves movement time for deliveries, suppliers, clients and workforce access.</p>
-    </div>
-  </section>
-
-  <section class="content-section alt" id="connectivity">
-    <div class="container">   
   
-      <div class="section-head">
-        <h2>2.Connectivity & Accessibility</h2>
-        <p>
-          Strategically positioned with direct access to major highways and close proximity to Port Klang, Armani Bizcore Bukit Raja ensures efficient logistics movement, strong regional connectivity and seamless business operations.
-        </p>
-      </div>
-      
-      <div class="access-grid">
-        <div class="access-box">
-          <h3>NKVE</h3>
-          <p>Links Bukit Raja directly to key Klang Valley industrial and commercial zones.</p>
+        <!-- RIGHT -->
+        <div class="panel">
+          <h3>Connectivity & Accessibility</h3>
+          <div class="access-grid compact">
+            <div class="access-box">
+              <h3>NKVE</h3>
+              <p>Links Bukit Raja directly to key Klang Valley industrial zones.</p>
+            </div>
+            <div class="access-box">
+              <h3>Federal Highway</h3>
+              <p>Fast access to major urban corridors.</p>
+            </div>
+            <div class="access-box">
+              <h3>KESAS / WCE</h3>
+              <p>Supports west coast logistics distribution.</p>
+            </div>
+            <div class="access-box">
+              <h3>Regional Reach</h3>
+              <p>Close to Port Klang and key industrial hubs.</p>
+            </div>
+          </div>
         </div>
   
-        <div class="access-box">
-          <h3>Federal Highway</h3>
-          <p>Provides fast access to major urban corridors for daily business and logistics movement.</p>
-        </div>
-  
-        <div class="access-box">
-          <h3>KESAS / WCE</h3>
-          <p>Enhances west coast connectivity and supports regional logistics distribution.</p>
-        </div>
-  
-        <div class="access-box">
-          <h3>Operational Advantage</h3>
-          <p>Efficient movement for incoming goods, outgoing deliveries and daily operations.</p>
-        </div>
-  
-        <div class="access-box">
-          <h3>Regional Reach</h3>
-          <p>Close proximity to Port Klang, Klang industrial hubs and Shah Alam business districts.</p>
-        </div>
       </div>
   
-    </div> 
-  </section>
-
-  <section class="image-break">
-    <img src="Armani_portklang.png" alt="">
-    <div class="inner">
-      <h2>DIRECT ACCESS TO MALAYSIA’S KEY LOGISTICS HUB</h2>
-      <p>Only 17 km (approx. 20 minutes) from Port Klang, providing direct access to major highways for efficient logistics and smooth business operations.</p>
+      <!-- IMAGES BELOW -->
+      <div class="location-image-stack">
+        <section class="image-break">
+          <img src="armani_bizcore_map.png" alt="">
+          <div class="inner">
+            <h2>Strategic Connectivity Across Klang Valley</h2>
+            <p>Strong transport network improves movement efficiency.</p>
+          </div>
+        </section>
+  
+        <section class="image-break">
+          <img src="Armani_portklang.png" alt="">
+          <div class="inner">
+            <h2>Direct Access To Malaysia’s Key Logistics Hub</h2>
+            <p>Only 17 km to Port Klang with direct highway access.</p>
+          </div>
+        </section>
+      </div>
+  
     </div>
   </section>
 
