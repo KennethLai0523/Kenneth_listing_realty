@@ -925,8 +925,52 @@
 
     @media (max-width: 720px){
       .topbar{position:static;background:#111}
-      .nav{padding:14px 0;align-items:flex-start}
-      .nav,.nav-links{flex-direction:column;align-items:flex-start}
+      .nav{
+        padding:12px 0;
+        align-items:center;
+        justify-content:space-between;
+        gap:12px;
+        flex-wrap:nowrap;
+      }
+      
+      .nav,
+      .nav-links{
+        flex-direction:row;
+        align-items:center;
+      }
+      .brand strong{
+        font-size:.9rem;
+      }
+      
+      .brand span{
+        font-size:.68rem;
+      }
+      
+      .nav-links{
+        gap:12px;
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        white-space:nowrap;
+        scrollbar-width:none;
+        -ms-overflow-style:none;
+      }
+      
+      .nav-links::-webkit-scrollbar{
+        display:none;
+      }
+      
+      .nav-links a{
+        font-size:.8rem;
+        white-space:nowrap;
+        flex:0 0 auto;
+      }
+      
+      .nav-links .btn{
+        min-height:40px;
+        padding:0 14px;
+        font-size:.78rem;
+        flex:0 0 auto;
+      }
       .hero{min-height:auto}
       .hero-content{padding:60px 0 42px}
       .hero-stats,
