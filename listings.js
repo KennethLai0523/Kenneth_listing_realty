@@ -1,5 +1,29 @@
 const LISTINGS = [
   {
+    "id": 1775195882914,
+    "type": "asking",
+    "title": "Looking for own home",
+    "location": "Semi D corner lot",
+    "price": "Purchase : within RM 3,000,000 ",
+    "area": "Setia Alam",
+    "description": "prefer south or south west but do not much minded \n\ncan purchase recently as of 2026 ",
+    "whatsapp": "60166287357",
+    "privateNotes": "Jack wife, Magg contact me phone call , she's also agent looking for cobroke",
+    "status": "Available"
+  },
+  {
+    "id": 1775195725447,
+    "type": "asking",
+    "title": "Looking for studio or 1b1b",
+    "location": "Condo",
+    "price": "Rent : RM 1,200/month",
+    "area": "Damansara or nearby ",
+    "description": "Student studying at university at mid of 20s\nNo furniture requirement ",
+    "whatsapp": "60166287357",
+    "privateNotes": "表姐",
+    "status": "Available"
+  },
+  {
     "id": 1774750444993,
     "type": "listing",
     "category": "Residential",
