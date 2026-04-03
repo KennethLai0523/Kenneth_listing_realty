@@ -770,6 +770,7 @@
           <button id="askingBtn" class="toggle-btn asking-toggle" onclick="setMode('asking')">Asking</button>
           <button id="toolsBtn" class="toggle-btn tools-toggle" onclick="setMode('tools')">Tools</button>
           <button id="websiteBtn" class="toggle-btn website-toggle" onclick="setMode('website')">Website</button>
+          <button id="videoBtn" class="toggle-btn tools-toggle" onclick="setMode('video')">Video</button>
         </div>
 
         <div class="category-branch" id="categoryBranch">
@@ -800,6 +801,30 @@
               <a class="btn btn-gold" href="sungai_buloh_factory.html" target="_blank">Factory</a>
               <a class="btn btn-gold" href="https://leverra-sri-damansara.homes/" target="_blank">Leverra</a>
               <a class="btn btn-gold" href="armanibizcore.html" target="_blank">Armani Bizcore</a>
+            </div>
+          </div>
+
+          <div id="videoPanel" class="tool-panel" style="display:none;">
+            <h3 class="tool-title">Project Videos</h3>
+            <p class="tool-subtitle">
+              Watch project walkthroughs and highlights.
+            </p>
+          
+            <div>
+              <h4>Gamuda Garden Rawang Walkthrough</h4>
+          
+              <iframe 
+                src="https://www.youtube.com/embed/g9FVfRwGETo"
+                style="width:100%; aspect-ratio:9/16; border-radius:12px;"
+                frameborder="0"
+                allowfullscreen>
+              </iframe>
+          
+              <br>
+          
+              <a class="btn btn-green" href="https://wa.me/60166287357" target="_blank">
+                WhatsApp for Viewing
+              </a>
             </div>
           </div>
 
@@ -992,6 +1017,7 @@
       document.getElementById("askingBtn").classList.toggle("active", mode === "asking");
       document.getElementById("toolsBtn").classList.toggle("active", mode === "tools");
       document.getElementById("websiteBtn").classList.toggle("active", mode === "website");
+      document.getElementById("videoBtn").classList.toggle("active", mode === "video");
 
       const title = document.getElementById("searchTitle");
       const subtitle = document.getElementById("searchSubtitle");
@@ -1043,6 +1069,21 @@
         document.getElementById("roiToolPanel").style.display = "none";
         document.getElementById("loanToolPanel").style.display = "none";
         document.getElementById("websitePanel").style.display = "block";
+      } else if (mode === "video") {
+        title.textContent = "Project Videos";
+        subtitle.textContent = "Watch property walkthroughs and highlights.";
+      
+        searchBox.style.display = "none";
+        categoryBranch.style.display = "none";
+        toolsWrapper.style.display = "block";
+        listingsSection.style.display = "none";
+      
+        document.querySelector(".tool-selector").style.display = "none";
+      
+        document.getElementById("roiToolPanel").style.display = "none";
+        document.getElementById("loanToolPanel").style.display = "none";
+        document.getElementById("websitePanel").style.display = "none";
+        document.getElementById("videoPanel").style.display = "block";
       }
     }
 
