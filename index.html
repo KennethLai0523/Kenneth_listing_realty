@@ -668,6 +668,17 @@
       font-weight: 800;
       color: #111111;
     }
+    
+    .video-toggle {
+      background: #ffe9ec;
+      color: #d6336c;
+    }
+    
+    .video-toggle.active {
+      background: #ff4d6d;
+      color: white;
+      box-shadow: 0 8px 18px rgba(255, 77, 109, 0.25);
+    }
 
     @media (max-width: 980px) {
       .top-row,
@@ -770,7 +781,7 @@
           <button id="askingBtn" class="toggle-btn asking-toggle" onclick="setMode('asking')">Asking</button>
           <button id="toolsBtn" class="toggle-btn tools-toggle" onclick="setMode('tools')">Tools</button>
           <button id="websiteBtn" class="toggle-btn website-toggle" onclick="setMode('website')">Website</button>
-          <button id="videoBtn" class="toggle-btn tools-toggle" onclick="setMode('video')">Video</button>
+          <button id="videoBtn" class="toggle-btn video-toggle" onclick="setMode('video')">Video</button>
         </div>
 
         <div class="category-branch" id="categoryBranch">
