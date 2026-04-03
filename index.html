@@ -1038,6 +1038,10 @@
       const listingsSection = document.getElementById("listings");
 
       if (mode === "listing") {
+        document.getElementById("websitePanel").style.display = "none";
+        document.getElementById("videoPanel").style.display = "none";
+        document.getElementById("roiToolPanel").style.display = "none";
+        document.getElementById("loanToolPanel").style.display = "none";
         title.textContent = "Available Listings";
         subtitle.textContent = "Search by project name, location, or keyword to quickly find the property you are looking for.";
         searchBox.placeholder = "Search project, location, keyword...";
@@ -1047,6 +1051,10 @@
         listingsSection.style.display = "grid";
         render();
       } else if (mode === "asking") {
+        document.getElementById("websitePanel").style.display = "none";
+        document.getElementById("videoPanel").style.display = "none";
+        document.getElementById("roiToolPanel").style.display = "none";
+        document.getElementById("loanToolPanel").style.display = "none";
         title.textContent = "Asking Requests";
         subtitle.textContent = "Browse what buyers or tenants are currently looking for by budget, area, or requirement.";
         searchBox.placeholder = "Search budget, area, requirement...";
@@ -1063,7 +1071,9 @@
         toolsWrapper.style.display = "block";
         listingsSection.style.display = "none";
         document.querySelector(".tool-selector").style.display = "flex";
+      
         document.getElementById("websitePanel").style.display = "none";
+        document.getElementById("videoPanel").style.display = "none";
       
         setTool(currentTool);
       } else if (mode === "website") {
@@ -1079,6 +1089,7 @@
       
         document.getElementById("roiToolPanel").style.display = "none";
         document.getElementById("loanToolPanel").style.display = "none";
+        document.getElementById("videoPanel").style.display = "none";
         document.getElementById("websitePanel").style.display = "block";
       } else if (mode === "video") {
         title.textContent = "Project Videos";
@@ -1329,7 +1340,7 @@
     }
 
     function render() {
-      if (currentMode === "tools" || currentMode === "website") return;
+      if (currentMode === "tools" || currentMode === "website" || currentMode === "video") return;
 
       const key = document.getElementById("search").value.toLowerCase().trim();
 
