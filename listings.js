@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1775309854586,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Setia Alam Semi-D | Below Bank Value | Gated & Guarded",
+    "location": "Setial Alam, Shah Alam",
+    "price": "For Sale : RM 1,500,000 ",
+    "rooms": "5+1",
+    "bathrooms": "5",
+    "builtup": "40 x 85 sqft ",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "2 Storey Semi-Detached house located at Setia Alam. Below bank value unit.\n\nLand size 40 x 85 with 5+1 bedrooms and 5 bathrooms. Comes with dry and wet kitchen with cabinets. Spacious layout and suitable for family stay.\n\nGated and guarded community with north east facing.\n\nLocated near International School with easy access to main roads and amenities.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "SetiaAlamSemiD.jpeg"
+    ],
+    "privateNotes": "Amanda Setia alam Setia damai\n+60 11-1930 1980",
+    "status": "Available"
+  },
+  {
     "id": 1775308437347,
     "type": "listing",
     "category": "Residential",
