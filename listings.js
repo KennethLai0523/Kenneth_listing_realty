@@ -1,5 +1,32 @@
 const LISTINGS = [
   {
+    "id": 1775308437347,
+    "type": "listing",
+    "category": "Residential",
+    "title": "The Treez Jalil Residences | Fully Furnished Condo For Rent",
+    "location": "Bukit Jalil, Kuala Lumpur",
+    "price": "For Rent : RM 3,500/month",
+    "rooms": "3",
+    "bathrooms": "3",
+    "builtup": "1440 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "Freehold",
+    "description": "The Treez Condo For Rent\n\nUnit Details:\n- Fully furnished\n- 5 airconds\n- 2 water heaters\n- 40\" LED TV with TV cabinet\n- L-shape sofa set\n- Coffee table\n- Dining table with 6 chairs\n- Washing machine\n- Fridge\n\nWell maintained unit, suitable for family or working professionals.\n\nLocated in Bukit Jalil with easy access to main roads, amenities, and lifestyle facilities.\n\nFor viewing, please contact Kenneth Lai.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "BukitJalilTreez (2).jpeg",
+      "BukitJalilTreez (1).jpeg",
+      "BukitJalilTreez (5).jpeg",
+      "BukitJalilTreez (3).jpeg",
+      "BukitJalilTreez (4).jpeg",
+      "BukitJalilTreez (6).jpeg",
+      "BukitJalilTreez (8).jpeg",
+      "BukitJalilTreez (7).jpeg"
+    ],
+    "privateNotes": "Fei Ling Bukit Jalil Treez\n+60 12-565 8399",
+    "status": "Available"
+  },
+  {
     "id": 1775287396343,
     "type": "listing",
     "category": "Commercial",
