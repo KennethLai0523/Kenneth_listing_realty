@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1775287396343,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Shoplot just infront of Pavillion Bukit Jalil main gate | very high visibility & traffic",
+    "location": "Pavillion Bukit Jalil , KL ",
+    "price": "For Rent : RM 18k per month",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1700 sqft",
+    "furnishing": "-",
+    "tenure": "-",
+    "description": "Prime shoplot available for rent at Pavilion Bukit Jalil, located along main road Persiaran Jalil 1 with strong visibility and high traffic flow.\n\nIdeal for retail, F&B, showroom or brand exposure, within a vibrant commercial environment surrounded by residential catchment and lifestyle hub.\n\nProperty Details:\n\nBuilt-up: Approx. 1,680 sqft (24 x 70)\nRental: RM 18,000/month\nUnit Type: Shoplot\n\nKey Highlights:\n\nPrime lot within Pavilion Bukit Jalil vicinity\nMain road frontage (high exposure)\nHigh footfall & strong surrounding population\nLimited units available\nSuitable for retail / F&B / branding outlet",
+    "whatsapp": "60166287357",
+    "photos": [
+      "BukitJalilfrontrowshop.jpeg"
+    ],
+    "privateNotes": "mcc just infront pavillion bukit jalil 18k for rent\n+60 13-981 1214",
+    "status": "Available"
+  },
+  {
     "id": 1775285542224,
     "type": "listing",
     "category": "Industrial",
