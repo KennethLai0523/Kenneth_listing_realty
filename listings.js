@@ -1,9 +1,55 @@
 const LISTINGS = [
   {
+    "id": 1775314680040,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Semi D | 3 Storey Terrace | Huge Land | Corner",
+    "location": "Seksyen 7, Shah Alam",
+    "price": "For Sale : RM 2million",
+    "rooms": "5",
+    "bathrooms": "3",
+    "builtup": "8,000 sqft",
+    "furnishing": "Partly Furnished",
+    "tenure": "Individual Freehold",
+    "description": "3 storey terrace house located at Seksyen 7, Shah Alam. Rare unit with very large land size approx. 8,000 sqft.\n\nComes with 5 bedrooms and 3 bathrooms. Spacious layout suitable for large family or future extension.\n\nLocated in a prime and mature neighbourhood with strong community living.\n\nWalking distance to cafes, restaurants and daily conveniences. Easy access to supermarkets, retail shops and main roads.\n\nGood for own stay or long-term investment in a highly sought-after area.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Seksyen7ShahAlam.jpeg"
+    ],
+    "privateNotes": "Dato' Lam Shah Alam Seksyen 7\n+60 17-888 1836",
+    "status": "Available"
+  },
+  {
+    "id": 1775314105043,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Setia Alam Semi-D | Brand New | 4R4B | Freehold",
+    "location": "Setia Alam, Shah Alam",
+    "price": "For Sale : RM 1,500,000",
+    "rooms": "4",
+    "bathrooms": "4",
+    "builtup": "2400 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "Brand new semi-detached house located in Setia Alam. Bare unit condition, suitable for own renovation and customization.\n\nBuilt-up approx. 2,400 sqft with 4 bedrooms and 4 bathrooms. Practical layout ideal for family living.\n\nSouth facing unit with good natural lighting and ventilation.\n\nFreehold property with non-bumi lot. Located in a well-developed area with easy access to amenities and main roads.\n\nPrice negotiable.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "SetiaAlamSemiDhouse (1).jpeg",
+      "SetiaAlamSemiDhouse (2).jpeg",
+      "SetiaAlamSemiDhouse (3).jpeg",
+      "SetiaAlamSemiDhouse (4).jpeg",
+      "SetiaAlamSemiDhouse (5).jpeg",
+      "SetiaAlamSemiDhouse (6).jpeg",
+      "SetiaAlamSemiDhouse (7).jpeg"
+    ],
+    "privateNotes": "YewSK Setia Alam beside lake\n+60 12-469 9122",
+    "status": "Available"
+  },
+  {
     "id": 1775312522540,
     "type": "listing",
     "category": "Residential",
-    "title": "Setia Alam storey Semi D | Corner Unit | nicely renovated",
+    "title": "Setia Alam 3 storey Semi D | Corner Unit | nicely renovated",
     "location": "Setia Alam, Shah Alam",
     "price": "For Sale : RM 2 Million",
     "rooms": "6",
