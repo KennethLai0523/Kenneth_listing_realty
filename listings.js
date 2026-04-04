@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1775284267096,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "2 Linked Shoplot facing main road | High Visbility |",
+    "location": "Bandar Baru , Sungai Buloh",
+    "price": "For Rent : RM 22,000 /month",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "",
+    "furnishing": "Partly Furnished",
+    "tenure": "-",
+    "description": "Special Features:\n\nPer shop : 1400 sqft land, 2 storey = 2400 sqft ; 2 shop total = 4800 sqft \n2 units link shop\nDouble storey\nEquipped with cargo lift\nMain road frontage\nSuitable for retail / F&B / business use\n\nAccessibility / Highlights:\n\nLocated in established commercial area\nGood visibility & traffic\nEasy parking in front\n\nRental Price: RM 22,000/month",
+    "whatsapp": "60166287357",
+    "photos": [
+      "BRP_Sungaibuloh.jpeg"
+    ],
+    "privateNotes": "William Agent 1/3A sungai buloh\n+60 16-773 6166",
+    "status": "Available"
+  },
+  {
     "id": 1775273730504,
     "type": "listing",
     "category": "Commercial",
