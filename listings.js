@@ -60,7 +60,18 @@ const LISTINGS = [
     "description": "Corner 3 storey semi-detached house located at Setia Alam. Spacious land size approx. 54 x 70 (3,780 sqft) with built-up of 4,600 sqft.\n\nComes with 6 bedrooms and 6 bathrooms, suitable for large family living. Includes 1 study room and 2 store rooms.\n\nNorth-facing main entrance with east side access and south rear exit. Bright and airy layout with good ventilation.\n\nCorner unit with extra privacy, located beside a park in a peaceful and green environment.\n\nGated and guarded community with 24-hour security. Good for own stay or investment.",
     "whatsapp": "60166287357",
     "photos": [
-      "SetiaAlamSemi.jpeg"
+      "SetiaAlam2.08mil (3).jpeg",
+      "SetiaAlam2.08mil (4).jpeg",
+      "SetiaAlam2.08mil (5).jpeg",
+      "SetiaAlam2.08mil (6).jpeg",
+      "SetiaAlam2.08mil (7).jpeg",
+      "SetiaAlam2.08mil (8).jpeg",
+      "SetiaAlam2.08mil (9).jpeg",
+      "SetiaAlam2.08mil (10).jpeg",
+      "SetiaAlam2.08mil (11).jpeg",
+      "SetiaAlam2.08mil (12).jpeg",
+      "SetiaAlam2.08mil (1).jpeg",
+      "SetiaAlam2.08mil (2).jpeg"
     ],
     "privateNotes": "Vivian Lim Setia Alam\n+60 17-212 1928",
     "status": "Available"
@@ -80,9 +91,31 @@ const LISTINGS = [
     "description": "Well-maintained 2.5 storey semi-detached house located in Putra Heights / Subang Alam, Shah Alam. Strategically positioned near LRT station with good connectivity.\n\nBuilt-up approx. 2,800 sqft with 5 bedrooms and 5 bathrooms. Spacious layout designed for family living.\n\nIncludes dual kitchen setup (dry & wet kitchen), large living and dining area, and massive top floor suite. Renovated unit and move-in condition.\n\nCan park up to 5 cars.\n\nLocated in a peaceful residential area with easy access to main roads, amenities and public transport.",
     "whatsapp": "60166287357",
     "photos": [
-      "Putraheightsemid (1).jpeg",
-      "Putraheightsemid (3).jpeg",
-      "Putraheightsemid (4).jpeg"
+      "HuilingSetiaAlam (1).jpeg",
+      "HuilingSetiaAlam (2).jpeg",
+      "HuilingSetiaAlam (3).jpeg",
+      "HuilingSetiaAlam (4).jpeg",
+      "HuilingSetiaAlam (5).jpeg",
+      "HuilingSetiaAlam (6).jpeg",
+      "HuilingSetiaAlam (7).jpeg",
+      "HuilingSetiaAlam (8).jpeg",
+      "HuilingSetiaAlam (9).jpeg",
+      "HuilingSetiaAlam (10).jpeg",
+      "HuilingSetiaAlam (11).jpeg",
+      "HuilingSetiaAlam (12).jpeg",
+      "HuilingSetiaAlam (13).jpeg",
+      "HuilingSetiaAlam (14).jpeg",
+      "HuilingSetiaAlam (15).jpeg",
+      "HuilingSetiaAlam (16).jpeg",
+      "HuilingSetiaAlam (17).jpeg",
+      "HuilingSetiaAlam (18).jpeg",
+      "HuilingSetiaAlam (19).jpeg",
+      "HuilingSetiaAlam (20).jpeg",
+      "HuilingSetiaAlam (21).jpeg",
+      "HuilingSetiaAlam (22).jpeg",
+      "HuilingSetiaAlam (23).jpeg",
+      "HuilingSetiaAlam (24).jpeg",
+      "HuilingSetiaAlam (25).jpeg"
     ],
     "privateNotes": "Huiling Putra Height Shah Alam\n+60 11-5629 1851",
     "status": "Available"
@@ -102,7 +135,16 @@ const LISTINGS = [
     "description": "2 Storey Semi-Detached house located at Setia Alam. Below bank value unit.\n\nLand size 40 x 85 with 5+1 bedrooms and 5 bathrooms. Comes with dry and wet kitchen with cabinets. Spacious layout and suitable for family stay.\n\nGated and guarded community with north east facing.\n\nLocated near International School with easy access to main roads and amenities.",
     "whatsapp": "60166287357",
     "photos": [
-      "SetiaAlamSemiD.jpeg"
+      "SetiaAlamAmanda (1).jpeg",
+      "SetiaAlamAmanda (2).jpeg",
+      "SetiaAlamAmanda (3).jpeg",
+      "SetiaAlamAmanda (4).jpeg",
+      "SetiaAlamAmanda (5).jpeg",
+      "SetiaAlamAmanda (6).jpeg",
+      "SetiaAlamAmanda (7).jpeg",
+      "SetiaAlamAmanda (8).jpeg",
+      "SetiaAlamAmanda (9).jpeg",
+      "SetiaAlamAmanda (10).jpeg"
     ],
     "privateNotes": "Amanda Setia alam Setia damai\n+60 11-1930 1980",
     "status": "Available"
