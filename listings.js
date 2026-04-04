@@ -10,7 +10,7 @@ const LISTINGS = [
     "bathrooms": "3",
     "builtup": "8,000 sqft",
     "furnishing": "Partly Furnished",
-    "tenure": "Individual Freehold",
+    "tenure": "Individual Leasehold",
     "description": "3 storey terrace house located at Seksyen 7, Shah Alam. Rare unit with very large land size approx. 8,000 sqft.\n\nComes with 5 bedrooms and 3 bathrooms. Spacious layout suitable for large family or future extension.\n\nLocated in a prime and mature neighbourhood with strong community living.\n\nWalking distance to cafes, restaurants and daily conveniences. Easy access to supermarkets, retail shops and main roads.\n\nGood for own stay or long-term investment in a highly sought-after area.",
     "whatsapp": "60166287357",
     "photos": [
