@@ -1,5 +1,45 @@
 const LISTINGS = [
   {
+    "id": 1775273730504,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Ground floor high visibility shoplot | Corner unit | ",
+    "location": "Sungai Buloh, Jalan Hospital",
+    "price": "For Rent : RM 6,000/month",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1800 sqft ",
+    "furnishing": "-",
+    "tenure": "-",
+    "description": "Prime corner unit with excellent main road visibility along Jalan Kusta / Jalan Hospital – high exposure for any business 🚗\n\n✅ Corner lot advantage – more frontage & signage visibility\n✅ High traffic area – strong daily flow\n✅ Spacious layout (1,840 sqft) – flexible for various business use\n✅ 10 car parks available – convenient for customers & staff\n✅ New development (2026 completion) – modern environment\n\n💡 Suitable for:\n\nRetail / Showroom\nCafé / Restaurant\nOffice / Service center\nConvenience store / Mini mart",
+    "whatsapp": "60166287357",
+    "photos": [
+      "SungaibulohJalanhospital.jpeg"
+    ],
+    "privateNotes": "Victor Sungai buloh jalan hospital , jalan kusta\n+60 12-411 2580",
+    "status": "Available"
+  },
+  {
+    "id": 1775273409042,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Main road side high traffic shops | best for Mamak |",
+    "location": "Sungai buloh, Jalan Paya Jaras Hilir",
+    "price": "For rent : RM 7,500 altogether",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "6 shop : each shop 5meter x 5meter, total 1400 sqft ",
+    "furnishing": "partly furnished",
+    "tenure": "-",
+    "description": "Strategically located main road frontage with high visibility & heavy traffic flow – perfect for mamak / F&B business 🍛☕\n\n✅ Spacious setup – suitable for food court concept\n✅ Can place tables outside – great for night crowd & dine-in experience\n✅ Existing setup available – easier to start operation\n✅ Strong surrounding catchment – residential + commercial area\n✅ Good exposure – ideal for branding & walk-in customers\n\n📍 Sungai Buloh (Paya Jaras area)\n\n💡 Suitable for:\n\nMamak / Restaurant\nFood court operator\nCafé / Kopitiam\nLate-night dining concept",
+    "whatsapp": "60166287357",
+    "photos": [
+      "SungaibulohJalanPaya.jpeg"
+    ],
+    "privateNotes": "https://www.mudah.my/food-court-114337723.htm\n\nsungai buloh jalan paya hilir for rent mamak\n+60 19-898 9783",
+    "status": "Available"
+  },
+  {
     "id": 1775195882914,
     "type": "asking",
     "title": "Looking for own home",
