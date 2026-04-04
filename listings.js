@@ -1,5 +1,47 @@
 const LISTINGS = [
   {
+    "id": 1775312522540,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Setia Alam storey Semi D | Corner Unit | nicely renovated",
+    "location": "Setia Alam, Shah Alam",
+    "price": "For Sale : RM 2 Million",
+    "rooms": "6",
+    "bathrooms": "6",
+    "builtup": "54 x 70 sqft = 3700 sqft",
+    "furnishing": "Partly Furnished",
+    "tenure": "Freehold",
+    "description": "Corner 3 storey semi-detached house located at Setia Alam. Spacious land size approx. 54 x 70 (3,780 sqft) with built-up of 4,600 sqft.\n\nComes with 6 bedrooms and 6 bathrooms, suitable for large family living. Includes 1 study room and 2 store rooms.\n\nNorth-facing main entrance with east side access and south rear exit. Bright and airy layout with good ventilation.\n\nCorner unit with extra privacy, located beside a park in a peaceful and green environment.\n\nGated and guarded community with 24-hour security. Good for own stay or investment.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "SetiaAlamSemi.jpeg"
+    ],
+    "privateNotes": "Vivian Lim Setia Alam\n+60 17-212 1928",
+    "status": "Available"
+  },
+  {
+    "id": 1775312056226,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Renovated Semi D ",
+    "location": "Putra Heights / Subang Alam, Shah Alam",
+    "price": "For sale : RM 1,800,000",
+    "rooms": "5",
+    "bathrooms": "5",
+    "builtup": "2800 sqft",
+    "furnishing": "Partly Furnished renovated",
+    "tenure": "Freehold",
+    "description": "Well-maintained 2.5 storey semi-detached house located in Putra Heights / Subang Alam, Shah Alam. Strategically positioned near LRT station with good connectivity.\n\nBuilt-up approx. 2,800 sqft with 5 bedrooms and 5 bathrooms. Spacious layout designed for family living.\n\nIncludes dual kitchen setup (dry & wet kitchen), large living and dining area, and massive top floor suite. Renovated unit and move-in condition.\n\nCan park up to 5 cars.\n\nLocated in a peaceful residential area with easy access to main roads, amenities and public transport.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Putraheightsemid (1).jpeg",
+      "Putraheightsemid (3).jpeg",
+      "Putraheightsemid (4).jpeg"
+    ],
+    "privateNotes": "Huiling Putra Height Shah Alam\n+60 11-5629 1851",
+    "status": "Available"
+  },
+  {
     "id": 1775309854586,
     "type": "listing",
     "category": "Residential",
