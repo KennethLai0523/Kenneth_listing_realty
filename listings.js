@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1775285542224,
+    "type": "listing",
+    "category": "Industrial",
+    "title": "4 Acres Commercial Land | Bukit Jalil | Sports / Pickleball / Badminton Suitable",
+    "location": "Bukit Jalil, Sri Petaling",
+    "price": "For Rent : RM 60,000 /month",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "170,000 sqft",
+    "furnishing": "-",
+    "tenure": "-",
+    "description": "Ideal location in nearby City centre for sports facilities such as pickleball courts, badminton halls, or recreational centres, as well as other commercial uses.\n\n",
+    "whatsapp": "60166287357",
+    "photos": [
+      "BukitJalilFlatland.jpeg"
+    ],
+    "privateNotes": "Jr. Bukit jalil flat land\n+60 12-363 9578",
+    "status": "Available"
+  },
+  {
     "id": 1775284267096,
     "type": "listing",
     "category": "Commercial",
