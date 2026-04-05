@@ -1,5 +1,26 @@
 const LISTINGS = [
   {
+    "id": 1775377683134,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Ground Floor Retail with 2 private car park",
+    "location": "Razak City Shoplot @ Sungai Besi",
+    "price": "For Rent : RM 9,000/month",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "1250 sqft",
+    "furnishing": "-",
+    "tenure": "-",
+    "description": "Razak City Shoplot @ Sungai Besi – For Rent\n\nPrime retail shoplot located within Razak City Residences, surrounded by established businesses including KFC, Mixue, parcel hubs and various retail outlets — ensuring strong footfall and business visibility.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Sungaibesi (1).jpeg",
+      "Sungaibesi (2).jpeg"
+    ],
+    "privateNotes": "Rachel sungai besi shoplot for rent 9000\n+60 17-862 6668",
+    "status": "Available"
+  },
+  {
     "id": 1775377277772,
     "type": "listing",
     "category": "Residential",
