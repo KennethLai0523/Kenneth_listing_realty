@@ -1,5 +1,33 @@
 const LISTINGS = [
   {
+    "id": 1775377277772,
+    "type": "listing",
+    "category": "Residential",
+    "title": "2 storey semi D corner | corner unit | Brand New",
+    "location": "Alam Impian, Shah Alam",
+    "price": "For Sale : RM1,700,000",
+    "rooms": "4",
+    "bathrooms": "5",
+    "builtup": "2300 sqft",
+    "furnishing": "-",
+    "tenure": "Freehold",
+    "description": "Brand new double-storey Semi-Detached Cluster house located in the peaceful township of Alam Impian, Shah Alam. Limited corner unit available in this phase, ideal for own stay or long-term investment.\n\nProperty Details:\n\nBuilt-up: 2,339 sqft\nLand size: 51’ x 70’ (approx)\n4 Bedrooms | 5 Bathrooms\nCorner Unit (Only 2 units in this phase)\nBrand New\nNon-Bumi Lot\nDouble Storey Semi-D Cluster\n\nHighlights:\n\nSpacious layout with wide frontage\nLow density & exclusive environment\nSuitable for family living\nStrategic location in Alam Impian",
+    "whatsapp": "60166287357",
+    "photos": [
+      "AlamImpianCorner (1).jpeg",
+      "AlamImpianCorner (2).jpeg",
+      "AlamImpianCorner (3).jpeg",
+      "AlamImpianCorner (4).jpeg",
+      "AlamImpianCorner (5).jpeg",
+      "AlamImpianCorner (6).jpeg",
+      "AlamImpianCorner (7).jpeg",
+      "AlamImpianCorner (8).jpeg",
+      "AlamImpianCorner (9).jpeg"
+    ],
+    "privateNotes": ": A | L : . Alam Impian shah Alam\n+60 19-993 0710",
+    "status": "Available"
+  },
+  {
     "id": 1775369743052,
     "type": "listing",
     "category": "Residential",
