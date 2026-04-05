@@ -1,5 +1,30 @@
 const LISTINGS = [
   {
+    "id": 1775369743052,
+    "type": "listing",
+    "category": "Residential",
+    "title": "The Park 2 @ Pavilion Bukit Jalil",
+    "location": "Pavillion Bukit Jalil, Kuala Lumpur",
+    "price": "For Rent : RM 5,600 / month",
+    "rooms": "4",
+    "bathrooms": "4",
+    "builtup": "1519 sqft",
+    "furnishing": "Partly Furnished",
+    "tenure": "Freehold",
+    "description": "The Park 2 @ Pavilion Bukit Jalil – For Rent\n\nSpacious 4-bedroom service residence located in the heart of Bukit Jalil, directly connected to Pavilion Bukit Jalil via a covered link bridge — offering ultimate convenience and lifestyle living.\n\nProperty Details:\n\nBuilt-up: 1,519 sqft\n4 Bedrooms | 4 Bathrooms\nPartially Furnished\n2 Car Parks\nMid Floor\nRental: RM5,600/month\n\nHighlights:\n\nDirect access to Pavilion Bukit Jalil\nPremium lifestyle & retail convenience\nEasy connectivity to major highways\nIdeal for family or professionals\n\n📲 Contact for viewing & more details",
+    "whatsapp": "60166287357",
+    "photos": [
+      "The Park2 (1).jpeg",
+      "The Park2 (2).jpeg",
+      "The Park2 (3).jpeg",
+      "The Park2 (4).jpeg",
+      "The Park2 (5).jpeg",
+      "The Park2 (6).jpeg"
+    ],
+    "privateNotes": "Ker The Park 2 , bukit jalil\n+60 17-867 8832",
+    "status": "Available"
+  },
+  {
     "id": 1775314680040,
     "type": "listing",
     "category": "Residential",
