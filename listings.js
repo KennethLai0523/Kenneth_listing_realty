@@ -1,5 +1,30 @@
 const LISTINGS = [
   {
+    "id": 1775399158079,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Semi D @Bukit Jelutong",
+    "location": "Cahaya SPK, Shah Alam",
+    "price": "For Sale : RM 2,100,000",
+    "rooms": "5",
+    "bathrooms": "6",
+    "builtup": "3500 sqft",
+    "furnishing": "Partly Furnished",
+    "tenure": "Leasehold",
+    "description": "SEMI-D @ CAHAYA SPK, SHAH ALAM \n\nExperience comfortable suburban living in a peaceful, gated and guarded community. This well-maintained double-storey semi-detached home is located in Cahaya SPK, offering a quiet environment while remaining highly accessible via DASH Highway and surrounding key routes.\n\nWith a generous built-up of approximately 3,500 sq.ft, the property features 5 spacious bedrooms and 6 bathrooms, ideal for multi-generational families or those seeking larger living spaces. The layout is practical and well-designed, providing ample natural light and ventilation throughout.\n\nPROPERTY DETAILS:\n\nDouble Storey Semi-Detached\nIndividual Title (Leasehold, Bumi Lot)\nBuilt-up: approx. 3,500 sq.ft\n5 Bedrooms\n6 Bathrooms (including powder room)\nLocated within gated & guarded community\n\nStrategically located near Kota Damansara, Shah Alam and major highways, ensuring convenient access to daily amenities, schools, and commercial hubs.\n\nSuitable for own stay or long-term investment.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Cahaya (1).jpeg",
+      "Cahaya (2).jpeg",
+      "Cahaya (3).jpeg",
+      "Cahaya (4).jpeg",
+      "Cahaya (5).jpeg",
+      "Cahaya (6).jpeg"
+    ],
+    "privateNotes": "Leeza Shariff Cahaya SPK semi D\n+60 12-212 9689",
+    "status": "Available"
+  },
+  {
     "id": 1775377683134,
     "type": "listing",
     "category": "Commercial",
