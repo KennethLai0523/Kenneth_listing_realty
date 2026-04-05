@@ -165,8 +165,6 @@ const LISTINGS = [
     "description": "Well-maintained 2.5 storey semi-detached house located in Putra Heights / Subang Alam, Shah Alam. Strategically positioned near LRT station with good connectivity.\n\nBuilt-up approx. 2,800 sqft with 5 bedrooms and 5 bathrooms. Spacious layout designed for family living.\n\nIncludes dual kitchen setup (dry & wet kitchen), large living and dining area, and massive top floor suite. Renovated unit and move-in condition.\n\nCan park up to 5 cars.\n\nLocated in a peaceful residential area with easy access to main roads, amenities and public transport.",
     "whatsapp": "60166287357",
     "photos": [
-      "HuilingSetiaAlam (1).jpeg",
-      "HuilingSetiaAlam (2).jpeg",
       "HuilingSetiaAlam (3).jpeg",
       "HuilingSetiaAlam (4).jpeg",
       "HuilingSetiaAlam (5).jpeg",
