@@ -32,7 +32,7 @@ const LISTINGS = [
     "builtup": "2300 sqft",
     "furnishing": "-",
     "tenure": "Freehold",
-    "description": "Brand new double-storey Semi-Detached Cluster house located in the peaceful township of Alam Impian, Shah Alam. Limited corner unit available in this phase, ideal for own stay or long-term investment.\n\nProperty Details:\n\nBuilt-up: 2,339 sqft\nLand size: 51’ x 70’ (approx)\n4 Bedrooms | 5 Bathrooms\nCorner Unit (Only 2 units in this phase)\nBrand New\nNon-Bumi Lot\nDouble Storey Semi-D Cluster\n\nHighlights:\n\nSpacious layout with wide frontage\nLow density & exclusive environment\nSuitable for family living\nStrategic location in Alam Impian",
+    "description": "Brand new double-storey Semi-Detached Cluster house located in the peaceful township of Alam Impian, Shah Alam. Limited corner unit available in this phase, ideal for own stay or long-term investment.\n\nProperty Details:\n\nBuilt-up: 2,300 sqft\nLand size: 51’ x 70’ (approx)\n4 Bedrooms | 5 Bathrooms\nCorner Unit (Only 2 units in this phase)\nBrand New\nNon-Bumi Lot\nDouble Storey Semi-D Cluster\n\nHighlights:\n\nSpacious layout with wide frontage\nLow density & exclusive environment\nSuitable for family living\nStrategic location in Alam Impian",
     "whatsapp": "60166287357",
     "photos": [
       "AlamImpianCorner (1).jpeg",
