@@ -1,5 +1,32 @@
 const LISTINGS = [
   {
+    "id": 1775409830422,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Residensi AVA Kiara Bay | High Floor North Facing 3R2B For Sale",
+    "location": "Kiara Bay, Kepong",
+    "price": "For Sale : RM 680,000",
+    "rooms": "3",
+    "bathrooms": "2",
+    "builtup": "1125 sqft",
+    "furnishing": "Partly Furnished",
+    "tenure": "Leasehold",
+    "description": "Residensi AVA @ Kiara Bay high floor unit for sale, offering 3 bedrooms and 2 bathrooms with a practical layout. North facing with good natural lighting and ventilation. Located within a growing waterfront township in Kepong, surrounded by lifestyle amenities, retail, and upcoming developments.\n\nSuitable for own stay or investment, with easy access to major roads and nearby MRT. High floor unit provides better privacy and open view.\n\nContact Kenneth Lai for viewing arrangement.",
+    "whatsapp": "0166287357",
+    "photos": [
+      "residensiAvaNorth (1).jpeg",
+      "residensiAvaNorth (2).jpeg",
+      "residensiAvaNorth (3).jpeg",
+      "residensiAvaNorth (4).jpeg",
+      "residensiAvaNorth (5).jpeg",
+      "residensiAvaNorth (6).jpeg",
+      "residensiAvaNorth (7).jpeg",
+      "residensiAvaNorth (8).jpeg"
+    ],
+    "privateNotes": "Yan residensi ava north facing\n+60 10-396 2772",
+    "status": "Available"
+  },
+  {
     "id": 1775399158079,
     "type": "listing",
     "category": "Residential",
