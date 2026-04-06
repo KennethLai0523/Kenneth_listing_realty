@@ -1,5 +1,25 @@
 const LISTINGS = [
   {
+    "id": 1775496797117,
+    "type": "listing",
+    "category": "Commercial",
+    "title": "Enesta Kepong Shoplot (Below Residence) For Rent",
+    "location": "Kepong, Kuala Lumpur",
+    "price": "For Rent : RM 9,500",
+    "rooms": "-",
+    "bathrooms": "-",
+    "builtup": "2400 sqft",
+    "furnishing": "Partly",
+    "tenure": "-",
+    "description": "Enesta Kepong shoplot located directly beneath residential units with strong built-in catchment. Suitable for F&B, retail, convenience store and various business uses. High visibility corner unit with easy access and parking. Strategic location within mature Kepong area with surrounding residential population.",
+    "whatsapp": "60166287357",
+    "photos": [
+      "EnestaKepongshoplot.jpeg"
+    ],
+    "privateNotes": "janice aktan Enesta Kepong\n+60 12-889 9382",
+    "status": "Available"
+  },
+  {
     "id": 1775472835115,
     "type": "listing",
     "category": "Residential",
