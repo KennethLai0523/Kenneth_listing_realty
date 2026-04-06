@@ -1,5 +1,30 @@
 const LISTINGS = [
   {
+    "id": 1775472835115,
+    "type": "listing",
+    "category": "Residential",
+    "title": "Sunway Velocity Two | 2R1B | Direct Link to Mall | 2 Carpark",
+    "location": "Maluri, KL city centre",
+    "price": "For Rent : RM 3,700/month",
+    "rooms": "2",
+    "bathrooms": "1",
+    "builtup": "615 sqft",
+    "furnishing": "Fully Furnished",
+    "tenure": "-",
+    "description": "SUNWAY VELOCITY TWO | 2R1B | Double Carpark | Direct Link to Mall\n\nPrime location in the heart of Cheras, directly connected to Sunway Velocity Mall. Suitable for young professionals, couples or small families working in KLCC/TRX/Bukit Bintang area.\n\nUnit Details:\n\n2 Bedrooms 1 Bathroom\n615 sqft\n2 Carparks\nDirect link to mall & MRT\nHigh convenience lifestyle\n\nStrategic Location:\n\nWalking distance to MRT & LRT\nEasy access to MEX, AKLEH, Jalan Tun Razak\nNear TRX, KLCC, Bukit Bintang",
+    "whatsapp": "60166287357",
+    "photos": [
+      "Sunwayvelocity2 (1).jpeg",
+      "Sunwayvelocity2 (2).jpeg",
+      "Sunwayvelocity2 (3).jpeg",
+      "Sunwayvelocity2 (4).jpeg",
+      "Sunwayvelocity2 (5).jpeg",
+      "Sunwayvelocity2 (6).jpeg"
+    ],
+    "privateNotes": "jacoby sunway velocity 2\n+60 16-933 0895",
+    "status": "Available"
+  },
+  {
     "id": 1775409830422,
     "type": "listing",
     "category": "Residential",
