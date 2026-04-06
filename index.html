@@ -680,6 +680,17 @@
       box-shadow: 0 8px 18px rgba(255, 77, 109, 0.25);
     }
 
+    .social-toggle {
+      background: #e6fbf7;
+      color: #0f766e;
+    }
+    
+    .social-toggle.active {
+      background: #14b8a6;
+      color: white;
+      box-shadow: 0 8px 18px rgba(20, 184, 166, 0.25);
+    }
+
     @media (max-width: 980px) {
       .top-row,
       .footer-grid,
@@ -782,6 +793,7 @@
           <button id="toolsBtn" class="toggle-btn tools-toggle" onclick="setMode('tools')">Tools</button>
           <button id="websiteBtn" class="toggle-btn website-toggle" onclick="setMode('website')">Website</button>
           <button id="videoBtn" class="toggle-btn video-toggle" onclick="setMode('video')">Video</button>
+          <button id="socialBtn" class="toggle-btn social-toggle" onclick="setMode('social')">Social Media</button>
         </div>
 
         <div class="category-branch" id="categoryBranch">
@@ -860,6 +872,22 @@
             </div>
       <!--end of kiara bay video-->
           </div>
+
+          <div id="socialPanel" class="tool-panel" style="display:none;">
+            <h3 class="tool-title">Social Media</h3>
+            <p class="tool-subtitle">
+              Follow and explore more listings, videos and updates across all platforms.
+            </p>
+          
+            <div class="listing-actions">
+              <a class="btn btn-gold" href="https://youtube.com/" target="_blank">YouTube</a>
+              <a class="btn btn-gold" href="https://facebook.com/" target="_blank">Facebook</a>
+              <a class="btn btn-gold" href="https://instagram.com/" target="_blank">Instagram</a>
+              <a class="btn btn-gold" href="https://tiktok.com/" target="_blank">TikTok</a>
+              <a class="btn btn-gold" href="https://www.xiaohongshu.com/" target="_blank">小红书</a>
+            </div>
+          </div>
+     
 
           <div id="roiToolPanel" class="tool-panel">
             <h3 class="tool-title">ROI Calculator</h3>
@@ -1051,6 +1079,7 @@
       document.getElementById("toolsBtn").classList.toggle("active", mode === "tools");
       document.getElementById("websiteBtn").classList.toggle("active", mode === "website");
       document.getElementById("videoBtn").classList.toggle("active", mode === "video");
+      document.getElementById("socialBtn").classList.toggle("active", mode === "social");
 
       const title = document.getElementById("searchTitle");
       const subtitle = document.getElementById("searchSubtitle");
@@ -1064,6 +1093,8 @@
         document.getElementById("videoPanel").style.display = "none";
         document.getElementById("roiToolPanel").style.display = "none";
         document.getElementById("loanToolPanel").style.display = "none";
+        document.getElementById("socialPanel").style.display = "none";
+        
         title.textContent = "Available Listings";
         subtitle.textContent = "Search by project name, location, or keyword to quickly find the property you are looking for.";
         searchBox.placeholder = "Search project, location, keyword...";
@@ -1077,6 +1108,8 @@
         document.getElementById("videoPanel").style.display = "none";
         document.getElementById("roiToolPanel").style.display = "none";
         document.getElementById("loanToolPanel").style.display = "none";
+        document.getElementById("socialPanel").style.display = "none";
+        
         title.textContent = "Asking Requests";
         subtitle.textContent = "Browse what buyers or tenants are currently looking for by budget, area, or requirement.";
         searchBox.placeholder = "Search budget, area, requirement...";
@@ -1096,6 +1129,7 @@
       
         document.getElementById("websitePanel").style.display = "none";
         document.getElementById("videoPanel").style.display = "none";
+        document.getElementById("socialPanel").style.display = "none";
       
         setTool(currentTool);
       } else if (mode === "website") {
@@ -1113,6 +1147,8 @@
         document.getElementById("loanToolPanel").style.display = "none";
         document.getElementById("videoPanel").style.display = "none";
         document.getElementById("websitePanel").style.display = "block";
+        document.getElementById("socialPanel").style.display = "none";
+        
       } else if (mode === "video") {
         title.textContent = "Project Videos";
         subtitle.textContent = "Watch property walkthroughs and highlights.";
@@ -1127,7 +1163,25 @@
         document.getElementById("roiToolPanel").style.display = "none";
         document.getElementById("loanToolPanel").style.display = "none";
         document.getElementById("websitePanel").style.display = "none";
+        document.getElementById("socialPanel").style.display = "none";
         document.getElementById("videoPanel").style.display = "block";
+        
+      } else if (mode === "social") {
+        title.textContent = "Social Media";
+        subtitle.textContent = "Connect with Kenneth Lai across all social platforms.";
+      
+        searchBox.style.display = "none";
+        categoryBranch.style.display = "none";
+        toolsWrapper.style.display = "block";
+        listingsSection.style.display = "none";
+      
+        document.querySelector(".tool-selector").style.display = "none";
+      
+        document.getElementById("roiToolPanel").style.display = "none";
+        document.getElementById("loanToolPanel").style.display = "none";
+        document.getElementById("websitePanel").style.display = "none";
+        document.getElementById("videoPanel").style.display = "none";
+        document.getElementById("socialPanel").style.display = "block";
       }
     }
 
@@ -1362,7 +1416,7 @@
     }
 
     function render() {
-      if (currentMode === "tools" || currentMode === "website" || currentMode === "video") return;
+      if (currentMode === "tools" || currentMode === "website" || currentMode === "video" || currentMode === "social") return;
 
       const key = document.getElementById("search").value.toLowerCase().trim();
 
