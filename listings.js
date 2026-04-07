@@ -475,7 +475,7 @@ const LISTINGS = [
     "category": "Residential",
     "title": "Residensi AVA @ Kiara Bay | Lake View High Floor | Corner | type E layout",
     "location": "Kiara Bay, Kepong",
-    "price": "For Rent : RM 2,500/month",
+    "price": "For Rent : RM 2,300/month",
     "rooms": "4",
     "bathrooms": "2",
     "builtup": "1285 sqft",
