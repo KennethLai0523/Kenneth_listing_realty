@@ -473,7 +473,7 @@ const LISTINGS = [
     "id": 1774750444993,
     "type": "listing",
     "category": "Residential",
-    "title": "Residensi AVA @ Kiara Bay | Lake View High Floor | Corner | type E layout",
+    "title": "Residensi AVA @ Kiara Bay | Zig View Mid Floor | Corner | type E layout",
     "location": "Kiara Bay, Kepong",
     "price": "For Rent : RM 2,300/month",
     "rooms": "4",
@@ -481,7 +481,7 @@ const LISTINGS = [
     "builtup": "1285 sqft",
     "furnishing": "Partly",
     "tenure": "Leasehold",
-    "description": "Residensi AVA @ Kiara Bay high floor unit with non-blocking lake view 🌊\nSpacious 4 bedroom 2 bathroom layout, modern design and well maintained\nComes with 2 carparks, suitable for own stay or investment\nStrategic location near MRT, Desa ParkCity & major highways 🚗",
+    "description": "Residensi AVA @ Kiara Bay mid floor unit with greenery view 🌿\nSpacious 4 bedroom 2 bathroom layout, modern design and well maintained\nComes with 2 carparks, suitable for own stay or investment\nStrategic location near MRT, Desa ParkCity & major highways 🚗",
     "whatsapp": "60166287357",
     "photos": [
       "resiAvazigfacing (1).jpeg",
