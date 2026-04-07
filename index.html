@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#1f1f1f">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kenneth Lai | KL & Selangor Property Agent | Shoplot, Condo & Commercial Listings</title>
@@ -883,7 +885,7 @@
               <a class="btn btn-gold" href="https://www.youtube.com/@kennethlaiproperty" target="_blank">YouTube</a>
               <a class="btn btn-gold" href="https://www.facebook.com/profile.php?id=61585076815802" target="_blank">Facebook</a>
               <a class="btn btn-gold" href="https://www.instagram.com/msia_jaychou/" target="_blank">Instagram</a>
-              <a class="btn btn-gold" href="www.tiktok.com/@msia_jaychou" target="_blank">TikTok</a>
+              <a class="btn btn-gold" href="https://www.tiktok.com/@msia_jaychou" target="_blank">TikTok</a>
               <a class="btn btn-gold" href="https://xhslink.com/m/VdxbkCDRPP" target="_blank">小红书</a>
             </div>
           </div>
@@ -1516,5 +1518,20 @@
       e.preventDefault();
     });
   </script>
+
+  <script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("/sw.js")
+        .then(function () {
+          console.log("Service Worker registered");
+        })
+        .catch(function (error) {
+          console.log("Service Worker registration failed:", error);
+        });
+    });
+  }
+  </script>
+  
 </body>
 </html>
