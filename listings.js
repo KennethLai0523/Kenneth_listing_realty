@@ -14,7 +14,7 @@ const LISTINGS = [
     "description": "Enesta Kepong shoplot located directly beneath residential units with strong built-in catchment. Suitable for F&B, retail, convenience store and various business uses. High visibility corner unit with easy access and parking. Strategic location within mature Kepong area with surrounding residential population.",
     "whatsapp": "60166287357",
     "photos": [
-      "EnestaKepongshoplot.jpeg"
+      "Enestashop.jpeg"
     ],
     "privateNotes": "janice aktan Enesta Kepong\n+60 12-889 9382",
     "status": "Available"
