@@ -881,6 +881,35 @@
       display:block;
     }
 
+    .pricing-tabs{
+      display:flex;
+      gap:10px;
+      margin:20px 0 20px;
+      flex-wrap:wrap;
+    }
+    
+    .pricing-tab{
+      border:none;
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:700;
+      cursor:pointer;
+    }
+    
+    .pricing-tab.active{
+      background:#b89257;
+    }
+    
+    .pricing-panel{
+      display:none;
+    }
+    
+    .pricing-panel.active{
+      display:block;
+    }
+
     
     @media (max-width: 900px){
       .features-grid{
@@ -973,6 +1002,7 @@
     .image-break-sub h2{
       font-size:clamp(1.5rem, 3vw, 2.6rem);
     }
+
     
     /* MOBILE */
     @media (max-width: 720px){
@@ -1651,75 +1681,96 @@
   
         <!-- 🔥 PRICING PANEL -->
         <div class="interest-panel" id="pricing-panel">
-          <div class="panel" style="padding:30px; border-radius:16px; background:rgba(255,255,255,0.03);">
-  
-            <div class="eyebrow" style="margin-bottom:16px;">Pricing</div>
-  
-            <h2 style="font-size:clamp(2rem,4vw,3rem); margin-bottom:16px;">
-              Indicative Pricing
-            </h2>
-  
-            <p style="margin-bottom:20px;">
-              Get a quick overview of Armani Bizcore pricing by unit type.
-            </p>
-  
+        
+          <div class="eyebrow" style="margin-bottom:16px;">Pricing</div>
+        
+          <h2 style="font-size:clamp(2rem,4vw,3rem); margin-bottom:16px;">
+            Indicative Pricing
+          </h2>
+        
+          <p style="margin-bottom:20px;">
+            Get a quick overview of Armani Bizcore pricing.
+          </p>
+        
+          <!-- THIS is the small switch inside pricing -->
+          <div class="pricing-tabs">
+            <button class="pricing-tab active" data-target="type-panel">By Type</button>
+            <button class="pricing-tab" data-target="floor-panel">By Floor</button>
+          </div>
+        
+          <!-- By Type -->
+          <div class="pricing-panel active" id="type-panel">
             <div style="display:grid; gap:16px; margin-bottom:20px;">
-              
               <div style="padding:16px; border:1px solid rgba(255,255,255,0.1); border-radius:12px;">
-                <strong>Type A</strong><br>
-                RM 1,482,435 → RM 2,463,880
+                <strong>Type A / B</strong><br>
+                RM 1.48M – RM 2.46M
               </div>
-  
+        
               <div style="padding:16px; border:1px solid rgba(255,255,255,0.1); border-radius:12px;">
-                <strong>Type B</strong><br>
-                RM 1,482,435 → RM 2,410,950
+                <strong>Type C / D / E</strong><br>
+                RM 1.98M – RM 3.63M
               </div>
-              
+        
               <div style="padding:16px; border:1px solid rgba(255,255,255,0.1); border-radius:12px;">
-                <strong>Type C</strong><br>
-                RM 2,150,000 → RM 3,631,200
+                <strong>Type F / G</strong><br>
+                RM 3.03M – RM 5.19M
               </div>
-              
-              <div style="padding:16px; border:1px solid rgba(255,255,255,0.1); border-radius:12px;">
-                <strong>Type D</strong><br>
-                RM 1,983,000 → RM 2,353,000
-              </div>
-              
-              <div style="padding:16px; border:1px solid rgba(255,255,255,0.1); border-radius:12px;">
-                <strong>Type E</strong><br>
-                RM 2,206,000 → RM 2,619,000
-              </div>
-
-              <div style="padding:16px; border:1px solid rgba(255,255,255,0.1); border-radius:12px;">
-                <strong>Type F</strong><br>
-                RM 3,025,000 → RM 3,600,000
-              </div>
-              
+        
               <div style="padding:16px; border:1px solid rgba(255,255,255,0.1); border-radius:12px;">
                 <strong>Type F1</strong><br>
-                RM 5,668,000 → RM 5,698,000
+                RM 5.67M – RM 5.70M
               </div>
-              
-              <div style="padding:16px; border:1px solid rgba(255,255,255,0.1); border-radius:12px;">
-                <strong>Type G</strong><br>
-                RM 3,050,000 → RM 5,187,600
-              </div>
-              
             </div>
-  
-            <p style="color:#aaa; font-size:14px;">
-              Pricing varies based on layout, size, facing and current unit availability.
-            </p>
-  
-            <a href="https://wa.me/60166287357?text=Hi%20I%20want%20latest%20Armani%20Bizcore%20price"
-               class="btn"
-               style="margin-top:20px; display:inline-block;"
-               target="_blank"
-               rel="noopener">
-               📲 Get Latest Pricing
-            </a>
-  
           </div>
+        
+          <!-- By Floor -->
+          <div class="pricing-panel" id="floor-panel">
+            <div style="display:grid; gap:16px; margin-bottom:20px;">
+              <div style="padding:16px; border:1px solid rgba(255,255,255,0.1); border-radius:12px;">
+                <strong>Ground Floor</strong><br>
+                RM 2.41M – RM 5.70M
+              </div>
+        
+              <div style="padding:16px; border:1px solid rgba(255,255,255,0.1); border-radius:12px;">
+                <strong>Level 1</strong><br>
+                RM 1.77M – RM 3.63M
+              </div>
+        
+              <div style="padding:16px; border:1px solid rgba(255,255,255,0.1); border-radius:12px;">
+                <strong>Level 2</strong><br>
+                RM 1.69M – RM 3.48M
+              </div>
+        
+              <div style="padding:16px; border:1px solid rgba(255,255,255,0.1); border-radius:12px;">
+                <strong>Level 3A</strong><br>
+                RM 1.62M – RM 3.34M
+              </div>
+        
+              <div style="padding:16px; border:1px solid rgba(255,255,255,0.1); border-radius:12px;">
+                <strong>Level 5</strong><br>
+                RM 1.55M – RM 3.32M
+              </div>
+        
+              <div style="padding:16px; border:1px solid rgba(255,255,255,0.1); border-radius:12px;">
+                <strong>Level 6</strong><br>
+                RM 1.48M – RM 3.05M
+              </div>
+            </div>
+          </div>
+        
+          <p style="color:#aaa; font-size:14px;">
+            Pricing varies based on layout, size, facing and current unit availability.
+          </p>
+        
+          <a href="https://wa.me/60166287357?text=Hi%20I%20want%20latest%20Armani%20Bizcore%20price"
+             class="btn"
+             style="margin-top:20px; display:inline-block;"
+             target="_blank"
+             rel="noopener">
+             📲 Get Latest Pricing
+          </a>
+        
+        
         </div>
   
       </div>
@@ -1802,6 +1853,22 @@
   
       interestTabs.forEach(tab => tab.classList.remove('active'));
       interestPanels.forEach(panel => panel.classList.remove('active'));
+  
+      button.classList.add('active');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+
+  /* PRICING TABS (By Type / By Floor) */
+  const pricingTabs = document.querySelectorAll('.pricing-tab');
+  const pricingPanels = document.querySelectorAll('.pricing-panel');
+  
+  pricingTabs.forEach(button => {
+    button.addEventListener('click', () => {
+      const target = button.getAttribute('data-target');
+  
+      pricingTabs.forEach(tab => tab.classList.remove('active'));
+      pricingPanels.forEach(panel => panel.classList.remove('active'));
   
       button.classList.add('active');
       document.getElementById(target).classList.add('active');
