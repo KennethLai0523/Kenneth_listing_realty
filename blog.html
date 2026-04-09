@@ -623,7 +623,7 @@
           <p>${blog.excerpt}</p>
           <div class="card-actions">
             <button class="small-btn primary" onclick="openBlog('${blog.slug}')">Open Blog</button>
-            <button class="small-btn" onclick="copyPath('${blog.slug}')">Copy Path</button>
+            
           </div>
         </article>
       `).join('');
@@ -653,13 +653,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function copyPath(slug) {
-      const path = `mainsiteblog/${slug}`;
-      navigator.clipboard.writeText(path).then(() => {
-        alert(`Copied: ${path}`);
-      });
-    }
-
+    
     renderBlogCards();
   </script>
 </body>
