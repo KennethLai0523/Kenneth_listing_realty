@@ -1685,6 +1685,18 @@
       document.getElementById(target).classList.add('active');
     });
   });
+
+
+  function togglePricing() {
+    const box = document.getElementById("pricingBox");
+  
+    if (box.style.display === "none" || box.style.display === "") {
+      box.style.display = "block";
+      box.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      box.style.display = "none";
+    }
+  }
 </script>
   
   <a href="https://wa.me/60166287357?text=Hi%20Kenneth,%20I’m%20interested%20in%20Armani%20Bizcore%20Bukit%20Raja.%20Can%20I%20get%20more%20details?" 
