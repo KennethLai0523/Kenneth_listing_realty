@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenneth Property Blog</title>
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --panel: #ffffff;
+      --text: #18212b;
+      --muted: #667085;
+      --dark: #101827;
+      --dark-2: #1f2937;
+      --gold: #d4a017;
+      --line: #ebe6dc;
+      --shadow: 0 12px 30px rgba(16, 24, 39, 0.08);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #fbfaf7 0%, #f4f0e8 100%);
+      line-height: 1.65;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(16, 24, 39, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+    }
+    .brand {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--gold), #f4d97b);
+      color: #111827;
+      font-weight: 900;
+    }
+    .nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .nav a {
+      color: #e5e7eb;
+      font-size: 14px;
+    }
+    .nav .cta {
+      background: var(--gold);
+      color: #111827;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 800;
+    }
+
+    .hero {
+      background: radial-gradient(circle at top right, rgba(212,160,23,0.16), transparent 30%), linear-gradient(135deg, var(--dark), var(--dark-2));
+      color: white;
+      padding: 72px 0 56px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .badge {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      margin-bottom: 16px;
+    }
+    h1, h2, h3 { margin-top: 0; }
+    .hero h1 {
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.05;
+      margin-bottom: 16px;
+      max-width: 700px;
+    }
+    .hero p {
+      color: #dde6f2;
+      max-width: 700px;
+      font-size: 17px;
+    }
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #111827;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.98);
+      color: #111827;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+    }
+    .hero-card p { color: #475467; }
+    .mini-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .mini-item {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: #fff;
+      font-size: 14px;
+    }
+
+    .section { padding: 58px 0; }
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .search-box {
+      flex: 1 1 280px;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid #d8dbe2;
+      font: inherit;
+      background: white;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .blog-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tag {
+      display: inline-block;
+      width: fit-content;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #fff4c7;
+      color: #8a5a00;
+    }
+    .blog-card p {
+      color: #475467;
+      margin: 0;
+    }
+    .blog-meta {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .card-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+    .small-btn {
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 14px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .small-btn.primary {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #111827;
+    }
+
+    .blog-view {
+      display: none;
+    }
+    .blog-view.active,
+    .home-view.active {
+      display: block;
+    }
+    .home-view {
+      display: none;
+    }
+
+    .article-shell {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .article-hero {
+      background: linear-gradient(135deg, #162032, #22304a);
+      color: white;
+      padding: 34px 28px;
+    }
+    .article-hero p {
+      color: #dbe4ef;
+      max-width: 820px;
+    }
+    .article-body {
+      padding: 28px;
+    }
+    .article-body h3 {
+      margin-top: 22px;
+      margin-bottom: 8px;
+    }
+    .article-body p,
+    .article-body li {
+      color: #425466;
+    }
+    .article-body ul {
+      padding-left: 20px;
+    }
+    .back-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      color: #8a5a00;
+    }
+    .article-cta {
+      margin-top: 26px;
+      padding: 18px;
+      border-radius: 18px;
+      background: #fffaf0;
+      border: 1px solid #f1dfa1;
+    }
+    .article-cta p { margin-top: 0; }
+
+    .footer {
+      background: var(--dark);
+      color: #d1d5db;
+      padding: 32px 0;
+      margin-top: 36px;
+    }
+    .footer small {
+      display: block;
+      color: #98a2b3;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">K</div>
+        <div>Kenneth Property Blog</div>
+      </div>
+      <nav class="nav">
+        <a href="#" onclick="goHome(); return false;">Home</a>
+        <a href="#blogs" onclick="goHome(); return false;">Blogs</a>
+        <a href="#" class="cta">Latest Posts</a>
+      </nav>
+    </div>
+  </div>
+
+  <div id="homeView" class="home-view active">
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">Latest property insights • curated projects • easy to explore</div>
+          <h1>Property news, project insights, and building guides — all in one place</h1>
+          <p>
+            Explore clear, focused property insights at your own pace. Each post covers one topic, so you can quickly understand a project, compare options, and move on to the next when you're ready.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#blogs">Browse Blogs</a>
+            
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3 style="margin-bottom:8px;">Why follow this blog</h3>
+          <p>Get quick, clear insights on projects, market trends, and real property knowledge without the fluff.</p>
+          <div class="mini-list">
+            <div class="mini-item"><strong>Project insights:</strong> understand before you view</div>
+            <div class="mini-item"><strong>Market updates:</strong> stay ahead of trends</div>
+            <div class="mini-item"><strong>Buyer guidance:</strong> know what to look for</div>
+            <div class="mini-item"><strong>Direct contact:</strong> reach out anytime</div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" id="blogs">
+      <div class="container">
+        <h2 class="section-title">Latest blog posts</h2>
+        <p class="section-subtitle">
+          Browse the latest posts in a clean, easy-to-read format. Find quick insights on projects, market updates, and buyer tips—then jump straight into the topics that matter to you.
+        </p>
+
+        <div class="toolbar">
+          <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search blog title or topic..." oninput="renderBlogCards()" />
+          </div>
+        </div>
+
+        <div id="blogGrid" class="blog-grid"></div>
+      </div>
+    </section>
+  </div>
+
+  <div id="blogView" class="blog-view">
+    <section class="section">
+      <div class="container">
+        <div class="back-row">
+          <a href="#" class="back-link" onclick="goHome(); return false;">← Back to main blog</a>
+          <div id="currentSlug" class="tag">/armani</div>
+        </div>
+
+        <article class="article-shell">
+          <div class="article-hero">
+            <div id="articleTag" class="tag" style="background:rgba(255,255,255,0.14); color:white;">Project Blog</div>
+            <h1 id="articleTitle" style="margin:14px 0 12px; font-size:clamp(30px,4vw,48px);"></h1>
+            <p id="articleSummary"></p>
+            <div class="blog-meta" id="articleMeta" style="color:#dbe4ef;"></div>
+          </div>
+          <div class="article-body" id="articleBody"></div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <strong>Kenneth Property Blog</strong>
+      <small>Clear property insights, project updates, and useful information — all in one place.</small>
+    </div>
+  </footer>
+
+  <script>
+    const blogs = [
+      {
+        slug: 'armani',
+        title: 'Armani Bizcore: What buyers should know',
+        category: 'Commercial Project',
+        date: '10 Apr 2026',
+        summary: 'A simple information-sharing post focused only on Armani Bizcore, including concept, suitability, and why certain buyers may be interested.',
+        excerpt: 'Ramp-up concept, own-use potential, and what makes this project different from ordinary office buildings.',
+        body: `
+          <p>Armani Bizcore is a modern commercial project designed with a ramp-up concept, allowing direct access to units by vehicle. This creates a more practical working environment compared to traditional office towers.</p>
+
+          <h3>Key highlights</h3>
+          <ul>
+            <li>Ramp-up access for convenience and efficiency</li>
+            <li>Suitable for own-use business owners and SMEs</li>
+            <li>Modern corporate image with practical layout</li>
+            <li>Flexible unit usage for office, showroom, or workspace</li>
+          </ul>
+
+          <h3>Why buyers consider Armani Bizcore</h3>
+          <p>Many buyers are drawn to the combination of accessibility and branding. Unlike conventional offices, this concept allows easier loading, faster access, and a more direct working flow—especially useful for businesses that require frequent movement of goods or client visits.</p>
+
+          <h3>Location & accessibility</h3>
+          <ul>
+            <li>Strategic Klang / Bukit Raja area</li>
+            <li>Connected via major highways</li>
+            <li>Growing commercial and industrial surroundings</li>
+          </ul>
+
+          <h3>Own use vs investment</h3>
+          <p>This project is often more attractive for own-use buyers who want control over their workspace. However, investors may also see potential depending on tenant demand for this type of concept.</p>
+
+          <div class="article-cta">
+            <p><strong>Interested in this project?</strong> Get the latest price, available units, and suitable options based on your usage.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://wa.me/60123456789?text=Hi%20Kenneth%2C%20I%20just%20read%20your%20Armani%20Bizcore%20blog%20and%20want%20more%20details." target="_blank">Ask About Armani</a>
+              <button class="btn" style="background:#111827;color:white;" onclick="goHome()">Back to Main Blog</button>
+            </div>
+          </div>
+        `
+      },
+      {
+        slug: 'leverra',
+        title: 'Leverra Sri Damansara overview for own-stay buyers',
+        category: 'Residential Project',
+        date: '03 Apr 2026',
+        summary: 'A focused post for readers who want only Leverra information without mixing it together with your other project pages.',
+        excerpt: 'Transit-oriented, freehold concept, and strong own-stay appeal in a mature township.',
+        body: `
+          <p>Leverra is a freehold residential development located in Bandar Sri Damansara, a mature township that combines daily convenience with a more peaceful living environment. It is designed with a strong focus on connectivity, lifestyle, and practicality for own-stay buyers.</p>
+
+          <h3>Key highlights</h3>
+          <ul>
+            <li>Freehold development in a mature township</li>
+            <li>Covered walkway to MRT station (approx. 300m–500m)</li>
+            <li>Transit-oriented concept for daily convenience</li>
+            <li>Suitable layouts for families and working adults</li>
+          </ul>
+
+          <h3>Why buyers consider Leverra</h3>
+          <p>One of the main attractions is its connectivity. With a sheltered walkway to the MRT station, residents can easily travel across KL without heavy reliance on driving. This improves both lifestyle convenience and long-term property appeal. ([sridamansaraproject.com](https://www.sridamansaraproject.com/?utm_source=chatgpt.com))</p>
+
+          <h3>Location & lifestyle</h3>
+          <ul>
+            <li>Located in Bandar Sri Damansara (established area)</li>
+            <li>Near shopping malls, schools, and daily amenities</li>
+            <li>Easy access to LDP, NKVE, and major highways</li>
+            <li>Surrounded by growing commercial and residential developments</li>
+          </ul>
+
+          <h3>Facilities & living concept</h3>
+          <p>The project includes lifestyle-focused facilities and green elements, creating a more balanced environment between urban living and comfort. Some developments in this area feature large facility spaces and community-oriented design. ([bestpropertyforsales.com](https://www.bestpropertyforsales.com/?utm_source=chatgpt.com))</p>
+
+          <h3>Own stay vs investment</h3>
+          <p>Leverra is particularly attractive for own-stay buyers who value MRT accessibility and a complete living environment. Investors may also consider it due to rental demand from nearby working professionals and accessibility to the city.</p>
+
+          <div class="article-cta">
+            <p><strong>Interested in Leverra?</strong> Ask for latest pricing, available units, and which layout suits your needs best.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://wa.me/60123456789?text=Hi%20Kenneth%2C%20I%20just%20read%20your%20Leverra%20blog%20and%20want%20more%20details." target="_blank">Ask About Leverra</a>
+              <button class="btn" style="background:#111827;color:white;" onclick="goHome()">Back to Main Blog</button>
+            </div>
+          </div>
+        `
+      },
+      {
+        slug: 'ava',
+        title: 'Residensi AVA @ Kiara Bay: What buyers should know',
+        category: 'Condo Blog',
+        date: '27 Mar 2026',
+        summary: 'A focused blog for buyers looking into AVA, covering concept, lifestyle, and suitability for own stay or investment.',
+        excerpt: 'Lake-facing environment, modern layout, and strong lifestyle positioning near Desa ParkCity.',
+        body: `
+          <p>Residensi AVA @ Kiara Bay is a residential development designed with a strong focus on lifestyle, greenery, and modern living. Located near Desa ParkCity, it attracts buyers who want both convenience and a more relaxed living environment.</p>
+
+          <h3>Key highlights</h3>
+          <ul>
+            <li>Strategic location near Desa ParkCity</li>
+            <li>Lake and greenery surroundings</li>
+            <li>Modern layouts suitable for families</li>
+            <li>Lifestyle-focused facilities</li>
+          </ul>
+
+          <h3>Why buyers consider AVA</h3>
+          <p>One of the main attractions is the lifestyle environment. Compared to more congested areas, this project offers a balance between city access and a more peaceful, greenery-focused living experience. This is especially attractive for own-stay buyers and young families.</p>
+
+          <h3>Location & accessibility</h3>
+          <ul>
+            <li>Near Desa ParkCity (high-demand residential area)</li>
+            <li>Access via major highways like MRR2 and DUKE</li>
+            <li>Close to retail, dining, and daily amenities</li>
+          </ul>
+
+          <h3>Own stay vs investment</h3>
+          <p>This project is more suitable for own-stay buyers who value environment, comfort, and lifestyle. However, due to its location and surrounding demand, it may also attract tenants looking for better quality living near the city.</p>
+
+          <h3>What to consider before buying</h3>
+          <ul>
+            <li>Unit facing (lake vs internal view)</li>
+            <li>Level and noise considerations</li>
+            <li>Future development in surrounding area</li>
+          </ul>
+
+          <div class="article-cta">
+            <p><strong>Interested in AVA?</strong> Get the latest price, best facing units, and recommendations based on your needs.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://wa.me/60123456789?text=Hi%20Kenneth%2C%20I%20just%20read%20your%20AVA%20blog%20and%20want%20more%20details." target="_blank">Ask About AVA</a>
+              <button class="btn" style="background:#111827;color:white;" onclick="goHome()">Back to Main Blog</button>
+            </div>
+          </div>
+        `
+      },
+      {
+        slug: 'property-news',
+        title: 'Property news and market updates from Kenneth',
+        category: 'News Sharing',
+        date: '20 Mar 2026',
+        summary: 'Not every post has to be a building page. You can also publish broader property news, buying tips, or market observations in the same main blog site.',
+        excerpt: 'Use the same homepage structure for news sharing, buyer education, and project-specific posts.',
+        body: `
+          <p>Here are practical tips buyers actually use before making a decision—simple, real, and straight to the point.</p>
+
+          <h3>How to roughly calculate your mortgage</h3>
+          <ul>
+            <li>Loan amount = property price × 90% (if first home)</li>
+            <li>Use rough rule: RM100,000 loan ≈ RM450/month</li>
+            <li>Example: RM500,000 house → loan RM450k → ≈ RM2,000/month</li>
+          </ul>
+
+          <h3>What banks will check</h3>
+          <ul>
+            <li>Debt Service Ratio (DSR)</li>
+            <li>Your existing commitments (car, PTPTN, credit card)</li>
+            <li>Income stability</li>
+          </ul>
+          <p><strong>Tip:</strong> Try keep your total commitments below 60–70% of your income.</p>
+
+          <h3>Market situation now (simple view)</h3>
+          <ul>
+            <li>Good projects still moving fast</li>
+            <li>Buyers are more selective (not blindly buying)</li>
+            <li>Location + concept matters more than ever</li>
+          </ul>
+
+          <h3>How to choose a property</h3>
+          <ul>
+            <li>Own stay → focus on comfort, layout, access</li>
+            <li>Investment → focus on demand, rental, location</li>
+            <li>Avoid buying just because “cheap”</li>
+          </ul>
+
+          <div class="article-cta">
+            <p><strong>Need help deciding?</strong> I can help you calculate budget, shortlist projects, and match based on your situation.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="https://wa.me/60123456789?text=Hi%20Kenneth%2C%20I%20want%20help%20to%20calculate%20my%20budget%20and%20choose%20property." target="_blank">Ask Kenneth</a>
+              <button class="btn" style="background:#111827;color:white;" onclick="goHome()">Back to Main Blog</button>
+            </div>
+          </div>
+        `
+      }
+    ];
+
+    function renderBlogCards() {
+      const search = document.getElementById('searchInput').value.trim().toLowerCase();
+      const grid = document.getElementById('blogGrid');
+
+      const filtered = blogs.filter(blog => {
+        const haystack = `${blog.title} ${blog.category} ${blog.summary} ${blog.excerpt}`.toLowerCase();
+        return !search || haystack.includes(search);
+      });
+
+      if (!filtered.length) {
+        grid.innerHTML = '<div class="blog-card"><h3>No blog found</h3><p>Try another keyword.</p></div>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(blog => `
+        <article class="blog-card">
+          <div class="tag">${blog.category}</div>
+          <h3>${blog.title}</h3>
+          <div class="blog-meta">${blog.date} • /${blog.slug}</div>
+          <p>${blog.excerpt}</p>
+          <div class="card-actions">
+            <button class="small-btn primary" onclick="openBlog('${blog.slug}')">Open Blog</button>
+            <button class="small-btn" onclick="copyPath('${blog.slug}')">Copy Path</button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function openBlog(slug) {
+      const blog = blogs.find(item => item.slug === slug);
+      if (!blog) return;
+
+      document.getElementById('homeView').classList.remove('active');
+      document.getElementById('blogView').classList.add('active');
+      document.getElementById('currentSlug').textContent = `/${blog.slug}`;
+      document.getElementById('articleTag').textContent = blog.category;
+      document.getElementById('articleTitle').textContent = blog.title;
+      document.getElementById('articleSummary').textContent = blog.summary;
+      document.getElementById('articleMeta').textContent = `${blog.date} • Kenneth Property Blog`;
+      document.getElementById('articleBody').innerHTML = blog.body;
+
+      requestAnimationFrame(() => {
+        document.getElementById('blogView').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+
+    function goHome() {
+      document.getElementById('blogView').classList.remove('active');
+      document.getElementById('homeView').classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function copyPath(slug) {
+      const path = `mainsiteblog/${slug}`;
+      navigator.clipboard.writeText(path).then(() => {
+        alert(`Copied: ${path}`);
+      });
+    }
+
+    renderBlogCards();
+  </script>
+</body>
+</html>
