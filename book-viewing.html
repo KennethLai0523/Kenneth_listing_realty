@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Armani Bizcore Viewing</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #111, #2c2c2c);
+      color: #fff;
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 32px;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 16px;
+      color: #ddd;
+    }
+
+    .content {
+      padding: 28px 24px 36px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      margin: 0 0 16px;
+      color: #111;
+    }
+
+    .booking-form {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .booking-form input,
+    .booking-form textarea,
+    .booking-form select {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid #d9d9d9;
+      border-radius: 10px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .booking-form input:focus,
+    .booking-form textarea:focus,
+    .booking-form select:focus {
+      border-color: #b8860b;
+      box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.12);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 12px;
+      padding: 15px 18px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: white;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1ebe5d;
+    }
+
+    .location-card {
+      background: #fafafa;
+      border: 1px solid #e8e8e8;
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .location-card p {
+      margin: 8px 0;
+    }
+
+    .map-wrap {
+      margin-top: 16px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #e5e5e5;
+    }
+
+    iframe {
+      width: 100%;
+      height: 380px;
+      border: 0;
+      display: block;
+    }
+
+    .directions-btn {
+      display: inline-block;
+      margin-top: 14px;
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .directions-btn:hover {
+      background: #333;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 26px;
+      }
+
+      .content {
+        padding: 22px 16px 30px;
+      }
+
+      iframe {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <h1>Book Armani Bizcore Viewing</h1>
+      <p>Select your preferred date and time, and Kenneth will confirm via WhatsApp.</p>
+    </div>
+
+    <div class="content">
+      <h2 class="section-title">Viewing Request Form</h2>
+
+      <form class="booking-form" onsubmit="sendToWhatsApp(event)">
+        <input type="text" id="name" placeholder="Your Name" required />
+        
+        <div class="grid-2">
+          <input type="tel" id="phone" placeholder="Your Phone Number" required />
+          <input type="email" id="email" placeholder="Your Email (Optional)" />
+        </div>
+
+        <div class="grid-2">
+          <input type="date" id="date" required />
+          <select id="time" required>
+            <option value="">Preferred Time</option>
+            <option>9:00 AM</option>
+            <option>10:00 AM</option>
+            <option>11:00 AM</option>
+            <option>12:00 PM</option>
+            <option>1:00 PM</option>
+            <option>2:00 PM</option>
+            <option>3:00 PM</option>
+            <option>4:00 PM</option>
+            <option>5:00 PM</option>
+          </select>
+        </div>
+
+        <textarea id="message" rows="5" placeholder="Notes (Optional) e.g. own use / investment / unit size / budget"></textarea>
+
+        <button type="submit" class="btn btn-whatsapp">Book via WhatsApp</button>
+      </form>
+
+      <h2 class="section-title">Location</h2>
+
+      <div class="location-card">
+        <p><strong>Address:</strong></p>
+        <p>Eco Ardence, 71-1, Jalan Eco Ardence D U12/36D, Seksyen U12, 40170 Shah Alam, Selangor</p>
+
+        <a
+          class="directions-btn"
+          href="https://www.google.com/maps/search/?api=1&query=Eco+Ardence,+71-1,+Jalan+Eco+Ardence+D+U12%2F36D,+Seksyen+U12,+40170+Shah+Alam,+Selangor"
+          target="_blank"
+        >
+          Open in Google Maps
+        </a>
+
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps?q=Eco%20Ardence,%2071-1,%20Jalan%20Eco%20Ardence%20D%20U12/36D,%20Seksyen%20U12,%2040170%20Shah%20Alam,%20Selangor&z=16&output=embed"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const date = document.getElementById("date").value;
+      const time = document.getElementById("time").value;
+      const message = document.getElementById("message").value.trim();
+
+      const whatsappNumber = "60166287357";
+
+      const text =
+`Hi Kenneth, I want to book an Armani Bizcore viewing.
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email || "-"}
+Preferred Date: ${date}
+Preferred Time: ${time}
+Notes: ${message || "-"}`;
+
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
